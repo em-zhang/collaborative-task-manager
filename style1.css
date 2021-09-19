@@ -1,20 +1,46 @@
-ul{
-    border: 3px solid black;
-    max-width: 600px;
-    padding: 20px 20px;
+* {
+    font-size: 150%;
 }
 
-h1{
-    text-align: center;
-    border: 3px solid blue;
-    padding: 20px 20px;
-    max-width: 600px;
+h1 {
+    font-size: 2em;
+    text-align: left;
+    font-weight: bold;
 }
 
-body{
-    font: 100%/1.7 Helvetica;
-    max-width: 500px;
-    margin: 0 auto;
-    width: 50%;
-    background: snow;
+h2 {
+    font-size: 1.6em;
+    font-weight: bold;
+}
+
+ul {
+    margin: 3em 0;
+    font-size: 1em;
+}
+
+body {
+    font-family: "PT Sans", sans-serif;
+    margin: 10% auto;
+    width: 85%;
+    background: white;
+}
+
+.add-task {
+    font-size: 1em;
+    display: flex;
+}
+
+#add-task-button {
+    justify-content: flex-end;
+}
+
+.button {
+    font-size: 1.2em;
+    padding: 30px;
+    border: none;
+    margin: 20px auto;
+}
+
+input[type=checkbox] {
+    transform: scale(2.5);
 }
