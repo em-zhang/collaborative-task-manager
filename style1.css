@@ -3,6 +3,7 @@
     margin: 0 auto;
 }
 
+
 body {
     font-family: "PT Sans", sans-serif;
     margin: 0% auto;
@@ -45,6 +46,10 @@ h2 {
     font-size: 1em;
 }
 
+.no-tasks-message{
+    text-align: center;
+}
+
 input[name="tasks"]{
     background-color: red;
 }
@@ -63,10 +68,6 @@ input[name="tasks"]{
     color: white;
     border-style: hidden;
     border-radius: 10px;
-}
-
-.bottombar {
-    display: inline-block;
 }
 
 input[type=text] {
@@ -99,6 +100,9 @@ label {
 
 .toolbar {
     display: flex;
+    position:absolute;
+    bottom:0;
+    width:100%;
 }
 
 .button {

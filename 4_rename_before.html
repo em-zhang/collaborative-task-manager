@@ -12,26 +12,28 @@
 <h2>My Tasks</h2>
 <button type="button">Edit tasks</button>
 
-<form class="add-task">
-    <input class= "top" type="text" id="newtask" name="newtask"><br>
-    <input class="top button" type="submit" value="Add Task" id="add-task-button">
-</form>
-<ul>
-    <input type="checkbox" id="task1" name="task1" value="t1">
-    <label for="task1"> Buy new John Grisham book </label><br>
-    <input type="checkbox" id="task2" name="task2" value="t2">
-    <label for="task2"> Get car washed </label><br>
-    <input type="checkbox" id="task3" name="task3" value="t3">
-    <label for="task3"> Order textbooks </label><br>
-    <input type="checkbox" id="task4" name="task4" value="t4">
-    <label for="task4"> Call Mom </label><br>
-    <input type="checkbox" id="task5" name="task5" value="t5">
-    <label for="task5"> Text John about bank statements </label><br>
-    <input type="checkbox" id="task6" name="task6" value="t6">
-    <label for="task6"> Eat Lunch </label><br>
-</ul>
+<div class="container">
+    <h2>My Tasks</h2>
+    <form class="add-task">
+        <input class= "top" type="text" id="newtask" name="newtask"><br>
+        <input class="top button" type="submit" value="Add Task" id="add-task-button">
+    </form>
+    <div class="checklist">
+        <input type="checkbox" name="tasks" value="task1">Buy new John Grisham book<br>
+        <input type="checkbox" name="tasks" value="task2">Get car washed<br>
+        <input type="checkbox" name="tasks" value="task3">Order textbooks<br>
+                <input type="checkbox" name="tasks" value="task4" checked>Call Mom<br>
+        <input type="checkbox" name="tasks" value="task5">Text John <br>
+                <input type="checkbox" name="tasks" value="task6" checked>Eat lunch<br>
+        <input type="checkbox" name="tasks" value="task7">Fix laptop<br>
+    </div>
+</div>
 
-<button type="button">Add Task</button>
+<div class="toolbar">
+    <button class="button" type="button">Edit Tasks</button></br>
+    <button class="button" type="button">Show To-Do</button></br>
+    <button class="button" type="button">Delete Done</button>
+</div>
 </body>
 </html>
 
