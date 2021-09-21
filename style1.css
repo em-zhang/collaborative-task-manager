@@ -3,7 +3,10 @@
     margin: 0 auto;
 }
 
-
+ul {
+    list-style-type: upper-roman;
+    font-size: 40%;
+}
 body {
     font-family: "PT Sans", sans-serif;
     margin: 0% auto;
