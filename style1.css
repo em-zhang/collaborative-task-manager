@@ -4,13 +4,18 @@
 
 h1 {
     font-size: 2em;
-    text-align: left;
+    text-align: center;
     font-weight: bold;
+    background: lightgray;
+    padding: 10px;
 }
 
 h2 {
     font-size: 1.6em;
     font-weight: bold;
+    text-align: center;
+    background: lightblue;
+    padding: 10px;
 }
 
 ul {
@@ -22,7 +27,7 @@ body {
     font-family: "PT Sans", sans-serif;
     margin: 10% auto;
     width: 85%;
-    background: white;
+    background: whitesmoke;
 }
 
 .add-task {
@@ -34,13 +39,87 @@ body {
     justify-content: flex-end;
 }
 
+.bottombar {
+    display: inline-block;
+}
+
 .button {
     font-size: 1.2em;
     padding: 30px;
     border: none;
     margin: 20px auto;
+    background-color: lightblue;
+    color: black;
+    border: 2px solid lightgray;
 }
 
-input[type=checkbox] {
-    transform: scale(2.5);
+#bottom {
+    display: flex;
+    display: inline-block;
 }
+
+#top {
+    display: flex;
+    display: inline-block;
+}
+
+input[type=text] {
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 4px;
+}
+
+.submit {
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 20px;
+    border-radius: 0;
+    -webkit-appearance: none;
+}
+
+
+/*#tools {*/
+/*    border-style: solid;*/
+/*    border-width: 5px;*/
+/*    border-color: lightblue;*/
+/*}*/
+
+label {
+    align-items: center;
+}
+input[type=checkbox]{
+    transform: scale(2.5);
+    flex: none;
+}
+
+/*input[type=checkbox] {*/
+/*    transform: scale(4);*/
+/*    vertical-align: middle;*/
+/*    !*position: relative;*!*/
+/*    !*horiz-align: center;*!*/
+/*    padding-right: 10px;*/
+/*}*/
+
+/*input[type=checkbox] > label {*/
+/*    transform: scale(3.5);*/
+/*    vertical-align: middle;*/
+/*    padding-right: 10px;*/
+/*}*/
+
+input[type=checkbox] {
+    vertical-align: middle;
+    position: relative;
+    bottom: 1px;
+}
+
+label {
+    display: block;
+}
+
+/*label {*/
+/*    display: block;*/
+/*    padding-left: 15px;*/
+/*    text-indent: -15px;*/
+/*}*/
