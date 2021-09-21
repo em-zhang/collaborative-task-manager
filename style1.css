@@ -35,14 +35,18 @@ body {
 }
 
 h2 {
-    font-size: 0.6em;
+    font-size: 1em;
     font-weight: bold;
     padding: 10px;
 }
 
 .checklist {
     margin: 2em 0;
-    font-size: 0.8em;
+    font-size: 1em;
+}
+
+input[name="tasks"]{
+    background-color: red;
 }
 
 .add-task {
