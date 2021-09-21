@@ -7,33 +7,39 @@
 </head>
 <body>
 
-<h1>Task Manager</h1>
+<div class="heading">
+    <h1>Task Manager</h1>
+</div>
 
-<h2>My Tasks</h2>
-<form class="add-task">
-    <input class= "top" type="text" id="newtask" name="newtask"><br>
-    <input class="top button" type="submit" value="Add Task" id="add-task-button">
-</form>
-<ul>
-    <input type="checkbox" id="task1" name="task1">
-    <label for="task1"> Buy new John Grisham book </label><br>
-    <input type="checkbox" id="task2" name="task2">
-    <label for="task2"> Get car washed </label><br>
-    <input type="checkbox" id="task3" name="task3">
-    <label for="task3"> Order textbooks </label><br>
-    <input type="checkbox" id="task4" name="task4" checked>
-    <label for="task4"> Call Mom </label><br>
-    <input type="checkbox" id="task5" name="task5">
-    <label for="task5"> Text John </label><br>
-    <input type="checkbox" id="task6" name="task6" checked>
-    <label for="task6"> Eat Lunch </label><br>
-    <input type="checkbox" id="task7" name="task6" >
-    <label for="task6"> Fix laptop </label><br>
-</ul>
+<div class="container">
+    <h2>My Tasks</h2>
+    <form class="add-task">
+        <input class= "top" type="text" id="newtask" name="newtask"><br>
+        <input class="top button" type="submit" value="Add Task" id="add-task-button">
+    </form>
+    <ul>
+        <input type="checkbox" id="task1" name="task1">
+        <label for="task1"> Buy new John Grisham book </label>
+        <input type="checkbox" id="task2" name="task2">
+        <label for="task2"> Get car washed </label>
+        <input type="checkbox" id="task3" name="task3">
+        <label for="task3"> Order textbooks </label>
+        <input type="checkbox" id="task4" name="task4" checked>
+        <label for="task4"> Call Mom </label>
+        <input type="checkbox" id="task5" name="task5">
+        <label for="task5"> Text John </label>
+        <input type="checkbox" id="task6" name="task6" checked>
+        <label for="task6"> Eat Lunch </label>
+        <input type="checkbox" id="task7" name="task6" >
+        <label for="task6"> Fix laptop </label>
+    </ul>
+</div>
 
-<button class="button" type="button">Edit Tasks</button></br>
-<button class="button" type="button">Show Uncompleted</button></br>
-<button class="button" type="button">Delete Completed</button>
+<div class="toolbar">
+    <button class="button" type="button">Edit Tasks</button></br>
+    <button class="button" type="button">Show To-Do</button></br>
+    <button class="button" type="button">Delete Done</button>
+</div>
 </body>
 </html>
 

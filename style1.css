@@ -1,125 +1,103 @@
 * {
     font-size: 150%;
+    margin: 0 auto;
 }
 
-h1 {
-    font-size: 2em;
-    text-align: center;
+body {
+    font-family: "PT Sans", sans-serif;
+    margin: 0% auto;
+    background: whitesmoke;
+}
+
+.heading {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    padding-top: 7.5%;
+    padding-left: 7.5%;
+    padding-right: 7.5%;
+    border-bottom-style: solid;
+    border-color: lightgrey;
+}
+
+.container {
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 3%;
+}
+
+.heading h1 {
+    font-size: 1.2em;
     font-weight: bold;
-    background: lightgray;
-    padding: 10px;
+    padding-bottom: 30px;
 }
 
 h2 {
-    font-size: 1.6em;
+    font-size: 0.6em;
     font-weight: bold;
-    text-align: center;
-    background: lightblue;
     padding: 10px;
 }
 
 ul {
     margin: 3em 0;
-    font-size: 1em;
-}
-
-body {
-    font-family: "PT Sans", sans-serif;
-    margin: 10% auto;
-    width: 85%;
-    background: whitesmoke;
+    font-size: 0.6em;
 }
 
 .add-task {
-    font-size: 1em;
+    font-size: 30px;
     display: flex;
 }
 
 #add-task-button {
-    justify-content: flex-end;
+    font-size: 40px;
+    margin-left: 20px;
+    background-color: royalblue;
+    color: white;
+    border-style: hidden;
+    border-radius: 10px;
 }
 
 .bottombar {
     display: inline-block;
 }
 
-.button {
-    font-size: 1.2em;
-    padding: 30px;
-    border: none;
-    margin: 20px auto;
-    background-color: lightblue;
-    color: black;
-    border: 2px solid lightgray;
-}
-
-#bottom {
-    display: flex;
-    display: inline-block;
-}
-
-#top {
-    display: flex;
-    display: inline-block;
-}
-
 input[type=text] {
-    padding: 12px 20px;
-    margin: 8px 0;
+    padding:20px 50px;
+    margin: 20px 0px;
     box-sizing: border-box;
-    border: 2px solid black;
-    border-radius: 4px;
+    border: 2px solid lightgrey;
+    border-radius: 10px; /*updates the roundness of box corners*/
 }
 
 .submit {
     display: inline-block;
-    padding: 10px 15px;
+    /*padding: 20px 15px;*/
     font-size: 20px;
     border-radius: 0;
     -webkit-appearance: none;
 }
 
-
-/*#tools {*/
-/*    border-style: solid;*/
-/*    border-width: 5px;*/
-/*    border-color: lightblue;*/
-/*}*/
-
 label {
     align-items: center;
 }
+
 input[type=checkbox]{
     transform: scale(2.5);
-    flex: none;
-}
-
-/*input[type=checkbox] {*/
-/*    transform: scale(4);*/
-/*    vertical-align: middle;*/
-/*    !*position: relative;*!*/
-/*    !*horiz-align: center;*!*/
-/*    padding-right: 10px;*/
-/*}*/
-
-/*input[type=checkbox] > label {*/
-/*    transform: scale(3.5);*/
-/*    vertical-align: middle;*/
-/*    padding-right: 10px;*/
-/*}*/
-
-input[type=checkbox] {
-    vertical-align: middle;
-    position: relative;
-    bottom: 1px;
 }
 
 label {
     display: block;
 }
 
-/*label {*/
-/*    display: block;*/
-/*    padding-left: 15px;*/
-/*    text-indent: -15px;*/
-/*}*/
+.toolbar {
+    display: flex;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+}
+
+.button {
+    font-size: 1em;
+    padding: 1em;
+}
