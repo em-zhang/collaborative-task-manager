@@ -3,6 +3,12 @@
     margin: 0 auto;
 }
 
+/*unordered list for styling index.html*/
+ul {
+    padding: 10px;
+    font-size: 22px;
+}
+
 body {
     font-family: "PT Sans", sans-serif;
     background: whitesmoke;
@@ -43,7 +49,7 @@ h2 {
     padding-block: 20px;
     padding-left: 20px;
     display: inline-block;
-    font-size: 24px;
+    font-size: 22px;
 }
 
 input[type="checkbox"]{
@@ -68,10 +74,11 @@ label > input[type="checkbox"] + * {
 }
 
 .no-tasks-message{
+    padding-top: 50px;
     text-align: center;
 }
 
-/* layout for add task and corresponding buton */
+/* layout for add task and corresponding button */
 .add-task {
     font-size: 0.6em;
     display: flex;
@@ -101,6 +108,10 @@ input[type=text] {
     font-size: 20px;
     border-radius: 0;
     -webkit-appearance: none;
+}
+
+.rename {
+    font-size: 25px;
 }
 
 /* layout for toolbar on bottom */
