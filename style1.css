@@ -3,13 +3,8 @@
     margin: 0 auto;
 }
 
-ul {
-    list-style-type: upper-roman;
-    font-size: 40%;
-}
 body {
     font-family: "PT Sans", sans-serif;
-    margin: 0% auto;
     background: whitesmoke;
 }
 
@@ -18,8 +13,7 @@ body {
     margin-right: auto;
     background-color: white;
     padding-top: 7.5%;
-    padding-left: 7.5%;
-    padding-right: 7.5%;
+    padding-bottom: 3%;
     border-bottom-style: solid;
     border-color: lightgrey;
 }
@@ -28,8 +22,6 @@ body {
     width: 85%;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 3%;
-    padding-bottom: 3%;
 }
 
 .heading h1 {
@@ -42,32 +34,44 @@ body {
 h2 {
     font-size: 1em;
     font-weight: bold;
-    padding: 10px;
+    padding-top: 50px;
 }
 
+/* layout for to do list */
 .checklist {
-    /*margin: 2em 0;*/
-    font-size: 50px;
+    margin-top: 30px;
+    padding-block: 20px;
+    padding-left: 20px;
+    display: inline-block;
+    font-size: 24px;
 }
 
-.task {
-    /*display: flex;*/
-    /*padding: 2px;*/
+input[type="checkbox"]{
+    transform: scale(3.5);
+    display: inline-block;
+    vertical-align: text-top;
 }
 
-.taskname {
-    font-size: 50px;
-    border: 2px solid black;
+label {
+    display: block;
+}
+
+label > input[type="checkbox"]:checked + * {
+    text-decoration: line-through;
+}
+
+label > input[type="checkbox"] + * {
+    display: inline-block;
+    vertical-align: bottom;
+    margin-left: 50px;
+    margin-top: 30px;
 }
 
 .no-tasks-message{
     text-align: center;
 }
 
-input[name="tasks"]{
-    background-color: red;
-}
-
+/* layout for add task and corresponding buton */
 .add-task {
     font-size: 0.6em;
     display: flex;
@@ -94,28 +98,12 @@ input[type=text] {
 
 .submit {
     display: inline-block;
-    /*padding: 20px 15px;*/
     font-size: 20px;
     border-radius: 0;
     -webkit-appearance: none;
 }
 
-label {
-    align-items: center;
-}
-
-input[type=checkbox]{
-    transform: scale(2.5);
-}
-
-.border1 {
-    border: 5px solid red;
-}
-
-label {
-    display: block;
-}
-
+/* layout for toolbar on bottom */
 .toolbar {
     display: flex;
     position:absolute;
