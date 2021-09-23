@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous"><head>
     <meta charset="UTF-8">
     <title>Task Manager App</title>
     <link rel="stylesheet" href="style1.css">
@@ -14,24 +14,26 @@
 <div class="container">
     <h2>My Tasks</h2>
     <form class="add-task">
-        <input class= "top" type="text" id="newtask" name="newtask"><br>
+        <input class="top" type="text" id="newtask" name="newtask"><br>
         <input class="top button" type="submit" value="Add Task" id="add-task-button">
     </form>
     <div class="checklist">
-        <input type="checkbox" name="tasks" value="task1">Buy new John Grisham book<br>
-        <input type="checkbox" name="tasks" value="task2">Get car washed<br>
-        <input type="checkbox" name="tasks" value="task3">Order textbooks<br>
-        <input type="checkbox" name="tasks" value="task4">Call Mom<br>
-        <input type="checkbox" name="tasks" value="task5">Text John <br>
-        <input type="checkbox" name="tasks" value="task7">Fix laptop<br>
-        <input type="checkbox" name="tasks" value="task7">Eat Lunch<br>
+        <div class="task"><input class="border1" type="checkbox" name="tasks" value="task1">Buy new John Grisham book</div>
+        <div class="task"><input type="checkbox" name="tasks" value="task2">Get car washed</div>
+        <div class="task"><input type="checkbox" name="tasks" value="task3">Order textbooks</div>
+        <div class="task"><input type="checkbox" name="tasks" value="task4">Call Mom</div>
+        <div class="task"><input type="checkbox" name="tasks" value="task5">Text John</div>
+        <div class="task"><input type="checkbox" name="tasks" value="task7">Fix laptop</div>
+        <div class="task"><input type="checkbox" name="tasks" value="task7">Eat Lunch</div>
     </div>
 </div>
 
 <div class="toolbar">
-    <button class="button" type="button">Edit Tasks</button></br>
-    <button class="button" type="button">Show To-Do</button></br>
-    <button class="button" type="button">Delete Done</button>
+<!--    <button class="button" type="button">Edit Tasks</button>-->
+<!--    </br>-->
+    <button class="button icon" type="button"><i class="fas fa-eye-slash"></i></button>
+    </br>
+    <button class="button icon" type="button"><i class="fas fa-trash-alt"></i></button>
 </div>
 </body>
 </html>
