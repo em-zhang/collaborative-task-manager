@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Task Manager App</title>
     <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
 </head>
 <body>
 
@@ -29,10 +30,6 @@
             <input type="checkbox" name="checkbox" value="task" />
             <span>Order textbooks</span>
         </label>
-<!--        <label>-->
-<!--            <input type="checkbox" name="checkbox" value="task" checked/>-->
-<!--            <span>Call Mom</span>-->
-<!--        </label>-->
         <label>
             <input type="checkbox" name="checkbox" value="task" />
             <span>Text John about bank statements</span>
@@ -41,18 +38,19 @@
             <input type="checkbox" name="checkbox" value="task" />
             <span>Fix laptop</span>
         </label>
-<!--        <label>-->
-<!--            <input type="checkbox" name="checkbox" value="task" checked/>-->
-<!--            <span>Eat lunch</span>-->
-<!--        </label>-->
     </div>
 </div>
 
 <div class="toolbar">
-    <button class="button" type="button">Edit Tasks</button></br>
-    <button class="button" type="button">Show All</button></br>
-    <button class="button" type="button">Delete Done</button>
+    <button class="button icon" type="button"><i class="fas fa-eye-slash"></i>
+        <div class="toolbutton">Hide Completed Tasks</div>
+    </button>
+    </br>
+    <button class="button icon" type="button"><i class="fas fa-trash-alt"></i>
+        <div class="toolbutton">Clear Completed Tasks</div>
+    </button>
 </div>
+
 </body>
 </html>
 

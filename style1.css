@@ -117,7 +117,7 @@ input[type=text] {
 /* layout for toolbar on bottom */
 .toolbar {
     display: flex;
-    position:absolute;
+    position: absolute;
     bottom:0;
     width:100%;
 }
@@ -125,13 +125,30 @@ input[type=text] {
 .button {
     font-size: 0.8em;
     padding: 1.4em;
-    background-color: lightsteelblue;
+    background: lightsteelblue;
     border-style: solid;
     border-width: 1px;
     border-color: lightgrey;
+    border-radius: 12px;
 }
+
 
 .icon {
     width: 500px;
     border-color: white;
 }
+
+.toolbutton {
+    margin-top: 40px;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+#editingtask {
+    border-style: solid;
+    border-width: 2px;
+    border-color: royalblue;
+    border-radius: 12px;
+    font-style: italic;
+}
+
