@@ -37,7 +37,7 @@ From left to right, the following screenshots represent the stages of our mock-u
 The following are some alternative design ideas that we considered, in addition to the ones we documented above in our sketching and mock-up process:
 - **Position of the Add Task input box and button:**
   We considered putting the add task button at the bottom of the list or having it off to the side rather than the top. After a bit of user testing and feedback, we realized that it was most convenient for the add task functionality to be prominently placed at the top of the list for ease of access. Particularly when the list of task items grows long, and because this is a mobile app, it would be inconvenient for the user to have to scroll through a long list of tasks in order to add a task.
-- **App actions as wide buttons**
+- **App actions as wide buttons:**
 The buttons were originally screen-width wide, simply functioning as large buttons for the users to press. This took a lot of screen real estate and fit into the mental model of choosing between equivalent alternative tasks, which is not the intended function of the available tools.
 
 ### User Testing
