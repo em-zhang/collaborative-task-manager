@@ -1,0 +1,154 @@
+* {
+    font-size: 150%;
+    margin: 0 auto;
+}
+
+/*unordered list for styling index.html*/
+ul {
+    padding: 10px;
+    font-size: 22px;
+}
+
+body {
+    font-family: "PT Sans", sans-serif;
+    background: whitesmoke;
+}
+
+.heading {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    padding-top: 7.5%;
+    padding-bottom: 3%;
+    border-bottom-style: solid;
+    border-color: lightgrey;
+}
+
+.container {
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.heading h1 {
+    font-size: 1.2em;
+    font-weight: bold;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1em;
+    font-weight: bold;
+    padding-top: 50px;
+}
+
+/* layout for to do list */
+.checklist {
+    margin-top: 30px;
+    padding-block: 20px;
+    padding-left: 20px;
+    display: inline-block;
+    font-size: 22px;
+}
+
+input[type="checkbox"]{
+    transform: scale(3.5);
+    display: inline-block;
+    vertical-align: text-top;
+}
+
+label {
+    display: block;
+}
+
+label > input[type="checkbox"]:checked + * {
+    text-decoration: line-through;
+}
+
+label > input[type="checkbox"] + * {
+    display: inline-block;
+    vertical-align: bottom;
+    margin-left: 50px;
+    margin-top: 30px;
+}
+
+.no-tasks-message{
+    padding-top: 50px;
+    text-align: center;
+}
+
+/* layout for add task and corresponding button */
+.add-task {
+    font-size: 0.6em;
+    display: flex;
+    justify-content: space-between;
+}
+
+#add-task-button {
+    font-size: 1.3em;
+    padding: 30px 40px;
+    margin: 20px 0px;
+    background-color: royalblue;
+    color: white;
+    border-style: hidden;
+    border-radius: 10px;
+}
+
+input[type=text] {
+    padding: 30px 30px;
+    margin: 20px 0px;
+    box-sizing: border-box;
+    border: 2px solid lightgrey;
+    border-radius: 10px; /*updates the roundness of box corners*/
+}
+
+.submit {
+    display: inline-block;
+    font-size: 20px;
+    border-radius: 0;
+    -webkit-appearance: none;
+}
+
+.rename {
+    font-size: 25px;
+}
+
+/* layout for toolbar on bottom */
+.toolbar {
+    display: flex;
+    position: absolute;
+    bottom:0;
+    width:100%;
+}
+
+.button {
+    font-size: 0.8em;
+    padding: 1.4em;
+    background: lightsteelblue;
+    border-style: solid;
+    border-width: 1px;
+    border-color: lightgrey;
+    border-radius: 12px;
+}
+
+
+.icon {
+    width: 500px;
+    border-color: white;
+}
+
+.toolbutton {
+    margin-top: 40px;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+#editingtask {
+    border-style: solid;
+    border-width: 2px;
+    border-color: royalblue;
+    border-radius: 12px;
+    font-style: italic;
+}
+
