@@ -1,4 +1,4 @@
-# Lab 1: Task Manager App
+# Lab 2: Task Manager App
 **Group members:** Emily Zhang, Christopher Chung, Olina Wong
 
 For Lab 1, we aimed to design a modern, simple interface for a mobile web app that functions as a task manager.
