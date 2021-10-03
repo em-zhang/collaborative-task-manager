@@ -2,7 +2,6 @@
 import './App.css';
 import './index.js';
 import {useState, useEffect} from "react";
-import TodoList from './components/TodoList';
 
 const data = [
     {
@@ -64,9 +63,6 @@ function App() {
                         <button type="submit">add</button>
                     </form>
                 </div>
-            </div>
-            <div className="todo-app">
-                <TodoList />
             </div>
         </div>
     );
