@@ -1,11 +1,13 @@
 // import logo from './logo.svg';
 import './App.css';
+import './index.js';
 import {useState, useEffect} from "react";
+import TodoList from './components/TodoList';
 
 const data = [
     {
         id: 512,
-        name: "Neil Rhodes",
+        name: "Hello Rhodes",
         email: "rhodes@hmc.edu",
         phone: "(909) 555-1212"
     },
@@ -16,7 +18,6 @@ const data = [
         phone: "(312) 555-1212"
     }
 ];
-
 
 function Person(props) {
     let className ="person";
@@ -41,7 +42,6 @@ function People(props) {
     const persons = props.peopleList.map(e => <Person onPersonClicked={() => setSelectedID(e.id)}name={e.name} email={e.email}
                                                       phone={e.phone} id={e.id} selected={selectedID === e.id}/>);
     return <div>
-        <h1> Task Manager </h1>
             <h2> Tasks selected {selectedID ? 1 :0}/{data.length} selected</h2>
         {persons}
     </div>;
@@ -50,7 +50,24 @@ function People(props) {
 function App() {
     return (
         <div className="App">
-            <People peopleList={data} />
+            <div class="heading">
+                <h1> Task Manager </h1>
+            </div>
+            <div class="container">
+                <h2>My Tasks</h2>
+            </div>
+            <div className="add-task">
+                <div className="header">
+                    <form>
+                        <input placeholder="enter task">
+                        </input>
+                        <button type="submit">add</button>
+                    </form>
+                </div>
+            </div>
+            <div className="todo-app">
+                <TodoList />
+            </div>
         </div>
     );
 }
