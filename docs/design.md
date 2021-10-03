@@ -6,7 +6,7 @@ The app handles various tasks including creating, renaming, and marking items as
 For final screen images and flows for each task, see the bottom of this design doc.
 
 ### Design Decisions
-*Decision 1: Creating a toolbar at the bottom of the app*
+*Decision 1: Creating a toolbar at teshe bottom of the app*
 - Initially, the functions of the app (“Edit Tasks”, “Show To-Do”, and “Delete Done”) were arbitrarily placed as different buttons around the app. The toolbar consolidates these functions into an easily accessible toolbar for a mobile-first approach. By placing these actions at the bottom, this would reduce travel time for the user’s finger and reduce cognitive overload by action search. The navigation bar is persistent to allow the user to always access these functions.
 
 *Decision 2: The “Add Task” button location and styling*
