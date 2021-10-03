@@ -40,8 +40,9 @@ function TodosComponent() {
     return (
         <div>
             <input
-                className="todo-input"
-                placeholder="Add a task"
+                class="todo-input"
+                id="add-button-text"
+                placeholder="Buy Milk"
                 value={currTask}
                 onChange={e => {
                     setCurrTask(e.target.value);
@@ -54,15 +55,27 @@ function TodosComponent() {
                     }
                 }}
             />
+            <button class="todo-input add-button"
+                onClick={() =>
+                {createTask(currTask);
+                setCurrTask("");
+                }}>
+                Add New Task
+            </button>
+            {/*/>*/}
             {/*display*/}
             {todoList.map((todo, index) => (
                 <div key={todo} className="todo">
-                    <div> {todo.todo}</div>
+                    <label>
+                        <input type="checkbox" name="checkbox"/>
+                        <span>{todo.todo}</span>
+                    </label>
+                    {/*<div> {todo.todo}</div>*/}
                 </div>
             ))}
-        <div className="tasks-remaining-message">
+        <div class="tasks-remaining-message">
             {/*Show number of tasks*/}
-            {`${todoList.length} remaining tasks`}
+            {`${todoList.length} Remaining Tasks`}
         </div>
         </div>
     );

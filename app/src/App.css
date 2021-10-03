@@ -1,11 +1,11 @@
 
-.name {
-  font-weight: bold;
-}
+/*.name {*/
+/*  font-weight: bold;*/
+/*}*/
 
-.email {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-}
+/*.email {*/
+/*  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;*/
+/*}*/
 /** {*/
 /*  font-size: 150%;*/
 /*  margin: 0 auto;*/
@@ -20,51 +20,75 @@
 body {
   font-family: "PT Sans", sans-serif;
   background: whitesmoke;
-  text-align: center;
+  /*text-align: center;*/
 }
 
 .todo-list{
-  border-style: solid;
-  border-color: royalblue;
-  text-align: center;
+  padding-block: 20px;
+  padding-left: 20px;
+  display: inline-block;
   font-size: 20px;
-}
-
-.tasks-remaining-message{
-  font-weight: bold;
+  text-align: left;
 }
 
 .heading {
   margin-left: auto;
   margin-right: auto;
   background-color: white;
-  padding-top: 7.5%;
+  padding-top: 5%;
   padding-bottom: 3%;
   border-bottom-style: solid;
   border-color: lightgrey;
 }
 
-.container {
-  width: 85%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 h1 {
-  font-size: 1.2em;
+  font-size: 2em;
   font-weight: bold;
-  padding-bottom: 30px;
   text-align: center;
 }
 
 h2 {
-  font-size: 1em;
+  font-size: 1.2em;
   font-weight: bold;
-  padding-top: 50px;
   text-align: center;
+  padding: 10px;
+  background: white;
+  border-bottom-style: solid;
+  border-top-style: solid;
+  border-color: lightgrey;
 }
 
-/*!* layout for to do list *!*/
+.todo-input {
+  padding: 5px;
+  margin-bottom: 15px;
+}
+
+#add-button-text {
+  width: 15.5em;
+}
+
+.tasks-remaining-message {
+  margin-top: 15px;
+  font-weight: bold;
+  text-align: center;
+  border-style: solid;
+  border-color: lightgrey;
+  width: 100%;
+  padding: 5px;
+  font-size: 20px;
+}
+
+/*#add-button {*/
+/*  font-size: 15px;*/
+/*  padding: 30px 40px;*/
+/*  margin: 20px 0px;*/
+/*  background-color: dimgrey;*/
+/*  color: white;*/
+/*  border-style: hidden;*/
+/*  border-radius: 10px;*/
+/*}*/
+
+/* layout for to do list */
 /*.checklist {*/
 /*  margin-top: 30px;*/
 /*  padding-block: 20px;*/

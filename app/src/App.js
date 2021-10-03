@@ -10,14 +10,13 @@ function App() {
     return (
         <div className="App">
             <div class="heading">
-                <h1> Task Manager </h1>
+                <h1>- Task Manager -</h1>
             </div>
             <div class="container">
                 <h2>My Tasks</h2>
             </div>
-            <div class="add-button">
-                <button>Add</button>
-            </div>
+            {/*<div class="add-button">*/}
+            {/*</div>*/}
             {/*<div class="add-task">*/}
             {/*    <AddTask/>*/}
             {/*</div>*/}
