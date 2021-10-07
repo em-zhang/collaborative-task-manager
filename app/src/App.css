@@ -1,22 +1,3 @@
-
-/*.name {*/
-/*  font-weight: bold;*/
-/*}*/
-
-/*.email {*/
-/*  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;*/
-/*}*/
-/** {*/
-/*  font-size: 150%;*/
-/*  margin: 0 auto;*/
-/*}*/
-
-/*!*unordered list for styling index.html*!*/
-/*ul {*/
-/*  padding: 10px;*/
-/*  font-size: 22px;*/
-/*}*/
-
 body {
   font-family: "PT Sans", sans-serif;
   background: whitesmoke;
@@ -78,15 +59,15 @@ h2 {
   font-size: 20px;
 }
 
-/*#add-button {*/
-/*  font-size: 15px;*/
-/*  padding: 30px 40px;*/
-/*  margin: 20px 0px;*/
-/*  background-color: dimgrey;*/
-/*  color: white;*/
-/*  border-style: hidden;*/
-/*  border-radius: 10px;*/
-/*}*/
+#add-button {
+  font-size: 15px;
+  padding: 30px 40px;
+  margin: 20px 0px;
+  background-color: dimgrey;
+  color: white;
+  border-style: hidden;
+  border-radius: 10px;
+}
 
 /* layout for to do list */
 /*.checklist {*/

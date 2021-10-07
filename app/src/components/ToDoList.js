@@ -1,83 +1,46 @@
-import React, { useState } from "react";
-import initialData from '../index.js'
+import AddTask from "./AddTask";
 
-function TodosComponent() {
-    const [currTask, setCurrTask] = useState("");
-    const [todoList, setTodoList] = useState([
-        {
-            todo: "Buy new John Grisham book",
-            isDone: true
-        },
-        {
-            todo: "Get car washed",
-            isDone: false
-        },
-        {
-            todo: "Order textbooks",
-            isDone: false
-        },
-        {
-            todo: "Call Mom",
-            isDone: false
-        },
-    ]);
+import React, {useState} from 'react';
 
-    function createTask(currTask) {
-        let todoQueue = [...todoList];
-        todoQueue.push({
-            todo: currTask,
-            completed: false
-        });
-        setTodoList(todoQueue);
-    }
-
-    function markTaskComplete(index) {
-        let todoQueue = [...todoList];
-        todoQueue[index].isCompleted = !todoQueue[index].isCompleted;
-        setCurrTask(todoQueue);
-    }
-
+function ToDoList(props) {
+    const [selectedId, setSelectedId] = useState(null);
     return (
         <div>
-            <input
-                class="todo-input"
-                id="add-button-text"
-                placeholder="Buy Milk"
-                value={currTask}
-                onChange={e => {
-                    setCurrTask(e.target.value);
-                }}
-                // also need to support functionality for button
-                onKeyPress={e => {
-                    if (e.key === "Enter") {
-                        createTask(currTask);
-                        setCurrTask("");
-                    }
-                }}
-            />
-            <button class="todo-input add-button"
-                onClick={() =>
-                {createTask(currTask);
-                setCurrTask("");
-                }}>
-                Add New Task
-            </button>
-            {/*/>*/}
-            {/*display*/}
-            {todoList.map((todo, index) => (
+            {props.taskList.map((todo, index) => (
                 <div key={todo} className="todo">
                     <label>
                         <input type="checkbox" name="checkbox"/>
-                        <span>{todo.todo}</span>
+                        <span>{todo.task}</span>
                     </label>
-                    {/*<div> {todo.todo}</div>*/}
                 </div>
             ))}
-        <div class="tasks-remaining-message">
-            {/*Show number of tasks*/}
-            {`${todoList.length} Remaining Tasks`}
-        </div>
+            <div className="tasks-remaining-message">
+                {/*Show number of tasks*/}
+                {`${props.taskList.length} Remaining Tasks`}
+            </div>
         </div>
     );
 }
-export default TodosComponent;
+        // <div>
+        //     <h1>ToDoList ({selectedId === null ? 0 : 1}/{props.list.length} selected)</h1>
+        //     {props.list.map(a => <Task
+        //         onRowClick={(id) =>
+        //             setSelectedId(id)}
+        //         onTaskFieldChanged={props.onTaskFieldChanged}
+        //         selected={a.id === selectedId}
+        //         key={a.id}
+        //         {...a} />)}
+        //     {selectedId && <button type="button" onClick={
+        //         () => {
+        //             props.onDeleteTask(selectedId);
+        //             setSelectedId(null);
+        //         }}>
+        //         Delete Selected
+        //     </button>}
+        //     <button type="button" onClick={props.onAddTask}>
+        //         Add
+        //     </button>
+        // </div>);
+
+
+export default ToDoList;
