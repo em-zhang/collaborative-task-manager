@@ -12,21 +12,14 @@ function App(props) {
             <div class="heading">
                 <h1>- Task Manager -</h1>
             </div>
-            <div class="my-tasks-container">
-                <h2>My Tasks</h2>
-            </div>
-            <div class="add-task-container">
-                <AddTask
-                        // data={props.data}
-                        //  onChange={props.handleAddTask}
-                        taskList={props.taskList}
-                        setTaskList={props.setTaskList}
-                        currTask={props.currTask}
-                        setCurrTask={props.setCurrTask}
-                        handleAddTask={props.handleAddTask}
-                />
-            </div>
             <div class="todo-list">
+                <AddTask
+                    taskList={props.taskList}
+                    setTaskList={props.setTaskList}
+                    currTask={props.currTask}
+                    setCurrTask={props.setCurrTask}
+                    handleAddTask={props.handleAddTask}
+                />
                 <ToDoList data={props.data}
                           taskList={props.taskList}
                           setTaskList={props.setTaskList}

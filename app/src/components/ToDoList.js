@@ -1,26 +1,55 @@
-import AddTask from "./AddTask";
-
 import React, {useState} from 'react';
+import Task from "./Task";
 
 function ToDoList(props) {
     const [selectedId, setSelectedId] = useState(null);
     return (
         <div>
-            {props.taskList.map((todo, index) => (
-                <div key={todo} className="todo">
-                    <label>
-                        <input type="checkbox" name="checkbox"/>
-                        <span>{todo.task}</span>
-                    </label>
-                </div>
-            ))}
-            <div className="tasks-remaining-message">
-                {/*Show number of tasks*/}
-                {`${props.taskList.length} Remaining Tasks`}
+            <div className="my-tasks-container">
+                <h2>My Tasks ({selectedId === null ? 0 : 1}/{props.taskList.length} selected)</h2>
             </div>
-        </div>
-    );
+            {props.taskList.map(a =>
+                <label>
+                    <input type="checkbox" name="checkbox"/>
+                        <Task
+                            onRowClick={(id) =>
+                                setSelectedId(id)}
+                            onTaskFieldChanged={props.onTaskFieldChanged}
+                            selected={a.id === selectedId}
+                            key={a.id}
+                            {...a}
+                        />
+                    </label>)}
+            {selectedId && <button type="button" onClick={
+                () => {
+                    props.onDeleteTask(selectedId);
+                    setSelectedId(null);
+                }}>
+                Delete Selected
+            </button>}
+            {/*<div className="tasks-remaining-message">*/}
+            {/*    {`${props.taskList.length} Remaining Tasks`}*/}
+            {/*</div>*/}
+        </div>);
 }
+//     const [selectedId, setSelectedId] = useState(null);
+//     return (
+//         <div>
+//             {props.taskList.map((todo, index) => (
+//                 <div key={todo} className="todo">
+//                     <label>
+//                         <input type="checkbox" name="checkbox"/>
+//                         <span>{todo.task}</span>
+//                     </label>
+//                 </div>
+//             ))}
+//             <div className="tasks-remaining-message">
+//                 {/*Show number of tasks*/}
+//                 {`${props.taskList.length} Remaining Tasks`}
+//             </div>
+//         </div>
+//     );
+// }
         // <div>
         //     <h1>ToDoList ({selectedId === null ? 0 : 1}/{props.list.length} selected)</h1>
         //     {props.list.map(a => <Task

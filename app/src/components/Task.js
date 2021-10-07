@@ -15,7 +15,7 @@ function Task(props) {
                 }}
     >
         <TaskField field="task" {...props}/>
-        <TaskField field="completed" {...props}/>
+        {/*<TaskField field="completed" {...props}/>*/}
     </div>
 }
 export default Task;
