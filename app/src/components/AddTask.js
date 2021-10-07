@@ -25,10 +25,6 @@ function AddTask(props){
                     }}>
                 Add Task
             </button>
-            <div className="tasks-remaining-message">
-                {/*Show number of tasks*/}
-                {props.length > 0 && `${props.length} remaining tasks`}
-            </div>
         </div>
     );
 }

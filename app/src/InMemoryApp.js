@@ -22,11 +22,11 @@ function InMemoryApp(props) {
         console.log("taskList ", taskList)
 
     }
-    function handleCompleteTask(index) {
-        let todoQueue = [...taskList];
-        todoQueue[index].isCompleted = !todoQueue[index].isCompleted;
-        setCurrTask(todoQueue);
-    }
+    // function handleCompleteTask(index) {
+    //     let todoQueue = [...taskList];
+    //     todoQueue[index].isDone = !todoQueue[index].isDone;
+    //     setCurrTask(todoQueue);
+    // }
 
     function handleTaskFieldChanged(taskId, field, value) {
         setTaskList(props.data.map(
@@ -45,6 +45,7 @@ function InMemoryApp(props) {
                 setTaskList={setTaskList}
                 setCurrTask={setCurrTask}
                 currTask={currTask}
+                // handleCompleteTask={handleCompleteTask()}
                 handleDeleteTask={handleDeleteTask}
                 handleAddTask={handleAddTask}
                 handleTaskFieldChanged={handleTaskFieldChanged}

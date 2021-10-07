@@ -14,8 +14,9 @@ function Task(props) {
                     props.onRowClick(e.currentTarget.id);
                 }}
     >
+        <input type="checkbox" name="checkbox"/>
+        {/*<Task/>*/}
         <TaskField field="task" {...props}/>
-        {/*<TaskField field="completed" {...props}/>*/}
     </div>
 }
 export default Task;

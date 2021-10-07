@@ -4,17 +4,12 @@ body {
   /*text-align: center;*/
 }
 
-.todo-list{
-  padding-block: 20px;
-  padding-left: 20px;
-  display: inline-block;
-  font-size: 15px;
-  text-align: left;
+.add-task{
+  padding-top: 20px;
+  text-align: center;
 }
 
 .heading {
-  margin-left: auto;
-  margin-right: auto;
   background-color: white;
   padding-top: 5%;
   padding-bottom: 3%;
@@ -37,6 +32,32 @@ h2 {
   border-bottom-style: solid;
   border-top-style: solid;
   border-color: lightgrey;
+}
+
+/*layout for to do list*/
+.checklist {
+  /*margin-top: 30px;*/
+  /*padding-block: 20px;*/
+  padding-left: 10px;
+  display: inline-block;
+  font-size: 18px;
+  width: 300px;
+}
+
+.task-container{
+  display: inline-block;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  background-color: whitesmoke;
+}
+
+.task-buttons {
+  display: flex;
+  align-items: flex-end;
 }
 
 .todo-input {
@@ -68,15 +89,6 @@ h2 {
   border-style: hidden;
   border-radius: 10px;
 }
-
-/* layout for to do list */
-/*.checklist {*/
-/*  margin-top: 30px;*/
-/*  padding-block: 20px;*/
-/*  padding-left: 20px;*/
-/*  display: inline-block;*/
-/*  font-size: 22px;*/
-/*}*/
 
 /*input[type="checkbox"]{*/
 /*  transform: scale(3.5);*/

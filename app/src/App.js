@@ -4,7 +4,7 @@ import './index.js';
 import ToDoList from "./components/ToDoList"
 import AddTask from "./components/AddTask"
 import InMemoryApp from "./InMemoryApp"
-import {useState, useEffect} from "react";
+import React, {useState, useEffect} from "react";
 
 function App(props) {
     return (
@@ -12,7 +12,7 @@ function App(props) {
             <div class="heading">
                 <h1>- Task Manager -</h1>
             </div>
-            <div class="todo-list">
+            <div class="add-task">
                 <AddTask
                     taskList={props.taskList}
                     setTaskList={props.setTaskList}
@@ -20,15 +20,17 @@ function App(props) {
                     setCurrTask={props.setCurrTask}
                     handleAddTask={props.handleAddTask}
                 />
+            </div>
+            <div>
                 <ToDoList data={props.data}
-                          taskList={props.taskList}
-                          setTaskList={props.setTaskList}
-                          onDeleteTask={props.handleDeleteTask}
-                          onAddTask={props.handleAddTask}
-                          onTaskFieldChanged={props.onTaskFieldChanged}
-                          handleCompleteTask={props.handleCompleteTask}
+                              taskList={props.taskList}
+                              setTaskList={props.setTaskList}
+                              // handleCompleteTask={props.handleCompleteTask()}
+                              onDeleteTask={props.handleDeleteTask}
+                              onAddTask={props.handleAddTask}
+                              onTaskFieldChanged={props.onTaskFieldChanged}
+                              handleCompleteTask={props.handleCompleteTask}
                 />
-
             </div>
         </div>
     );
