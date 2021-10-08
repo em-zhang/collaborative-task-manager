@@ -16,8 +16,8 @@ function InMemoryApp(props) {
 
         setTaskList([...taskList, {
             taskId: generateUniqueID(),
-            task: currTask,
-            isDone: false
+            taskLabel: currTask,
+            isCompleted: false
         }]);
         console.log("taskList ", taskList)
 

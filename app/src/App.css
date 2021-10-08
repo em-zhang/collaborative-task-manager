@@ -45,19 +45,24 @@ h2 {
 }
 
 .task-container{
-  display: inline-block;
+  display: inline-flex;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   width: 100%;
+  height: 30px;
   border-radius: 5px;
   margin-bottom: 10px;
   margin-left: 20px;
   background-color: whitesmoke;
+  opacity: 80%;
 }
 
+.task-label{
+  color: black;
+}
 .task-buttons {
-  display: flex;
-  align-items: flex-end;
+  padding-left: 30px;
+  display: inline-list-item;
 }
 
 .todo-input {

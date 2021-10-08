@@ -7,28 +7,28 @@ import InMemoryApp from './InMemoryApp';
 const initialData = [
     {
         taskId: 0,
-        task: "Get lunch at Frary",
-        isDone: true
+        taskLabel: "Get lunch at Frary",
+        isCompleted: true
     },
     {
         taskId: 1,
-        task: "Organize finances",
-        isDone: false
+        taskLabel: "Organize finances",
+        isCompleted: false
     },
     {
         taskId: 2,
-        task: "Play Genshin Impact",
-        isDone: false
+        taskLabel: "Play Genshin Impact",
+        isCompleted: true
     },
     {
         taskId: 3,
-        task: "Call Mom",
-        isDone: false
+        taskLabel: "Call Mom",
+        isCompleted: false
     },
     {
         taskId: 4,
-        task: "Meet with Prof. Rhodes",
-        isDone: false
+        taskLabel: "Meet with Prof. Rhodes",
+        isCompleted: false
     },
 ];
 
