@@ -3,8 +3,9 @@ import {generateUniqueID} from "web-vitals/dist/modules/lib/generateUniqueID";
 import App from "./App"
 
 function InMemoryApp(props) {
-    const [currId, setCurrId] = useState(0)
     const [taskList, setTaskList] = useState(props.data)
+    const [completedTasks, setCompletedTasks] = useState([])
+    const [uncompletedTasks, setUncompletedTasks] = useState([])
     const [idCounter, setIdCounter] = useState(taskList.length);
     const [currTask, setCurrTask] = useState("");
     const [isEditingId, setIsEditingId] = useState(null);
@@ -27,13 +28,15 @@ function InMemoryApp(props) {
         setTaskList(props.data.map(
             task => task.id !== taskId
                 ? task
-                : {...task, [field]: value}))
+                : {...task, [field]: value}
+        ))
     }
-    // function handleCompleteTask(index) {
-    //     let todoQueue = [...taskList];
-    //     todoQueue[index].isDone = !todoQueue[index].isDone;
-    //     setCurrTask(todoQueue);
-    // }
+
+    function handleCompleteTask(taskId) {
+        let todoQueue = [...taskList];
+        todoQueue[taskId].isCompleted = !todoQueue[taskId].isCompleted;
+        setTaskList(todoQueue);
+    }
 
     function handleDeleteTask(taskID) {
         setTaskList(taskList.filter(task => task.taskId !==taskID))
@@ -45,7 +48,7 @@ function InMemoryApp(props) {
                 setTaskList={setTaskList}
                 setCurrTask={setCurrTask}
                 currTask={currTask}
-                // handleCompleteTask={handleCompleteTask()}
+                handleCompleteTask={handleCompleteTask}
                 handleDeleteTask={handleDeleteTask}
                 handleAddTask={handleAddTask}
                 handleTaskFieldChanged={handleTaskFieldChanged}

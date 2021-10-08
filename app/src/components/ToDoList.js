@@ -3,18 +3,23 @@ import Task from "./Task";
 
 function ToDoList(props) {
     const [selectedId, setSelectedId] = useState(null);
+    const s = "" + props.taskList.map(task => task.isCompleted === false ? "n" : "y");
+    const numChecked = s.split("y").length - 1;
 
     return (
         <div class="checklist-container">
             <div className="my-tasks">
-                <h2>My Tasks ({selectedId === null ? 0 : 1}/{props.taskList.length} completed)</h2>
+                {/*how to make this work?*/}
+                <h2>My Tasks ({numChecked}/{props.taskList.length} completed)
+
+                </h2>
             </div>
             <div class="checklist">
                 {props.taskList.map(task =>
                 <Task
                     handleDeleteTask = {props.handleDeleteTask}
                     handleTaskFieldChanged = {props.handleTaskFieldChanged}
-
+                    handleCompleteTask={props.handleCompleteTask}
                     taskId = {task.taskId}
                     taskLabel = {task.taskLabel}
                     isSelected = {task.isSelected}

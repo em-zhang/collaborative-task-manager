@@ -6,7 +6,18 @@ import {useState} from "react";
 function Task(props) {
     return(
         <div className="task-container">
-            <input type="checkbox" checked={props.isCompleted}/>
+            <input type="checkbox"
+                   checked={props.isCompleted}
+                   onChange={() => {
+                       console.log("checked")
+                       props.handleCompleteTask(props.taskId);
+                       console.log("checked id", props.taskId);
+                       // props.handleTaskFieldChanged(props.taskId, field, value);
+                       // props.setCurrTask(this);
+                       // console.log(this);
+                       // props.handleAddTask(props.currTask);
+                   }}
+            />
             <div className="task-label"> {props.taskLabel}</div>
             <div className="task-buttons">
                 <button className="edit-button"
