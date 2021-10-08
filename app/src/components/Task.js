@@ -1,5 +1,7 @@
 // import './Task.css';
 import TaskField from './TaskField.js'
+import InMemoryApp from "../InMemoryApp";
+import {useState} from "react";
 
 function Task(props) {
     return(
@@ -7,7 +9,29 @@ function Task(props) {
             <input type="checkbox" checked={props.isCompleted}/>
             <div className="task-label"> {props.taskLabel}</div>
             <div className="task-buttons">
-                <button className="deleteButton"> X</button>
+                <button className="edit-button"
+                    onClick={() => {
+                        console.log("edit button clicked")
+                        console.log("edit id", props.taskId);
+                        // props.handleTaskFieldChanged(props.taskId, field, value);
+                        // props.setCurrTask(this);
+                        // console.log(this);
+                        // props.handleAddTask(props.currTask);
+                }}>
+                    edit
+                </button>
+
+                <button className="delete-button"onClick={() => {
+                    console.log("edit button clicked")
+                    console.log("delete id", props.taskId);
+                    props.handleDeleteTask(props.taskId);
+                    // props.handleTaskFieldChanged(props.taskId, field, value);
+                    // props.setCurrTask(this);
+                    // console.log(this);
+                    // props.handleAddTask(props.currTask);
+                }}>
+                    x
+                </button>
             </div>
         </div>
     )

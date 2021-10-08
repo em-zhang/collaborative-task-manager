@@ -42,26 +42,37 @@ h2 {
   display: inline-block;
   font-size: 18px;
   width: 300px;
+  height: 20px;
+  bottom: 100px;
 }
 
 .task-container{
   display: inline-flex;
+  margin: 5px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  width: 100%;
-  height: 30px;
+  width: 110%;
   border-radius: 5px;
-  margin-bottom: 10px;
-  margin-left: 20px;
   background-color: whitesmoke;
   opacity: 80%;
 }
 
+
+input[type="checkbox"]{
+  transform: scale(1.4);
+  display: inline-block;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
 .task-label{
+  margin: 5px;
   color: black;
 }
+
 .task-buttons {
-  padding-left: 30px;
+  right: 20px;
+  position: absolute;
+  margin-top: 5px;
   display: inline-list-item;
 }
 
@@ -95,85 +106,24 @@ h2 {
   border-radius: 10px;
 }
 
-/*input[type="checkbox"]{*/
-/*  transform: scale(3.5);*/
-/*  display: inline-block;*/
-/*  vertical-align: text-top;*/
-/*}*/
+/* layout for toolbar on bottom */
+.toolbar {
+  margin-left: 30px;
+  display: flex;
+  position: fixed;
+  bottom: 10px;
+}
 
-/*label {*/
-/*  display: block;*/
-/*}*/
-
-/*label > input[type="checkbox"]:checked + * {*/
-/*  text-decoration: line-through;*/
-/*}*/
-
-/*label > input[type="checkbox"] + * {*/
-/*  display: inline-block;*/
-/*  vertical-align: bottom;*/
-/*  margin-left: 50px;*/
-/*  margin-top: 30px;*/
-/*}*/
-
-/*.no-tasks-message{*/
-/*  padding-top: 50px;*/
-/*  text-align: center;*/
-/*}*/
-
-/*!* layout for add task and corresponding button *!*/
-/*.add-task {*/
-/*  font-size: 0.6em;*/
-/*  display: flex;*/
-/*  justify-content: space-between;*/
-/*}*/
-
-/*#add-task-button {*/
-/*  font-size: 1.3em;*/
-/*  padding: 30px 40px;*/
-/*  margin: 20px 0px;*/
-/*  background-color: royalblue;*/
-/*  color: white;*/
-/*  border-style: hidden;*/
-/*  border-radius: 10px;*/
-/*}*/
-
-/*input[type=text] {*/
-/*  padding: 30px 30px;*/
-/*  margin: 20px 0px;*/
-/*  box-sizing: border-box;*/
-/*  border: 2px solid lightgrey;*/
-/*  border-radius: 10px; !*updates the roundness of box corners*!*/
-/*}*/
-
-/*.submit {*/
-/*  display: inline-block;*/
-/*  font-size: 20px;*/
-/*  border-radius: 0;*/
-/*  -webkit-appearance: none;*/
-/*}*/
-
-/*.rename {*/
-/*  font-size: 25px;*/
-/*}*/
-
-/*!* layout for toolbar on bottom *!*/
-/*.toolbar {*/
-/*  display: flex;*/
-/*  position: absolute;*/
-/*  bottom:0;*/
-/*  width:100%;*/
-/*}*/
-
-/*.button {*/
-/*  font-size: 0.8em;*/
-/*  padding: 1.4em;*/
-/*  background: lightsteelblue;*/
-/*  border-style: solid;*/
-/*  border-width: 1px;*/
-/*  border-color: lightgrey;*/
-/*  border-radius: 12px;*/
-/*}*/
+.toolbar-button {
+  font-size: 15px;
+  padding: 10px;
+  margin-right: 15px;
+  /*background: lightsteelblue;*/
+  border-style: solid;
+  border-width: 1px;
+  border-color: lightgrey;
+  border-radius: 12px;
+}
 
 
 /*.icon {*/
@@ -181,11 +131,6 @@ h2 {
 /*  border-color: white;*/
 /*}*/
 
-/*.toolbutton {*/
-/*  margin-top: 40px;*/
-/*  font-size: 32px;*/
-/*  font-weight: bold;*/
-/*}*/
 
 /*#editingtask {*/
 /*  border-style: solid;*/

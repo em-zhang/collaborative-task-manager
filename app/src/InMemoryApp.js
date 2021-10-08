@@ -5,7 +5,7 @@ import App from "./App"
 function InMemoryApp(props) {
     const [currId, setCurrId] = useState(0)
     const [taskList, setTaskList] = useState(props.data)
-    // const [idCounter, setIdCounter] = useState(taskList.length);
+    const [idCounter, setIdCounter] = useState(taskList.length);
     const [currTask, setCurrTask] = useState("");
     const [isEditingId, setIsEditingId] = useState(null);
     const [selectedId, setSelectedId] = useState(null);
@@ -15,18 +15,13 @@ function InMemoryApp(props) {
         console.log("taskList is", taskList)
 
         setTaskList([...taskList, {
-            taskId: generateUniqueID(),
+            taskId: idCounter,
             taskLabel: currTask,
             isCompleted: false
         }]);
+        setIdCounter(idCounter + 1);
         console.log("taskList ", taskList)
-
     }
-    // function handleCompleteTask(index) {
-    //     let todoQueue = [...taskList];
-    //     todoQueue[index].isDone = !todoQueue[index].isDone;
-    //     setCurrTask(todoQueue);
-    // }
 
     function handleTaskFieldChanged(taskId, field, value) {
         setTaskList(props.data.map(
@@ -34,9 +29,14 @@ function InMemoryApp(props) {
                 ? task
                 : {...task, [field]: value}))
     }
+    // function handleCompleteTask(index) {
+    //     let todoQueue = [...taskList];
+    //     todoQueue[index].isDone = !todoQueue[index].isDone;
+    //     setCurrTask(todoQueue);
+    // }
 
     function handleDeleteTask(taskID) {
-        setTaskList(taskList.filter(task => task.id !==taskID))
+        setTaskList(taskList.filter(task => task.taskId !==taskID))
     }
 
     return <div>

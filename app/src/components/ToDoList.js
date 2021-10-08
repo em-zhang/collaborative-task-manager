@@ -3,22 +3,25 @@ import Task from "./Task";
 
 function ToDoList(props) {
     const [selectedId, setSelectedId] = useState(null);
+
     return (
-        <div>
+        <div class="checklist-container">
             <div className="my-tasks">
-                <h2>My Tasks ({selectedId === null ? 0 : 1}/{props.taskList.length} selected)</h2>
+                <h2>My Tasks ({selectedId === null ? 0 : 1}/{props.taskList.length} completed)</h2>
             </div>
             <div class="checklist">
                 {props.taskList.map(task =>
                 <Task
+                    handleDeleteTask = {props.handleDeleteTask}
+                    handleTaskFieldChanged = {props.handleTaskFieldChanged}
+
+                    taskId = {task.taskId}
                     taskLabel = {task.taskLabel}
                     isSelected = {task.isSelected}
                     isCompleted = {task.isCompleted}
                 />)}
             </div>
-            <div className="tasks-remaining-message">
-                {`${props.taskList.length} Remaining Tasks`}
-            </div>
+
         </div>);
 }
 //     const [selectedId, setSelectedId] = useState(null);

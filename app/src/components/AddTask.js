@@ -8,11 +8,9 @@ function AddTask(props){
                 value={props.currTask}
                 onChange={e => {
                     props.setCurrTask(e.target.value);
-                    console.log("curr task is", props.currTask);
                 }}
                 onKeyPress={e => {
                     if (e.key === "Enter") {
-                        console.log("the curr task is ", props.currTask)
                         props.handleAddTask(props.currTask);
                         props.setCurrTask("");
                     }
