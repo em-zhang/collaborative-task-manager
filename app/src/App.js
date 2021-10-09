@@ -28,13 +28,17 @@ function App(props) {
                               setTaskList={props.setTaskList}
                               handleCompleteTask={props.handleCompleteTask}
                               handleDeleteTask={props.handleDeleteTask}
+                              handleHideTasks = {props.handleHideTasks}
                               onAddTask={props.handleAddTask}
+                              handleDeleteTasks = {props.handleDeleteTasks}
                               handleTaskFieldChanged={props.handleTaskFieldChanged}
-                              handleCompleteTask={props.handleCompleteTask}
                 />
             </div>
             <div>
-                <ToolBar/>
+                <ToolBar
+                    handleHideTasks = {props.handleHideTasks}
+                    handleDeleteTasks = {props.handleDeleteTasks}
+                />
             </div>
         </div>
     );

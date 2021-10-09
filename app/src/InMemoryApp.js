@@ -4,6 +4,7 @@ import App from "./App"
 
 function InMemoryApp(props) {
     const [taskList, setTaskList] = useState(props.data)
+    // const [hideButton, setHideButton] = useState(false)
     const [completedTasks, setCompletedTasks] = useState([])
     const [uncompletedTasks, setUncompletedTasks] = useState([])
     const [idCounter, setIdCounter] = useState(taskList.length);
@@ -42,6 +43,14 @@ function InMemoryApp(props) {
         setTaskList(taskList.filter(task => task.taskId !==taskID))
     }
 
+    function handleHideTasks() {
+        setTaskList(taskList.filter(task => task.isCompleted == false))
+    }
+
+    function handleDeleteTasks() {
+        setTaskList(taskList.filter(task => task.isCompleted == false))
+    }
+
     return <div>
         <App data={props.data}
                 taskList={taskList}
@@ -50,7 +59,9 @@ function InMemoryApp(props) {
                 currTask={currTask}
                 handleCompleteTask={handleCompleteTask}
                 handleDeleteTask={handleDeleteTask}
+                handleDeleteTasks={handleDeleteTasks}
                 handleAddTask={handleAddTask}
+                handleHideTasks = {handleHideTasks}
                 handleTaskFieldChanged={handleTaskFieldChanged}
         />
     </div>

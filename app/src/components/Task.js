@@ -29,7 +29,7 @@ function Task(props) {
                         // console.log(this);
                         // props.handleAddTask(props.currTask);
                 }}>
-                    edit
+                    Edit
                 </button>
 
                 <button className="delete-button"onClick={() => {

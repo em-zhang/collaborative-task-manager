@@ -11,13 +11,14 @@ function ToDoList(props) {
             <div className="my-tasks">
                 {/*how to make this work?*/}
                 <h2>My Tasks ({numChecked}/{props.taskList.length} completed)
-
                 </h2>
             </div>
             <div className="checklist">
                 {props.taskList.map(task =>
                 <Task
                     handleDeleteTask = {props.handleDeleteTask}
+                    handleHideTasks = {props.handleHideTasks}
+                    handleDeleteTasks = {props.handleDeleteTasks}
                     handleTaskFieldChanged = {props.handleTaskFieldChanged}
                     handleCompleteTask={props.handleCompleteTask}
                     taskId = {task.taskId}
@@ -40,7 +41,6 @@ function ToDoList(props) {
                 {/*    Edit Selected*/}
                 {/*</button>}*/}
             </div>
-
         </div>);
 }
 //     const [selectedId, setSelectedId] = useState(null);
