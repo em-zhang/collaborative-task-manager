@@ -15,16 +15,29 @@ function ToDoList(props) {
                 </h2>
             </div>
             <div class="checklist">
-                {props.taskList.map(task =>
-                <Task
-                    handleDeleteTask = {props.handleDeleteTask}
-                    handleTaskFieldChanged = {props.handleTaskFieldChanged}
-                    handleCompleteTask={props.handleCompleteTask}
-                    taskId = {task.taskId}
-                    taskLabel = {task.taskLabel}
-                    isSelected = {task.isSelected}
-                    isCompleted = {task.isCompleted}
-                />)}
+                {/*{props.taskList.map(task =>*/}
+                {/*<Task*/}
+                {/*    handleDeleteTask = {props.handleDeleteTask}*/}
+                {/*    handleTaskFieldChanged = {props.handleTaskFieldChanged}*/}
+                {/*    handleCompleteTask={props.handleCompleteTask}*/}
+                {/*    taskId = {task.taskId}*/}
+                {/*    taskLabel = {task.taskLabel}*/}
+                {/*    isSelected = {task.isSelected}*/}
+                {/*    isCompleted = {task.isCompleted}*/}
+                {/*/>)}*/}
+                {props.taskList.map(a => <Task
+                    onRowClick={(id) =>
+                        selectedId(id)}
+                    onTaskFieldChanged={props.onTaskFieldChanged}
+                    isSelected={a.id === selectedId}
+                    key={a.id}
+                    {...a} />)}
+                {selectedId && <button type="button" onClick={
+                    () => {
+                        props.onTaskFieldChanged(selectedId);
+                    }}>
+                    Edit Selected
+                </button>}
             </div>
 
         </div>);

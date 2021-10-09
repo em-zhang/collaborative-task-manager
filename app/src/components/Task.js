@@ -44,6 +44,18 @@ function Task(props) {
                     x
                 </button>
             </div>
+            {/*<div*/}
+            {/*    // className={classes.join(" ")}*/}
+            {/*            key={props.id}*/}
+            {/*            id={props.id}*/}
+            {/*            onClick={(e) => {*/}
+            {/*                props.onRowClick(e.currentTarget.id);*/}
+            {/*            }}*/}
+            {/*>*/}
+            {/*    <input type="checkbox" name="checkbox"/>*/}
+            {/*    <Task/>*/}
+            {/*    <TaskField field="task" {...props}/>*/}
+            {/*</div>*/}
         </div>
     )
     // const classes = ["task "];

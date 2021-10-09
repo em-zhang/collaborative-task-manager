@@ -1,10 +1,10 @@
 function TaskField(props) {
     return <input type="text"
-                  className={props.field}
+                  className={props.taskLabel}
                   onChange={
-                      event=>props.onTaskFieldChanged(props.id, props.field, event.target.value)
+                      event=>props.onTaskFieldChanged(props.id, props.taskLabel, event.target.value)
                   }
-                  value={props[props.field]} />
+                  value={props[props.taskLabel]} />
 }
 
 export default TaskField;
