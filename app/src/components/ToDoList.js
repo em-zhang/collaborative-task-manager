@@ -7,37 +7,38 @@ function ToDoList(props) {
     const numChecked = s.split("y").length - 1;
 
     return (
-        <div class="checklist-container">
+        <div className="checklist-container">
             <div className="my-tasks">
                 {/*how to make this work?*/}
                 <h2>My Tasks ({numChecked}/{props.taskList.length} completed)
 
                 </h2>
             </div>
-            <div class="checklist">
-                {/*{props.taskList.map(task =>*/}
-                {/*<Task*/}
-                {/*    handleDeleteTask = {props.handleDeleteTask}*/}
-                {/*    handleTaskFieldChanged = {props.handleTaskFieldChanged}*/}
-                {/*    handleCompleteTask={props.handleCompleteTask}*/}
-                {/*    taskId = {task.taskId}*/}
-                {/*    taskLabel = {task.taskLabel}*/}
-                {/*    isSelected = {task.isSelected}*/}
-                {/*    isCompleted = {task.isCompleted}*/}
-                {/*/>)}*/}
-                {props.taskList.map(a => <Task
-                    onRowClick={(id) =>
-                        selectedId(id)}
+            <div className="checklist">
+                {props.taskList.map(task =>
+                <Task
+                    handleDeleteTask = {props.handleDeleteTask}
+                    handleTaskFieldChanged = {props.handleTaskFieldChanged}
+                    handleCompleteTask={props.handleCompleteTask}
+                    taskId = {task.taskId}
+                    taskLabel = {task.taskLabel}
+                    isSelected = {task.isSelected}
+                    isCompleted = {task.isCompleted}
                     onTaskFieldChanged={props.onTaskFieldChanged}
-                    isSelected={a.id === selectedId}
-                    key={a.id}
-                    {...a} />)}
-                {selectedId && <button type="button" onClick={
-                    () => {
-                        props.onTaskFieldChanged(selectedId);
-                    }}>
-                    Edit Selected
-                </button>}
+                />)}
+                {/*{props.taskList.map(a => <Task*/}
+                {/*    onRowClick={(id) =>*/}
+                {/*        selectedId(id)}*/}
+                {/*    onTaskFieldChanged={props.onTaskFieldChanged}*/}
+                {/*    isSelected={a.id === selectedId}*/}
+                {/*    key={a.id}*/}
+                {/*    {...a} />)}*/}
+                {/*{selectedId && <button type="button" onClick={*/}
+                {/*    () => {*/}
+                {/*        props.onTaskFieldChanged(selectedId);*/}
+                {/*    }}>*/}
+                {/*    Edit Selected*/}
+                {/*</button>}*/}
             </div>
 
         </div>);
