@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
 import './App.css';
 import './index.js';
+import Alert from "./components/Alert"
 import ToDoList from "./components/ToDoList"
 import AddTask from "./components/AddTask"
 import ToolBar from "./components/ToolBar"

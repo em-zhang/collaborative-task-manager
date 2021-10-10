@@ -33,10 +33,10 @@ function InMemoryApp(props) {
 
     function handleCompleteTask(taskId) {
         console.log("in handle complete task task ID is ", taskId)
-        handleTaskFieldChanged(taskId, "isCompleted", true)
-        // let todoQueue = [...taskList];
-        // todoQueue[taskId].isCompleted = !todoQueue[taskId].isCompleted;
-        // setTaskList(todoQueue);
+        // handleTaskFieldChanged(taskId, "isCompleted", true)
+        let todoQueue = [...taskList];
+        todoQueue[taskId].isCompleted = !todoQueue[taskId].isCompleted;
+        setTaskList(todoQueue);
     }
 
     function handleDeleteTask(taskID) {
