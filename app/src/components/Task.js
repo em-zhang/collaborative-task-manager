@@ -12,7 +12,7 @@ function Task(props) {
                        console.log("checked")
                        props.handleCompleteTask(props.taskId);
                        console.log("checked id", props.taskId);
-                       // props.handleTaskFieldChanged(props.taskId, field, value);
+                       props.handleTaskFieldChanged(props.taskId, "isCompleted", true);
                        // props.setCurrTask(this);
                        // console.log(this);
                        // props.handleAddTask(props.currTask);

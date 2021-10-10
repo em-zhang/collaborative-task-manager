@@ -5,8 +5,6 @@ import App from "./App"
 function InMemoryApp(props) {
     const [taskList, setTaskList] = useState(props.data)
     // const [hideButton, setHideButton] = useState(false)
-    const [completedTasks, setCompletedTasks] = useState([])
-    const [uncompletedTasks, setUncompletedTasks] = useState([])
     const [idCounter, setIdCounter] = useState(taskList.length);
     const [currTask, setCurrTask] = useState("");
     const [isEditingId, setIsEditingId] = useState(null);
@@ -34,9 +32,11 @@ function InMemoryApp(props) {
     }
 
     function handleCompleteTask(taskId) {
-        let todoQueue = [...taskList];
-        todoQueue[taskId].isCompleted = !todoQueue[taskId].isCompleted;
-        setTaskList(todoQueue);
+        console.log("in handle complete task task ID is ", taskId)
+        handleTaskFieldChanged(taskId, "isCompleted", true)
+        // let todoQueue = [...taskList];
+        // todoQueue[taskId].isCompleted = !todoQueue[taskId].isCompleted;
+        // setTaskList(todoQueue);
     }
 
     function handleDeleteTask(taskID) {
