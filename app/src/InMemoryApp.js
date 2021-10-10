@@ -24,20 +24,27 @@ function InMemoryApp(props) {
     }
 
     function handleTaskFieldChanged(taskId, field, value) {
-        setTaskList(props.data.map(
-            task => task.id !== taskId
-                ? task
-                : {...task, [field]: value}
-        ))
+        function modify(task) {
+            if (task.id === taskId){
+                task[field] = value;
+                return task;
+            }
+            else {
+                return task;
+            }
+        }
+        console.log("changing ", taskId, "field ", field, "to value ", value)
+        setTaskList(taskList.map(modify));
+        console.log("new task List ", taskList)
     }
-
-    function handleCompleteTask(taskId) {
-        console.log("in handle complete task task ID is ", taskId)
-        // handleTaskFieldChanged(taskId, "isCompleted", true)
-        let todoQueue = [...taskList];
-        todoQueue[taskId].isCompleted = !todoQueue[taskId].isCompleted;
-        setTaskList(todoQueue);
-    }
+    //
+    // function handleCompleteTask(taskId) {
+    //     console.log("in handle complete task task ID is ", taskId)
+    //     // handleTaskFieldChanged(taskId, "isCompleted", true)
+    //     let todoQueue = [...taskList];
+    //     todoQueue[taskId].isCompleted = !todoQueue[taskId].isCompleted;
+    //     setTaskList(todoQueue);
+    // }
 
     function handleDeleteTask(taskID) {
         setTaskList(taskList.filter(task => task.taskId !==taskID))
@@ -57,7 +64,7 @@ function InMemoryApp(props) {
                 setTaskList={setTaskList}
                 setCurrTask={setCurrTask}
                 currTask={currTask}
-                handleCompleteTask={handleCompleteTask}
+                // handleCompleteTask={handleCompleteTask}
                 handleDeleteTask={handleDeleteTask}
                 handleDeleteTasks={handleDeleteTasks}
                 handleAddTask={handleAddTask}

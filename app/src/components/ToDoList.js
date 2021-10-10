@@ -19,7 +19,7 @@ function ToDoList(props) {
                     handleHideTasks = {props.handleHideTasks}
                     handleDeleteTasks = {props.handleDeleteTasks}
                     handleTaskFieldChanged = {props.handleTaskFieldChanged}
-                    handleCompleteTask={props.handleCompleteTask}
+                    // handleCompleteTask={props.handleCompleteTask}
                     taskId = {task.taskId}
                     taskLabel = {task.taskLabel}
                     isSelected = {task.isSelected}
