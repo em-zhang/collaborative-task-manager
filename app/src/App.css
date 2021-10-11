@@ -2,6 +2,9 @@ body {
   font-family: "PT Sans", sans-serif;
   background: whitesmoke;
   /*text-align: center;*/
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .add-task{
@@ -15,6 +18,7 @@ body {
   padding-bottom: 3%;
   border-bottom-style: solid;
   border-color: lightgrey;
+  border-width: 1px;
 }
 
 h1 {
@@ -32,148 +36,12 @@ h2 {
   border-bottom-style: solid;
   border-top-style: solid;
   border-color: lightgrey;
-}
-
-/*layout for to do list*/
-.checklist {
-  /*margin-top: 30px;*/
-  /*padding-block: 20px;*/
-  padding-left: 10px;
-  display: inline-block;
-  font-size: 18px;
-  width: 300px;
-  height: 20px;
-  bottom: 100px;
-}
-
-.task-container{
-  display: inline-flex;
-  margin: 5px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  width: 110%;
-  border-radius: 5px;
-  background-color: whitesmoke;
-  opacity: 80%;
-}
-
-
-input[type="checkbox"]{
-  transform: scale(1.4);
-  display: inline-block;
-  margin-left: 10px;
-  margin-top: 10px;
-}
-
-.task-label{
-  margin: 5px;
-  color: black;
-}
-
-.task-buttons {
-  right: 20px;
-  position: absolute;
-  margin-top: 5px;
-  display: inline-list-item;
-}
-
-.todo-input {
-  padding: 5px;
-  margin-bottom: 15px;
-}
-
-#add-button-text {
-  width: 15.5em;
-}
-
-.tasks-remaining-message {
-  margin-top: 15px;
-  font-weight: bold;
-  text-align: center;
-  border-style: solid;
-  border-color: lightgrey;
-  width: 100%;
-  padding: 5px;
-  font-size: 20px;
-}
-
-#add-button {
-  font-size: 15px;
-  padding: 30px 40px;
-  margin: 20px 0px;
-  background-color: dimgrey;
-  color: white;
-  border-style: hidden;
-  border-radius: 10px;
-}
-
-/* layout for toolbar on bottom */
-.toolbar {
-  margin-left: 30px;
-  display: flex;
-  position: fixed;
-  bottom: 10px;
-}
-
-.toolbar-button {
-  font-size: 15px;
-  padding: 10px;
-  margin-right: 15px;
-  /*background: lightsteelblue;*/
-  border-style: solid;
   border-width: 1px;
-  border-color: lightgrey;
-  border-radius: 12px;
 }
 
 .app-container {
   width: 300pt;
   height: 400pt;
-}
-
-.alertapp {
-  width: 300pt;
-  height: 400pt;
-  background-color: lightyellow;
-  font-size: x-large;
-}
-
-.backdrop {
-  position: fixed;
-  top:0;
-  left: 0;
-  bottom: 400pt;
-  right: 300pt;
-  width: 300pt;
-  height: 600pt;
-  background-color: rgba(0, 0, 0, .3);
-}
-
-.modal {
-  background-color: #fff;
-  border-radius: 5pt  ;
-  border-color: black;
-  border-style: solid;
-  margin: 0 auto;
-  top: 150pt;
-  right: 15px;
-  text-align: center;
-  height: 75pt;
-  width: 150pt;
-  /*padding: 10pt;*/
-  /*position: relative;*/
-  display: flex;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 30px;
-  position: relative;
-}
-
-.alert-buttons {
-  position: absolute;
-  display: flex;
-  padding: 10px;
-  bottom: 0;
-  right: 0;
 }
 
 /*.icon {*/

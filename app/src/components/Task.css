@@ -1,0 +1,21 @@
+.task-container{
+    display: inline-flex;
+    margin: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    width: 110%;
+    border-radius: 5px;
+    background-color: white;
+    opacity: 80%;
+}
+
+.task-label{
+    margin: 5px;
+    color: black;
+}
+
+.task-buttons {
+    right: 20px;
+    position: absolute;
+    margin-top: 5px;
+    display: inline-list-item;
+}

@@ -1,3 +1,5 @@
+import './AddTask.css';
+
 function AddTask(props){
     return (
         <div>
