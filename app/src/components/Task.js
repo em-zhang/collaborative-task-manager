@@ -1,5 +1,3 @@
-// import './Task.css';
-import TaskField from './TaskField.js'
 import TextareaAutosize from 'react-textarea-autosize';
 import './Task.css';
 
@@ -8,9 +6,8 @@ function Task(props) {
         <div className="task-container">
             <input type="checkbox" className="checkbox"
                    checked={props.isCompleted}
-                   onChange={() => {
-                       console.log("checked ", props.taskId, props.isCompleted, "change to ", !props.isCompleted)
-                        props.handleTaskFieldChanged(props.taskId, "isCompleted", !props.isCompleted)
+                   onChange={(e) => {
+                        props.handleTaskFieldChanged(props.taskId, "isCompleted", e.target.checked)
                    }}
             />
             <TextareaAutosize className="task-label"
@@ -22,8 +19,6 @@ function Task(props) {
             />
             <div className="task-buttons">
                 <button className="delete-button"onClick={() => {
-                    console.log("edit button clicked")
-                    console.log("delete id", props.taskId);
                     props.handleDeleteTask(props.taskId);
                 }}>
                     x

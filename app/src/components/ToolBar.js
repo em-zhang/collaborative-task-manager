@@ -1,4 +1,3 @@
-import InMemoryApp from "../InMemoryApp";
 import Alert from "../components/Alert"
 import React, {useState} from "react";
 import './ToolBar.css';
@@ -6,22 +5,10 @@ import './ToolBar.css';
 
 function ToolBar(props) {
     const [showAlert, setShowAlert] = useState(false);
-    let [hideButton, setHideButton] = useState(false)
 
     function handleAlertOK() {
         props.handleDeleteTasks();
     }
-
-    function handleHideTasksButton() {
-        if (hideButton) {
-            props.handleShowTasks();
-        } else {
-            props.handleHideTasks();
-        }
-        hideButton ? setHideButton(false) : setHideButton(true)
-        console.log(hideButton)
-    }
-
 
     function toggleModal() {
         showAlert ? setShowAlert(false) : setShowAlert(true)
@@ -33,9 +20,11 @@ function ToolBar(props) {
                 <button className="toolbar-button" id={"hide-button"}
                         onClick={() => {
                             console.log("hide button clicked")
-                            handleHideTasksButton();
+                            props.setShowCompleted(!props.showCompleted)
+                            console.log("show completed is", props.showCompleted)
+                            // handleHideTasksButton();
                         }}
-                > Show Uncompleted
+                > {props.showCompleted ? "Show Completed" : "Show All Tasks"}
                 </button>
                 <button className="toolbar-button" id="delete-completed-button" onClick={() => {
                     console.log("delete completed button clicked")

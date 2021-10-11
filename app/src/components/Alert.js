@@ -1,5 +1,3 @@
-import {useState} from 'react'
-import InMemoryApp from "../InMemoryApp";
 import './Alert.css';
 
 function Alert(props) {
@@ -8,16 +6,16 @@ function Alert(props) {
             <div className="modal">
                 {props.children}
                 <div className="alert-buttons">
-                    <button className={"alert-button alert-cancel"} type={"button"}
+                    <button className={"alert-button"} id={"alert-cancel"} type={"button"}
                             onClick={() => props.onClose()}>
                         Cancel
                     </button>
-                    <button className={"alert-button alert-ok"} type={"button"}
+                    <button className={"alert-button"} id={"alert-ok"} type={"button"}
                             onClick={() => {
                                 props.onOK();
                                 props.onClose()
                             }}>
-                        Ok
+                        OK
                     </button>
                 </div>
             </div>

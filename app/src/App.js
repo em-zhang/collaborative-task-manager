@@ -1,14 +1,14 @@
-// import logo from './logo.svg';
 import './App.css';
 import './index.js';
-import Alert from "./components/Alert"
 import ToDoList from "./components/ToDoList"
 import AddTask from "./components/AddTask"
 import ToolBar from "./components/ToolBar"
-import InMemoryApp from "./InMemoryApp"
 import React, {useState, useEffect} from "react";
 
 function App(props) {
+    const[showCompleted, setShowCompleted] = useState(true);
+    const filteredList = props.taskList.filter(task => showCompleted || !task.isCompleted);
+    console.log(filteredList);
     return (
         <div className="App">
             <div class="heading">
@@ -16,29 +16,24 @@ function App(props) {
             </div>
             <div class="add-task">
                 <AddTask
-                    taskList={props.taskList}
+                    taskList={filteredList}
                     setTaskList={props.setTaskList}
-                    currTask={props.currTask}
-                    setCurrTask={props.setCurrTask}
                     handleAddTask={props.handleAddTask}
                 />
             </div>
             <div>
-                <ToDoList data={props.data}
-                              taskList={props.taskList}
-                              setTaskList={props.setTaskList}
-                              handleDeleteTask={props.handleDeleteTask}
-                              handleHideTasks = {props.handleHideTasks}
-                              handleShowTasks = {props.handleShowTasks}
-                              handleDeleteTasks = {props.handleDeleteTasks}
-                              handleTaskFieldChanged={props.handleTaskFieldChanged}
+                <ToDoList
+                    taskList={filteredList}
+                    handleDeleteTask={props.handleDeleteTask}
+                    handleDeleteTasks = {props.handleDeleteTasks}
+                    handleTaskFieldChanged={props.handleTaskFieldChanged}
                 />
             </div>
             <div>
                 <ToolBar
-                    handleHideTasks = {props.handleHideTasks}
-                    handleShowTasks = {props.handleShowTasks}
                     handleDeleteTasks = {props.handleDeleteTasks}
+                    showCompleted = {showCompleted}
+                    setShowCompleted = {setShowCompleted}
                 />
             </div>
         </div>

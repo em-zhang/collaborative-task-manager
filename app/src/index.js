@@ -34,7 +34,7 @@ const initialData = [
 
 ReactDOM.render(
   <React.StrictMode>
-      <InMemoryApp data={initialData}/>
+      <InMemoryApp initialData={initialData}/>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -1,27 +1,30 @@
 import './AddTask.css';
+import {useState} from "react";
 
 function AddTask(props){
+    const [currTask, setCurrTask] = useState("");
+
     return (
         <div>
             <input
                 className="todo-input"
                 id="add-button-text"
                 placeholder="Enter task here"
-                value={props.currTask}
+                value={currTask}
                 onChange={e => {
-                    props.setCurrTask(e.target.value);
+                    setCurrTask(e.target.value);
                 }}
                 onKeyPress={e => {
                     if (e.key === "Enter") {
-                        props.handleAddTask(props.currTask);
-                        props.setCurrTask("");
+                        props.handleAddTask(currTask);
+                        setCurrTask("");
                     }
                 }}
             />
             <button className="todo-input add-button"
                     onClick={() => {
-                        props.handleAddTask(props.currTask);
-                        props.setCurrTask("");
+                        props.handleAddTask(currTask);
+                        setCurrTask("");
                     }}>
                 Add Task
             </button>
