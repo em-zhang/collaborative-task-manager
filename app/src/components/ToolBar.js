@@ -1,6 +1,7 @@
 import InMemoryApp from "../InMemoryApp";
 import Alert from "../components/Alert"
 import React, {useState} from "react";
+import './ToolBar.css';
 
 
 function ToolBar(props) {
@@ -29,14 +30,14 @@ function ToolBar(props) {
     return (
         <div>
             <div className="toolbar">
-                <button className="toolbar-button"
+                <button className="toolbar-button" id={"hide-button"}
                         onClick={() => {
                             console.log("hide button clicked")
                             handleHideTasksButton();
                         }}
                 > Show Uncompleted
                 </button>
-                <button className="toolbar-button" onClick={() => {
+                <button className="toolbar-button" id="delete-completed-button" onClick={() => {
                     console.log("delete completed button clicked")
                     toggleModal()
                 }}> Delete Completed</button>

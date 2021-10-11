@@ -12,7 +12,7 @@ function App(props) {
     return (
         <div className="App">
             <div class="heading">
-                <h1>- Task Manager -</h1>
+                <h1>Task Manager</h1>
             </div>
             <div class="add-task">
                 <AddTask

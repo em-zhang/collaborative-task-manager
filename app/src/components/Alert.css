@@ -1,0 +1,38 @@
+.backdrop {
+    position: fixed;
+    top:0;
+    left: 0;
+    bottom: 400pt;
+    right: 300pt;
+    width: 300pt;
+    height: 600pt;
+    background-color: rgba(0, 0, 0, .3);
+}
+
+.modal {
+    background-color: #fff;
+    border-radius: 5pt  ;
+    border-color: black;
+    border-style: solid;
+    margin: 0 auto;
+    top: 150pt;
+    right: 15px;
+    text-align: center;
+    height: 75pt;
+    width: 150pt;
+    /*padding: 10pt;*/
+    /*position: relative;*/
+    display: flex;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 30px;
+    position: relative;
+}
+
+.alert-buttons {
+    position: absolute;
+    display: flex;
+    padding: 10px;
+    bottom: 0;
+    right: 0;
+}

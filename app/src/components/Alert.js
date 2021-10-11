@@ -1,5 +1,6 @@
 import {useState} from 'react'
 import InMemoryApp from "../InMemoryApp";
+import './Alert.css';
 
 function Alert(props) {
     return (

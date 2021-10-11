@@ -1,0 +1,28 @@
+.checklist {
+    /*margin-top: 30px;*/
+    /*padding-block: 20px;*/
+    padding-left: 10px;
+    display: inline-block;
+    font-size: 18px;
+    width: 300px;
+    height: 20px;
+    bottom: 100px;
+}
+
+input[type="checkbox"]{
+    transform: scale(1.4);
+    display: inline-block;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.tasks-remaining-message {
+    margin-top: 15px;
+    font-weight: bold;
+    text-align: center;
+    border-style: solid;
+    border-color: lightgrey;
+    width: 100%;
+    padding: 5px;
+    font-size: 20px;
+}
