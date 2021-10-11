@@ -9,6 +9,7 @@ function InMemoryApp(props) {
     const [currTask, setCurrTask] = useState("");
     const [isEditingId, setIsEditingId] = useState(null);
     const [selectedId, setSelectedId] = useState(null);
+    const [lastTasks, setLastTasks] = useState([]);
 
     function handleAddTask(currTask) {
         console.log("adding task ", currTask)
@@ -50,7 +51,12 @@ function InMemoryApp(props) {
         setTaskList(taskList.filter(task => task.taskId !==taskID))
     }
 
+    function handleShowTasks() {
+        setTaskList(lastTasks)
+    }
+
     function handleHideTasks() {
+        setLastTasks(taskList)
         setTaskList(taskList.filter(task => task.isCompleted == false))
     }
 
@@ -69,6 +75,7 @@ function InMemoryApp(props) {
                 handleDeleteTasks={handleDeleteTasks}
                 handleAddTask={handleAddTask}
                 handleHideTasks = {handleHideTasks}
+                handleShowTasks = {handleShowTasks}
                 handleTaskFieldChanged={handleTaskFieldChanged}
         />
     </div>
