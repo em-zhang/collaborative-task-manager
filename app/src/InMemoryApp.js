@@ -4,7 +4,6 @@ import App from "./App"
 
 function InMemoryApp(props) {
     const [taskList, setTaskList] = useState(props.data)
-    // const [hideButton, setHideButton] = useState(false)
     const [idCounter, setIdCounter] = useState(taskList.length);
     const [currTask, setCurrTask] = useState("");
     const [isEditingId, setIsEditingId] = useState(null);
@@ -25,27 +24,12 @@ function InMemoryApp(props) {
     }
 
     function handleTaskFieldChanged(taskId, field, value) {
-        function modify(task) {
-            if (task.id === taskId){
-                task[field] = value;
-                return task;
-            }
-            else {
-                return task;
-            }
-        }
-        console.log("changing ", taskId, "field ", field, "to value ", value)
-        setTaskList(taskList.map(modify));
-        console.log("new task List ", taskList)
+        setTaskList(taskList.map(
+            task => task.taskId !== taskId
+                ? task
+                : {...task, [field]: value}))
+        console.log("handle changed taskList ", taskList)
     }
-    //
-    // function handleCompleteTask(taskId) {
-    //     console.log("in handle complete task task ID is ", taskId)
-    //     // handleTaskFieldChanged(taskId, "isCompleted", true)
-    //     let todoQueue = [...taskList];
-    //     todoQueue[taskId].isCompleted = !todoQueue[taskId].isCompleted;
-    //     setTaskList(todoQueue);
-    // }
 
     function handleDeleteTask(taskID) {
         setTaskList(taskList.filter(task => task.taskId !==taskID))
@@ -70,7 +54,7 @@ function InMemoryApp(props) {
                 setTaskList={setTaskList}
                 setCurrTask={setCurrTask}
                 currTask={currTask}
-                // handleCompleteTask={handleCompleteTask}
+
                 handleDeleteTask={handleDeleteTask}
                 handleDeleteTasks={handleDeleteTasks}
                 handleAddTask={handleAddTask}
@@ -79,45 +63,6 @@ function InMemoryApp(props) {
                 handleTaskFieldChanged={handleTaskFieldChanged}
         />
     </div>
-    //
-    // return (
-    //
-    //     <div>
-    //         <AddTask
-    //             onClick={createTask}
-    //         />
-    //         <button class="todo-input add-button"
-    //                 onClick={() =>
-    //                 {createTask(currTask);
-    //                     setCurrTask("");
-    //                 }}>
-    //             Add New Task
-    //         </button>
-    //         {/*/>*/}
-    //         {/*display*/}
-    //         {taskList.map((todo, index) => (
-    //             <div key={todo} className="todo">
-    //                 <label>
-    //                     <input type="checkbox" name="checkbox"/>
-    //                     <span>{todo.task}</span>
-    //                 </label>
-    //                 {/*<div> {todo.task}</div>*/}
-    //             </div>
-    //         ))}
-    //         <h1>ToDoList ({selectedId === null ? 0 : 1}/{props.list.length} selected)</h1>
-    //         {props.list.map(a => <Task
-    //             onRowClick={(id) =>
-    //                 setSelectedId(id)}
-    //             onTaskFieldChanged={props.editTask}
-    //             selected={a.id === selectedId}
-    //             key={a.id}
-    //             {...a} />)}
-    //         <div class="tasks-remaining-message">
-    //             {/*Show number of tasks*/}
-    //             {`${taskList.length} Remaining Tasks`}
-    //         </div>
-    //     </div>
-    // );
 }
 
 export default InMemoryApp;

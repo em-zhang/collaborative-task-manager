@@ -9,7 +9,6 @@ function ToDoList(props) {
     return (
         <div className="checklist-container">
             <div className="my-tasks">
-                {/*how to make this work?*/}
                 <h2>My Tasks ({numCompleted}/{props.taskList.length} completed)
                 </h2>
             </div>
@@ -20,12 +19,10 @@ function ToDoList(props) {
                     handleHideTasks = {props.handleHideTasks}
                     handleDeleteTasks = {props.handleDeleteTasks}
                     handleTaskFieldChanged = {props.handleTaskFieldChanged}
-                    // handleCompleteTask={props.handleCompleteTask}
                     taskId = {task.taskId}
                     taskLabel = {task.taskLabel}
                     isSelected = {task.isSelected}
                     isCompleted = {task.isCompleted}
-                    onTaskFieldChanged={props.onTaskFieldChanged}
                 />)}
                 {/*{props.taskList.map(a => <Task*/}
                 {/*    onRowClick={(id) =>*/}

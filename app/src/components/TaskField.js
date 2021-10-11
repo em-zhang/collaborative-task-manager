@@ -1,10 +1,11 @@
 function TaskField(props) {
+    console.log("curr task list is ", props.taskList);
     return <input type="text"
-                  className={props.taskLabel}
+                  className="task-field"
                   onChange={
-                      event=>props.onTaskFieldChanged(props.id, props.taskLabel, event.target.value)
+                      event=>props.handleTaskFieldChanged(props.id, props.taskLabel, event.target.value)
                   }
-                  value={props[props.taskLabel]} />
+                  value={props.taskLabel} />
 }
 
 export default TaskField;

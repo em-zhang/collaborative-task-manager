@@ -27,11 +27,9 @@ function App(props) {
                 <ToDoList data={props.data}
                               taskList={props.taskList}
                               setTaskList={props.setTaskList}
-                              handleCompleteTask={props.handleCompleteTask}
                               handleDeleteTask={props.handleDeleteTask}
                               handleHideTasks = {props.handleHideTasks}
                               handleShowTasks = {props.handleShowTasks}
-                              onAddTask={props.handleAddTask}
                               handleDeleteTasks = {props.handleDeleteTasks}
                               handleTaskFieldChanged={props.handleTaskFieldChanged}
                 />

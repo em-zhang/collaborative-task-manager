@@ -9,8 +9,13 @@
 }
 
 .task-label{
-    margin: 5px;
-    color: black;
+    font-family: "PT Sans", sans-serif;
+    font-size: 20px;
+    flex-basis: 80%;
+    min-height: 30px;
+    height: auto;
+    border: none;
+    resize: none;
 }
 
 .task-buttons {
