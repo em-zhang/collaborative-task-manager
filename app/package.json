@@ -2,7 +2,7 @@
   "name": "app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://emily-zhang.com/cs124",
+  "homepage": "http://em-zhang.github.io/cs124",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
