@@ -1,87 +1,49 @@
 # Lab 2: Task Manager App
 **Group members:** Emily Zhang, Christopher Chung, Olina Wong
 
-For Lab 1, we aimed to design a modern, simple interface for a mobile web app that functions as a task manager.
-The app handles various tasks including creating, renaming, and marking items as well as showing uncompleted items and deleting completed items.
-For final screen images and flows for each task, see the bottom of this design doc.
+For Lab 2, we aimed to implement our Task Manager interface from Lab 1 into a functional app via React.
 
-### Design Decisions
-*Decision 1: Creating a toolbar at teshe bottom of the app*
-- Initially, the functions of the app (“Edit Tasks”, “Show To-Do”, and “Delete Done”) were arbitrarily placed as different buttons around the app. The toolbar consolidates these functions into an easily accessible toolbar for a mobile-first approach. By placing these actions at the bottom, this would reduce travel time for the user’s finger and reduce cognitive overload by action search. The navigation bar is persistent to allow the user to always access these functions.
+The app handles various tasks including creating, renaming, and marking items as well as showing uncompleted items and deleting completed items. For final screen images and flows for each task, see the bottom of this design doc.
 
-*Decision 2: The “Add Task” button location and styling*
-- The text box and “Add Task” button are placed above the list of items. Initially, we wanted the approach of a traditional notebook by placing the text box at the bottom of the list. However, accounting for an expanded list that stretches past off screen, we decided to have the “Add Task” button at the top so the user will always have it easily accessible as a common feature.
-- In terms of the styling, we chose a prominent blue color to contrast against the rest of the white/grey interface, signaling a high-priority task.
+### Design Process, Decisions, and Early Mock-Ups
 
-*Decision 3: Icons*
-- We added icons to the toolbar actions to facilitate visual priority over reading the text for finding every desired action. The text was split in half to fit into the small boxes, which would increase cognitive overload reading from line to line. The icons are understandable and the subtext allows a user to double-check their action prior to executing it.
+### Key Design Decisions
+- **Added the functionality of deleting a single task**: Prior to our redesign, deleting a task required selecting the desired tasks to delete and clicking a delete button at the navigation bar. Because we expected a common function to be deleting only a single task, we included the ability to delete a single task in one quick action by adding buttons into the individual task containers.
+- **Added a button next to each task to edit**: We also anticipated that a common function would be to edit a task when desired. Previously, you had to delete a task to make the appropriate task. This new functionality allows the user to edit the task without the extended process of deleting the task, typing a new task, and adding a task.
+- **Changed the toolbar at the bottom to just two labeled buttons**: After rationalizing the design decisions above, we compressed the toolbar into just two labeled buttons: “Show uncompleted tasks” and “Delete completed tasks”. Previously, we had three buttons, with the additional button as “Edit tasks”. We reduced cognitive travel by spatially relocating the commonly used task buttons and reducing the clicks needed to complete the task.
 
 ### Alternative Designs
-The following are some alternative design ideas that we considered:
-- **Position of the Add Task input box and button:**
-  We considered putting the add task button at the bottom of the list or having it off to the side rather than the top. After a bit of user testing and feedback, we realized that it was most convenient for the add task functionality to be prominently placed at the top of the list for ease of access. Particularly when the list of task items grows long, and because this is a mobile app, it would be inconvenient for the user to have to scroll through a long list of tasks in order to add a task.
-- **App actions as wide buttons**
-  The buttons were originally screen-width wide, simply functioning as large buttons for the users to press. This took a lot of screen real estate and fit into the mental model of choosing between equivalent alternative tasks, which is not the intended function of the available tools.
-
-- **Tool bar at bottom of page:**
-
-Figma mockup
-
-Low fidelity sketch
-
-Implementation
-
-Figma mockup
+- **Highlighting a task when you edit it**: We considered highlighting the task when you edit to make the action more obvious. However, upon our implementation, we realized this would be redundant since the form to fill out the edited task is conspicuous for the user.
+- **Moving add task to the bottom**: We considered the possibility of a shorter finger travel time if the add task is at the bottom. However, after reflecting upon common user interfaces in apps, we determined that although this addition would be more efficient, this did not fit the cognitive model found in most other apps of creating a new task; the new task button is typically in the top right.
 
 ### User Testing
-We did some user experience research by asking 4 friends to navigate through our app's screen images while performing some of the tasks. For example, we asked them to talk out loud as they walked through what steps they would take to add a task or rename a task. We iteratively changed our design to ensure that the app was intuitive and clear in what functionalities it performed.
+In order to test our new functionality without a large user testing group, we conducted internal testing within our group. When one of our group members implements a new function, we test the functionality with the other group member(s) during meetups, allowing us to have a fresh perspective on the app.
 
-We also asked some of the following specific questions:
-- Where would you rather have an "add task" button be located?
-- What are some important must-haves for a to-do list manager app?
+We had an open session asking our group members unfamiliar with the new changes to play with the app and test out desired tasks, such as the functionality of creating a new item, editing a task, and the usage of the buttons in the navigation bar. In addition, we asked several roommates and friends to navigate through the app, encouraging them to talk out loud and articulate any parts of the process that were unclear. 
+
+Some key questions we asked were:
+- What are you trying to do? (Determining intended purpose)
+- Does this workflow feel like it makes sense? (Asking for intuition)
+- Is there anything you’re confused about? (Clarity of content)
+
+We had positive reception for the cleaner user interface and the tasks completed ticker. Users commented that it was easy to navigate through the app and modify their tasks, and it was something they could use on a daily basis.
+A couple key suggestions that we later incorporated included:
+- Ensuring that the pop-up modal for the delete completed button is deactivated if there are no completed icons. This seemed to be a source of confusion for one user.
+- Ensuring that the tasks do not overlap with each other or go out of the box if there are particularly long task labels or many tasks.
+In the later sections, we describe the challenges we ran into and parts we’re proud of while taking these suggestions into consideration and implementing these changes.
 
 ### Challenges
-The following are some challenges that we faced:
-- **Deciding what order to approach the design process**: Initially, we began with implementing a simple HTML page of all the static pages. However, when we began styling the CSS, we realized we did not have adequate <div> and class descriptors, which affected our ability to organize and format the CSS styling. Moving forward, we will be more conscious about implementing appropriate descriptors early in the implementation process.
-- **CSS formatting**: We had difficulties working with CSS Flexbox and list styling. Some common issues were overlapping parts, nonfunctional CSS, and inconsistent font sizes. In the future, we will work with <div> containers to clarify the formatting of each object. We also hope to find a solution for consistent text sizing, which required a universal (*) workaround with a font size percentage.
-- **Toolbar model**: In order to make the actions of the app easily understandable, we cycled through different designs for the toolbar before settling on the current toolbar with both icons and text. Using the principle of proximity, we standardized the buttons to help the user understand that the actions all modify something with the list.
+- **Separating our files into components**: We found it challenging to parse our previous HTML content and separate them into appropriate components. It was helpful to start from the initialData in our index.js, working our way through inMemoryApp, App.js, and the components in the actual application
+- **Moving the data into an intermediate file**: Handling data was difficult, so we moved the data into an intermediate file as declutter. We made sure to think carefully about what data should be kept as state information in various components.
+- **Implementing the edit functionality**: Because the edit function required the ability to open a text field and update the data, we found it difficult to implement from a technical perspective. We made use of an existing React component for editing the text field and handled making changes to the field when the user tapped on a task.
 
 ### Parts We’re Proud Of
-- Iteratively walking through the design process
-- Implementing a persistent toolbar reminiscent of mobile nav bars
-- Consistent margins and padding using containers
-- Minimalistic but functional visual design
+- **New CSS**: We revamped the CSS styling with shadows and other elements for a cleaner, more user-friendly interface. We also split the CSS into different files for each component so we could think about styling each component individually, and put them together in a cohesive layout.
+- **Showing how many items are completed**: Inspired by the exercise from class, we decided to implement a new ticker showing the fraction of tasks completed (e.g. 3/4 Tasks completed). We expected for the user to have greater satisfaction from being able to see the fraction of tasks completed, communicating the workload of the entire task list at a glance.
+- **Changing the user flow for deleting and editing items**: We optimized the user flow for deleting items by moving the button to the task container. Because we are designing for a mobile device, we wanted the user to easily edit a task by tapping on it – a border would appear around the new input box, and the user could tap out to save the updated task. We expected an improvement in the spatial understanding of the Delete function and Edit function of each respective task.
+- **Dynamic display and functionality of buttons**: In order to make the interface as easy as possible for the user to understand, we ensured that under certain conditions, buttons were disabled. We changed the opacity and styling of certain buttons so that it was clear that clicking the button would lead to an event.
 
 ### Final Design
 Below you will find the screen images and flow for each task.
 
-1. In an empty list, create an item named "Buy new John Grisham book"
-   Before: User sees a message “No current tasks.”
-   User Actions/During: User clicks on the add task input box at the top => User types in the name of a new task => User clicks on the add task button
-   After: A new task is created “Buy new John Grisham book” in the list
-
-2. In a non-empty list, create an item named "Eat Lunch"
-   Before: User sees a list of tasks.
-   User Actions/During: User clicks on the add task input box at the top => User types in the name of a new task => User clicks on the add task button
-   After: A new task, “Buy new John Grisham book,” is added to the current list
-
-3. Mark the item named "Call Mom" completed (assumes there exists an item named "Call Mom").
-   Before: User sees a list of tasks. “Call Mom” is not checked.
-   User Actions/During: User clicks on the checkbox associated with the “Call Mom” task
-   After: The checkbox associated with the “Call Mom” task is checked blue.
-
-4. Rename the item "Text John" to "Text John about bank statements" (assumes there exists an item named "Text John").
-   Before: User sees a list of tasks. “Text John” is one of these tasks.
-   User Actions/During: User double clicks on the item named “Text John” => User edits the task and types in “Text John about bank statements” => User clicks out to save
-   After: The “Text John” task appears as “Text John about bank statements”
-
-5. Show only uncompleted items.
-   Before: A list of tasks is displayed, with 5 uncompleted items and 2 completed items.
-   User Actions/During: User taps on the icon at the bottom that represents “Show only uncompleted”
-   After: A list of tasks is displayed, with 5 uncompleted items.
-
-6. Delete all completed items.
-   Before: User sees a list of tasks, with 5 uncompleted items and 2 completed items.
-   User Actions/During: User taps on the icon on the bottom that represents “Delete completed”
-   After: A list of tasks is displayed, with 5 uncompleted items.
 
