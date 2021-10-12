@@ -3,15 +3,16 @@ import './index.js';
 import ToDoList from "./components/ToDoList"
 import AddTask from "./components/AddTask"
 import ToolBar from "./components/ToolBar"
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 
 function App(props) {
     const[showCompleted, setShowCompleted] = useState(true);
     const filteredList = props.taskList.filter(task => showCompleted || !task.isCompleted);
-    const numCompleted = props.taskList.filter(task => task.isCompleted == true).length;
+    const numCompleted = props.taskList.filter(task => task.isCompleted === true).length;
+
     return (
         <div className="app-container">
-            <div class="heading">
+            <div className="heading">
                 <h1>Task Manager</h1>
             </div>
             <div className="add-task">
@@ -25,16 +26,16 @@ function App(props) {
                 <ToDoList
                     taskList={filteredList}
                     handleDeleteTask={props.handleDeleteTask}
-                    handleDeleteTasks = {props.handleDeleteTasks}
+                    handleDeleteTasks={props.handleDeleteTasks}
                     handleTaskFieldChanged={props.handleTaskFieldChanged}
                     numCompleted={numCompleted}
                 />
             </div>
             <div>
                 <ToolBar
-                    handleDeleteTasks = {props.handleDeleteTasks}
-                    showCompleted = {showCompleted}
-                    setShowCompleted = {setShowCompleted}
+                    handleDeleteTasks={props.handleDeleteTasks}
+                    showCompleted={showCompleted}
+                    setShowCompleted={setShowCompleted}
                     numCompleted={numCompleted}
                 />
             </div>

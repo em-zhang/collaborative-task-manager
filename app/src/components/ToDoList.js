@@ -1,9 +1,8 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Task from "./Task";
 import './ToDoList.css';
 
 function ToDoList(props) {
-    const [selectedId, setSelectedId] = useState(null);
 
     return (
         <div className = "list-container">

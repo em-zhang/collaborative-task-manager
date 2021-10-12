@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import {generateUniqueID} from "web-vitals/dist/modules/lib/generateUniqueID";
 import App from "./App"
 
 function InMemoryApp(props) {
     const [taskList, setTaskList] = useState(props.initialData);
     const [idCounter, setIdCounter] = useState(taskList.length);
 
+    // adds a task, maintaining a taskId counter
     function handleAddTask(currTask) {
         setTaskList([...taskList, {
             taskId: idCounter,
@@ -15,6 +15,7 @@ function InMemoryApp(props) {
         setIdCounter(idCounter + 1);
     }
 
+    // handles updating any field of a task
     function handleTaskFieldChanged(taskId, field, value) {
         setTaskList(taskList.map(
             task => task.taskId !== taskId
@@ -22,27 +23,22 @@ function InMemoryApp(props) {
                 : {...task, [field]: value}))
     }
 
-    // u can pass a list of taskIDs
+    // handles task deletion through filtering
     function handleDeleteTask(taskID) {
-        console.log("in handledeletetask", taskID);
-        const deletedList = taskList.filter(task => task.taskId !==taskID);
-        console.log("deleted list is ", deletedList);
+        const deletedList = taskList.filter(task => task.taskId !== taskID);
         setTaskList(deletedList)
     }
-
-    // deletecompletedtasks
     function handleDeleteTasks() {
-        setTaskList(taskList.filter(task => task.isCompleted == false))
+        setTaskList(taskList.filter(task => task.isCompleted === false))
     }
 
     return <div>
         <App
-                taskList={taskList}
-                // setTaskList={setTaskList}
-                handleDeleteTask={handleDeleteTask}
-                handleDeleteTasks={handleDeleteTasks}
-                handleAddTask={handleAddTask}
-                handleTaskFieldChanged={handleTaskFieldChanged}
+            taskList={taskList}
+            handleDeleteTask={handleDeleteTask}
+            handleDeleteTasks={handleDeleteTasks}
+            handleAddTask={handleAddTask}
+            handleTaskFieldChanged={handleTaskFieldChanged}
         />
     </div>
 }

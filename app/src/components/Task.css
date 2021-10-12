@@ -9,19 +9,19 @@
 }
 
 .task-label{
+    margin-top: 4px;
     font-family: "PT Sans", sans-serif;
-    margin: 3px 0px 0px 5px;
+    margin-left: 5px;
     font-size: 18px;
     flex-basis: 80%;
-    min-height: 30px;
+    min-height: 27px;
     height: auto;
     border: none;
     resize: none;
 }
 
-.task-buttons {
-    right: 20px;
-    position: absolute;
-    margin-top: 5px;
+.delete-button {
+    right: 23px;
+    margin-top: 7px;
     display: inline-list-item;
 }

@@ -11,13 +11,28 @@
 }
 
 .add-button {
-    font-size: 18px;
-    margin-left: 10px;
-    padding: 6px 10px 6px 10px;
+    font-family: "PT Sans", sans-serif;
+    font-size: 17px;
     background-color: royalblue;
     color: white;
     border-color: darkgrey;
     border-style: solid;
     border-width: 1px;
     border-radius: 5px;
+    margin-left: 10px;
+    padding: 6px 10px 6px 10px;
+}
+
+.add-button-disabled {
+    opacity: 60%;
+    font-family: "PT Sans", sans-serif;
+    font-size: 17px;
+    background-color: royalblue;
+    color: white;
+    border-color: darkgrey;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    margin-left: 10px;
+    padding: 6px 10px 6px 10px;
 }

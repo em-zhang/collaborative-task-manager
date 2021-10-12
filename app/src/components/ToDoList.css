@@ -5,10 +5,6 @@
     font-size: 18px;
     width: 300px;
     height: 100px;
-    /*scroll*/
-    /*scroll-margin-block-end: initial;*/
-    /*scroll-behavior: smooth;*/
-    /*bottom: 100px;*/
 }
 
 input[type="checkbox"]{

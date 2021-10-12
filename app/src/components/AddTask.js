@@ -23,9 +23,9 @@ function AddTask(props){
                     }
                 }}
             />
-            <button className="add-button"
+            <button className={currTask !== "" ? "add-button" : "add-button-disabled"}
                     onClick={() => {
-                        if (currTask != "") {
+                        if (currTask !== "") {
                             props.handleAddTask(currTask);
                             setCurrTask("");
                         }

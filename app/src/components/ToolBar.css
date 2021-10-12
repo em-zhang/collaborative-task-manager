@@ -24,10 +24,6 @@
     color: white;
 }
 
-#delete-completed-button{
-    visibility: visible;
-}
-
 #delete-completed-button-hidden{
-    opacity: 50%;
+    opacity: 60%;
 }

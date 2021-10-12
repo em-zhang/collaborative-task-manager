@@ -16,20 +16,23 @@ function ToolBar(props) {
     return (
         <div>
             <div className="toolbar">
-                <button className="toolbar-button" id="hide-button"
-                        onClick={() => {
-                            props.setShowCompleted(!props.showCompleted)
-                        }}
-                > {props.showCompleted ? "Show Completed" : "Show All Tasks"}
+                <button
+                    className="toolbar-button"
+                    id="hide-button"
+                    onClick={() => {
+                        props.setShowCompleted(!props.showCompleted)
+                    }}>
+                    {props.showCompleted ? "Show Completed" : "Show All Tasks"}
                 </button>
-                <button className="toolbar-button"
-                        // only make button fully visible and support functionality if there are completed tasks
-                        id = {props.numCompleted != 0 ? "delete-completed-button" : "delete-completed-button-hidden"}
-                        onClick={() => {
-                            if(props.numCompleted != 0) {
-                                toggleModal();
-                            }
-                        }}>
+                <button
+                    className="toolbar-button"
+                    // only make button fully visible and support functionality if there are completed tasks
+                    id={props.numCompleted !== 0 ? null : "delete-completed-button-hidden"}
+                    onClick={() => {
+                        if(props.numCompleted !== 0) {
+                            toggleModal();
+                        }
+                    }}>
                     Delete Completed</button>
             </div>
             {showAlert && <Alert onClose={toggleModal} onOK={handleAlertOK}>

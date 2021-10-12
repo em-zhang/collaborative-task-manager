@@ -1,23 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import InMemoryApp from './InMemoryApp';
 
 const initialData = [
     {
         taskId: 0,
-        taskLabel: "Get lunch at Frary",
+        taskLabel: "Get lunch at dining hall",
         isCompleted: true
     },
     {
         taskId: 1,
-        taskLabel: "Organize finances",
+        taskLabel: "Buy textbooks",
         isCompleted: false
     },
     {
         taskId: 2,
-        taskLabel: "Play Genshin Impact",
+        taskLabel: "Watch videos about React",
         isCompleted: true
     },
     {
@@ -38,5 +37,3 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
-
-// export default initialData
