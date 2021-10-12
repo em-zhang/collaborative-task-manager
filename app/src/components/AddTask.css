@@ -24,7 +24,7 @@
 }
 
 .add-button-disabled {
-    opacity: 60%;
+    opacity: 0.6;
     font-family: "PT Sans", sans-serif;
     font-size: 17px;
     background-color: royalblue;

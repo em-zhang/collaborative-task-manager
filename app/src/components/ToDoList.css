@@ -1,10 +1,9 @@
-
 .checklist {
     padding-left: 10px;
-    display: inline-block;
+    /*display: inline-block;*/
     font-size: 18px;
-    width: 300px;
-    height: 100px;
+    /*width: 300px;*/
+    /*height: 100px;*/
 }
 
 input[type="checkbox"]{
@@ -13,15 +12,4 @@ input[type="checkbox"]{
     margin-left: 10px;
     margin-top: 10px;
     color: orange;
-}
-
-.tasks-remaining-message {
-    margin-top: 15px;
-    font-weight: bold;
-    text-align: center;
-    border-style: solid;
-    border-color: lightgrey;
-    width: 100%;
-    padding: 5px;
-    font-size: 20px;
 }

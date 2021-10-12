@@ -3,7 +3,6 @@
     display: flex;
     position: fixed;
     bottom: 15px;
-    overflow: no-content;
 }
 
 #hide-button{
@@ -12,8 +11,7 @@
 
 .toolbar-button {
     font-family: "PT Sans", sans-serif;
-    /*font-weight: bold;*/
-    font-size: 17px;
+    font-size: 16px;
     padding: 10px;
     margin-right: 15px;
     background: royalblue;
@@ -25,5 +23,5 @@
 }
 
 #delete-completed-button-hidden{
-    opacity: 60%;
+    opacity: 0.6;
 }

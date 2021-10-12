@@ -3,9 +3,9 @@ import Task from "./Task";
 import './ToDoList.css';
 
 function ToDoList(props) {
-
+    console.log("in ToDoList ", props.taskList)
     return (
-        <div className = "list-container">
+        <div id = "list-container">
             <div className="my-tasks">
                 <h2>My Tasks ({props.numCompleted}/{props.taskList.length} completed)
                 </h2>

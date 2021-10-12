@@ -11,7 +11,7 @@ function App(props) {
     const numCompleted = props.taskList.filter(task => task.isCompleted === true).length;
 
     return (
-        <div className="app-container">
+        <div id="app-container">
             <div className="heading">
                 <h1>Task Manager</h1>
             </div>
