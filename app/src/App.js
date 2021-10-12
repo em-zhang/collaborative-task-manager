@@ -8,13 +8,13 @@ import React, {useState, useEffect} from "react";
 function App(props) {
     const[showCompleted, setShowCompleted] = useState(true);
     const filteredList = props.taskList.filter(task => showCompleted || !task.isCompleted);
-    console.log(filteredList);
+    const numCompleted = props.taskList.filter(task => task.isCompleted == true).length;
     return (
-        <div className="App">
+        <div className="app-container">
             <div class="heading">
                 <h1>Task Manager</h1>
             </div>
-            <div class="add-task">
+            <div className="add-task">
                 <AddTask
                     taskList={filteredList}
                     setTaskList={props.setTaskList}
@@ -27,6 +27,7 @@ function App(props) {
                     handleDeleteTask={props.handleDeleteTask}
                     handleDeleteTasks = {props.handleDeleteTasks}
                     handleTaskFieldChanged={props.handleTaskFieldChanged}
+                    numCompleted={numCompleted}
                 />
             </div>
             <div>
@@ -34,6 +35,7 @@ function App(props) {
                     handleDeleteTasks = {props.handleDeleteTasks}
                     showCompleted = {showCompleted}
                     setShowCompleted = {setShowCompleted}
+                    numCompleted={numCompleted}
                 />
             </div>
         </div>

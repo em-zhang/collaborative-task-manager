@@ -2,7 +2,6 @@ import Alert from "../components/Alert"
 import React, {useState} from "react";
 import './ToolBar.css';
 
-
 function ToolBar(props) {
     const [showAlert, setShowAlert] = useState(false);
 
@@ -17,19 +16,21 @@ function ToolBar(props) {
     return (
         <div>
             <div className="toolbar">
-                <button className="toolbar-button" id={"hide-button"}
+                <button className="toolbar-button" id="hide-button"
                         onClick={() => {
-                            console.log("hide button clicked")
                             props.setShowCompleted(!props.showCompleted)
-                            console.log("show completed is", props.showCompleted)
-                            // handleHideTasksButton();
                         }}
                 > {props.showCompleted ? "Show Completed" : "Show All Tasks"}
                 </button>
-                <button className="toolbar-button" id="delete-completed-button" onClick={() => {
-                    console.log("delete completed button clicked")
-                    toggleModal()
-                }}> Delete Completed</button>
+                <button className="toolbar-button"
+                        // only make button fully visible and support functionality if there are completed tasks
+                        id = {props.numCompleted != 0 ? "delete-completed-button" : "delete-completed-button-hidden"}
+                        onClick={() => {
+                            if(props.numCompleted != 0) {
+                                toggleModal();
+                            }
+                        }}>
+                    Delete Completed</button>
             </div>
             {showAlert && <Alert onClose={toggleModal} onOK={handleAlertOK}>
                 <div>

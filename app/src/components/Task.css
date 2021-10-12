@@ -10,7 +10,8 @@
 
 .task-label{
     font-family: "PT Sans", sans-serif;
-    font-size: 20px;
+    margin: 3px 0px 0px 5px;
+    font-size: 18px;
     flex-basis: 80%;
     min-height: 30px;
     height: auto;

@@ -8,25 +8,29 @@ function AddTask(props){
         <div>
             <input
                 className="todo-input"
-                id="add-button-text"
+                id="new-todo-text"
                 placeholder="Enter task here"
                 value={currTask}
                 onChange={e => {
                     setCurrTask(e.target.value);
                 }}
                 onKeyPress={e => {
-                    if (e.key === "Enter") {
-                        props.handleAddTask(currTask);
-                        setCurrTask("");
+                    if (currTask !== "") {
+                        if (e.key === "Enter") {
+                            props.handleAddTask(currTask);
+                            setCurrTask("");
+                        }
                     }
                 }}
             />
-            <button className="todo-input add-button"
+            <button className="add-button"
                     onClick={() => {
-                        props.handleAddTask(currTask);
-                        setCurrTask("");
+                        if (currTask != "") {
+                            props.handleAddTask(currTask);
+                            setCurrTask("");
+                        }
                     }}>
-                Add Task
+                Add
             </button>
         </div>
     );

@@ -1,19 +1,23 @@
 .todo-input {
     padding: 5px;
+    font-size: 18px;
     margin-top: 5px;
     margin-bottom: 10px;
 }
 
-#add-button-text {
-    width: 15.5em;
+#new-todo-text {
+    width: 14em;
+    color: black;
 }
 
-#add-button {
-    font-size: 15px;
-    padding: 30px 40px;
-    margin: 20px 0;
-    background-color: dimgrey;
+.add-button {
+    font-size: 18px;
+    margin-left: 10px;
+    padding: 6px 10px 6px 10px;
+    background-color: royalblue;
     color: white;
-    border-style: hidden;
-    border-radius: 10px;
+    border-color: darkgrey;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
 }

@@ -11,10 +11,11 @@ function Task(props) {
                    }}
             />
             <TextareaAutosize className="task-label"
-                value = {props.taskLabel}
+                value={props.taskLabel}
                 onChange={(e) =>
                     props.handleTaskFieldChanged(props.taskId, "taskLabel", e.target.value)
                 }
+                // don't allow user to edit a task if it's been marked completed
                 disabled={props.isCompleted}
             />
             <div className="task-buttons">
