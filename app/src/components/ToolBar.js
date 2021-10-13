@@ -22,7 +22,7 @@ function ToolBar(props) {
                     onClick={() => {
                         props.setShowCompleted(!props.showCompleted)
                     }}>
-                    {props.showCompleted ? "Show Completed" : "Show All Tasks"}
+                    {props.showCompleted ? "Hide Completed" : "Show All Tasks"}
                 </button>
                 <button
                     className="toolbar-button"
