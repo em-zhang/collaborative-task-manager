@@ -17,7 +17,7 @@ function AddTask(props){
                 onKeyPress={e => {
                     if (currTask !== "") {
                         if (e.key === "Enter") {
-                            props.handleAddTask(currTask);
+                            props.onAddTask(currTask);
                             setCurrTask("");
                         }
                     }
@@ -26,7 +26,7 @@ function AddTask(props){
             <button className={currTask !== "" ? "add-button" : "add-button-disabled"}
                     onClick={() => {
                         if (currTask !== "") {
-                            props.handleAddTask(currTask);
+                            props.onAddTask(currTask);
                             setCurrTask("");
                         }
                     }}>

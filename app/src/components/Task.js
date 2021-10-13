@@ -8,14 +8,14 @@ function Task(props) {
                    className="checkbox"
                    checked={props.isCompleted}
                    onChange={(e) => {
-                        props.handleTaskFieldChanged(props.taskId, "isCompleted", e.target.checked)
+                        props.onTaskFieldChanged(props.taskId, "isCompleted", e.target.checked)
                    }}
             />
             <TextareaAutosize
                 className="task-label"
                 value={props.taskLabel}
                 onChange={(e) =>
-                    props.handleTaskFieldChanged(props.taskId, "taskLabel", e.target.value)
+                    props.onTaskFieldChanged(props.taskId, "taskLabel", e.target.value)
                 }
                 // don't allow user to edit a task if it's been marked completed
                 disabled={props.isCompleted}
@@ -23,7 +23,7 @@ function Task(props) {
             <div>
                 <button className="delete-button"
                         onClick={() => {
-                            props.handleDeleteTask(props.taskId);
+                            props.onDeleteTask(props.taskId);
                         }}>
                     X
                 </button>

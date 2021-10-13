@@ -8,7 +8,7 @@ import React, {useState} from "react";
 function App(props) {
     const[showCompleted, setShowCompleted] = useState(true);
     const filteredList = props.taskList.filter(task => showCompleted || !task.isCompleted);
-    const numCompleted = props.taskList.filter(task => task.isCompleted === true).length;
+    const numCompleted = props.taskList.filter(task => task.isCompleted).length;
 
     return (
         <div id="app-container">
@@ -18,24 +18,24 @@ function App(props) {
             <div className="add-task">
                 <AddTask
                     taskList={filteredList}
-                    setTaskList={props.setTaskList}
-                    handleAddTask={props.handleAddTask}
+                    onSetTaskList={props.setTaskList}
+                    onAddTask={props.handleAddTask}
                 />
             </div>
             <div>
                 <ToDoList
                     taskList={filteredList}
-                    handleDeleteTask={props.handleDeleteTask}
-                    handleDeleteTasks={props.handleDeleteTasks}
-                    handleTaskFieldChanged={props.handleTaskFieldChanged}
+                    onDeleteTask={props.handleDeleteTask}
+                    onDeleteTasks={props.handleDeleteTasks}
+                    onTaskFieldChanged={props.handleTaskFieldChanged}
                     numCompleted={numCompleted}
                 />
             </div>
             <div>
                 <ToolBar
-                    handleDeleteTasks={props.handleDeleteTasks}
+                    onDeleteTasks={props.handleDeleteTasks}
                     showCompleted={showCompleted}
-                    setShowCompleted={setShowCompleted}
+                    onSetShowCompleted={setShowCompleted}
                     numCompleted={numCompleted}
                 />
             </div>

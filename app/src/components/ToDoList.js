@@ -14,8 +14,8 @@ function ToDoList(props) {
                 {props.taskList.map(task =>
                 <Task
                     key={task.taskId}
-                    handleDeleteTask={props.handleDeleteTask}
-                    handleTaskFieldChanged={props.handleTaskFieldChanged}
+                    onDeleteTask={props.onDeleteTask}
+                    onTaskFieldChanged={props.onTaskFieldChanged}
                     {...task}
                 />)}
             </div>
