@@ -24,6 +24,7 @@ Progressive renders of our app. The final version removes the separate edit butt
 ### Alternative Designs
 - **Highlighting a task when you edit it**: We considered highlighting the task when you edit to make the action more obvious. However, upon our implementation, we realized this would be redundant since the form to fill out the edited task is conspicuous for the user.
 - **Moving add task to the bottom**: We considered the possibility of a shorter finger travel time if the add task is at the bottom. However, after reflecting upon common user interfaces in apps, we determined that although this addition would be more efficient, this did not fit the cognitive model found in most other apps of creating a new task; the new task button is typically in the top right.
+- **Categorizing tasks under Completed or Uncompleted**: We considered putting tasks into a couple different categories and groups so that the app would display as a two sections of task lists instead of just one. However, with some user testing, we learned that the one-task approach was most intuitive when users were editing and modifying tasks frequently.
 
 ### User Testing
 In order to test our new functionality without a large user testing group, we conducted internal testing within our group. When one of our group members implements a new function, we test the functionality with the other group member(s) during meetups, allowing us to have a fresh perspective on the app.
@@ -81,6 +82,7 @@ Below you will find the screen images and flow for each task.
 <img src="screenshots/3_during.png" width="309.375" height="550"/>
 <img src="screenshots/3_after.png" width="309.375" height="550"/>
 </p>
+
 - Before: An unchecked list
 - During: Clicking the check box
 - After: A clicked check box that is registered as complete
@@ -94,9 +96,9 @@ Below you will find the screen images and flow for each task.
 </p>
 
 - Before: "Text John" as an item
-- During 1: Clicking the text as the edit box
+- During 1: Clicking the text as the edit box (the box has a orange border to signal that it's editable)
 - During 2: Typing in "Text John about bank statements"
-- After: Leaving the checkbox with ENTER
+- After: Leaving the edit box by clicking out of it
 
 <p float="left">
 <img src="screenshots/5_before.png" width="309.375" height="550"/>
@@ -116,4 +118,4 @@ Below you will find the screen images and flow for each task.
 
 - Before: A shown list with one completed item
 - During: Clicking the "Delete Completed" button opens a confirmation dialog box, in which "OK" is pressed
-- After: The item(s) are deleted, the "Delete Completed" box is greyed out
+- After: The item(s) are deleted, the "Delete Completed" button is greyed out
