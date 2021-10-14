@@ -14,7 +14,7 @@ The app handles various tasks including creating, renaming, and marking items as
 <img src="screenshots/v3.png" width="309.375" height="550"/>
 </p>
 
-Progressive renders of our app. The final version removes the separate edit button and adds color context for the toolbar. It also greys out the buttons when they are inactive to make the interface more intuitive and prevent user error. 
+Progressive renders of our app. Since lab 1, we decided to simplify the tool bar into two Hide Completed and Delete completed buttons. We also changed the styling of the tasks by moving them into containers, and we implemented functionality for renaming tasks and deleting them. The final version removes the separate edit button and adds color context for the toolbar. It also greys out the buttons when they are inactive to make the interface more intuitive and prevent user error. 
 
 ### Key Design Decisions
 - **Added the functionality of deleting a single task**: Prior to our redesign, deleting a task required selecting the desired tasks to delete and clicking a delete button at the navigation bar. Because we expected a common function to be deleting only a single task, we included the ability to delete a single task in one quick action by adding buttons into the individual task containers.
