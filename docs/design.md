@@ -7,6 +7,7 @@ The app handles various tasks including creating, renaming, and marking items as
 
 ### Design Process, Decisions, and Early Mock-Ups
 
+<img src="screenshots/first_design.png"/>
 <p float="left">
 <img src="screenshots/v1.png" width="309.375" height="550"/>
 <img src="screenshots/v2.png" width="309.375" height="550"/>
