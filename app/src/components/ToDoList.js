@@ -3,7 +3,6 @@ import Task from "./Task";
 import './ToDoList.css';
 
 function ToDoList(props) {
-    console.log("in ToDoList ", props.taskList)
     return (
         <div id = "list-container">
             <div className="my-tasks">
