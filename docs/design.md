@@ -7,11 +7,13 @@ The app handles various tasks including creating, renaming, and marking items as
 
 ### Design Process, Decisions, and Early Mock-Ups
 
-![](screenshots/v1.png)
-![](screenshots/v2.png)
-![](screenshots/v3.png)
+<p float="left">
+<img src="screenshots/v1.png" width="309.375" height="550"/>
+<img src="screenshots/v2.png" width="309.375" height="550"/>
+<img src="screenshots/v3.png" width="309.375" height="550"/>
+</p>
 
-Progressive renders of our app. The final version removes the separate edit button and adds color context for the toolbar.
+Progressive renders of our app. The final version removes the separate edit button and adds color context for the toolbar. It also greys out the buttons when they are inactive to make the interface more intuitive and prevent user error. 
 
 ### Key Design Decisions
 - **Added the functionality of deleting a single task**: Prior to our redesign, deleting a task required selecting the desired tasks to delete and clicking a delete button at the navigation bar. Because we expected a common function to be deleting only a single task, we included the ability to delete a single task in one quick action by adding buttons into the individual task containers.
@@ -54,51 +56,63 @@ A couple key suggestions that we later incorporated included:
 ### Final Design
 Below you will find the screen images and flow for each task.
 
-![](screenshots/1_before.png)
-![](screenshots/1_during.png)
-![](screenshots/1_after.png)
+<p float="left">
+<img src="screenshots/1_before.png" width="309.375" height="550"/>
+<img src="screenshots/1_during.png" width="309.375" height="550"/>
+<img src="screenshots/1_after.png" width="309.375" height="550"/>
+</p>
 
 - Before: The initial state is an empty task list.
 - During: Typing in text in the text box and clicking add
 - After: The new item appears in the list
 
-![](screenshots/2_before.png)
-![](screenshots/2_during.png)
-![](screenshots/2_after.png)
+<p float="left">
+<img src="screenshots/2_before.png" width="309.375" height="550"/>
+<img src="screenshots/2_during.png" width="309.375" height="550"/>
+<img src="screenshots/2_after.png" width="309.375" height="550"/>
+</p>
 
 - Before: A list with items
 - During: Typing in text in the text box and clicking add
 - After: The new item appears in the list
 
-![](screenshots/3_before.png)
-![](screenshots/3_during.png)
-![](screenshots/3_after.png)
-
+<p float="left">
+<img src="screenshots/3_before.png" width="309.375" height="550"/>
+<img src="screenshots/3_during.png" width="309.375" height="550"/>
+<img src="screenshots/3_after.png" width="309.375" height="550"/>
+</p>
 - Before: An unchecked list
 - During: Clicking the check box
 - After: A clicked check box that is registered as complete
 
-![](screenshots/4_before.png)
-![](screenshots/4_during.png)
-![](screenshots/4_during_2.png)
-![](screenshots/4_after.png)
+
+<p float="left">
+<img src="screenshots/4_before.png" width="220.375" height="380"/>
+<img src="screenshots/4_during.png" width="220.375" height="380"/>
+<img src="screenshots/4_during_2.png" width="220.375" height="380"/>
+<img src="screenshots/4_after.png" width="220.375" height="380"/>
+</p>
 
 - Before: "Text John" as an item
 - During 1: Clicking the text as the edit box
 - During 2: Typing in "Text John about bank statements"
 - After: Leaving the checkbox with ENTER
 
-![](screenshots/5_before.png)
-![](screenshots/5_during.png)
-![](screenshots/5_after.png)
+<p float="left">
+<img src="screenshots/5_before.png" width="309.375" height="550"/>
+<img src="screenshots/5_during.png" width="309.375" height="550"/>
+<img src="screenshots/5_after.png" width="309.375" height="550"/>
+</p>
 
 - Before: A shown list with one completed item
 - During: Clicking the "Hide Completed" button
 - After: "Hide Completed" becomes "Show All Tasks", checked items are hidden and can be brought back
 
-![](screenshots/6_before.png)
-![](screenshots/6_during.png)
-![](screenshots/6_after.png)
+<p float="left">
+<img src="screenshots/6_before.png" width="309.375" height="550"/>
+<img src="screenshots/6_during.png" width="309.375" height="550"/>
+<img src="screenshots/6_after.png" width="309.375" height="550"/>
+</p>
 
 - Before: A shown list with one completed item
 - During: Clicking the "Delete Completed" button opens a confirmation dialog box, in which "OK" is pressed
