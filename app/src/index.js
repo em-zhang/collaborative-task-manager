@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from 'react-dom';
 import './index.css';
-import InMemoryApp from './InMemoryApp';
+// import InMemoryApp from './InMemoryApp';
+import FirestoreApp from "./FirestoreApp";
 
 const initialData = [
     {
@@ -33,7 +34,7 @@ const initialData = [
 
 ReactDOM.render(
   <React.StrictMode>
-      <InMemoryApp initialData={initialData}/>
+      <FirestoreApp initialData={initialData}/>
   </React.StrictMode>,
   document.getElementById('root')
 );

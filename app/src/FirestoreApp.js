@@ -24,9 +24,14 @@ function FirestoreApp(props) {
     const [value, loading, error] = useCollection(query); // You can change the const used here
 
     // const [taskList, setTaskList] = useState(props.initialData);
-    const [idCounter, setIdCounter] = useState(taskList.length);
+    // const [idCounter, setIdCounter] = useState(taskList.length);
     const taskList = value ? value.docs.map(doc => doc.data()) : [];
 
+    // let people = null;
+    // if (value) {
+    //     people = value.docs.map((doc) => {
+    //         return {...doc.data()}});
+    // }
     // adds a task, maintaining a taskId counter
     function handleAddTask(currTask) {
         console.log("adding new task");

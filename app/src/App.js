@@ -4,8 +4,6 @@ import ToDoList from "./components/ToDoList"
 import AddTask from "./components/AddTask"
 import ToolBar from "./components/ToolBar"
 import React, {useState} from "react";
-import firebase from "firebase/compat";
-import { useCollection} from "react-firebase-hooks/firestore";
 
 function App(props) {
 
