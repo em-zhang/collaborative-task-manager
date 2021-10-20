@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import App from "./App"
 
 function InMemoryApp(props) {
-    const [taskList, setTaskList] = useState(props.initialData);
-    const [idCounter, setIdCounter] = useState(taskList.length);
+    // const [taskList, setTaskList] = useState(props.initialData);
+    // const [idCounter, setIdCounter] = useState(taskList.length);
+    const taskList = value ? value.docs.map(doc => doc.data()) : [];
 
     // adds a task, maintaining a taskId counter
     function handleAddTask(currTask) {

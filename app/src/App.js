@@ -6,7 +6,7 @@ import ToolBar from "./components/ToolBar"
 import React, {useState} from "react";
 import firebase from "firebase/compat";
 
-// Config provided from lab docs
+// Firebase initialization config provided from lab docs
 const firebaseConfig = {
     apiKey: "AIzaSyCd9qqxvMpEKpBzwfWcc2tlRFa6ICaLH_s",
     authDomain: "hmc-cs124-fa21-labs.firebaseapp.com",
@@ -21,6 +21,9 @@ const db = firebase.firestore();
 function App(props) {
     // Firebase collection
     const collectionName = "em-zhang-tasks"
+
+    const query = db.collection(collectionName);
+    const [value, loading, error] = useCollection(query); // You can change the const used here
 
     const[showCompleted, setShowCompleted] = useState(true);
     const filteredList = props.taskList.filter(task => showCompleted || !task.isCompleted);
