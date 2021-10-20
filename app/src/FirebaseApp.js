@@ -17,8 +17,8 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
-function FirebaseApp(props) {
-    // Firebase collection
+function FirestoreApp(props) {
+    // FirestoreApp collection
     const collectionName = "em-zhang-tasks"
     const query = db.collection(collectionName);
     const [value, loading, error] = useCollection(query); // You can change the const used here
@@ -74,4 +74,4 @@ function FirebaseApp(props) {
     </div>
 }
 
-export default FirebaseApp;
+export default FirestoreApp;
