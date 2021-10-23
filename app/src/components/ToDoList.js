@@ -11,11 +11,10 @@ function ToDoList(props) {
             </div>
             <div className="checklist">
                 {props.taskList.map(task =>
-                <Task
+                <Task {...task}
                     key={task.taskId}
                     onDeleteTask={props.onDeleteTask}
                     onTaskFieldChanged={props.onTaskFieldChanged}
-                    {...task}
                 />)}
             </div>
         </div>);

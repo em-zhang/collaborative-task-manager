@@ -14,15 +14,17 @@ function Task(props) {
             <TextareaAutosize
                 className="task-label"
                 value={props.taskLabel}
-                onChange={(e) =>
+                onChange={(e) => {
+                    console.log("editing task with taskId ", props.taskId)
                     props.onTaskFieldChanged(props.taskId, "taskLabel", e.target.value)
-                }
-                // don't allow user to edit a task if it's been marked completed
+                }}
+            // don't allow user to edit a task if it's been marked completed
                 disabled={props.isCompleted}
             />
             <div>
                 <button className="delete-button"
                         onClick={() => {
+                            console.log("TRYING TO DELETE THIS TASK,", props.taskId);
                             props.onDeleteTask(props.taskId);
                         }}>
                     X
