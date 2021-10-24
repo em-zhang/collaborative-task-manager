@@ -19,7 +19,7 @@ const db = firebase.firestore();
 
 function FirestoreApp(props) {
     // FirestoreApp collection
-    const collectionName = "em-zhang-tasks-v00"
+    const collectionName = "em-zhang-tasks-v1"
     const query = db.collection(collectionName);
     const [value, loading, error] = useCollection(query); // You can change the const used here
 
@@ -35,7 +35,7 @@ function FirestoreApp(props) {
         const newId = generateUniqueID();
         console.log("adding new task, task ID is ", newId);
         db.collection(collectionName).doc(newId).set({
-            id: newId,
+            taskId: newId,
             taskLabel: currTask,
             isCompleted: false,
             priority: "",
@@ -58,17 +58,8 @@ function FirestoreApp(props) {
         db.collection(collectionName).doc(taskID).delete();
     }
 
-    function handleDeleteTasks(taskType) {
-        let delete_query = null;
-        // delete the item based on the type of task
-        if (taskType === "Completed"){
-            delete_query = db.collection(collectionName).where('completed','==',true);
-        } else if (taskType === "Uncompleted") {
-            delete_query = db.collection(collectionName).where('completed','==',false);
-        } else if (taskType === "All") {
-            delete_query = db.collection(collectionName);
-        }
-
+    function handleDeleteTasks() {
+        let delete_query = db.collection(collectionName).where('isCompleted','==',true);
         delete_query.get().then(function(querySnapshot) {
             querySnapshot.forEach(function(doc) {
                 doc.ref.delete();
