@@ -27,6 +27,7 @@ function App(props) {
                 <ToDoList
                     taskList={filteredList}
                     onDeleteTask={props.handleDeleteTask}
+                    onChangePriority={props.handleChangePriority}
                     onDeleteTasks={props.handleDeleteTasks}
                     onTaskFieldChanged={props.handleTaskFieldChanged}
                     numCompleted={numCompleted}

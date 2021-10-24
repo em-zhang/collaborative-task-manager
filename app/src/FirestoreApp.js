@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import App from "./App"
 import {generateUniqueID} from "web-vitals/dist/modules/lib/generateUniqueID";
 
@@ -19,7 +19,7 @@ const db = firebase.firestore();
 
 function FirestoreApp(props) {
     // FirestoreApp collection
-    const collectionName = "em-zhang-tasks-v1"
+    const collectionName = "em-zhang-tasks-v3"
     const query = db.collection(collectionName);
     const [value, loading, error] = useCollection(query); // You can change the const used here
 
@@ -27,7 +27,8 @@ function FirestoreApp(props) {
     let taskList = [];
     if (value) {
         taskList = value.docs.map((doc) => {
-            return {...doc.data()}});
+            return {...doc.data()}
+        });
     }
 
     // adds a task, generating new id each time
@@ -38,7 +39,7 @@ function FirestoreApp(props) {
             taskId: newId,
             taskLabel: currTask,
             isCompleted: false,
-            priority: "",
+            priority: "!",
             dateCreated: firebase.database.ServerValue.TIMESTAMP
         });
         return newId;
@@ -52,16 +53,33 @@ function FirestoreApp(props) {
         })
     }
 
-    // handles task deletion through filtering
     function handleDeleteTask(taskID) {
         console.log("deleting task, task ID is ", taskID);
         db.collection(collectionName).doc(taskID).delete();
     }
 
+    function handleChangePriority(taskID, taskPriority) {
+        let docRef = db.collection(collectionName).doc(taskID);
+        if (taskPriority == "!") {
+            docRef.update({
+                priority: "!!"
+            })
+        } else if (taskPriority == "!!") {
+            docRef.update({
+                priority: "!!!"
+            })
+        } else if (taskPriority == "!!!") {
+            docRef.update({
+                priority: "!"
+            })
+        }
+    }
+
+
     function handleDeleteTasks() {
-        let delete_query = db.collection(collectionName).where('isCompleted','==',true);
-        delete_query.get().then(function(querySnapshot) {
-            querySnapshot.forEach(function(doc) {
+        let delete_query = db.collection(collectionName).where('isCompleted', '==', true);
+        delete_query.get().then(function (querySnapshot) {
+            querySnapshot.forEach(function (doc) {
                 doc.ref.delete();
             });
         });
@@ -71,6 +89,7 @@ function FirestoreApp(props) {
         <App
             taskList={taskList}
             handleDeleteTask={handleDeleteTask}
+            handleChangePriority={handleChangePriority}
             handleDeleteTasks={handleDeleteTasks}
             handleAddTask={handleAddTask}
             handleTaskFieldChanged={handleTaskFieldChanged}
