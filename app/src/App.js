@@ -4,9 +4,9 @@ import ToDoList from "./components/ToDoList"
 import AddTask from "./components/AddTask"
 import ToolBar from "./components/ToolBar"
 import React, {useState} from "react";
+import SortSelection from './components/SortSelection';
 
 function App(props) {
-
     const[showCompleted, setShowCompleted] = useState(true);
     const filteredList = props.taskList.filter(task => showCompleted || !task.isCompleted);
     const numCompleted = props.taskList.filter(task => task.isCompleted).length;
@@ -23,6 +23,7 @@ function App(props) {
                     onAddTask={props.handleAddTask}
                 />
             </div>
+            <div className="sortBy">Sort tasks by:</div>
             <div>
                 <ToDoList
                     taskList={filteredList}

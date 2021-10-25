@@ -17,6 +17,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
+
 function FirestoreApp(props) {
     // FirestoreApp collection
     const collectionName = "em-zhang-tasks-v3"
