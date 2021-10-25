@@ -1,5 +1,6 @@
 import TextareaAutosize from 'react-textarea-autosize';
 import './Task.css';
+import {useState} from "react";
 
 function Task(props) {
     return (
@@ -23,18 +24,17 @@ function Task(props) {
             />
             <div>
                 <button className="priority-button"
-                        id={props.priority == "!" ? "low" : "medium"}
+                        id={props.priority === 3 ? "high" : props.priority === 2 ? "medium" : "low"}
                         onClick={() => {
                             console.log("Priority is", props.priority);
                             props.onChangePriority(props.taskId, props.priority);
                         }}>
-                    {props.priority}
+                    {"!".repeat(props.priority)}
                 </button>
             </div>
             <div>
                 <button className="delete-button"
                         onClick={() => {
-                            console.log("TRYING TO DELETE THIS TASK,", props.taskId);
                             props.onDeleteTask(props.taskId);
                         }}>
                     X

@@ -34,10 +34,14 @@
     border-radius: 30%;
 }
 
-#medium {
-    background: lightyellow;
+#low {
+    background: lightgrey;
 }
 
-#low {
-    background: lightgreen;
+#medium {
+    background: #ffe599;
+}
+
+#high {
+    background: #d06161;
 }

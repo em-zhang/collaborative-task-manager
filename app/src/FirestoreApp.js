@@ -20,7 +20,7 @@ const db = firebase.firestore();
 
 function FirestoreApp(props) {
     // FirestoreApp collection
-    const collectionName = "em-zhang-tasks-v3"
+    const collectionName = "em-zhang-tasks-v4"
     const query = db.collection(collectionName);
     const [value, loading, error] = useCollection(query); // You can change the const used here
 
@@ -40,7 +40,7 @@ function FirestoreApp(props) {
             taskId: newId,
             taskLabel: currTask,
             isCompleted: false,
-            priority: "!",
+            priority: 1,
             dateCreated: firebase.database.ServerValue.TIMESTAMP
         });
         return newId;
@@ -61,17 +61,17 @@ function FirestoreApp(props) {
 
     function handleChangePriority(taskID, taskPriority) {
         let docRef = db.collection(collectionName).doc(taskID);
-        if (taskPriority == "!") {
+        if (taskPriority === 1) {
             docRef.update({
-                priority: "!!"
+                priority: 2
             })
-        } else if (taskPriority == "!!") {
+        } else if (taskPriority === 2) {
             docRef.update({
-                priority: "!!!"
+                priority: 3
             })
-        } else if (taskPriority == "!!!") {
+        } else if (taskPriority === 3) {
             docRef.update({
-                priority: "!"
+                priority: 1
             })
         }
     }
