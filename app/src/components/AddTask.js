@@ -30,7 +30,7 @@ function AddTask(props){
                             setCurrTask("");
                         }
                     }}>
-                +
+                Add
             </button>
         </div>
     );

@@ -12,3 +12,18 @@ input[type="checkbox"]{
     margin-top: 10px;
     color: orange;
 }
+
+.sort-button {
+    font-family: "PT Sans", sans-serif;
+    font-size: 10px;
+    background-color: lightgrey;
+    color: black;
+    border-color: darkgrey;
+    width: 40px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    margin-left: 40px;
+    padding: 6px 10px 6px 10px;
+}
+

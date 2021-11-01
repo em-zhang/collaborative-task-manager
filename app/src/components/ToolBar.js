@@ -20,6 +20,9 @@ function ToolBar(props) {
     return (
         <div>
             <div className="toolbar">
+                <button className="toolbar-button">
+                    Sort By
+                </button>
                 <button
                     className="toolbar-button"
                     id="hide-button"

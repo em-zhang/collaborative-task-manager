@@ -24,8 +24,9 @@ function App(props) {
                     onAddTask={props.handleAddTask}
                 />
                 </div>
-                <button className="sortBy">Sort By</button></div>
-            <div>
+                {/*<div className="sortBy">Sort By</div>*/}
+            </div>
+            <div className="taskList">
                 <ToDoList
                     taskList={filteredList}
                     onDeleteTask={props.handleDeleteTask}
@@ -35,7 +36,7 @@ function App(props) {
                     numCompleted={numCompleted}
                 />
             </div>
-            <div>
+            <div className="bottomBar">
                 <ToolBar
                     onDeleteTasks={props.handleDeleteTasks}
                     showCompleted={showCompleted}

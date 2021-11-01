@@ -6,8 +6,7 @@ function ToDoList(props) {
     return (
         <div id="list-container">
             <div className="my-tasks">
-                <h2>My Tasks ({props.numCompleted}/{props.taskList.length} completed)
-                </h2>
+                <h2>My Tasks ({props.numCompleted}/{props.taskList.length} completed)</h2>
             </div>
             <div className="checklist">
                 {props.taskList.map(task =>

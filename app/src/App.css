@@ -21,30 +21,13 @@
   /*grid-template-rows: 10pt 15pt 1fr 50pt;*/
   grid-template: 50pt / auto auto;
   background: white;
-  border-top-style: solid;
-  border-bottom-style: solid;
-  border-color: lightgrey;
+  /*border-top-style: solid;*/
+  /*border-bottom-style: solid;*/
+  /*border-color: lightgrey;*/
   border-width: 1px;
   margin-top: 17px;
 }
 
-.sortBy {
-  grid-column: 2;
-  padding: 2px;
-  margin: 18px 5px 0px 15px;
-  /*background: purple;*/
-  font-family: "PT Sans", sans-serif;
-  /*font-size: 17px;*/
-  font-size: 10px;
-  background-color: royalblue;
-  color: white;
-  border-radius: 5px;
-  height: 33px;
-  width: 33px;
-  border-left-style: solid;
-  border-color: lightgrey;
-  border-width: 1px;
-}
 .heading {
   background-color: white;
   padding-top: 1%;
