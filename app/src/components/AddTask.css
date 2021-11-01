@@ -6,13 +6,15 @@
 }
 
 #new-todo-text {
-    width: 14em;
+    /*width: 14em;*/
+    width: 12em;
     color: black;
 }
 
 .add-button {
     font-family: "PT Sans", sans-serif;
-    font-size: 17px;
+    /*font-size: 17px;*/
+    font-size: 14px;
     background-color: royalblue;
     color: white;
     border-color: darkgrey;
@@ -26,7 +28,8 @@
 .add-button-disabled {
     opacity: 0.6;
     font-family: "PT Sans", sans-serif;
-    font-size: 17px;
+    /*font-size: 17px;*/
+    font-size: 14px;
     background-color: royalblue;
     color: white;
     border-color: darkgrey;

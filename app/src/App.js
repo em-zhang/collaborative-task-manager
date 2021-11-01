@@ -16,14 +16,15 @@ function App(props) {
             <div className="heading">
                 <h1>Task Manager</h1>
             </div>
-            <div className="add-task">
+            <div className="topButtonBar">
+                <div className="add-task">
                 <AddTask
                     taskList={filteredList}
                     onSetTaskList={props.setTaskList}
                     onAddTask={props.handleAddTask}
                 />
-            </div>
-            <div className="sortBy">Sort tasks by:</div>
+                </div>
+                <button className="sortBy">Sort By</button></div>
             <div>
                 <ToDoList
                     taskList={filteredList}
