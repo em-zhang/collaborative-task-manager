@@ -1,9 +1,23 @@
 import Alert from "../components/Alert"
+import SortMenu from "../components/SortMenu"
 import React, {useState} from "react";
 import './ToolBar.css';
 
 function ToolBar(props) {
     const [showAlert, setShowAlert] = useState(false);
+    const [showSortMenu, setSortMenu] = useState(false);
+
+    function handleSortByName() {
+        // props.onDeleteTasks();
+    }
+
+    function handleSortByPriority() {
+        // props.onDeleteTasks();
+    }
+
+    function handleSortByCreationDate() {
+        // props.onDeleteTasks();
+    }
 
     function handleAlertOK() {
         props.onDeleteTasks();
@@ -13,6 +27,10 @@ function ToolBar(props) {
         showAlert ? setShowAlert(false) : setShowAlert(true)
     }
 
+    function toggleSortModal() {
+        showSortMenu ? setSortMenu(false) : setSortMenu(true)
+    }
+
     function toggleShowCompleted() {
         props.showCompleted ? props.onSetShowCompleted(false) : props.onSetShowCompleted(true)
     }
@@ -20,9 +38,18 @@ function ToolBar(props) {
     return (
         <div>
             <div className="toolbar">
-                <button className="toolbar-button">
-                    Sort By
-                </button>
+                <button className="toolbar-button"
+                    onClick={toggleSortModal}>
+                    Sort Tasks</button>
+                {showSortMenu && <SortMenu className="toolbar-button"
+                          onClose={toggleSortModal}
+                          onSortByName={handleSortByName}
+                          onSortByPriority={handleSortByPriority}
+                          onSortByCreationDate={handleSortByCreationDate}>
+                    <div>
+                        What do you want to sort by?
+                    </div>
+                </SortMenu>}
                 <button
                     className="toolbar-button"
                     id="hide-button"
@@ -33,8 +60,7 @@ function ToolBar(props) {
                     className="toolbar-button"
                     // only make button fully visible and support functionality if there are completed tasks
                     id={props.numCompleted !== 0 ? null : "delete-completed-button-hidden"}
-                    onClick={props.numCompleted !== 0 ? toggleModal : null}
-                >
+                    onClick={props.numCompleted !== 0 ? toggleModal : null}>
                     Delete Completed</button>
             </div>
             {showAlert && <Alert onClose={toggleModal} onOK={handleAlertOK}>
