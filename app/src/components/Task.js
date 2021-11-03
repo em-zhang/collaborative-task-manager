@@ -21,7 +21,7 @@ function Task(props) {
                 }}
                 onKeyPress={e => {
                     if (e.key === "Enter") {
-                        props.onTaskFieldChanged(props.taskId, "taskLabel", e.target.value)
+                        return
                     }
                 }}
                 // don't allow user to edit a task if it's been marked completed

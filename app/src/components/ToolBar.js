@@ -54,7 +54,7 @@ function ToolBar(props) {
                     className="toolbar-button"
                     id="hide-button"
                     onClick={() => {toggleShowCompleted()}}>
-                    {props.showCompleted ? "Hide Completed" : "Show All Tasks"}
+                    {props.showCompleted ? "Hide Completed" : "Show All"}
                 </button>
                 <button
                     className="toolbar-button"
