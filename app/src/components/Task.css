@@ -19,6 +19,18 @@
     margin: 4px 10px 4px 5px;
 }
 
+.task-label-strikethrough{
+    font-family: "PT Sans", sans-serif;
+    text-decoration: line-through;
+    font-size: 18px;
+    flex-basis: 80%;
+    min-height: 27px;
+    height: auto;
+    border: none;
+    resize: none;
+    margin: 4px 10px 4px 5px;
+}
+
 .delete-button {
     right: 23px;
     margin-top: 7px;

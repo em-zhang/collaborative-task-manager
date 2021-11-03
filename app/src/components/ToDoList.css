@@ -5,6 +5,10 @@
     margin-bottom: 100px;
 }
 
+.no-tasks-message{
+    text-align: center;
+    color: royalblue;
+}
 input[type="checkbox"]{
     transform: scale(1.4);
     display: inline-block;
