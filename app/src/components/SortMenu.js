@@ -11,21 +11,22 @@ function SortMenu(props) {
                                 props.onSortByName();
                                 props.onClose()
                             }}>
-                        Task Name
+                        {/*onClick={props.sortOption === "taskLabel" => {*/}
+                        {props.sortOption === "taskLabel" ? "✓ Name" : "Name"}
                     </button>
                     <button className={"alert-button"} id={"alert-sort-priority"} type={"button"}
                             onClick={() => {
                                 props.onSortByPriority();
                                 props.onClose()
                             }}>
-                        Task Priority
+                        {props.sortOption === "priority" ? "✓ Priority" : "Priority"}
                     </button>
                     <button className={"alert-button"} id={"alert-sort-date"} type={"button"}
                             onClick={() => {
                                 props.onSortByCreationDate();
                                 props.onClose()
                             }}>
-                        Task Creation Date
+                        {props.sortOption === "dateCreated" ? "✓ Date Created" : "Date Created"}
                     </button>
                     <button className={"alert-button"} id={"alert-sort-cancel"} type={"button"}
                             onClick={() => props.onClose()}>

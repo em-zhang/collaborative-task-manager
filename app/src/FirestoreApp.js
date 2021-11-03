@@ -21,7 +21,17 @@ const db = firebase.firestore();
 function FirestoreApp(props) {
     // FirestoreApp collection
     const collectionName = "em-zhang-tasks-v4"
-    const query = db.collection(collectionName);
+    let query = db.collection(collectionName);
+
+    const [sortOption, setSortOption] = useState(null);
+    if (sortOption){
+        // sort in descending order by priority
+        if (sortOption === "priority"){
+            query = query.orderBy(sortOption, "desc");
+        } else {
+            query = query.orderBy(sortOption);
+        }
+    }
     const [value, loading, error] = useCollection(query); // You can change the const used here
 
     // const taskList = value ? value.docs.map(doc => doc.data()) : [];
@@ -86,6 +96,10 @@ function FirestoreApp(props) {
         });
     }
 
+    function handleSortSelected(option){
+        setSortOption(option);
+    }
+
     return <div>
         <App
             taskList={taskList}
@@ -94,6 +108,9 @@ function FirestoreApp(props) {
             handleDeleteTasks={handleDeleteTasks}
             handleAddTask={handleAddTask}
             handleTaskFieldChanged={handleTaskFieldChanged}
+            handleSortSelected={handleSortSelected}
+            sortOption={sortOption}/>
+
         />
     </div>
 }

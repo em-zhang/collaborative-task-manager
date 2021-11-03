@@ -4,7 +4,6 @@ import ToDoList from "./components/ToDoList"
 import AddTask from "./components/AddTask"
 import ToolBar from "./components/ToolBar"
 import React, {useState} from "react";
-import SortSelection from './components/SortSelection';
 
 function App(props) {
     const[showCompleted, setShowCompleted] = useState(true);
@@ -24,7 +23,6 @@ function App(props) {
                     onAddTask={props.handleAddTask}
                 />
                 </div>
-                {/*<div className="sortBy">Sort By</div>*/}
             </div>
             <div className="taskList">
                 <ToDoList
@@ -42,6 +40,8 @@ function App(props) {
                     showCompleted={showCompleted}
                     onSetShowCompleted={setShowCompleted}
                     numCompleted={numCompleted}
+                    onSortSelected={props.handleSortSelected}
+                    sortOption={props.sortOption}
                 />
             </div>
         </div>

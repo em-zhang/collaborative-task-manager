@@ -38,6 +38,8 @@
     border-radius: 12px;
     border-color: dimgrey;
     border-width: 1px;
+    background: royalblue;
+    color: white;
 }
 
 #alert-sort-priority {
@@ -47,6 +49,8 @@
     border-radius: 12px;
     border-color: dimgrey;
     border-width: 1px;
+    background: royalblue;
+    color: white;
 }
 
 #alert-sort-date {
@@ -56,13 +60,15 @@
     border-radius: 12px;
     border-color: dimgrey;
     border-width: 1px;
+    background: royalblue;
+    color: white;
 }
 
 #alert-sort-cancel {
-    margin: 5px;
+    margin: 3px;
     height: 25px;
-    width: 170px;
-    border-radius: 12px;
+    width: 60px;
+    border-radius: 1px;
     border-color: dimgrey;
     border-width: 1px;
 }

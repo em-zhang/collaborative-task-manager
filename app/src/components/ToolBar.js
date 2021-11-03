@@ -8,15 +8,29 @@ function ToolBar(props) {
     const [showSortMenu, setSortMenu] = useState(false);
 
     function handleSortByName() {
-        // props.onDeleteTasks();
+        props.onSortSelected("taskLabel");
     }
 
     function handleSortByPriority() {
-        // props.onDeleteTasks();
+        props.onSortSelected("priority");
     }
 
     function handleSortByCreationDate() {
-        // props.onDeleteTasks();
+        props.onSortSelected("dateCreated");
+    }
+
+    function describeSortOption() {
+        let sortOptionText = "Date Created";
+        if (props.sortOption === "dateCreated"){
+            sortOptionText = "Date Created";
+        }
+        else if (props.sortOption === "priority"){
+            sortOptionText = "Priority";
+        }
+        else if (props.sortOption === "taskLabel"){
+            sortOptionText = "Name";
+        }
+        return sortOptionText;
     }
 
     function handleAlertOK() {
@@ -41,13 +55,17 @@ function ToolBar(props) {
                 <button className="toolbar-button"
                     onClick={toggleSortModal}>
                     Sort Tasks</button>
-                {showSortMenu && <SortMenu className="toolbar-button"
+                {showSortMenu &&
+                <SortMenu className="toolbar-button"
+                          sortOption={props.sortOption}
                           onClose={toggleSortModal}
                           onSortByName={handleSortByName}
                           onSortByPriority={handleSortByPriority}
                           onSortByCreationDate={handleSortByCreationDate}>
-                    <div>
-                        What do you want to sort by?
+                    <div className="sort-modal-message">
+                        Tasks are currently sorted by <b>{describeSortOption()}</b>.
+                        <br/>
+                        Sort by:
                     </div>
                 </SortMenu>}
                 <button
@@ -65,7 +83,7 @@ function ToolBar(props) {
             </div>
             {showAlert && <Alert onClose={toggleModal} onOK={handleAlertOK}>
                 <div>
-                    Are you sure you want to delete all completed tasks?
+                    Are you sure you want to delete all {props.numCompleted} completed tasks?
                 </div>
             </Alert>}
         </div>
