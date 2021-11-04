@@ -1,9 +1,16 @@
 .toolbar {
     /*margin-left: 26px;*/
-    margin-left: 15px;
     display: flex;
     position: fixed;
-    bottom: 15px;
+    overflow: hidden;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    justify-content: center;
+    padding: 10px;
+    border-top-style: solid;
+    border-color: lightgrey;
+    border-width: 1px;
 }
 
 #hide-button{
@@ -31,4 +38,8 @@
 }
 
 .sort-modal-message{
+}
+
+.bottomBar {
+    background-color: red;
 }
