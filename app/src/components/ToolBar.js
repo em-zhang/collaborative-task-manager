@@ -65,6 +65,7 @@ function ToolBar(props) {
                     <div className="sort-modal-message">
                         Tasks are currently sorted by <b>{describeSortOption()}</b>.
                         <br/>
+                        <br/>
                         Sort by:
                     </div>
                 </SortMenu>}

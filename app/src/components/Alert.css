@@ -30,7 +30,7 @@
 .alert-buttons {
     position: absolute;
     display: flex;
-    padding: 10px;
+    padding: 30px;
     bottom: 0;
     right: 0;
 }

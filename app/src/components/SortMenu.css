@@ -11,18 +11,16 @@
 
 .sort-modal {
     background-color: #fff;
-    border-radius: 5pt  ;
-    border-color: black;
-    border-style: solid;
+    border-radius: 5px;
     margin: 0 auto;
-    top: 150pt;
+    top: 130pt;
     right: 15px;
     text-align: center;
-    height: 150pt;
+    height: 200pt;
     width: 150pt;
     display: flex;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
     padding-top: 30px;
     position: relative;
 }
@@ -65,7 +63,7 @@
 }
 
 #alert-sort-cancel {
-    margin: 3px;
+    margin: 10px;
     height: 25px;
     width: 60px;
     border-radius: 1px;
