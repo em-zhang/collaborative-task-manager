@@ -23,7 +23,7 @@ function FirestoreApp(props) {
     const collectionName = "em-zhang-tasks-v4"
     let query = db.collection(collectionName);
 
-    const [sortOption, setSortOption] = useState(null);
+    const [sortOption, setSortOption] = useState("dateCreated");
     if (sortOption){
         // sort in descending order by priority
         if (sortOption === "priority"){
@@ -110,8 +110,6 @@ function FirestoreApp(props) {
             handleTaskFieldChanged={handleTaskFieldChanged}
             handleSortSelected={handleSortSelected}
             sortOption={sortOption}/>
-
-        />
     </div>
 }
 

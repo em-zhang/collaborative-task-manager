@@ -6,19 +6,16 @@
     width: 100%;
     background-color: white;
     justify-content: center;
-    padding: 10px 0;
+    padding: 6px 0px;
     border-top-style: solid;
     border-color: lightgrey;
     border-width: 1px;
     gap: 5px;
 }
 
-/*.toolbar > div {*/
-/*    margin: 6px;*/
-/*}*/
 
 #hide-button{
-    width: 150px;
+    width: 120px;
 }
 
 .toolbar-button {
@@ -29,18 +26,14 @@
     border-width: 1px;
     border-color: lightgrey;
     border-radius: 12px;
+    padding: 6px;
     color: white;
-    width: 140px;
-    height: 60px;
+    width: 100px;
+    height: 55px;
+    margin: 5px 5px 5px 5px;
+
 }
 
 #delete-completed-button-hidden{
     opacity: 0.6;
-}
-
-.sort-modal-message{
-}
-
-.bottomBar {
-    background-color: red;
 }

@@ -4,12 +4,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin-bottom: 85px;
-  width: 360px;
-  height: 900px;
+  width: 380px;
+  /*height: 800px;*/
 }
 
 .add-task{
-  /*padding-top: 15px;*/
   padding-top: 10px;
   text-align: center;
   grid-column: 1;
@@ -18,18 +17,15 @@
 
 .topButtonBar {
   display: grid;
-  /*grid-template-rows: 10pt 15pt 1fr 50pt;*/
   grid-template: 50pt / auto auto;
   background: white;
-  /*border-top-style: solid;*/
-  /*border-bottom-style: solid;*/
-  /*border-color: lightgrey;*/
   border-width: 1px;
   margin-top: 17px;
 }
 
 .heading {
   background-color: white;
+  width: 380px;
   padding-top: 1%;
   /*padding-bottom: 3%;*/
   border-bottom-style: solid;

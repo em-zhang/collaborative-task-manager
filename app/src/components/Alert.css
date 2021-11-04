@@ -30,7 +30,7 @@
 .alert-buttons {
     position: absolute;
     display: flex;
-    padding: 30px;
+    padding: 15px;
     bottom: 0;
     right: 0;
 }
@@ -43,4 +43,6 @@
 #alert-ok {
     margin: 5px;
     height: 25px;
+    background: royalblue;
+    color: white;
 }
