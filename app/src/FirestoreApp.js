@@ -33,8 +33,6 @@ function FirestoreApp(props) {
         }
     }
     const [value, loading, error] = useCollection(query); // You can change the const used here
-
-    // const taskList = value ? value.docs.map(doc => doc.data()) : [];
     let taskList = [];
     if (value) {
         taskList = value.docs.map((doc) => {
@@ -110,6 +108,10 @@ function FirestoreApp(props) {
             handleSortSelected={handleSortSelected}
             sortOption={sortOption}
         />
+        {loading &&
+        <div className="loading-message">
+            Loading tasks...
+        </div>}
     </div>
 }
 

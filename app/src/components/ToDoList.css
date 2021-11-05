@@ -1,5 +1,6 @@
 #checklist {
     padding-left: 20px;
+    padding-top: 10px;
     width: 360px;
     max-height: 390px;
     grid-row: 4 / span 1;

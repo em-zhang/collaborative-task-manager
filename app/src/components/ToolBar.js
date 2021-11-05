@@ -78,7 +78,7 @@ function ToolBar(props) {
                     className="toolbar-button"
                     id="hide-button"
                     onClick={() => {toggleShowCompleted()}}>
-                    <i id={props.showCompleted ? "hide-icon" : "show-icon"}
+                    <i id="hide-icon"
                        className={props.showCompleted ? "las la-eye-slash": "las la-eye"}>
                     </i>
                     <br/>
@@ -89,6 +89,9 @@ function ToolBar(props) {
                     // only make button fully visible and support functionality if there are completed tasks
                     id={props.numCompleted !== 0 ? "delete-button" : "delete-completed-button-hidden"}
                     onClick={props.numCompleted !== 0 ? toggleModal : null}>
+                    <i id="delete-icon" className="las la-trash">
+                    </i>
+                    <br/>
                     Delete Completed
                 </button>
             </div>

@@ -8,6 +8,11 @@
   /*height: 800px;*/
 }
 
+.loading-message{
+  text-align: center;
+  font-size: 30px;
+}
+
 .add-task{
   padding-top: 10px;
   text-align: center;

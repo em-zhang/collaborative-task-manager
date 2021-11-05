@@ -25,10 +25,10 @@
     border-width: 1px;
     border-color: lightgrey;
     border-radius: 12px;
-    padding: 3px;
+    padding-top: 5px;
     color: white;
-    height: 65px;
-    margin: 3px 3px 3px 3px;
+    height: 62px;
+    margin: 2px 2px 2px 2px;
 }
 
 #sort-button{
@@ -45,10 +45,23 @@
     width: 130px;
 }
 
+#hide-icon{
+    padding-top: 3px;
+    padding-bottom: 5px;
+    transform: scale(2);
+}
+
 #delete-button{
     width: 140px;
 }
 
+#delete-icon{
+    padding-top: 3px;
+    padding-bottom: 5px;
+    transform: scale(2);
+}
+
 #delete-completed-button-hidden{
     opacity: 0.6;
+    width: 140px;
 }

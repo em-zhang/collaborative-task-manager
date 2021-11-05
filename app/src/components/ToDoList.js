@@ -5,9 +5,6 @@ import './ToDoList.css';
 function ToDoList(props) {
     return (
         <div id="list-container">
-            <div className="no-tasks-message">
-                <h3>{props.taskList.length ? "" : "No current tasks." }</h3>
-            </div>
             <div id="checklist">
                 {props.taskList.map(task =>
                     <Task {...task}

@@ -33,17 +33,22 @@
 
 .delete-button {
     right: 23px;
-    margin-top: 7px;
+    margin-top: 10px;
     display: inline-list-item;
     margin-right: 10px;
+    border: none;
+    background-color: white;
+    transform: scale(1.2);
 }
 
 .priority-button {
-    margin-right: 10px;
-    margin-top: 7px;
+    margin-right: 5px;
+    margin-top: 10px;
     display: inline-list-item;
     width: 25px;
     border-radius: 30%;
+    border: none;
+    font-weight: bold;
 }
 
 #low {
