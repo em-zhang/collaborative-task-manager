@@ -2,7 +2,7 @@ import './SortMenu.css';
 
 function SortMenu(props) {
     return (
-        <div className={"sort-backdrop"}>
+        <div className="sort-backdrop">
             <div className="sort-modal">
                 {props.children}
                 <div className="alert-buttons">
