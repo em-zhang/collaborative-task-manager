@@ -1,27 +1,78 @@
 .toolbar {
-    margin-left: 26px;
     display: flex;
     position: fixed;
-    bottom: 15px;
+    overflow: hidden;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    justify-content: center;
+    padding: 6px 0px;
+    border-top-style: solid;
+    border-color: lightgrey;
+    border-width: 1px;
+    gap: 5px;
+}
+
+.backdrop {
+    position: fixed;
+    top:0;
+    left: 0;
+    bottom: 400pt;
+    right: 300pt;
+    width: 300pt;
+    height: 600pt;
+    background-color: rgba(0, 0, 0, .3);
 }
 
 #hide-button{
-    width: 150px;
+    width: 120px;
 }
 
 .toolbar-button {
     font-family: "PT Sans", sans-serif;
-    font-size: 16px;
-    padding: 10px;
-    margin-right: 15px;
+    font-size: 13.5px;
     background: royalblue;
     border-style: solid;
     border-width: 1px;
     border-color: lightgrey;
     border-radius: 12px;
+    padding-top: 5px;
     color: white;
+    height: 62px;
+    margin: 2px 1px 1px 2px;
+}
+
+#sort-button{
+    width: 70px;
+}
+
+#sort-icon{
+    padding-top: 3px;
+    padding-bottom: 5px;
+    transform: scale(2);
+}
+
+#hide-button{
+    width: 130px;
+}
+
+#hide-icon{
+    padding-top: 3px;
+    padding-bottom: 5px;
+    transform: scale(2);
+}
+
+#delete-button{
+    width: 150px;
+}
+
+#delete-icon{
+    padding-top: 3px;
+    padding-bottom: 5px;
+    transform: scale(2);
 }
 
 #delete-completed-button-hidden{
     opacity: 0.6;
+    width: 150px;
 }

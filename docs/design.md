@@ -1,122 +1,124 @@
-# Lab 2: Task Manager App
+# Lab 3: Task Manager App using Firestore
 **Group members:** Emily Zhang, Christopher Chung, Olina Wong
 
-For Lab 2, we aimed to implement our Task Manager interface from Lab 1 into a functional app via React.
+For Lab 3, we iterated on our working Task Manager app from Lab 2 by supporting 3 new key functionalities.
+- using Firestore for permanent cloud storage
+- adding priority level to tasks
+- allowing sorting of tasks by task priority, task name, and creation date (default sorting)
 
-The app handles various tasks including creating, renaming, and marking items as well as showing uncompleted items and deleting completed items. For final screen images and flows for each task, see the bottom of this design doc.
+The app continues to handle various tasks including creating, renaming, and marking items as well as showing uncompleted items and deleting completed items – all this data is synced and modified in real-time through Firestore. For final screen images and flows for each task, see the bottom of this design doc.
 
 ### Design Process, Decisions, and Early Mock-Ups
-
-<img src="screenshots/first_design.png"/>
+Since our last lab, we made many iterations and progressive renders of our app based on user research and testing, as well as research and inspiration from other to-do apps. We created several mock-ups of our app as sketches and as screen images in Figma. 
 <p float="left">
-<img src="screenshots/v1.png" width="309.375" height="550"/>
-<img src="screenshots/v2.png" width="309.375" height="550"/>
-<img src="screenshots/v3.png" width="309.375" height="550"/>
+<img src="screenshots/figma_mockup.png" width="400" height="400"/>
+<img src="screenshots/priority_inspo.png" width="300" height="100"/>
+</p>
+We were inspired by existing task manager apps that display task priority based on color, number, or exclamation marks. We considered alternate designs for displaying task priority, and we settled on using a combination of color and exclamation marks based on positive feedback we received from test users. The following are progressive renders of our app that we modified through user testing. For example, you can see that we changed the color themes of the buttons to reflect a more intuitive sense of priority, and we also moved the location of the sort tasks button to the toolbar so users could easily access this functionality along with "Hide Completed" and "Delete Completed". These changes and decisions are discussed further down below under Design Decisions and User Testing.
+<img src="screenshots/second_design.png"/>
+
+We continued to refine the smaller UI/UX details of our app, until we got to the final general screen images of our app. The following screen images show the following:
+1. No tasks have been marked as completed. This is the default view of a full task list.
+2. Some tasks are marked as completed. The tasks are sorted by priority in descending order.
+3. A preview of the modal that pops up when the user wants to sort the tasks by name, priority, or date created. The tasks are currently sorted by date created.
+
+You'll notice that we refined the look of the buttons and priority displays for the tasks, and we also added icons to our task bar for a more intuitive understanding of functionality.
+<p float="left">
+<img src="screenshots/all_uncomplete.png" width="270.375" height="500"/>
+<img src="screenshots/final1.png" width="270.375" height="500"/>
+<img src="screenshots/final2.png" width="270.375" height="500"/>
 </p>
 
-Progressive renders of our app. Since lab 1, we decided to simplify the tool bar into two Hide Completed and Delete completed buttons. We also changed the styling of the tasks by moving them into containers, and we implemented functionality for renaming tasks and deleting them. The final version removes the separate edit button and adds color context for the toolbar. It also greys out the buttons when they are inactive to make the interface more intuitive and prevent user error. 
-
 ### Key Design Decisions
-- **Added the functionality of deleting a single task**: Prior to our redesign, deleting a task required selecting the desired tasks to delete and clicking a delete button at the navigation bar. Because we expected a common function to be deleting only a single task, we included the ability to delete a single task in one quick action by adding buttons into the individual task containers.
-- **Directly editing text**: We also anticipated that a common function would be to edit a task when desired. Previously, you had to delete a task to make the appropriate task. This new functionality allows the user to edit the task without the extended process of deleting the task, typing a new task, and adding a task.
-- **Changed the toolbar at the bottom to just two labeled buttons**: After rationalizing the design decisions above, we compressed the toolbar into just two labeled buttons: “Show uncompleted tasks” and “Delete completed tasks”. Previously, we had three buttons, with the additional button as “Edit tasks”. We reduced cognitive travel by spatially relocating the commonly used task buttons and reducing the clicks needed to complete the task.
-- **Add color context for buttons**: Buttons now have color to communicate whether an action is doable (For example, delete Completed is grayed out since no items are completed).
+- **Implementing task priority:** We debated on how to display priority in the most understandable way for the user. Looking at different design paradigms for the user (such as a star system, flag system, exclamation points, numbering, color), we settled on exclamation points. Exclamation points communicate importance and it was within the guidelines of accessible design (not limited by color). Users can click the exclamation points (!) to change the priority (!! or !!!), raising it up the list in a sort by priority.
+- **Implementing sorting for tasks:** We made a decision on where to place the sorting function for the user. Following rules of proximity in design, we added a modal button at the bottom toolbar for sorting. We rationalize this location as high level functions the user would commonly access, placing it near the bottom for less cursor/finger distance.
+- **A modified, clean, central toolbar:** After much user research and testing we decided to keep all of our functionalites as buttons in the tool bar rather than drop down menus. Through our testing we realized this was the simplest way for users to select options, especially in a smaller mobile screen. We also decided to add unicode icons including a sort icon, hide/show icon displayed by an eye/slashed eye image, and a trash can to represent deleting items.
+
 
 ### Alternative Designs
-- **Highlighting a task when you edit it**: We considered highlighting the task when you edit to make the action more obvious. However, upon our implementation, we realized this would be redundant since the form to fill out the edited task is conspicuous for the user.
-- **Moving add task to the bottom**: We considered the possibility of a shorter finger travel time if the add task is at the bottom. However, after reflecting upon common user interfaces in apps, we determined that although this addition would be more efficient, this did not fit the cognitive model found in most other apps of creating a new task; the new task button is typically in the top right.
-- **Categorizing tasks under Completed or Uncompleted**: We considered putting tasks into a couple different categories and groups so that the app would display as a two sections of task lists instead of just one. However, with some user testing, we learned that the one-task approach was most intuitive when users were editing and modifying tasks frequently.
+- **Changing the way we display task priority**: In addition to the current system of adding an extra label/button where the user can easily switch between priority numbers, we considered some alternatives:
+- 1. Using a star system to mark priority: We considered a star system, similar to a flag rating system in file organizing UI, to sort the items by priority. Although this would be simple and visual for the user, this implementation would have taken too much screen real estate for a small UI.
+- 2. Drop-down selection for changing priority: Another option would be allowing the user to choose between different priority levels on click, which would open up a drop down to select.
+- 3. Task boxes on click: We considered implementing our app such that a box associated with a task pops up when the user clicks on a task, and the user could change the task name, task priority, etc. While this would allow us to design within a larger space, we thought that having so many pop-up functions could be confusing for the user, especially on a mobile layout. 
+- **Choosing what data to display for a task:** We decided not to display the creation date of a task because it might take up too much screen real estate, especially for longer tasks. Instead, we focused on the key pieces of information that the user cared about, which is what the task actually is, and its priority. Still, users can sort by tasks
 
 ### User Testing
-In order to test our new functionality without a large user testing group, we conducted internal testing within our group. When one of our group members implements a new function, we test the functionality with the other group member(s) during meetups, allowing us to have a fresh perspective on the app.
-
-We had an open session asking our group members unfamiliar with the new changes to play with the app and test out desired tasks, such as the functionality of creating a new item, editing a task, and the usage of the buttons in the navigation bar. In addition, we asked several roommates and friends to navigate through the app, encouraging them to talk out loud and articulate any parts of the process that were unclear.
+We asked 5+ test users who are unfamiliar with the new changes to play with the app and test out desired tasks, such as the functionality of creating a new item, editing a task, using the buttons in the navigation bar, and also modifying the task priority and sorting tasks by different orders. We asked several roommates and friends to navigate through the app, encouraging them to talk out loud and articulate any parts of the process that were unclear. 
 
 Some key questions we asked were:
 - What are you trying to do? (Determining intended purpose)
-- Does this workflow feel like it makes sense? (Asking for intuition)
+- What is it about this workflow that makes sense to you? (Asking for intuition)
+- Why did you choose to click this button/navigate to this position on the screen? (Understanding user rationale)
 - Is there anything you’re confused about? (Clarity of content)
 
-We had positive reception for the cleaner user interface and the tasks completed ticker. Users commented that it was easy to navigate through the app and modify their tasks, and it was something they could use on a daily basis.
+We had positive reception for the clean user interface – users were quickly able to understand the concept of task priority as well as sorting tasks. They also really appreciated the simplicity of the tool bar because all the information was readily accessible. Users mentioned that it was easy to navigate through the app to perform different functions and modify tasks, and it was an app that they could use on a daily basis.
 
 A couple key suggestions that we later incorporated included:
-- Ensuring that the pop-up modal for the delete completed button is deactivated if there are no completed icons. This seemed to be a source of confusion for one user.
-- Ensuring that the tasks do not overlap with each other or go out of the box if there are particularly long task labels or many tasks.
-- In the later sections, we describe the challenges we ran into and parts we’re proud of while taking these suggestions into consideration and implementing these changes.
+- We implemented the sorting options as a modal with a menu where users can selection options as this would be an intuitive way for the user to switch between different views and options.
+- Modifying the colors of our priority buttons so that it makes more intuitive sense. Originally we decided the priority levels would be ! (green), !! (yellow), and !!! (red), but we decided to make the lowest priority task a less bold color so it doesn’t confuse the user.
+- We decided to add icons in addition to text to our sort bar.
+- We fixed our toolbar and added a background so that tasks wouldn't bleed through. We also made it so that pressing enter while editing a task would save the task and would not add a line break (feedback given to us previously).
+- We modified the interface slightly to not display multiple headers (My Tasks) because these headers were taking up too much space and users couldn't see tasks.
+
+In the later sections, we describe the challenges we ran into and parts we’re proud of while taking these suggestions into consideration and implementing these changes.
 
 ### Challenges
-- **Separating our files into components**: We found it challenging to parse our previous HTML content and separate them into appropriate components. It was helpful to start from the initialData in our index.js, working our way through inMemoryApp, App.js, and the components in the actual application
-- **Moving the data into an intermediate file**: Handling data was difficult, so we moved the data into an intermediate file as declutter. We made sure to think carefully about what data should be kept as state information in various components.
-- **Implementing the edit functionality**: Because the edit function required the ability to open a text field and update the data, we found it difficult to implement from a technical perspective. We made use of an existing React component for editing the text field and handled making changes to the field when the user tapped on a task.
+- **Implementing the sort functionality**: The sort functionality took a bit of time to figure out because we had to build the priority based on the sort option that the user selected. We decided to pass this information through state and easily switch between the sort options to build queries.
+- **Deciding the UI for a priority system**: The UI for displaying priority and allowing the users to manipulate per item requires a compromise between ease of functionality and screen real estate. We had to optimize for lower number of clicks, ease of understanding, and how intrusive is the UI.
+- Other challenges:
+- 1. Ensuring that buttons and other functionality are disabled when they can't be used
+- 2. Styling and formatting the buttons with both icons and text
+- 3. Thinking through different design options when all of them seemed like reaasonable alternatives – user testing helped us with this a lot
 
 ### Parts We’re Proud Of
-- **New CSS**: We revamped the CSS styling with shadows and other elements for a cleaner, more user-friendly interface. We also split the CSS into different files for each component so we could think about styling each component individually, and put them together in a cohesive layout.
-- **Showing how many items are completed**: Inspired by the exercise from class, we decided to implement a new ticker showing the fraction of tasks completed (e.g. 3/4 Tasks completed). We expected for the user to have greater satisfaction from being able to see the fraction of tasks completed, communicating the workload of the entire task list at a glance.
-- **Changing the user flow for deleting and editing items**: We optimized the user flow for deleting items by moving the button to the task container. Because we are designing for a mobile device, we wanted the user to easily edit a task by tapping on it – a border would appear around the new input box, and the user could tap out to save the updated task. We expected an improvement in the spatial understanding of the Delete function and Edit function of each respective task.
-- **Dynamic display and functionality of buttons**: In order to make the interface as easy as possible for the user to understand, we ensured that under certain conditions, buttons were disabled. We changed the opacity and styling of certain buttons so that it was clear that clicking the button would lead to an event.
+- Designing a simple, intuitive design for task priority. Uses exclamation points, which is more universally understood than our alternative options. Simple to use by clicks
+- Reimplementing the toolbar with cleaner CSS and covering the background
+- Developing a modal interface for confirmation boxes. Adding icons to the buttons
+- Creating a cloud-based storage system for the list information through Firestore
 
 ### Final Design
-Below you will find the screen images and flow for each task.
+Below you will find the screen images and flow for new changes that we've made since the previous lab:
 
+**Changing the priority of a task**
+
+You can see that the user can simply tap on the priority button and toggle between low, medium, and high priority. Here we are changing the priority of the task "buy groceries".
 <p float="left">
-<img src="screenshots/1_before.png" width="309.375" height="550"/>
-<img src="screenshots/1_during.png" width="309.375" height="550"/>
-<img src="screenshots/1_after.png" width="309.375" height="550"/>
+<img src="screenshots/final1.png" width="220" height="380"/>
+<img src="screenshots/change_priority_high.png" width="220" height="380"/>
+<img src="screenshots/change_priority_low.png" width="220" height="380"/>
+=</p>
+
+**Sorting tasks**
+
+When the user wants to sort tasks, they simply have to create on the Sort button in the toolbar. A modal will pop up and the user will simply select an option – date created, name, or priority. We also display the current sorting option with a checkmark. The user selects one of these options, or can cancel out, and we automatically exit the modal and load the new tasks in the preferred order.
+
+<p float="left"> 
+<img src="screenshots/sorted_by_datecreated.png" width="220" height="380"/>
+<img src="screenshots/sorted_by_name.png" width="220" height="380"/>
+<img src="screenshots/sorted_by_priority.png" width="220" height="380"/>
 </p>
 
-- Before: The initial state is an empty task list.
-- During: Typing in text in the text box and clicking add
-- After: The new item appears in the list
+The default sorting is by date created. The following screen images capture what happens after the user clicks on sort by name and sort by priority, respectively.
 
-<p float="left">
-<img src="screenshots/2_before.png" width="309.375" height="550"/>
-<img src="screenshots/2_during.png" width="309.375" height="550"/>
-<img src="screenshots/2_after.png" width="309.375" height="550"/>
+<p float="left"> 
+<img src="screenshots/sort_after_name.png" width="220" height="380"/>
+<img src="screenshots/sort_after_priority.png" width="220" height="380"/>
 </p>
 
-- Before: A list with items
-- During: Typing in text in the text box and clicking add
-- After: The new item appears in the list
+**New Changes to UI**
 
-<p float="left">
-<img src="screenshots/3_before.png" width="309.375" height="550"/>
-<img src="screenshots/3_during.png" width="309.375" height="550"/>
-<img src="screenshots/3_after.png" width="309.375" height="550"/>
-</p>
+We implemented several changes to the user interface for basic tasks like editing and deletion. This was based on user feedback that we received. Overall, we wanted to support a cleaner look and prevent user errors.
 
-- Before: An unchecked list
-- During: Clicking the check box
-- After: A clicked check box that is registered as complete
+We added a loading screen for when the tasks information is being fetched, which will briefly display while tasks are loading.
 
+<img src="screenshots/loading.png" width="220.375" height="380"/>
 
-<p float="left">
-<img src="screenshots/4_before.png" width="220.375" height="380"/>
-<img src="screenshots/4_during.png" width="220.375" height="380"/>
-<img src="screenshots/4_during_2.png" width="220.375" height="380"/>
-<img src="screenshots/4_after.png" width="220.375" height="380"/>
-</p>
+When deleting all completed tasks, more information is provided and users will see the number of tasks that are about to be deleted.
 
-- Before: "Text John" as an item
-- During 1: Clicking the text as the edit box (the box has a orange border to signal that it's editable)
-- During 2: Typing in "Text John about bank statements"
-- After: Leaving the edit box by clicking out of it
+<img src="screenshots/delete_before.png" width="220.375" height="380"/>
 
-<p float="left">
-<img src="screenshots/5_before.png" width="309.375" height="550"/>
-<img src="screenshots/5_during.png" width="309.375" height="550"/>
-<img src="screenshots/5_after.png" width="309.375" height="550"/>
-</p>
+We added a background to our toolbar so that tasks do not bleed under the toolbar. Tasks are now in a separate container such that the user can scroll through the tasks without losing sight of the "add task" bar and header on the screen. For example, this is a screen image where we have many tasks.
 
-- Before: A shown list with one completed item
-- During: Clicking the "Hide Completed" button
-- After: "Hide Completed" becomes "Show All Tasks", checked items are hidden and can be brought back
+<img src="screenshots/many_tasks.png" width="220.375" height="380"/>
 
-<p float="left">
-<img src="screenshots/6_before.png" width="309.375" height="550"/>
-<img src="screenshots/6_during.png" width="309.375" height="550"/>
-<img src="screenshots/6_after.png" width="309.375" height="550"/>
-</p>
-
-- Before: A shown list with one completed item
-- During: Clicking the "Delete Completed" button opens a confirmation dialog box, in which "OK" is pressed
-- After: The item(s) are deleted, the "Delete Completed" button is greyed out
+You can find the screen images and flow for the original tasks that we were asked to implement in previous labs. While the interface for our app is slightly more clean, the functionality for these tasks have not changed much.

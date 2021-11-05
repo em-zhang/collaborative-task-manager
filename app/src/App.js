@@ -15,28 +15,33 @@ function App(props) {
             <div className="heading">
                 <h1>Task Manager</h1>
             </div>
-            <div className="add-task">
+            <div className="topButtonBar">
+                <div className="add-task">
                 <AddTask
                     taskList={filteredList}
                     onSetTaskList={props.setTaskList}
                     onAddTask={props.handleAddTask}
                 />
+                </div>
             </div>
-            <div>
+            <div className="taskList">
                 <ToDoList
                     taskList={filteredList}
                     onDeleteTask={props.handleDeleteTask}
+                    onChangePriority={props.handleChangePriority}
                     onDeleteTasks={props.handleDeleteTasks}
                     onTaskFieldChanged={props.handleTaskFieldChanged}
                     numCompleted={numCompleted}
                 />
             </div>
-            <div>
+            <div className="bottomBar">
                 <ToolBar
                     onDeleteTasks={props.handleDeleteTasks}
                     showCompleted={showCompleted}
                     onSetShowCompleted={setShowCompleted}
                     numCompleted={numCompleted}
+                    onSortSelected={props.handleSortSelected}
+                    sortOption={props.sortOption}
                 />
             </div>
         </div>
