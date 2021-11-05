@@ -1,9 +1,12 @@
-# Lab 2: Task Manager App
+# Lab 3: Task Manager App using Firestore
 **Group members:** Emily Zhang, Christopher Chung, Olina Wong
 
-For Lab 2, we aimed to implement our Task Manager interface from Lab 1 into a functional app via React.
+For Lab 3, we iterated on our working Task Manager app from Lab 2 by supporting 3 new key functionalities.
+- using Firestore for permanent cloud storage
+- adding priority level to tasks
+- allowing sorting of tasks by task priority, task name, and creation date (default sorting)
 
-The app handles various tasks including creating, renaming, and marking items as well as showing uncompleted items and deleting completed items. For final screen images and flows for each task, see the bottom of this design doc.
+The app continues to handle various tasks including creating, renaming, and marking items as well as showing uncompleted items and deleting completed items – all this data is synced and modified in real-time through Firestore. For final screen images and flows for each task, see the bottom of this design doc.
 
 ### Design Process, Decisions, and Early Mock-Ups
 
