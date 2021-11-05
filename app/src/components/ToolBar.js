@@ -53,9 +53,12 @@ function ToolBar(props) {
         <div>
             <div className="toolbar">
                 <button
+                    id="sort-button"
                     className="toolbar-button"
                     onClick={toggleSortModal}>
-                    Sort Tasks
+                    <i id="sort-icon" className="las la-sort-amount-down"></i>
+                    <br/>
+                    Sort
                 </button>
                 {showSortMenu &&
                 <SortMenu className="toolbar-button"
@@ -75,12 +78,16 @@ function ToolBar(props) {
                     className="toolbar-button"
                     id="hide-button"
                     onClick={() => {toggleShowCompleted()}}>
+                    <i id={props.showCompleted ? "hide-icon" : "show-icon"}
+                       className={props.showCompleted ? "las la-eye-slash": "las la-eye"}>
+                    </i>
+                    <br/>
                     {props.showCompleted ? "Hide Completed" : "Show All"}
                 </button>
                 <button
                     className="toolbar-button"
                     // only make button fully visible and support functionality if there are completed tasks
-                    id={props.numCompleted !== 0 ? null : "delete-completed-button-hidden"}
+                    id={props.numCompleted !== 0 ? "delete-button" : "delete-completed-button-hidden"}
                     onClick={props.numCompleted !== 0 ? toggleModal : null}>
                     Delete Completed
                 </button>

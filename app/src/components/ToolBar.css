@@ -19,17 +19,34 @@
 
 .toolbar-button {
     font-family: "PT Sans", sans-serif;
-    font-size: 16px;
+    font-size: 15px;
     background: royalblue;
     border-style: solid;
     border-width: 1px;
     border-color: lightgrey;
     border-radius: 12px;
-    padding: 6px;
+    padding: 3px;
     color: white;
-    width: 100px;
-    height: 55px;
-    margin: 5px 5px 5px 5px;
+    height: 65px;
+    margin: 3px 3px 3px 3px;
+}
+
+#sort-button{
+    width: 70px;
+}
+
+#sort-icon{
+    padding-top: 3px;
+    padding-bottom: 5px;
+    transform: scale(2);
+}
+
+#hide-button{
+    width: 130px;
+}
+
+#delete-button{
+    width: 140px;
 }
 
 #delete-completed-button-hidden{

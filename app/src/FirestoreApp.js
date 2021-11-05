@@ -86,7 +86,6 @@ function FirestoreApp(props) {
         }
     }
 
-
     function handleDeleteTasks() {
         let delete_query = db.collection(collectionName).where('isCompleted', '==', true);
         delete_query.get().then(function (querySnapshot) {
@@ -109,7 +108,8 @@ function FirestoreApp(props) {
             handleAddTask={handleAddTask}
             handleTaskFieldChanged={handleTaskFieldChanged}
             handleSortSelected={handleSortSelected}
-            sortOption={sortOption}/>
+            sortOption={sortOption}
+        />
     </div>
 }
 
