@@ -1,8 +1,10 @@
 .checklist {
-    padding-left: 10px;
-    display: inline-block;
-    font-size: 18px;
-    margin-bottom: 100px;
+    /*padding-left: 10px;*/
+    /*display: inline-block;*/
+    /*font-size: 18px;*/
+    /*!*margin-bottom: 100px;*!*/
+    width: 90%;
+    margin: auto;
 }
 
 .no-tasks-message{

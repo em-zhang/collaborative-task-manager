@@ -1,3 +1,4 @@
+import './normalize.css';
 import './App.css';
 import './index.js';
 import ToDoList from "./components/ToDoList"
