@@ -20,7 +20,7 @@ const db = firebase.firestore();
 
 function FirestoreApp(props) {
     // FirestoreApp collection
-    const collectionName = "em-zhang-tasks-v4"
+    const collectionName = "em-zhang-tasks-v5"
     let query = db.collection(collectionName);
 
     const [sortOption, setSortOption] = useState(null);

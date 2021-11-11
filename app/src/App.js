@@ -4,6 +4,7 @@ import './index.js';
 import ToDoList from "./components/ToDoList"
 import AddTask from "./components/AddTask"
 import ToolBar from "./components/ToolBar"
+import ListMenu from "./components/ListMenu";
 import React, {useState} from "react";
 
 function App(props) {
@@ -14,8 +15,23 @@ function App(props) {
     return (
         <div id="app-container">
             <div className="heading">
+                <button className="toolbar-button">
+                    <i id="home-icon" className="las la-trash"></i>
+                    Home</button>
                 <h1>Task Manager</h1>
             </div>
+            <div className="list-name">
+                <h2>Current List</h2>
+            </div>
+            {/*<div className="listMenuBar">*/}
+            {/*    <div className="list-menu">*/}
+            {/*        <ListMenu*/}
+            {/*            taskList={filteredList}*/}
+            {/*            onSetTaskList={props.setTaskList}*/}
+            {/*            // onAddList={props.handleAddList}*/}
+            {/*        />*/}
+            {/*    </div>*/}
+            {/*</div>*/}
             <div className="topButtonBar">
                 <div className="add-task">
                 <AddTask
