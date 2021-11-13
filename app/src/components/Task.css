@@ -5,13 +5,13 @@
     border-radius: 5px;
     background-color: white;
     opacity: 0.8;
-    width: 331px;
+    /*width: 331px;*/
+    width: 100%;
 }
 
 .task-label{
     font-family: "PT Sans", sans-serif;
     font-size: 18px;
-    flex-basis: 80%;
     min-height: 27px;
     height: auto;
     border: none;
