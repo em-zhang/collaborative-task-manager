@@ -120,6 +120,12 @@ function FirestoreApp(props) {
         return newId;
     }
 
+    function handleDeleteList(listID) {
+        console.log("deleting list, list ID is ", listID);
+        db.collection(collectionName).doc(listID).delete();
+    }
+
+
     function handleListSelected(list){
         console.log("in handle list selected setting list to be ", list)
         setCurrentList(list)
@@ -142,6 +148,7 @@ function FirestoreApp(props) {
             currListName={currentListName}
             handleAddList={handleAddList}
             handleListSelected={handleListSelected}
+            handleDeleteList={handleDeleteList}
 
             taskList={taskList}
             handleDeleteTask={handleDeleteTask}

@@ -12,12 +12,12 @@ function App(props) {
     const[showCompleted, setShowCompleted] = useState(true);
     const filteredList = props.taskList.filter(task => showCompleted || !task.isCompleted);
     const numCompleted = props.taskList.filter(task => task.isCompleted).length;
-    const[homePage, showHomePage] = useState(true);
+    const[homepage, showHomepage] = useState(true);
 
     console.log("lists are ", props.listData)
 
     return (
-        homePage
+        homepage
             ?
             <div id="homepage">
                 <div className="homepage-heading">
@@ -35,13 +35,21 @@ function App(props) {
                         currListID={props.currListID}
                         currListName={props.currListName}
                         onListSelected={props.handleListSelected}
-                        homepage={homePage}
-                        showHomepage={showHomePage}
+                        showHomepage={showHomepage}
+                        onDeleteList={props.handleDeleteList}
                     />
                 </div>
             </div>
             :
             <div id="app-container">
+                <div className="return-home">
+                    <button className="home-button"
+                            onClick={() => {
+                                showHomepage(true);
+                            }}>
+                        Home
+                    </button>
+                </div>
                 <div className="heading">
                     <h1>Task Manager</h1>
                 </div>

@@ -12,16 +12,21 @@ function ListItem(props) {
             <div>
                 <button className="view-list-button"
                         onClick={() => {
-                            console.log("test");
                             props.onListSelected(props.listID);
                             console.log("curr list is ", props.currListName, props.currListID)
-                            // props.showHomePage(true);
+                            props.showHomepage(false);
                         }}>
                     View list
                 </button>
             </div>
+            <button className="delete-list-button"
+                    onClick={() => {
+                        props.onDeleteList(props.listID);
+                        console.log("DELETING LIST ", props.listID);
+                    }}>
+                X
+            </button>
         </div>
-
     )
 }
 

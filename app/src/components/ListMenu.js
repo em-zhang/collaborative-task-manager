@@ -15,7 +15,8 @@ function ListMenu(props) {
                         currListName={props.currListName}
                         onListSelected={props.onListSelected}
                         homepage={props.homepage}
-                        showHomepage={props.showHomePage}
+                        showHomepage={props.showHomepage}
+                        onDeleteList={props.onDeleteList}
                     />)}
             </div>
         </div>);
