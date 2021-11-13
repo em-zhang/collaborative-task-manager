@@ -9,7 +9,7 @@ function ListItem(props) {
                 className="list-item-label"
                 value={props.listName}
                 onChange={(e) => {
-                    props.onListFieldChanged(props.listID, "listLabel", e.target.value)
+                    props.onListFieldChanged(props.listID, "listName", e.target.value)
                 }}
                 onKeyPress={e => {
                     if (e.key === "Enter") {

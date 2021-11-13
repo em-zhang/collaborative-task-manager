@@ -17,6 +17,7 @@ function ListMenu(props) {
                         homepage={props.homepage}
                         showHomepage={props.showHomepage}
                         onDeleteList={props.onDeleteList}
+                        onListFieldChanged={props.onListFieldChanged}
                     />)}
             </div>
         </div>);

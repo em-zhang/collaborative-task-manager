@@ -68,14 +68,6 @@ function FirestoreApp(props) {
         return newId;
     }
 
-    // handles updating any field of a list
-    function handleListFieldChanged(listID, field, value) {
-        const doc = db.collection(collectionName).doc(currentList);
-        doc.update({
-            [field]: value,
-        })
-    }
-
     // handles updating any field of a task
     function handleTaskFieldChanged(taskId, field, value) {
         const doc = db.collection(collectionName).doc(currentList).collection("list-items").doc(taskId);
@@ -117,6 +109,15 @@ function FirestoreApp(props) {
 
     function handleSortSelected(option){
         setSortOption(option);
+    }
+
+
+    // handles updating any field of a list
+    function handleListFieldChanged(listID, field, value) {
+        const doc = db.collection(collectionName).doc(listID);
+        doc.update({
+            [field]: value,
+        })
     }
 
     function handleAddList(newList){
