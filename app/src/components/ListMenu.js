@@ -11,6 +11,9 @@ function ListMenu(props) {
                     <ListItem
                         listID={list.id}
                         listName={list.listName}
+                        currListID={props.currListID}
+                        currListName={props.currListName}
+                        onListSelected={props.onListSelected}
                     />)}
             </div>
         </div>);
