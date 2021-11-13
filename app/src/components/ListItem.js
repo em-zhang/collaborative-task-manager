@@ -15,6 +15,7 @@ function ListItem(props) {
                             console.log("test");
                             props.onListSelected(props.listID);
                             console.log("curr list is ", props.currListName, props.currListID)
+                            // props.showHomePage(true);
                         }}>
                     View list
                 </button>

@@ -35,6 +35,8 @@ function App(props) {
                         currListID={props.currListID}
                         currListName={props.currListName}
                         onListSelected={props.handleListSelected}
+                        homepage={homePage}
+                        showHomepage={showHomePage}
                     />
                 </div>
             </div>
