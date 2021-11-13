@@ -24,7 +24,7 @@ function AddTask(props){
                     }
                 }}
             />
-            <button className={currList !== "" ? "add-button" : "add-button-disabled"}
+            <button className={currList !== "" ? "list-add-button" : "list-add-button-disabled"}
                     onClick={() => {
                         if (currList !== "") {
                             props.onAddList(currList);

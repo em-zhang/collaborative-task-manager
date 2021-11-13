@@ -68,6 +68,14 @@ function FirestoreApp(props) {
         return newId;
     }
 
+    // handles updating any field of a list
+    function handleListFieldChanged(listID, field, value) {
+        const doc = db.collection(collectionName).doc(currentList);
+        doc.update({
+            [field]: value,
+        })
+    }
+
     // handles updating any field of a task
     function handleTaskFieldChanged(taskId, field, value) {
         const doc = db.collection(collectionName).doc(currentList).collection("list-items").doc(taskId);
@@ -82,7 +90,7 @@ function FirestoreApp(props) {
     }
 
     function handleChangePriority(taskID, taskPriority) {
-        let docRef = db.collection(collectionName).doc(taskID);
+        let docRef = db.collection(collectionName).doc(currentList).collection("list-items").doc(taskID);
         if (taskPriority === 1) {
             docRef.update({
                 priority: 2
@@ -149,6 +157,7 @@ function FirestoreApp(props) {
             handleAddList={handleAddList}
             handleListSelected={handleListSelected}
             handleDeleteList={handleDeleteList}
+            handleListFieldChanged={handleListFieldChanged}
 
             taskList={taskList}
             handleDeleteTask={handleDeleteTask}

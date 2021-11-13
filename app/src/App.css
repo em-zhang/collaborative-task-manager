@@ -8,6 +8,15 @@
   /*height: 800px;*/
 }
 
+#homepage {
+  font-family: "PT Sans", sans-serif;
+  background: whitesmoke;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-bottom: 85px;
+  width: 380px;
+}
+
 .loading-message{
   text-align: center;
   font-size: 30px;
@@ -20,7 +29,24 @@
   display: inline;
 }
 
+.add-list{
+  padding-top: 10px;
+  text-align: center;
+  grid-column: 1;
+  display: inline;
+  border: red;
+  border: solid;
+}
+
 .topButtonBar {
+  display: grid;
+  grid-template: 50pt / auto auto;
+  background: white;
+  border-width: 1px;
+  margin-top: 17px;
+}
+
+.home-top-bar {
   display: grid;
   grid-template: 50pt / auto auto;
   background: white;
@@ -38,3 +64,16 @@
   border-width: 1px;
 }
 
+.homepage-heading {
+  background-color: white;
+  width: 380px;
+  padding-top: 1%;
+  /*padding-bottom: 3%;*/
+  border-bottom-style: solid;
+  border-color: lightgrey;
+  border-width: 1px;
+}
+
+.list-menu {
+  padding-top: 3%;
+}

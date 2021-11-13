@@ -25,7 +25,6 @@ function Task(props) {
                 }}
                 // don't allow user to edit a task if it's been marked completed
                 disabled={props.isCompleted}
-
             />
             <div>
                 <button className="priority-button"

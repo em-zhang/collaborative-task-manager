@@ -23,11 +23,13 @@ function App(props) {
                 <div className="homepage-heading">
                     <h1>Task Manager</h1>
                 </div>
-                <div className="add-list">
-                    <AddList
-                        onAddList={props.handleAddList}
-                        onListSelected={props.handleListSelected}
-                    />
+                <div className="home-top-bar">
+                    <div className="add-list">
+                        <AddList
+                            onAddList={props.handleAddList}
+                            onListSelected={props.handleListSelected}
+                        />
+                    </div>
                 </div>
                 <div className="list-menu">
                     <ListMenu
@@ -37,6 +39,7 @@ function App(props) {
                         onListSelected={props.handleListSelected}
                         showHomepage={showHomepage}
                         onDeleteList={props.handleDeleteList}
+                        onListFieldChanged={props.handleListFieldChanged}
                     />
                 </div>
             </div>

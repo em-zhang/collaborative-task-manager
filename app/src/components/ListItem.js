@@ -8,6 +8,14 @@ function ListItem(props) {
             <TextareaAutosize
                 className="list-item-label"
                 value={props.listName}
+                onChange={(e) => {
+                    props.onListFieldChanged(props.listID, "listLabel", e.target.value)
+                }}
+                onKeyPress={e => {
+                    if (e.key === "Enter") {
+                        e.preventDefault();
+                    }
+                }}
             />
             <div>
                 <button className="view-list-button"
