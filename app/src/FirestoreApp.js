@@ -121,6 +121,7 @@ function FirestoreApp(props) {
     }
 
     function handleListSelected(list){
+        console.log("in handle list selected setting list to be ", list)
         setCurrentList(list)
     }
 

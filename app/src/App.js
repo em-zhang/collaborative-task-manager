@@ -17,7 +17,7 @@ function App(props) {
     console.log("lists are ", props.listData)
 
     return (
-        !homePage
+        homePage
             ?
             <div id="homepage">
                 <div className="homepage-heading">
@@ -32,6 +32,9 @@ function App(props) {
                 <div className="list-menu">
                     <ListMenu
                         listData={props.listData}
+                        currListID={props.currListID}
+                        currListName={props.currListName}
+                        onListSelected={props.handleListSelected}
                     />
                 </div>
             </div>
