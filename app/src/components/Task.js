@@ -12,20 +12,20 @@ function Task(props) {
                        props.onTaskFieldChanged(props.taskId, "isCompleted", e.target.checked)
                    }}
             />
-            <input
+            <TextareaAutosize
                 className= {!props.isCompleted ? "task-label" : "task-label-strikethrough"}
                 value={props.taskLabel}
                 onChange={(e) => {
-                    console.log("editing task with taskId ", props.taskId)
                     props.onTaskFieldChanged(props.taskId, "taskLabel", e.target.value)
                 }}
                 onKeyPress={e => {
                     if (e.key === "Enter") {
-                        return
+                        e.preventDefault();
                     }
                 }}
                 // don't allow user to edit a task if it's been marked completed
                 disabled={props.isCompleted}
+
             />
             <div>
                 <button className="priority-button"
@@ -44,6 +44,7 @@ function Task(props) {
                         }}>
                     X
                 </button>
+
             </div>
         </div>
     )

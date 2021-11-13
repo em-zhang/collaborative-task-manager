@@ -1,7 +1,7 @@
-import './AddTask.css';
+// import './AddTask.css';
 import {useState} from "react";
 
-function AddTask(props){
+function AddList(props){
     const [currTask, setCurrTask] = useState("");
 
     return (
@@ -36,4 +36,4 @@ function AddTask(props){
     );
 }
 
-export default AddTask;
+export default AddList;

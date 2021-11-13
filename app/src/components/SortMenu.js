@@ -2,7 +2,7 @@ import './SortMenu.css';
 
 function SortMenu(props) {
     return (
-        <div className={"sort-backdrop"}>
+        <div className="sort-backdrop">
             <div className="sort-modal">
                 {props.children}
                 <div className="alert-buttons">
@@ -11,7 +11,6 @@ function SortMenu(props) {
                                 props.onSortByName();
                                 props.onClose()
                             }}>
-                        {/*onClick={props.sortOption === "taskLabel" => {*/}
                         {props.sortOption === "taskLabel" ? "✓ Name" : "Name"}
                     </button>
                     <button className={"alert-button"} id={"alert-sort-priority"} type={"button"}
