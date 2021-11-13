@@ -1,25 +1,19 @@
-import './ListMenu.css';
-import React, {useState} from "react";
+import React from 'react';
+import ListItem from './ListItem'
+import Task from "./Task";
+// import './ToDoList.css';
 
-function ListMenu(props){
-    const [currTask, setCurrTask] = useState("");
-
+function ListMenu(props) {
     return (
-        <div>
-            <div className="heading">
-                <h2>Current List</h2>
+        <div id="list-menu-container">
+            <div id="list-menu">
+                {props.listData.map(list =>
+                    <ListItem
+                        listID={list.id}
+                        listName={list.listName}
+                    />)}
             </div>
-            <button className={currTask !== "" ? "add-button" : "add-button-disabled"}
-                    onClick={() => {
-                        if (currTask !== "") {
-                            props.onAddTask(currTask);
-                            setCurrTask("");
-                        }
-                    }}>
-                Add
-            </button>
-        </div>
-    );
+        </div>);
 }
 
 export default ListMenu;

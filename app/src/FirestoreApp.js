@@ -17,13 +17,26 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
-
 function FirestoreApp(props) {
     // FirestoreApp collection
-    const collectionName = "em-zhang-tasks-v5"
-    let query = db.collection(collectionName);
+    const collectionName = "em-zhang-tasks-v5.1"
+    let queryAll = db.collection(collectionName);
 
-    const [sortOption, setSortOption] = useState(null);
+    const [all_value, all_loading, all_error] = useCollection(queryAll);
+
+    let listIDs = [];
+    // let init_list_id = "default-list";
+    if (all_value) {
+        listIDs = all_value.docs.map((doc) => {
+            return {...doc.data()}});
+
+        // init_list_id = all_lists_id[0].id;
+    }
+    const [currentList, setCurrentList] = useState("default-list");
+
+    let query = db.collection(collectionName).doc(currentList).collection("list-items");
+
+    const [sortOption, setSortOption] = useState("dateCreated");
     if (sortOption){
         // sort in descending order by priority
         if (sortOption === "priority"){
@@ -33,8 +46,6 @@ function FirestoreApp(props) {
         }
     }
     const [value, loading, error] = useCollection(query); // You can change the const used here
-
-    // const taskList = value ? value.docs.map(doc => doc.data()) : [];
     let taskList = [];
     if (value) {
         taskList = value.docs.map((doc) => {
@@ -46,7 +57,8 @@ function FirestoreApp(props) {
     function handleAddTask(currTask) {
         const newId = generateUniqueID();
         console.log("adding new task, task ID is ", newId);
-        db.collection(collectionName).doc(newId).set({
+
+        db.collection(collectionName).doc(currentList).collection("list-items").doc(newId).set({
             taskId: newId,
             taskLabel: currTask,
             isCompleted: false,
@@ -58,7 +70,7 @@ function FirestoreApp(props) {
 
     // handles updating any field of a task
     function handleTaskFieldChanged(taskId, field, value) {
-        const doc = db.collection(collectionName).doc(taskId);
+        const doc = db.collection(collectionName).doc(currentList).collection("list-items").doc(taskId);
         doc.update({
             [field]: value,
         })
@@ -66,7 +78,7 @@ function FirestoreApp(props) {
 
     function handleDeleteTask(taskID) {
         console.log("deleting task, task ID is ", taskID);
-        db.collection(collectionName).doc(taskID).delete();
+        db.collection(collectionName).doc(currentList).collection("list-items").doc(taskID).delete();
     }
 
     function handleChangePriority(taskID, taskPriority) {
@@ -86,7 +98,6 @@ function FirestoreApp(props) {
         }
     }
 
-
     function handleDeleteTasks() {
         let delete_query = db.collection(collectionName).where('isCompleted', '==', true);
         delete_query.get().then(function (querySnapshot) {
@@ -100,8 +111,37 @@ function FirestoreApp(props) {
         setSortOption(option);
     }
 
+    function handleAddList(newList){
+        const newId = generateUniqueID();
+        db.collection(collectionName).doc(newId).set({
+            id: newId,
+            listName: newList,
+        })
+        return newId;
+    }
+
+    function handleListSelected(list){
+        setCurrentList(list)
+    }
+
+    // determine what list name to display in the header of the app
+    let currentListName = "";
+    if (listIDs.length > 0){
+        // find the information of the current list that we are displaying
+        let currList = listIDs.filter((e) => e.id === currentList);
+        if (currList.length > 0) {
+            currentListName = listIDs.filter((e) => e.id === currentList)[0].listName;
+        }
+    }
+
     return <div>
         <App
+            listData={listIDs}
+            currListID={currentList}
+            currListName={currentListName}
+            handleAddList={handleAddList}
+            handleListSelected={handleListSelected}
+
             taskList={taskList}
             handleDeleteTask={handleDeleteTask}
             handleChangePriority={handleChangePriority}
@@ -109,9 +149,12 @@ function FirestoreApp(props) {
             handleAddTask={handleAddTask}
             handleTaskFieldChanged={handleTaskFieldChanged}
             handleSortSelected={handleSortSelected}
-            sortOption={sortOption}/>
-
+            sortOption={sortOption}
         />
+        {loading &&
+        <div className="loading-message">
+            Loading tasks...
+        </div>}
     </div>
 }
 

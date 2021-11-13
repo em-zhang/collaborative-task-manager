@@ -1,44 +1,39 @@
 .todo-input {
     padding: 5px;
     font-size: 18px;
-    margin-top: 10px;
+    margin-top: 5px;
     margin-bottom: 10px;
+    margin-left: 15px;
 }
 
 #new-todo-text {
-    width: 14em;
-    /*width: 12em;*/
+    width: 14.2em;
     color: black;
 }
 
 .add-button {
     font-family: "PT Sans", sans-serif;
-    /*font-size: 17px;*/
-    font-size: 14px;
+    font-size: 17px;
     background-color: royalblue;
     color: white;
-    /*border-color: darkgrey;*/
-    border-style: none;
+    border-color: darkgrey;
+    border-style: solid;
     border-width: 1px;
     border-radius: 5px;
-    margin-left: 10px;
-    padding: 8px 12px 8px 12px;
-    position:relative;
-    bottom:2px;
+    margin-left: 15px;
+    padding: 6px 10px 6px 10px;
 }
 
 .add-button-disabled {
+    opacity: 0.6;
     font-family: "PT Sans", sans-serif;
-    /*font-size: 17px;*/
-    font-size: 14px;
-    background-color: #8EA5EE;
+    font-size: 17px;
+    background-color: royalblue;
     color: white;
-    /*border-color: darkgrey;*/
-    border-style: none;
+    border-color: darkgrey;
+    border-style: solid;
     border-width: 1px;
     border-radius: 5px;
-    margin-left: 10px;
-    padding: 8px 12px 8px 12px;
-    position:relative;
-    bottom:2px;
+    margin-left: 15px;
+    padding: 6px 10px 6px 10px;
 }
