@@ -1,4 +1,4 @@
-// import './AddTask.css';
+import './AddTask.css';
 import {useState} from "react";
 
 function AddList(props){
@@ -9,7 +9,7 @@ function AddList(props){
             <input
                 className="todo-input"
                 id="new-todo-text"
-                placeholder="Enter task here"
+                placeholder="Create a new task"
                 value={currTask}
                 onChange={e => {
                     setCurrTask(e.target.value);

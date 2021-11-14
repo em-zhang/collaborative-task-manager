@@ -18,3 +18,14 @@
     resize: none;
     margin: 4px 10px 4px 5px;
 }
+
+
+.delete-list-button {
+    right: 23px;
+    margin-top: 10px;
+    display: inline-list-item;
+    margin-right: 10px;
+    border: none;
+    background-color: white;
+    transform: scale(1.2);
+}

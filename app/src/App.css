@@ -4,7 +4,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin-bottom: 85px;
-  width: 380px;
+  /*width: 380px;*/
   /*height: 800px;*/
 }
 
@@ -14,7 +14,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin-bottom: 85px;
-  width: 380px;
 }
 
 .loading-message{
@@ -52,26 +51,15 @@
   margin-top: 17px;
 }
 
-.heading {
-  background-color: white;
-  width: 380px;
-  padding-top: 1%;
-  /*padding-bottom: 3%;*/
-  border-bottom-style: solid;
-  border-color: lightgrey;
-  border-width: 1px;
+.home-button{
+  color: green;
+}
+
+.heading{
+  padding-top: 3%;
 }
 
 .homepage-heading {
-  background-color: white;
-  width: 380px;
-  padding-top: 1%;
-  /*padding-bottom: 3%;*/
-  border-bottom-style: solid;
-  border-color: lightgrey;
-  border-width: 1px;
-}
-
-.list-menu {
+  background-color: whitesmoke;
   padding-top: 3%;
 }

@@ -1,4 +1,4 @@
-import './AddTask.css';
+import './AddList.css';
 import {useState} from "react";
 
 function AddTask(props){
@@ -9,7 +9,7 @@ function AddTask(props){
             <input
                 className="list-input"
                 id="new-list-text"
-                placeholder="Enter new list name"
+                placeholder="Create a new list"
                 value={currList}
                 onChange={e => {
                     setCurrList(e.target.value);
@@ -31,7 +31,7 @@ function AddTask(props){
                             setCurrList("");
                         }
                     }}>
-                Add List
+                Add
             </button>
         </div>
     );

@@ -18,19 +18,15 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
 function FirestoreApp(props) {
-    // FirestoreApp collection
-    const collectionName = "em-zhang-tasks-v5.1"
+    const collectionName = "em-zhang-tasks-v6"
     let queryAll = db.collection(collectionName);
 
     const [all_value, all_loading, all_error] = useCollection(queryAll);
 
     let listIDs = [];
-    // let init_list_id = "default-list";
     if (all_value) {
         listIDs = all_value.docs.map((doc) => {
             return {...doc.data()}});
-
-        // init_list_id = all_lists_id[0].id;
     }
     const [currentList, setCurrentList] = useState("default-list");
 
@@ -56,8 +52,6 @@ function FirestoreApp(props) {
     // adds a task, generating new id each time
     function handleAddTask(currTask) {
         const newId = generateUniqueID();
-        console.log("adding new task, task ID is ", newId);
-
         db.collection(collectionName).doc(currentList).collection("list-items").doc(newId).set({
             taskId: newId,
             taskLabel: currTask,
@@ -76,11 +70,12 @@ function FirestoreApp(props) {
         })
     }
 
+    // delete a task based on taskID
     function handleDeleteTask(taskID) {
-        console.log("deleting task, task ID is ", taskID);
         db.collection(collectionName).doc(currentList).collection("list-items").doc(taskID).delete();
     }
 
+    // change a task's priority among 1/2/3
     function handleChangePriority(taskID, taskPriority) {
         let docRef = db.collection(collectionName).doc(currentList).collection("list-items").doc(taskID);
         if (taskPriority === 1) {
@@ -98,6 +93,7 @@ function FirestoreApp(props) {
         }
     }
 
+    // delete completed tasks in a list
     function handleDeleteTasks() {
         let delete_query = db.collection(collectionName).where('isCompleted', '==', true);
         delete_query.get().then(function (querySnapshot) {
@@ -107,10 +103,10 @@ function FirestoreApp(props) {
         });
     }
 
+    // select a sort option
     function handleSortSelected(option){
         setSortOption(option);
     }
-
 
     // handles updating any field of a list
     function handleListFieldChanged(listID, field, value) {
@@ -120,6 +116,7 @@ function FirestoreApp(props) {
         })
     }
 
+    // add a new list
     function handleAddList(newList){
         const newId = generateUniqueID();
         db.collection(collectionName).doc(newId).set({
@@ -129,14 +126,14 @@ function FirestoreApp(props) {
         return newId;
     }
 
+    // delete a list
     function handleDeleteList(listID) {
-        console.log("deleting list, list ID is ", listID);
         db.collection(collectionName).doc(listID).delete();
     }
 
 
+    // select and go into a list
     function handleListSelected(list){
-        console.log("in handle list selected setting list to be ", list)
         setCurrentList(list)
     }
 
@@ -171,7 +168,7 @@ function FirestoreApp(props) {
         />
         {loading &&
         <div className="loading-message">
-            Loading tasks...
+            Loading...
         </div>}
     </div>
 }
