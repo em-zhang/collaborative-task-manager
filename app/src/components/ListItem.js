@@ -26,12 +26,14 @@ function ListItem(props) {
                     View
                 </button>
             </div>
+            <div>
             <button className="delete-list-button"
                     onClick={() => {
                         props.onDeleteList(props.listID);
                     }}>
                 X
             </button>
+            </div>
         </div>
     )
 }

@@ -46,15 +46,20 @@ function App(props) {
             <div id="app-container">
                 <div className="heading">
                     <h1>
-                        <button className="home-button"
+                        <button id="home-button"
                                 onClick={() => {
                                     showHomepage(true);
                                 }}>
+                            <i id="home-icon" className="las la-home">
+                            </i>
+                            <br/>
                             Home
                         </button>
                         Task Manager
                     </h1>
-                    <h2>{props.currListName}</h2>
+                    <div>
+                        <h2>{props.currListName}</h2>
+                    </div>
                 </div>
                 <div className="topButtonBar">
                     <div className="add-task">

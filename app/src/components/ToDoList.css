@@ -1,8 +1,8 @@
 #checklist {
-    padding-left: 20px;
+    padding-left: 5px;
     padding-top: 10px;
-    width: 360px;
-    max-height: 390px;
+    width: 95%;
+    max-height: 90%;
     grid-row: 4 / span 1;
     grid-column: 1 / span 1;
     display: flex;
@@ -11,10 +11,6 @@
     overflow-y: auto;
 }
 
-.no-tasks-message{
-    text-align: center;
-    color: royalblue;
-}
 input[type="checkbox"]{
     transform: scale(1.4);
     display: inline-block;

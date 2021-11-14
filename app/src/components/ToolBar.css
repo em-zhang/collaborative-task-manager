@@ -43,7 +43,8 @@
 }
 
 #sort-button{
-    width: 70px;
+    /*width: 70px;*/
+    width: 30%
 }
 
 #sort-icon{
@@ -53,7 +54,7 @@
 }
 
 #hide-button{
-    width: 130px;
+    width: 45%;
 }
 
 #hide-icon{
@@ -63,7 +64,7 @@
 }
 
 #delete-button{
-    width: 150px;
+    width: 45%
 }
 
 #delete-icon{
@@ -74,5 +75,5 @@
 
 #delete-completed-button-hidden{
     opacity: 0.6;
-    width: 150px;
+    width: 45%
 }

@@ -1,7 +1,8 @@
 .list-menu{
-    padding-left: 20px;
+    padding-left: 5px;
     padding-top: 10px;
-    max-height: 390px;
+    width: 95%;
+    max-height: 90%;
     grid-row: 4 / span 1;
     grid-column: 1 / span 1;
     display: flex;
@@ -19,17 +20,14 @@
 
 #new-todo-text {
     width: 14em;
-    /*width: 12em;*/
     color: black;
 }
 
 .add-button {
     font-family: "PT Sans", sans-serif;
-    /*font-size: 17px;*/
     font-size: 14px;
     background-color: royalblue;
     color: white;
-    /*border-color: darkgrey;*/
     border-style: none;
     border-width: 1px;
     border-radius: 5px;
@@ -41,11 +39,9 @@
 
 .add-button-disabled {
     font-family: "PT Sans", sans-serif;
-    /*font-size: 17px;*/
     font-size: 14px;
     background-color: #8EA5EE;
     color: white;
-    /*border-color: darkgrey;*/
     border-style: none;
     border-width: 1px;
     border-radius: 5px;
