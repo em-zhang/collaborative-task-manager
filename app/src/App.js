@@ -30,7 +30,7 @@ function App(props) {
                         />
                     </div>
                 </div>
-                <div className="list-menu">
+                <div className="list-container">
                     <ListMenu
                         listData={props.listData}
                         currListID={props.currListID}
@@ -55,7 +55,9 @@ function App(props) {
                             <br/>
                             Home
                         </button>
-                        Task Manager
+                        <div className="title">
+                             Task Manager
+                        </div>
                     </h1>
                     <div>
                         <h2>{props.currListName}</h2>

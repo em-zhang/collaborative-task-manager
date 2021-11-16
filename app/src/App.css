@@ -3,7 +3,7 @@
   background: whitesmoke;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /*margin-bottom: 85px;*/
+  margin-bottom: 10%;
 }
 
 #homepage {
@@ -12,6 +12,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /*margin-bottom: 85px;*/
+}
+
+.title {
+  padding-right: 17%;
 }
 
 .loading-message{
@@ -60,7 +64,6 @@
   margin: 0% 0% 5% 5%;
 }
 
-
 .heading {
   padding-top: 3%;
   display: inline;
@@ -69,4 +72,8 @@
 .homepage-heading {
   background-color: whitesmoke;
   padding-top: 3%;
+}
+
+.list-container{
+
 }

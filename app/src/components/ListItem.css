@@ -1,6 +1,6 @@
 .list-item-container{
     display: inline-flex;
-    margin: 5px;
+    margin: 1.5%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     border-radius: 5px;
     background-color: white;

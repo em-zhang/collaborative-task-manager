@@ -4,7 +4,7 @@ import './ListMenu.css';
 
 function ListMenu(props) {
     return (
-        <div id="list-menu-container">
+        <div id="list-container">
             <div id="list-menu">
                 {props.listData.map(list =>
                     <ListItem
