@@ -15,7 +15,6 @@
 }
 
 .title {
-  padding-right: 17%;
 }
 
 .loading-message{
@@ -24,7 +23,7 @@
 }
 
 .add-task{
-  padding-top: 10px;
+  padding: 0.5em 0 0.5em 0;
   text-align: center;
   grid-column: 1;
   display: inline;
@@ -39,7 +38,6 @@
 
 .topButtonBar {
   display: grid;
-  grid-template: 50pt / auto auto;
   background: white;
   border-width: 1px;
 }
@@ -75,5 +73,4 @@
 }
 
 .list-container{
-
 }
