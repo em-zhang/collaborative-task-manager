@@ -1,6 +1,7 @@
 .todo-input {
-    padding: 5px;
+    padding: 5px 3rem 5px 5px;
     font-size: 18px;
+    box-sizing: border-box;
 }
 
 #new-todo-text {

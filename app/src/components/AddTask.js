@@ -5,7 +5,7 @@ function AddList(props){
     const [currTask, setCurrTask] = useState("");
 
     return (
-        <div>
+        <div className="add-task-container">
             <input
                 className="todo-input"
                 id="new-todo-text"

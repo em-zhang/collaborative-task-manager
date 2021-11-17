@@ -15,6 +15,7 @@
 }
 
 .title {
+  text-align: center;
 }
 
 .loading-message{
@@ -22,11 +23,11 @@
   font-size: 30px;
 }
 
-.add-task{
-  padding: 0.5em 0 0.5em 0;
-  text-align: center;
-  grid-column: 1;
-  display: inline;
+.add-task-container{
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  /*text-align: center;*/
+  display: flex;
+  justify-content: space-between;
 }
 
 .add-list{
@@ -37,7 +38,6 @@
 }
 
 .topButtonBar {
-  display: grid;
   background: white;
   border-width: 1px;
 }
@@ -51,15 +51,21 @@
 }
 
 #home-button{
+  position: absolute;
   float: left;
-  background: royalblue;
-  border-style: solid;
-  border-width: 1px;
-  border-color: lightgrey;
-  border-radius: 12px;
-  color: white;
-  height: 50px;
-  margin: 0% 0% 5% 5%;
+  height: 42px;
+  width: 4em;
+  border-style: hidden;
+  background-color: transparent;
+  /*background: royalblue;*/
+  /*border-style: solid;*/
+  /*border-width: 1px;*/
+  /*border-color: lightgrey;*/
+  /*border-radius: 12px;*/
+  /*color: white;*/
+  /*height: 50px;*/
+  /*margin: 0% 0% 5% 5%;*/
+  transform: scale(2);
 }
 
 .heading {

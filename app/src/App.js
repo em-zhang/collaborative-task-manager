@@ -50,10 +50,10 @@ function App(props) {
                                 onClick={() => {
                                     showHomepage(true);
                                 }}>
-                            <i id="home-icon" className="las la-home">
+                            <i className="las la-angle-left">
                             </i>
-                            <br/>
-                            Home
+                            {/*<br/>*/}
+                            {/*Home*/}
                         </button>
                         <div className="title">
                              Task Manager

@@ -4,7 +4,7 @@ import {useState} from "react";
 
 function Task(props) {
     return (
-        <div className="task-container">
+        <div className="    task-container">
             <input type="checkbox"
                    className="checkbox"
                    checked={props.isCompleted}
@@ -26,7 +26,7 @@ function Task(props) {
                 // don't allow user to edit a task if it's been marked completed
                 disabled={props.isCompleted}
             />
-            <div>
+            <div className="priority-button-container">
                 <button className="priority-button"
                         id={props.priority === 3 ? "high" : props.priority === 2 ? "medium" : "low"}
                         onClick={() => {

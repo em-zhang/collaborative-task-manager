@@ -10,14 +10,13 @@ body {
 h1 {
     font-size: 2em;
     font-weight: bold;
-    text-align: center;
 }
 
 h2 {
     font-size: 1.2em;
     font-weight: bold;
-    text-align: center;
-    padding: 10px;
+    /*text-align: center;*/
+    padding: 0.6rem 1rem 0.6rem 1rem;
     background: white;
     border-bottom-style: solid;
     border-top-style: solid;
