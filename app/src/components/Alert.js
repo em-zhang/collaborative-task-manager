@@ -10,11 +10,10 @@ function Alert(props) {
             <div id="modal">
                 {props.children}
                 <div className="alert-buttons">
-                    <button tabIndex="0"
-                            id="alert-ok"
+                    <button id="alert-ok"
                             onClick={() => {
                                 props.onOK();
-                                props.onClose()
+                                props.onClose();
                             }}
                             onKeyDown={e => {
                                 if (e.keyCode === 9) {

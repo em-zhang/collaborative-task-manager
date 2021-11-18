@@ -95,7 +95,7 @@ function FirestoreApp(props) {
 
     // delete completed tasks in a list
     function handleDeleteTasks() {
-        let delete_query = db.collection(collectionName).where('isCompleted', '==', true);
+        let delete_query = db.collection(collectionName).doc(currentList).collection("list-items").where('isCompleted', '==', true);
         delete_query.get().then(function (querySnapshot) {
             querySnapshot.forEach(function (doc) {
                 doc.ref.delete();

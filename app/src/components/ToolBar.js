@@ -49,12 +49,6 @@ function ToolBar(props) {
         props.showCompleted ? props.onSetShowCompleted(false) : props.onSetShowCompleted(true)
     }
 
-    // const otherElements = document.querySelectorAll('.app-container')
-    //     .forEach(elem => {
-    //         elem.setAttribute('tabIndex', '-1')
-    //     })
-
-
     return (
         <div>
             <div className="toolbar">
