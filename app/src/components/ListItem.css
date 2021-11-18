@@ -20,6 +20,7 @@
 }
 
 .view-list-button {
+    font-size: 16px;
     margin-right: 10px;
     margin-top: 10px;
     display: inline-list-item;

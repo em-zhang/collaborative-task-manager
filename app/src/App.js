@@ -18,9 +18,17 @@ function App(props) {
         homepage
             ?
             <div id="homepage">
-                <div className="homepage-heading">
-                    <h1>Task Manager</h1>
-                    <h2>Home ({props.listData.length} lists)</h2>
+                <div className="heading">
+                    <h1>
+                        <div
+                            aria-label="Task Manager"
+                            className="title">
+                            Task Manager
+                        </div>
+                    </h1>
+                    <div className="header">
+                        <h2>All Lists</h2>
+                    </div>
                 </div>
                 <div className="home-top-bar">
                     <div className="add-list">
@@ -52,8 +60,6 @@ function App(props) {
                                 }}>
                             <i className="las la-angle-left">
                             </i>
-                            {/*<br/>*/}
-                            {/*Home*/}
                         </button>
                         <div className="title">
                              Task Manager
@@ -64,12 +70,13 @@ function App(props) {
                     </div>
                 </div>
                 <div className="topButtonBar">
-                    <div className="add-task">
-                    <AddTask
-                        taskList={filteredList}
-                        onSetTaskList={props.setTaskList}
-                        onAddTask={props.handleAddTask}
-                    />
+                    <div
+                        className="add-task">
+                        <AddTask
+                            taskList={filteredList}
+                            onSetTaskList={props.setTaskList}
+                            onAddTask={props.handleAddTask}
+                        />
                     </div>
                 </div>
                 <div className="taskList">

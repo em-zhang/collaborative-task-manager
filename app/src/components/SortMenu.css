@@ -62,12 +62,3 @@
     background: royalblue;
     color: white;
 }
-
-#alert-sort-cancel {
-    margin: 10px;
-    height: 25px;
-    width: 60px;
-    border-radius: 1px;
-    border-color: dimgrey;
-    border-width: 1px;
-}

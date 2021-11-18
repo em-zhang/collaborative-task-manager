@@ -27,7 +27,9 @@ function ListItem(props) {
                 </button>
             </div>
             <div>
-            <button className="delete-list-button"
+            <button
+                aria-label="Delete list button"
+                className="delete-list-button"
                     onClick={() => {
                         props.onDeleteList(props.listID);
                     }}>

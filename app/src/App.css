@@ -73,10 +73,12 @@
   display: inline;
 }
 
-.homepage-heading {
-  background-color: whitesmoke;
-  padding-top: 3%;
+.header{
+  text-align: center;
+  display: inline;
 }
 
-.list-container{
+.homepage-heading {
+  padding-top: 3%;
+  display: inline;
 }

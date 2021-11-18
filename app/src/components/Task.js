@@ -11,6 +11,12 @@ function Task(props) {
                    onChange={(e) => {
                        props.onTaskFieldChanged(props.taskId, "isCompleted", e.target.checked)
                    }}
+
+                   onKeyPress={e => {
+                       if (e.key === "Enter") {
+                           props.onTaskFieldChanged(props.taskId, "isCompleted", !props.isCompleted)
+                       }
+                   }}
             />
             <TextareaAutosize
                 className= {!props.isCompleted ? "task-label" : "task-label-strikethrough"}
@@ -37,7 +43,9 @@ function Task(props) {
                 </button>
             </div>
             <div>
-                <button className="delete-button"
+                <button
+                    aria-label="Delete this task button"
+                    className="delete-button"
                         onClick={() => {
                             props.onDeleteTask(props.taskId);
                         }}>
