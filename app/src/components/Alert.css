@@ -43,6 +43,6 @@
 #alert-ok {
     margin: 5px;
     height: 25px;
-    background: royalblue;
-    color: white;
+    /*background: royalblue;*/
+    color: black;
 }

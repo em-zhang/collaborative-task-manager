@@ -1,19 +1,18 @@
 import TextareaAutosize from 'react-textarea-autosize';
 import './ListItem.css';
-import {useState} from "react";
 
 function ListItem(props) {
     return (
         <div className="list-item-container">
             <TextareaAutosize
-                className="list-item-label"
+                id="list-item-label"
                 value={props.listName}
                 onChange={(e) => {
                     props.onListFieldChanged(props.listID, "listName", e.target.value)
                 }}
                 onKeyPress={e => {
                     if (e.key === "Enter") {
-                        e.preventDefault();
+                        document.getElementById('list-item-label').blur();
                     }
                 }}
             />

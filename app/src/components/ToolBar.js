@@ -86,9 +86,14 @@ function ToolBar(props) {
                 </button>
                 <button
                     className="toolbar-button"
-                    // only make button fully visible and support functionality if there are completed tasks
                     id={props.numCompleted !== 0 ? "delete-button" : "delete-completed-button-hidden"}
+                    // onKeyPress={e => {
+                    //     if (e.key === "Enter") {
+                    //         document.getElementById('alert-ok').focus();
+                    //     }
+                    // }}
                     onClick={props.numCompleted !== 0 ? toggleModal : null}>
+
                     <i id="delete-icon" className="las la-trash">
                     </i>
                     <br/>

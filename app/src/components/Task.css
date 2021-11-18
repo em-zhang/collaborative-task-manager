@@ -9,7 +9,7 @@
     justify-content: space-between;
 }
 
-.task-label{
+#task-label{
     font-family: "PT Sans", sans-serif;
     font-size: 18px;
     flex-basis: 90%;
@@ -20,7 +20,7 @@
     margin: 4px 10px 4px 5px;
 }
 
-.task-label-strikethrough{
+#task-label-strikethrough{
     font-family: "PT Sans", sans-serif;
     text-decoration: line-through;
     font-size: 18px;

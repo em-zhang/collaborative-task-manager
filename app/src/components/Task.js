@@ -4,7 +4,7 @@ import {useState} from "react";
 
 function Task(props) {
     return (
-        <div className="    task-container">
+        <div className="task-container">
             <input type="checkbox"
                    className="checkbox"
                    checked={props.isCompleted}
@@ -19,14 +19,15 @@ function Task(props) {
                    }}
             />
             <TextareaAutosize
-                className= {!props.isCompleted ? "task-label" : "task-label-strikethrough"}
+                id= {!props.isCompleted ? "task-label" : "task-label-strikethrough"}
                 value={props.taskLabel}
                 onChange={(e) => {
                     props.onTaskFieldChanged(props.taskId, "taskLabel", e.target.value)
                 }}
                 onKeyPress={e => {
                     if (e.key === "Enter") {
-                        e.preventDefault();
+                        document.getElementById('task-label').blur();
+                        document.getElementById('task-label-strikethrough').blur();
                     }
                 }}
                 // don't allow user to edit a task if it's been marked completed
