@@ -14,6 +14,7 @@ function App(props) {
     const numCompleted = props.taskList.filter(task => task.isCompleted).length;
     const[homepage, showHomepage] = useState(true);
 
+
     return (
         homepage
             ?
@@ -51,10 +52,11 @@ function App(props) {
                 </div>
             </div>
             :
-            <div id="app-container">
+            <div className="app-container">
                 <div className="heading">
                     <h1>
                         <button id="home-button"
+                                aria-label="Home Button"
                                 onClick={() => {
                                     showHomepage(true);
                                 }}>
@@ -70,8 +72,7 @@ function App(props) {
                     </div>
                 </div>
                 <div className="topButtonBar">
-                    <div
-                        className="add-task">
+                    <div className="add-task">
                         <AddTask
                             taskList={filteredList}
                             onSetTaskList={props.setTaskList}

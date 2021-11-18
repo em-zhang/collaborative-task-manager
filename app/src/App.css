@@ -1,4 +1,4 @@
-#app-container {
+.app-container {
   font-family: "PT Sans", sans-serif;
   background: whitesmoke;
   -webkit-font-smoothing: antialiased;
@@ -23,7 +23,7 @@
   font-size: 30px;
 }
 
-.add-task-container{
+#add-task-container{
   padding: 0.5rem 1rem 0.5rem 1rem;
   /*text-align: center;*/
   display: flex;

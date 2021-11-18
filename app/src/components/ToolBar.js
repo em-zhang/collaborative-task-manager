@@ -49,6 +49,12 @@ function ToolBar(props) {
         props.showCompleted ? props.onSetShowCompleted(false) : props.onSetShowCompleted(true)
     }
 
+    // const otherElements = document.querySelectorAll('.app-container')
+    //     .forEach(elem => {
+    //         elem.setAttribute('tabIndex', '-1')
+    //     })
+
+
     return (
         <div>
             <div className="toolbar">
@@ -87,13 +93,9 @@ function ToolBar(props) {
                 <button
                     className="toolbar-button"
                     id={props.numCompleted !== 0 ? "delete-button" : "delete-completed-button-hidden"}
-                    // onKeyPress={e => {
-                    //     if (e.key === "Enter") {
-                    //         document.getElementById('alert-ok').focus();
-                    //     }
-                    // }}
-                    onClick={props.numCompleted !== 0 ? toggleModal : null}>
-
+                    disabled={props.numCompleted === 0}
+                    onClick={toggleModal}
+                    >
                     <i id="delete-icon" className="las la-trash">
                     </i>
                     <br/>
