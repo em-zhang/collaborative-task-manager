@@ -67,7 +67,9 @@ function ToolBar(props) {
                           onSortByName={handleSortByName}
                           onSortByPriority={handleSortByPriority}
                           onSortByCreationDate={handleSortByCreationDate}>
-                    <div className="sort-modal-message">
+                    <div className="sort-modal-message"
+                         aria-labelledby={"Tasks are currently sorted by" + describeSortOption()}
+                         >
                         Tasks are currently sorted by <b>{describeSortOption()}</b>.
                         <br/>
                         <br/>

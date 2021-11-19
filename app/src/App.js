@@ -14,7 +14,6 @@ function App(props) {
     const numCompleted = props.taskList.filter(task => task.isCompleted).length;
     const[homepage, showHomepage] = useState(true);
 
-
     return (
         homepage
             ?

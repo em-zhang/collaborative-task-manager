@@ -21,6 +21,10 @@ function ListItem(props) {
                         onClick={() => {
                             props.onListSelected(props.listID);
                             props.showHomepage(false);
+                            if(document.getElementById("home-button")){
+                                document.getElementById("home-button").focus();
+                            }
+
                         }}>
                     View
                 </button>

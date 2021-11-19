@@ -36,6 +36,7 @@ function Task(props) {
             <div className="priority-button-container">
                 <button className="priority-button"
                         id={props.priority === 3 ? "high" : props.priority === 2 ? "medium" : "low"}
+                        aria-label= {(props.priority === 3 ? "high" : props.priority === 2 ? "medium" : "low") + " priority"}
                         onClick={() => {
                             props.onChangePriority(props.taskId, props.priority);
                         }}>
@@ -45,6 +46,7 @@ function Task(props) {
             <div>
                 <button
                     className="delete-button"
+                    aria-label="delete"
                         onClick={() => {
                             props.onDeleteTask(props.taskId);
                         }}>

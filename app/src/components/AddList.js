@@ -18,7 +18,6 @@ function AddTask(props){
                     if (currList !== "") {
                         if (e.key === "Enter") {
                             props.onAddList(currList);
-                            console.log("adding new list with name ", currList)
                             setCurrList("");
                         }
                     }
