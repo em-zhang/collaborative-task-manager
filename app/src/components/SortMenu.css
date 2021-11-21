@@ -5,8 +5,8 @@
     left: 0;
     bottom: 400pt;
     right: 300pt;
-    width: 300pt;
-    height: 800pt;
+    width: 100%;
+    height: 100%;
     background-color: rgba(0, 0, 0, .3);
 }
 
@@ -17,7 +17,7 @@
     top: 130pt;
     right: 15px;
     text-align: center;
-    height: 200pt;
+    height: 170pt;
     width: 150pt;
     display: flex;
     padding-left: 30px;
@@ -26,8 +26,12 @@
     position: relative;
 }
 
-.alert-buttons {
+.sort-buttons {
     display: block;
+    position: absolute;
+    padding: 15px;
+    bottom: 5%;
+    right: 0;
 }
 
 #alert-sort-name {

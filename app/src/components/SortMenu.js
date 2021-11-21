@@ -5,7 +5,7 @@ function SortMenu(props) {
         <div className="sort-backdrop">
             <div className="sort-modal">
                 {props.children}
-                <div className="alert-buttons">
+                <div className="sort-buttons">
                     <button className={"alert-button"} id={"alert-sort-date"} type={"button"}
                             onClick={() => {
                                 props.onSortByCreationDate();
