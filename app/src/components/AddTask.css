@@ -6,7 +6,6 @@
 }
 
 .add-button {
-    font-family: "PT Sans", sans-serif;
     font-size: 17px;
     background-color: royalblue;
     color: white;
@@ -14,11 +13,12 @@
     border-style: hidden;
     border-width: 1px;
     border-radius: 5px;
+    margin-left: 15px;
+    padding: 6px 10px 6px 10px;
 }
 
 .add-button-disabled {
     opacity: 0.6;
-    font-family: "PT Sans", sans-serif;
     font-size: 17px;
     background-color: royalblue;
     color: white;

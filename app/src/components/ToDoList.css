@@ -1,5 +1,8 @@
-#checklist {
-    margin: 12px 1rem 12px 1rem;
+@media only screen and (max-width: 1080px) {
+}
+
+.checklist {
+    margin: 12px 1rem;
     display: flex;
     flex-direction: column;
     gap: 12px;
