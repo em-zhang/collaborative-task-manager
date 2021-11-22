@@ -33,7 +33,7 @@ function Task(props) {
                 // don't allow user to edit a task if it's been marked completed
                 disabled={props.isCompleted}
             />
-            <div className="priority-button-container">
+            <div className="button-container">
                 <button className="priority-button"
                         id={props.priority === 3 ? "high" : props.priority === 2 ? "medium" : "low"}
                         aria-label= {(props.priority === 3 ? "high" : props.priority === 2 ? "medium" : "low") + " priority"}
@@ -45,7 +45,7 @@ function Task(props) {
             </div>
             <div>
                 <button
-                    className="delete-button"
+                    className="delete-list-button"
                     aria-label="delete"
                         onClick={() => {
                             props.onDeleteTask(props.taskId);

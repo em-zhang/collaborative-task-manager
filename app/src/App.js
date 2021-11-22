@@ -17,7 +17,7 @@ function App(props) {
     return (
         homepage
             ?
-            <div id="homepage">
+            <div className="app-container">
                 <div className="heading">
                     <h1>
                         <div
@@ -30,15 +30,15 @@ function App(props) {
                         <h2>All Lists</h2>
                     </div>
                 </div>
-                <div className="home-top-bar">
-                    <div className="add-list">
+                <div className="top-button-bar">
+                    <div className="add-task">
                         <AddList
                             onAddList={props.handleAddList}
                             onListSelected={props.handleListSelected}
                         />
                     </div>
                 </div>
-                <div className="list-container">
+                <div className="taskList">
                     <ListMenu
                         listData={props.listData}
                         currListID={props.currListID}
@@ -70,7 +70,7 @@ function App(props) {
                         <h2>{props.currListName}</h2>
                     </div>
                 </div>
-                <div className="topButtonBar">
+                <div className="top-button-bar">
                     <div className="add-task">
                         <AddTask
                             taskList={filteredList}

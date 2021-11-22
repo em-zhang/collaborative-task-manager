@@ -10,30 +10,20 @@
 }
 
 #modal {
-    background-color: #fff;
-    border-radius: 5pt  ;
-    border-color: black;
-    border-style: solid;
+    background-color: #ffffff;
+    border-radius: 10px;
     margin: 0 auto;
-    top: 150pt;
-    right: 15px;
     text-align: center;
-    height: 90pt;
+    height: 80pt;
     width: 150pt;
     display: flex;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 30px;
+    padding: 30px 30px 30px 30px;
     position: relative;
-}
-
-.alert-buttons {
-    position: absolute;
-    display: flex;
-    padding: 15px;
-    margin-top: 80px;
-    bottom: 0;
-    right: 0;
+    top: 35vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
 #alert-cancel {

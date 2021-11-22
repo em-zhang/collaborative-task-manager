@@ -3,7 +3,7 @@ import './ListItem.css';
 
 function ListItem(props) {
     return (
-        <div className="list-item-container">
+        <div className="task-container">
             <TextareaAutosize
                 id="list-item-label"
                 value={props.listName}
@@ -16,7 +16,7 @@ function ListItem(props) {
                     }
                 }}
             />
-            <div>
+            <div className="button-container">
                 <button className="view-list-button"
                         onClick={() => {
                             props.onListSelected(props.listID);

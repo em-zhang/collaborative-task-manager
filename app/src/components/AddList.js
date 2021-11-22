@@ -5,10 +5,10 @@ function AddTask(props){
     const [currList, setCurrList] = useState("");
 
     return (
-        <div>
+        <div className="add-task-container">
             <input
-                className="list-input"
-                id="new-list-text"
+                className="todo-input"
+                id="new-todo-text"
                 placeholder="Create a new list"
                 value={currList}
                 onChange={e => {

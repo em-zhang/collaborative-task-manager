@@ -26,9 +26,7 @@
     font-family: "PT Sans", sans-serif;
     font-size: 13.5px;
     background: royalblue;
-    border-style: solid;
-    border-width: 1px;
-    border-color: lightgrey;
+    border-style: hidden;
     border-radius: 12px;
     padding-top: 5px;
     color: white;

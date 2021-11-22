@@ -5,7 +5,7 @@ import './ListMenu.css';
 function ListMenu(props) {
     return (
         <div id="list-container">
-            <div id="list-menu">
+            <div id="checklist">
                 {props.listData.map(list =>
                     <ListItem
                         listID={list.id}

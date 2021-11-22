@@ -1,84 +1,67 @@
 .app-container {
-  font-family: "PT Sans", sans-serif;
-  background: whitesmoke;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  margin-bottom: 10%;
-}
-
-#homepage {
-  font-family: "PT Sans", sans-serif;
-  background: whitesmoke;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  /*margin-bottom: 85px;*/
+    font-family: "PT Sans", sans-serif;
+    background: whitesmoke;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin-bottom: 10%;
+    min-width: 360px;
 }
 
 .title {
-  text-align: center;
+    text-align: center;
 }
 
-.loading-message{
-  text-align: center;
-  font-size: 30px;
+.loading-message {
+    text-align: center;
+    font-size: 30px;
 }
 
-#add-task-container{
-  padding: 0.5rem 1rem 0.5rem 1rem;
-  /*text-align: center;*/
-  display: flex;
-  justify-content: space-between;
+.add-task-container {
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
 }
 
-.add-list{
-  padding-top: 10px;
-  text-align: center;
-  grid-column: 1;
-  display: inline;
+.add-list {
+    padding-top: 10px;
+    text-align: center;
+    grid-column: 1;
+    display: inline;
 }
 
-.topButtonBar {
-  background: white;
-  border-width: 1px;
+.top-button-bar {
+    background: white;
+    border-width: 1px;
 }
 
-.home-top-bar {
-  display: grid;
-  grid-template: 50pt / auto auto;
-  background: white;
-  border-width: 1px;
-  margin-top: 17px;
-}
-
-#home-button{
-  position: absolute;
-  float: left;
-  height: 42px;
-  width: 4em;
-  border-style: hidden;
-  background-color: transparent;
-  /*background: royalblue;*/
-  /*border-style: solid;*/
-  /*border-width: 1px;*/
-  /*border-color: lightgrey;*/
-  /*border-radius: 12px;*/
-  /*color: white;*/
-  /*height: 50px;*/
-  /*margin: 0% 0% 5% 5%;*/
-  transform: scale(2);
+#home-button {
+    position: absolute;
+    float: left;
+    height: 42px;
+    width: 4em;
+    border-style: hidden;
+    background-color: transparent;
+    /*background: royalblue;*/
+    /*border-style: solid;*/
+    /*border-width: 1px;*/
+    /*border-color: lightgrey;*/
+    /*border-radius: 12px;*/
+    /*color: white;*/
+    /*height: 50px;*/
+    /*margin: 0% 0% 5% 5%;*/
+    transform: scale(2);
 }
 
 .heading {
-  padding-top: 3%;
-  display: inline;
+    padding-top: 3%;
+    display: inline;
 }
 
-.header{
-  text-align: center;
-  display: inline;
+.header {
+    display: inline;
 }
 
 .homepage-heading {
-  padding-top: 3%;
-  display: inline;
+    padding-top: 3%;
+    display: inline;
 }

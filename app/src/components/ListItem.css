@@ -1,14 +1,14 @@
-.list-item-container{
+.list-item-container {
     display: inline-flex;
     margin: 1.5%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     background-color: white;
     opacity: 0.8;
     width: 98%;
 }
 
-#list-item-label{
+#list-item-label {
     font-family: "PT Sans", sans-serif;
     font-size: 18px;
     flex-basis: 90%;
@@ -20,15 +20,12 @@
 }
 
 .view-list-button {
-    font-size: 16px;
-    margin-right: 10px;
-    margin-top: 10px;
-    display: inline-list-item;
-    width: 50px;
-    border-radius: 30%;
+    width: 48px;
+    height: 32px;
     border: none;
     font-weight: bold;
-    background: lightsteelblue;
+    border-radius: 10px;
+    background-color: #f0f0f0;
 }
 
 .delete-list-button {
