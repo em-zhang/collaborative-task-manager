@@ -5,7 +5,7 @@ function ListItem(props) {
     return (
         <div className="task-container">
             <TextareaAutosize
-                id="list-item-label"
+                id="task-label"
                 value={props.listName}
                 onChange={(e) => {
                     props.onListFieldChanged(props.listID, "listName", e.target.value)
