@@ -30,7 +30,7 @@ function Alert(props) {
                             id="alert-cancel"
                             onClick={() => props.onClose()}
                             onKeyDown={e => {
-                                if(e.keyCode == 9) {
+                                if(e.keyCode === 9) {
                                     e.preventDefault();
                                     document.getElementById("alert-ok").focus();
                                 }

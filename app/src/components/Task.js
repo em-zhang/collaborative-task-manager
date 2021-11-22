@@ -1,6 +1,5 @@
 import TextareaAutosize from 'react-textarea-autosize';
 import './Task.css';
-import {useState} from "react";
 
 function Task(props) {
     return (

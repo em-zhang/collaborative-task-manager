@@ -21,7 +21,7 @@ function FirestoreApp(props) {
     const collectionName = "em-zhang-tasks-v6"
     let queryAll = db.collection(collectionName);
 
-    const [all_value, all_loading, all_error] = useCollection(queryAll);
+    const [all_value] = useCollection(queryAll);
 
     let listIDs = [];
     if (all_value) {
