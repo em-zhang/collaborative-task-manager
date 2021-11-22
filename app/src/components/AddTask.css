@@ -18,7 +18,7 @@
 }
 
 .add-button-disabled {
-    opacity: 0.6;
+    opacity: 0.8;
     font-size: 17px;
     background-color: royalblue;
     color: white;

@@ -25,8 +25,10 @@ function Task(props) {
                 }}
                 onKeyPress={e => {
                     if (e.key === "Enter") {
-                        document.getElementById('task-label').blur();
-                        document.getElementById('task-label-strikethrough').blur();
+                        if (document.getElementById('task-label')){
+                            e.preventDefault();
+                            document.getElementById('task-label').blur();
+                        }
                     }
                 }}
                 // don't allow user to edit a task if it's been marked completed

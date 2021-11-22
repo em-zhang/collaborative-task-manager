@@ -3,16 +3,19 @@ import './ListItem.css';
 
 function ListItem(props) {
     return (
-        <div className="task-container">
+        <div className="list-item-container">
             <TextareaAutosize
-                id="task-label"
+                id="list-item-label"
                 value={props.listName}
                 onChange={(e) => {
                     props.onListFieldChanged(props.listID, "listName", e.target.value)
                 }}
                 onKeyPress={e => {
                     if (e.key === "Enter") {
-                        document.getElementById('list-item-label').blur();
+                        e.preventDefault();
+                        if(document.getElementById('list-item-label')){
+                            document.getElementById('list-item-label').blur();
+                        }
                     }
                 }}
             />

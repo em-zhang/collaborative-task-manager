@@ -1,11 +1,11 @@
 .list-item-container {
     display: inline-flex;
-    margin: 1.5%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     background-color: white;
     opacity: 0.8;
-    width: 98%;
+    width: 100%;
+    justify-content: space-between;
 }
 
 #list-item-label {
@@ -19,6 +19,7 @@
     margin: 4px 10px 4px 5px;
     flex-grow: 1;
 }
+
 
 .view-list-button {
     width: 48px;
