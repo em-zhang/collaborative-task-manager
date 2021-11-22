@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import App from "./App"
 import {generateUniqueID} from "web-vitals/dist/modules/lib/generateUniqueID";
-
+import loadingSymbol from '../src/LoadingSymbol.gif'
 import firebase from "firebase/compat";
 import {useCollection} from "react-firebase-hooks/firestore";
 
@@ -168,7 +168,7 @@ function FirestoreApp(props) {
         />
         {loading &&
         <div className="loading-message">
-            Loading...
+            <img src={loadingSymbol} alt="Loading..." />
         </div>}
     </div>
 }
