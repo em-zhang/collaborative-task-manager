@@ -20,7 +20,6 @@ const db = firebase.firestore();
 function FirestoreApp(props) {
     const collectionName = "em-zhang-tasks-v6"
     let queryAll = db.collection(collectionName);
-
     const [all_value] = useCollection(queryAll);
 
     let listIDs = [];
@@ -28,20 +27,17 @@ function FirestoreApp(props) {
         listIDs = all_value.docs.map((doc) => {
             return {...doc.data()}});
     }
-    const [currentList, setCurrentList] = useState("default-list");
 
+    // only get data from the current list
+    const [currentList, setCurrentList] = useState("default-list");
     let query = db.collection(collectionName).doc(currentList).collection("list-items");
 
+    // set the sort option to order the query
     const [sortOption, setSortOption] = useState("dateCreated");
-    if (sortOption){
-        // sort in descending order by priority
-        if (sortOption === "priority"){
-            query = query.orderBy(sortOption, "desc");
-        } else {
-            query = query.orderBy(sortOption);
-        }
-    }
-    const [value, loading, error] = useCollection(query); // You can change the const used here
+    query = query.orderBy(sortOption, sortOption === "priority" ? "desc" : "asc")
+
+    // return values of the task list
+    const [value, loading, error] = useCollection(query);
     let taskList = [];
     if (value) {
         taskList = value.docs.map((doc) => {

@@ -6,6 +6,9 @@ function SortMenu(props) {
             <div className="sort-modal">
                 {props.children}
                 <div className="sort-buttons">
+                    <div id="sort-by">
+                        Sort by:
+                    </div>
                     <button className={"alert-button"} id={"alert-sort-date"} type={"button"}
                             onClick={() => {
                                 props.onSortByCreationDate();

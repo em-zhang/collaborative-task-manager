@@ -1,10 +1,10 @@
-import TextareaAutosize from 'react-textarea-autosize';
 import './ListItem.css';
+import SelectionMaintainingInput from "./SelectionMaintainingInput";
 
 function ListItem(props) {
     return (
         <div className="list-item-container">
-            <TextareaAutosize
+            <SelectionMaintainingInput
                 id="list-item-label"
                 value={props.listName}
                 onChange={(e) => {

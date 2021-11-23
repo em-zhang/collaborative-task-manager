@@ -10,17 +10,21 @@
     background-color: rgba(0, 0, 0, .3);
 }
 
+#sort-by{
+    text-align: center;
+    padding-bottom: 20pt;
+}
 .sort-modal {
     background-color: #ffffff;
     border-radius: 10px;
     margin: 0 auto;
     text-align: center;
-    height: 170pt;
+    height: 130pt;
     width: 150pt;
     display: flex;
     padding: 30px 30px 0 30px;
     position: relative;
-    top: 25vh;
+    top: 35vh;
 }
 
 .sort-buttons {

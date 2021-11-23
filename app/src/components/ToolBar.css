@@ -65,3 +65,7 @@
 #delete-completed-button-hidden{
     opacity: 0.8;
 }
+
+.sort-modal-message{
+    text-align: center;
+}
