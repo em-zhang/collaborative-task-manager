@@ -1,0 +1,41 @@
+.list-item-container {
+    display: inline-flex;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    background-color: white;
+    opacity: 0.8;
+    width: 100%;
+    justify-content: space-between;
+}
+
+#list-item-label {
+    font-family: "PT Sans", sans-serif;
+    font-size: 18px;
+    flex-basis: 90%;
+    min-height: 27px;
+    height: auto;
+    border: none;
+    resize: none;
+    margin: 4px 10px 4px 5px;
+    flex-grow: 1;
+}
+
+
+.view-list-button {
+    width: 48px;
+    height: 32px;
+    border: none;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+}
+
+.delete-list-button {
+    right: 23px;
+    margin-top: 10px;
+    display: inline-list-item;
+    margin-right: 10px;
+    border: none;
+    background-color: white;
+    transform: scale(1.2);
+}

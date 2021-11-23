@@ -1,26 +1,19 @@
-#checklist {
-    padding-left: 20px;
-    padding-top: 10px;
-    width: 360px;
-    max-height: 390px;
-    grid-row: 4 / span 1;
-    grid-column: 1 / span 1;
+/*@media only screen and (max-width: 1080px) {*/
+/*}*/
+
+.checklist {
+    margin: 12px 1rem;
     display: flex;
     flex-direction: column;
-    font-size: 20px;
-    overflow-y: auto;
+    gap: 12px;
+    padding-bottom: 3rem;
 }
 
-.no-tasks-message{
-    text-align: center;
-    color: royalblue;
-}
-input[type="checkbox"]{
+input[type="checkbox"] {
     transform: scale(1.4);
     display: inline-block;
-    margin-left: 10px;
-    margin-top: 10px;
     color: orange;
+    margin: auto 12px auto 12px;
 }
 
 .sort-button {

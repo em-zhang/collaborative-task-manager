@@ -1,11 +1,12 @@
-.todo-input {
-    padding: 5px 3rem 5px 5px;
+.list-input {
+    padding: 5px;
     font-size: 18px;
-    box-sizing: border-box;
-    flex-grow: 1;
+    margin-top: 1%;
+    /*margin-left: 60%;*/
+    margin-left: 15px;
 }
 
-.add-button {
+#list-add-button {
     font-size: 17px;
     background-color: royalblue;
     color: white;
@@ -17,7 +18,7 @@
     padding: 6px 10px 6px 10px;
 }
 
-.add-button-disabled {
+#list-add-button-disabled {
     opacity: 0.8;
     font-size: 17px;
     background-color: royalblue;

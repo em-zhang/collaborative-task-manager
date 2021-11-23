@@ -5,29 +5,34 @@
     left: 0;
     bottom: 400pt;
     right: 300pt;
-    width: 300pt;
-    height: 800pt;
+    width: 100%;
+    height: 100%;
     background-color: rgba(0, 0, 0, .3);
 }
 
-.sort-modal {
-    background-color: #fff;
-    border-radius: 5px;
-    margin: 0 auto;
-    top: 130pt;
-    right: 15px;
+#sort-by{
     text-align: center;
-    height: 200pt;
+    padding-bottom: 20pt;
+}
+.sort-modal {
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin: 0 auto;
+    text-align: center;
+    height: 130pt;
     width: 150pt;
     display: flex;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-top: 30px;
+    padding: 30px 30px 0 30px;
     position: relative;
+    top: 35vh;
 }
 
-.alert-buttons {
+.sort-buttons {
     display: block;
+    position: absolute;
+    padding: 15px;
+    bottom: 5%;
+    right: 0;
 }
 
 #alert-sort-name {
@@ -37,8 +42,6 @@
     border-radius: 12px;
     border-color: dimgrey;
     border-width: 1px;
-    background: royalblue;
-    color: white;
 }
 
 #alert-sort-priority {
@@ -48,8 +51,6 @@
     border-radius: 12px;
     border-color: dimgrey;
     border-width: 1px;
-    background: royalblue;
-    color: white;
 }
 
 #alert-sort-date {
@@ -57,17 +58,6 @@
     height: 25px;
     width: 170px;
     border-radius: 12px;
-    border-color: dimgrey;
-    border-width: 1px;
-    background: royalblue;
-    color: white;
-}
-
-#alert-sort-cancel {
-    margin: 10px;
-    height: 25px;
-    width: 60px;
-    border-radius: 1px;
     border-color: dimgrey;
     border-width: 1px;
 }

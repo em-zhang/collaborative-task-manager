@@ -3,14 +3,12 @@
     position: fixed;
     overflow: hidden;
     bottom: 0;
-    width: 100%;
-    background-color: white;
     justify-content: center;
-    padding: 6px 0px;
     border-top-style: solid;
     border-color: lightgrey;
     border-width: 1px;
-    gap: 5px;
+    width: 100%;
+    background-color: white;
 }
 
 .backdrop {
@@ -19,31 +17,27 @@
     left: 0;
     bottom: 400pt;
     right: 300pt;
-    width: 300pt;
-    height: 600pt;
+    width: 100%;
+    height: 100%;
     background-color: rgba(0, 0, 0, .3);
-}
-
-#hide-button{
-    width: 120px;
 }
 
 .toolbar-button {
     font-family: "PT Sans", sans-serif;
     font-size: 13.5px;
     background: royalblue;
-    border-style: solid;
-    border-width: 1px;
-    border-color: lightgrey;
+    border-style: hidden;
     border-radius: 12px;
     padding-top: 5px;
     color: white;
     height: 62px;
     margin: 2px 1px 1px 2px;
+    width: 130px;
 }
 
 #sort-button{
     width: 70px;
+    /*width: 30%*/
 }
 
 #sort-icon{
@@ -52,18 +46,14 @@
     transform: scale(2);
 }
 
-#hide-button{
-    width: 130px;
-}
+/*#hide-button{*/
+/*    width: 100px;*/
+/*}*/
 
 #hide-icon{
     padding-top: 3px;
     padding-bottom: 5px;
     transform: scale(2);
-}
-
-#delete-button{
-    width: 150px;
 }
 
 #delete-icon{
@@ -73,6 +63,9 @@
 }
 
 #delete-completed-button-hidden{
-    opacity: 0.6;
-    width: 150px;
+    opacity: 0.8;
+}
+
+.sort-modal-message{
+    text-align: center;
 }

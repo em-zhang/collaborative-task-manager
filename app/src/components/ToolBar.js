@@ -5,7 +5,7 @@ import './ToolBar.css';
 
 function ToolBar(props) {
     const [showAlert, setShowAlert] = useState(false);
-    const [showSortMenu, setSortMenu] = useState(false);
+    const [showSortMenu, setShowSortMenu] = useState(false);
 
     function handleSortByName() {
         props.onSortSelected("taskLabel");
@@ -19,30 +19,16 @@ function ToolBar(props) {
         props.onSortSelected("dateCreated");
     }
 
-    function describeSortOption() {
-        let sortOptionText = "Date Created";
-        if (props.sortOption === "dateCreated"){
-            sortOptionText = "Date Created";
-        }
-        else if (props.sortOption === "priority"){
-            sortOptionText = "Priority";
-        }
-        else if (props.sortOption === "taskLabel"){
-            sortOptionText = "Name";
-        }
-        return sortOptionText;
-    }
-
     function handleAlertOK() {
         props.onDeleteTasks();
     }
 
     function toggleModal() {
-        showAlert ? setShowAlert(false) : setShowAlert(true)
+        setShowAlert(!showAlert)
     }
 
     function toggleSortModal() {
-        showSortMenu ? setSortMenu(false) : setSortMenu(true)
+        setShowSortMenu(!showSortMenu)
     }
 
     function toggleShowCompleted() {
@@ -67,12 +53,6 @@ function ToolBar(props) {
                           onSortByName={handleSortByName}
                           onSortByPriority={handleSortByPriority}
                           onSortByCreationDate={handleSortByCreationDate}>
-                    <div className="sort-modal-message">
-                        Tasks are currently sorted by <b>{describeSortOption()}</b>.
-                        <br/>
-                        <br/>
-                        Sort by:
-                    </div>
                 </SortMenu>}
                 <button
                     className="toolbar-button"
@@ -86,9 +66,10 @@ function ToolBar(props) {
                 </button>
                 <button
                     className="toolbar-button"
-                    // only make button fully visible and support functionality if there are completed tasks
                     id={props.numCompleted !== 0 ? "delete-button" : "delete-completed-button-hidden"}
-                    onClick={props.numCompleted !== 0 ? toggleModal : null}>
+                    disabled={props.numCompleted === 0}
+                    onClick={toggleModal}
+                    >
                     <i id="delete-icon" className="las la-trash">
                     </i>
                     <br/>

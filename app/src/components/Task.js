@@ -1,8 +1,10 @@
 import TextareaAutosize from 'react-textarea-autosize';
+import {useState} from 'react';
 import './Task.css';
-import {useState} from "react";
 
 function Task(props) {
+    const [itemName, setItemName] = useState(props.taskLabel);
+
     return (
         <div className="task-container">
             <input type="checkbox"
@@ -11,34 +13,45 @@ function Task(props) {
                    onChange={(e) => {
                        props.onTaskFieldChanged(props.taskId, "isCompleted", e.target.checked)
                    }}
+
+                   onKeyPress={e => {
+                       if (e.key === "Enter") {
+                           props.onTaskFieldChanged(props.taskId, "isCompleted", !props.isCompleted)
+                       }
+                   }}
             />
             <TextareaAutosize
-                className= {!props.isCompleted ? "task-label" : "task-label-strikethrough"}
-                value={props.taskLabel}
-                onChange={(e) => {
-                    props.onTaskFieldChanged(props.taskId, "taskLabel", e.target.value)
-                }}
+                id= {!props.isCompleted ? "task-label" : "task-label-strikethrough"}
+                value={itemName}
+                onChange={(e) => setItemName(e.target.value)}
+                onBlur={(e) =>
+                    props.onTaskFieldChanged(props.taskId, "taskLabel", itemName)
+                }
                 onKeyPress={e => {
                     if (e.key === "Enter") {
-                        e.preventDefault();
+                        if (document.getElementById('task-label')){
+                            e.preventDefault();
+                            document.getElementById('task-label').blur();
+                        }
                     }
                 }}
                 // don't allow user to edit a task if it's been marked completed
                 disabled={props.isCompleted}
-
             />
-            <div>
+            <div className="button-container">
                 <button className="priority-button"
                         id={props.priority === 3 ? "high" : props.priority === 2 ? "medium" : "low"}
+                        aria-label= {(props.priority === 3 ? "high" : props.priority === 2 ? "medium" : "low") + " priority"}
                         onClick={() => {
-                            console.log("Priority is", props.priority);
                             props.onChangePriority(props.taskId, props.priority);
                         }}>
                     {"!".repeat(props.priority)}
                 </button>
             </div>
             <div>
-                <button className="delete-button"
+                <button
+                    className="delete-list-button"
+                    aria-label="delete"
                         onClick={() => {
                             props.onDeleteTask(props.taskId);
                         }}>

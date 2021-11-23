@@ -1,20 +1,41 @@
 import './Alert.css';
 
+if ((document.getElementById('alert-cancel') && document.getElementById('alert-cancel').hasFocus())) {
+    console.log("on cancel");
+}
+
 function Alert(props) {
     return (
         <div className={"backdrop"}>
-            <div className="modal">
+            <div id="modal">
                 {props.children}
                 <div className="alert-buttons">
-                    <button className={"alert-button"} id={"alert-ok"} type={"button"}
+                    <button id="alert-ok"
                             onClick={() => {
                                 props.onOK();
-                                props.onClose()
-                            }}>
+                                props.onClose();
+                            }}
+                            onKeyDown={e => {
+                                if (e.keyCode === 9) {
+                                    e.preventDefault();
+                                    document.getElementById("alert-cancel").focus();
+                                }
+                            }}
+                    >
                         OK
                     </button>
-                    <button className={"alert-button"} id={"alert-cancel"} type={"button"}
-                            onClick={() => props.onClose()}>
+
+                    <button tabIndex="0"
+                            className="alert-button"
+                            id="alert-cancel"
+                            onClick={() => props.onClose()}
+                            onKeyDown={e => {
+                                if(e.keyCode === 9) {
+                                    e.preventDefault();
+                                    document.getElementById("alert-ok").focus();
+                                }
+                            }}
+                    >
                         Cancel
                     </button>
                 </div>
