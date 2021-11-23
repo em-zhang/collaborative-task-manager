@@ -11,11 +11,11 @@ The app continues to handle various tasks including creating, renaming, and mark
 ### Design Process, Decisions, and Early Mock-Ups
 Since our last lab, we made many iterations and progressive renders of our app based on user research and testing, as well as research and inspiration from other to-do apps. We created several mock-ups of our app as sketches and as screen images in Figma. 
 <p float="left">
-<img src="screenshots/figma_mockup.png" width="400" height="400"/>
-<img src="screenshots/priority_inspo.png" width="300" height="100"/>
+<img src="screenshots/lab3/figma_mockup.png" width="400" height="400"/>
+<img src="screenshots/lab3/priority_inspo.png" width="300" height="100"/>
 </p>
 We were inspired by existing task manager apps that display task priority based on color, number, or exclamation marks. We considered alternate designs for displaying task priority, and we settled on using a combination of color and exclamation marks based on positive feedback we received from test users. The following are progressive renders of our app that we modified through user testing. For example, you can see that we changed the color themes of the buttons to reflect a more intuitive sense of priority, and we also moved the location of the sort tasks button to the toolbar so users could easily access this functionality along with "Hide Completed" and "Delete Completed". These changes and decisions are discussed further down below under Design Decisions and User Testing.
-<img src="screenshots/second_design.png"/>
+<img src="screenshots/lab3/second_design.png"/>
 
 We continued to refine the smaller UI/UX details of our app, until we got to the final general screen images of our app. The following screen images show the following:
 1. No tasks have been marked as completed. This is the default view of a full task list.
@@ -24,9 +24,9 @@ We continued to refine the smaller UI/UX details of our app, until we got to the
 
 You'll notice that we refined the look of the buttons and priority displays for the tasks, and we also added icons to our task bar for a more intuitive understanding of functionality.
 <p float="left">
-<img src="screenshots/all_uncomplete.png" width="270.375" height="500"/>
-<img src="screenshots/final1.png" width="270.375" height="500"/>
-<img src="screenshots/final2.png" width="270.375" height="500"/>
+<img src="screenshots/lab3/all_uncomplete.png" width="270.375" height="500"/>
+<img src="screenshots/lab3/final1.png" width="270.375" height="500"/>
+<img src="screenshots/lab3/final2.png" width="270.375" height="500"/>
 </p>
 
 ### Key Design Decisions
@@ -83,9 +83,9 @@ Below you will find the screen images and flow for new changes that we've made s
 
 You can see that the user can simply tap on the priority button and toggle between low, medium, and high priority. Here we are changing the priority of the task "buy groceries".
 <p float="left">
-<img src="screenshots/final1.png" width="220" height="380"/>
-<img src="screenshots/change_priority_high.png" width="220" height="380"/>
-<img src="screenshots/change_priority_low.png" width="220" height="380"/>
+<img src="screenshots/lab3/final1.png" width="220" height="380"/>
+<img src="screenshots/lab3/change_priority_high.png" width="220" height="380"/>
+<img src="screenshots/lab3/change_priority_low.png" width="220" height="380"/>
 =</p>
 
 **Sorting tasks**
@@ -93,16 +93,16 @@ You can see that the user can simply tap on the priority button and toggle betwe
 When the user wants to sort tasks, they simply have to create on the Sort button in the toolbar. A modal will pop up and the user will simply select an option – date created, name, or priority. We also display the current sorting option with a checkmark. The user selects one of these options, or can cancel out, and we automatically exit the modal and load the new tasks in the preferred order.
 
 <p float="left"> 
-<img src="screenshots/sorted_by_datecreated.png" width="220" height="380"/>
-<img src="screenshots/sorted_by_name.png" width="220" height="380"/>
-<img src="screenshots/sorted_by_priority.png" width="220" height="380"/>
+<img src="screenshots/lab3/sorted_by_datecreated.png" width="220" height="380"/>
+<img src="screenshots/lab3/sorted_by_name.png" width="220" height="380"/>
+<img src="screenshots/lab3/sorted_by_priority.png" width="220" height="380"/>
 </p>
 
 The default sorting is by date created. The following screen images capture what happens after the user clicks on sort by name and sort by priority, respectively.
 
 <p float="left"> 
-<img src="screenshots/sort_after_name.png" width="220" height="380"/>
-<img src="screenshots/sort_after_priority.png" width="220" height="380"/>
+<img src="screenshots/lab3/sort_after_name.png" width="220" height="380"/>
+<img src="screenshots/lab3/sort_after_priority.png" width="220" height="380"/>
 </p>
 
 **New Changes to UI**
@@ -111,14 +111,14 @@ We implemented several changes to the user interface for basic tasks like editin
 
 We added a loading screen for when the tasks information is being fetched, which will briefly display while tasks are loading.
 
-<img src="screenshots/loading.png" width="220.375" height="380"/>
+<img src="screenshots/lab3/loading.png" width="220.375" height="380"/>
 
 When deleting all completed tasks, more information is provided and users will see the number of tasks that are about to be deleted.
 
-<img src="screenshots/delete_before.png" width="220.375" height="380"/>
+<img src="screenshots/lab3/delete_before.png" width="220.375" height="380"/>
 
 We added a background to our toolbar so that tasks do not bleed under the toolbar. Tasks are now in a separate container such that the user can scroll through the tasks without losing sight of the "add task" bar and header on the screen. For example, this is a screen image where we have many tasks.
 
-<img src="screenshots/many_tasks.png" width="220.375" height="380"/>
+<img src="screenshots/lab3/many_tasks.png" width="220.375" height="380"/>
 
 You can find the screen images and flow for the original tasks that we were asked to implement in previous labs. While the interface for our app is slightly more clean, the functionality for these tasks have not changed much.
