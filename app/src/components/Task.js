@@ -1,7 +1,10 @@
 import TextareaAutosize from 'react-textarea-autosize';
+import {useState} from 'react';
 import './Task.css';
 
 function Task(props) {
+    const [itemName, setItemName] = useState(props.taskLabel);
+
     return (
         <div className="task-container">
             <input type="checkbox"
@@ -19,10 +22,11 @@ function Task(props) {
             />
             <TextareaAutosize
                 id= {!props.isCompleted ? "task-label" : "task-label-strikethrough"}
-                value={props.taskLabel}
-                onChange={(e) => {
-                    props.onTaskFieldChanged(props.taskId, "taskLabel", e.target.value)
-                }}
+                value={itemName}
+                onChange={(e) => setItemName(e.target.value)}
+                onBlur={(e) =>
+                    props.onTaskFieldChanged(props.taskId, "taskLabel", itemName)
+                }
                 onKeyPress={e => {
                     if (e.key === "Enter") {
                         if (document.getElementById('task-label')){
