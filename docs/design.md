@@ -82,10 +82,10 @@ We also implemented responsive design tos upport our application in landscape, p
 We made several changes to our user interface to support a cleaner, more intuitive design. We took into account feedback from previous labs and also from our test users.
 
 - We added a loading icon for when the tasks information is being fetched, which will briefly display while tasks are loading.
-<img src="screenshots/lab4/lab4-loading.png" height="380"/>
+<img src="screenshots/lab4/lab4-loading.png" height="300"/>
 
 - We updated the opacity and brightness of our color scheme so that the contrast and visibility were in tune with accessibility standards.
 - We updated the modal display buttons and pop-ups so they are aligned and cleaner.
-<img src="screenshots/lab4/lab4-modal.png" height="380"/>
+<img src="screenshots/lab4/lab4-modal.png" height="300"/>
 
 - We made sure that our app is well-aligned (add boxes, buttons, tasks) in accordance with the guest design lecture
