@@ -10,7 +10,7 @@ The app continues to handle various tasks including creating, renaming, and mark
 
 Quick references:
 1. github pages: http://em-zhang.github.io/cs124
-2. video recording (showing accessible design): 
+2. video recording (showing accessible design): https://www.youtube.com/watch?v=xF50nusGhkA
 
 ### Design Process, Decisions, and Early Mock-Ups
 The following is a mock-up of our original design idea for the interface, which consisted of a home page and list subpages. We also did a bit of iteration to arrive at the final layout of our homepage and listpage UI.
