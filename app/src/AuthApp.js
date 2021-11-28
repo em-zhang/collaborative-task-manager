@@ -1,25 +1,113 @@
-import React, {useState} from "react";
-import App from "./App"
+import App from './App';
+import TabList from './components/TabList';
 import {generateUniqueID} from "web-vitals/dist/modules/lib/generateUniqueID";
 import loadingSymbol from '../src/LoadingSymbol.gif'
+import React, {useState} from "react";
 import firebase from "firebase/compat";
-import {useCollection} from "react-firebase-hooks/firestore";
+import {  useCollection } from "react-firebase-hooks/firestore";
+import {
+    useAuthState,
+    useCreateUserWithEmailAndPassword,
+    useSignInWithEmailAndPassword
+} from 'react-firebase-hooks/auth';
 
-// Firebase initialization config provided from lab docs
+// Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyCd9qqxvMpEKpBzwfWcc2tlRFa6ICaLH_s",
-    authDomain: "hmc-cs124-fa21-labs.firebaseapp.com",
-    projectId: "hmc-cs124-fa21-labs",
-    storageBucket: "hmc-cs124-fa21-labs.appspot.com",
-    messagingSenderId: "949410042946",
-    appId: "1:949410042946:web:0113b139a7e3cd1cc709db"
+    apiKey: "AIzaSyCcQ6XCOvMIA7pHME4bWBgy_7OVy_7XErA",
+    authDomain: "cs124-fall2021.firebaseapp.com",
+    projectId: "cs124-fall2021",
+    storageBucket: "cs124-fall2021.appspot.com",
+    messagingSenderId: "264318304667",
+    appId: "1:264318304667:web:81528b78246f82b1cd613e"
 };
+
+// Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
+const auth = firebase.auth();
+const googleProvider = new firebase.auth.GoogleAuthProvider();
 
-function FirestoreApp(props) {
-    const collectionName = "em-zhang-tasks-v6"
-    let queryAll = db.collection(collectionName);
+function AuthApp(props) {
+    const [user, loading, error] = useAuthState(auth);
+
+    function verifyEmail() {
+        auth.currentUser.sendEmailVerification();
+    }
+
+    if (loading) {
+        return <p>Checking...</p>;
+    } else if (user) {
+        return <div>
+            {user.displayName || user.email}
+            <SignedInApp {...props} user={user}/>
+            <button type="button" onClick={() => auth.signOut()}>Logout</button>
+            {!user.emailVerified && <button type="button" onClick={verifyEmail}>Verify email</button>}
+        </div>
+    } else {
+        return <>
+            {error && <p>Error App: {error.message}</p>}
+            <TabList>
+                <SignIn key="Sign In"/>
+                <SignUp key="Sign Up"/>
+            </TabList>
+        </>
+    }
+}
+
+const FAKE_EMAIL = 'foo@bar.com';
+const FAKE_PASSWORD = 'xyzzyxx';
+
+function SignIn() {
+    const [
+        signInWithEmailAndPassword,
+        userCredential, loading, error
+    ] = useSignInWithEmailAndPassword(auth);
+
+    if (userCredential) {
+        // Shouldn't happen because App should see that
+        // we are signed in.
+        return <div>Unexpectedly signed in already</div>
+    } else if (loading) {
+        return <p>Logging in…</p>
+    }
+    return <div>
+        {error && <p>"Error logging in: " {error.message}</p>}
+        <button onClick={() =>
+            signInWithEmailAndPassword(FAKE_EMAIL, FAKE_PASSWORD)}>Login with test user Email/PW
+        </button>
+        <button onClick={() =>
+            auth.signInWithPopup(googleProvider)}>Login with Google
+        </button>
+    </div>
+}
+
+function SignUp() {
+    const [
+        createUserWithEmailAndPassword,
+        userCredential, loading, error
+    ] = useCreateUserWithEmailAndPassword(auth);
+
+    if (userCredential) {
+        // Shouldn't happen because App should see that
+        // we are signed in.
+        return <div>Unexpectedly signed in already</div>
+    } else if (loading) {
+        return <p>Signing up…</p>
+    }
+    return <div>
+        {error && <p>"Error signing up: " {error.message}</p>}
+        <button onClick={() =>
+            createUserWithEmailAndPassword(FAKE_EMAIL, FAKE_PASSWORD)}>
+            Create test user
+        </button>
+
+    </div>
+}
+
+const collectionName = "TaskManager-AuthenticationRequired-1"
+
+function SignedInApp(props) {
+    let queryAll = db.collection(collectionName).where('owner', "==", props.user.uid);
     const [all_value] = useCollection(queryAll);
 
     let listIDs = [];
@@ -30,7 +118,8 @@ function FirestoreApp(props) {
 
     // only get data from the current list
     const [currentList, setCurrentList] = useState("default-list");
-    let query = db.collection(collectionName).doc(currentList).collection("list-items");
+    let query = db.collection(collectionName).doc(currentList).collection("list-items")
+        .where('owner', "==", props.user.uid);
 
     // set the sort option to order the query
     const [sortOption, setSortOption] = useState("dateCreated");
@@ -45,6 +134,14 @@ function FirestoreApp(props) {
         });
     }
 
+    // delete a task based on taskID
+    function handleDeleteTask(taskID) {
+        db.collection(collectionName).doc(currentList).collection("list-items").doc(taskID).delete()
+            .catch((error) => {
+                    console.error("Error deleting document: ", error);
+                });
+    }
+
     // adds a task, generating new id each time
     function handleAddTask(currTask) {
         const newId = generateUniqueID();
@@ -53,8 +150,11 @@ function FirestoreApp(props) {
             taskLabel: currTask,
             isCompleted: false,
             priority: 1,
-            dateCreated: firebase.database.ServerValue.TIMESTAMP
-        });
+            dateCreated: firebase.database.ServerValue.TIMESTAMP,
+            owner: props.user.uid
+        }).catch((error) => {
+            console.error("Error writing document: ", error);
+        })
         return newId;
     }
 
@@ -63,12 +163,9 @@ function FirestoreApp(props) {
         const doc = db.collection(collectionName).doc(currentList).collection("list-items").doc(taskId);
         doc.update({
             [field]: value,
+        }).catch((error) => {
+            console.error("Error updating document: ", error);
         })
-    }
-
-    // delete a task based on taskID
-    function handleDeleteTask(taskID) {
-        db.collection(collectionName).doc(currentList).collection("list-items").doc(taskID).delete();
     }
 
     // change a task's priority among 1/2/3
@@ -127,7 +224,6 @@ function FirestoreApp(props) {
         db.collection(collectionName).doc(listID).delete();
     }
 
-
     // select and go into a list
     function handleListSelected(list){
         setCurrentList(list)
@@ -169,4 +265,4 @@ function FirestoreApp(props) {
     </div>
 }
 
-export default FirestoreApp;
+export default AuthApp;

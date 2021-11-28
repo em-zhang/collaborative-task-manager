@@ -1,0 +1,17 @@
+.tab-list {  border-bottom: 1px solid #ccc;
+    padding-left: 0;
+}
+
+.tab-list-item {
+    display: inline-block;
+    list-style: none;
+    margin-bottom: -1px;
+    padding: 0.5rem 0.75rem;
+    border: solid white;    /*White with width to reserve space for active gray border*/
+    border-width: 1px 1px 0 1px;
+}
+
+.tab-list-active {
+    background-color: white;
+    border-color: #cccccc;
+}
