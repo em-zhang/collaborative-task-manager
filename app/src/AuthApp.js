@@ -1,8 +1,10 @@
+import React, {useState} from "react";
 import App from './App';
 import TabList from './components/TabList';
-import {generateUniqueID} from "web-vitals/dist/modules/lib/generateUniqueID";
 import loadingSymbol from '../src/LoadingSymbol.gif'
-import React, {useState} from "react";
+
+// Import the functions you need from the SDKs you need
+import {generateUniqueID} from "web-vitals/dist/modules/lib/generateUniqueID";
 import firebase from "firebase/compat";
 import {  useCollection } from "react-firebase-hooks/firestore";
 import {
@@ -12,13 +14,23 @@ import {
 } from 'react-firebase-hooks/auth';
 
 // Your web app's Firebase configuration
+// const firebaseConfig = {
+//     apiKey: "AIzaSyCcQ6XCOvMIA7pHME4bWBgy_7OVy_7XErA",
+//     authDomain: "cs124-fall2021.firebaseapp.com",
+//     projectId: "cs124-fall2021",
+//     storageBucket: "cs124-fall2021.appspot.com",
+//     messagingSenderId: "264318304667",
+//     appId: "1:264318304667:web:81528b78246f82b1cd613e"
+// };
+
 const firebaseConfig = {
-    apiKey: "AIzaSyCcQ6XCOvMIA7pHME4bWBgy_7OVy_7XErA",
-    authDomain: "cs124-fall2021.firebaseapp.com",
-    projectId: "cs124-fall2021",
-    storageBucket: "cs124-fall2021.appspot.com",
-    messagingSenderId: "264318304667",
-    appId: "1:264318304667:web:81528b78246f82b1cd613e"
+    apiKey: "AIzaSyDQNFNc9MOCJM7dDkmRmHeJu2-vx_XdZPI",
+    authDomain: "em-zhang-cs124-lab.firebaseapp.com",
+    projectId: "em-zhang-cs124-lab",
+    storageBucket: "em-zhang-cs124-lab.appspot.com",
+    messagingSenderId: "791807570724",
+    appId: "1:791807570724:web:8c92b693e902d7077ab9b1",
+    measurementId: "G-2CLJDP4NEV"
 };
 
 // Initialize Firebase
@@ -100,11 +112,10 @@ function SignUp() {
             createUserWithEmailAndPassword(FAKE_EMAIL, FAKE_PASSWORD)}>
             Create test user
         </button>
-
     </div>
 }
 
-const collectionName = "TaskManager-AuthenticationRequired-1"
+const collectionName = "TaskManager-NoAuthenticationNeeded"
 
 function SignedInApp(props) {
     let queryAll = db.collection(collectionName).where('owner', "==", props.user.uid);
