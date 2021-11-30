@@ -15,13 +15,13 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "start": "../node_modules/.bin/react-scripts start",
+    "build": "../node_modules/.bin/react-scripts build",
+    "test": "../node_modules/.bin/react-scripts test",
+    "eject": "../node_modules/.bin/react-scripts eject",
     "install gh-pages": "npm install gh-pages --save-dev",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "../node_modules/.bin/gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
