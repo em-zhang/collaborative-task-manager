@@ -30,7 +30,6 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 const auth = firebase.auth();
-const googleProvider = new firebase.auth.GoogleAuthProvider();
 
 function InMemoryApp(props) {
     const [user, loading, error] = useAuthState(auth);
@@ -44,19 +43,24 @@ function InMemoryApp(props) {
     } else if (user) {
         return <div>
             {user.displayName || user.email}
-            <SignedInApp {...props} user={user}/>
+            <SignedInApp
+                {...props}
+                user={user}
+            />
             <button type="button" onClick={() => auth.signOut()}>Logout</button>
             {!user.emailVerified && <button type="button" onClick={verifyEmail}>Verify email</button>}
         </div>
     } else {
         return <>
             {error && <p>Error App: {error.message}</p>}
-            <AuthPage auth={auth}/>
+            <AuthPage
+                auth={auth}
+            />
         </>
     }
 }
 
-const collectionName = "TaskManager"
+const collectionName = "list-items"
 
 function SignedInApp(props) {
     let queryAll = db.collection(collectionName).where('owner', "==", props.user.uid);
@@ -70,8 +74,8 @@ function SignedInApp(props) {
 
     // only get data from the current list
     const [currentList, setCurrentList] = useState("default-list");
-    let query = db.collection(collectionName).doc(currentList).collection("list-items")
-        .where('owner', "==", props.user.uid);
+    let query = db.collection(collectionName).doc(currentList).collection("tasks");
+    // let query = db.collection(collectionName).doc(currentList).collection("list-items").where('owner', "==", props.user.uid);
 
     // set the sort option to order the query
     const [sortOption, setSortOption] = useState("dateCreated");
@@ -88,7 +92,7 @@ function SignedInApp(props) {
 
     // delete a task based on taskID
     function handleDeleteTask(taskID) {
-        db.collection(collectionName).doc(currentList).collection("list-items").doc(taskID).delete()
+        db.collection(collectionName).doc(currentList).collection("tasks").doc(taskID).delete()
             .catch((error) => {
                     console.error("Error deleting document: ", error);
                 });
@@ -97,7 +101,7 @@ function SignedInApp(props) {
     // adds a task, generating new id each time
     function handleAddTask(currTask) {
         const newId = generateUniqueID();
-        db.collection(collectionName).doc(currentList).collection("list-items").doc(newId).set({
+        db.collection(collectionName).doc(currentList).collection("tasks").doc(newId).set({
             taskId: newId,
             taskLabel: currTask,
             isCompleted: false,
@@ -112,7 +116,7 @@ function SignedInApp(props) {
 
     // handles updating any field of a task
     function handleTaskFieldChanged(taskId, field, value) {
-        const doc = db.collection(collectionName).doc(currentList).collection("list-items").doc(taskId);
+        const doc = db.collection(collectionName).doc(currentList).collection("tasks").doc(taskId);
         doc.update({
             [field]: value,
         }).catch((error) => {
@@ -122,7 +126,7 @@ function SignedInApp(props) {
 
     // change a task's priority among 1/2/3
     function handleChangePriority(taskID, taskPriority) {
-        let docRef = db.collection(collectionName).doc(currentList).collection("list-items").doc(taskID);
+        let docRef = db.collection(collectionName).doc(currentList).collection("tasks").doc(taskID);
         if (taskPriority === 1) {
             docRef.update({
                 priority: 2
@@ -140,7 +144,7 @@ function SignedInApp(props) {
 
     // delete completed tasks in a list
     function handleDeleteTasks() {
-        let delete_query = db.collection(collectionName).doc(currentList).collection("list-items").where('isCompleted', '==', true);
+        let delete_query = db.collection(collectionName).doc(currentList).collection("tasks").where('isCompleted', '==', true);
         delete_query.get().then(function (querySnapshot) {
             querySnapshot.forEach(function (doc) {
                 doc.ref.delete();
@@ -167,6 +171,8 @@ function SignedInApp(props) {
         db.collection(collectionName).doc(newId).set({
             id: newId,
             listName: newList,
+            owner: props.user.uid,
+            sharedWith: [props.user.uid],
         })
         return newId;
     }
@@ -193,6 +199,7 @@ function SignedInApp(props) {
 
     return <div>
         <App
+            user={props.user}
             listData={listIDs}
             currListID={currentList}
             currListName={currentListName}
