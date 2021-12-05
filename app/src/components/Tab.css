@@ -1,5 +1,7 @@
-.tab-list {  border-bottom: 1px solid #ccc;
+.tab-list {
+    border-bottom: 1px solid #ccc;
     padding-left: 0;
+    align-items: center;
 }
 
 .tab-list-item {

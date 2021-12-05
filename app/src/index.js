@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from 'react-dom';
 import './index.css';
 // import InMemoryApp from './InMemoryApp';
-import FirestoreApp from "./AuthApp";
+import FirestoreApp from "./InMemoryApp";
 
 const initialData = [
     {

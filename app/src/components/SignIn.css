@@ -1,0 +1,33 @@
+.signin-input{
+    padding: 5px;
+    font-size: 18px;
+    margin-top: 1%;
+    margin-left: 15px;
+}
+
+.signin-button{
+    font-size: 17px;
+    background-color: royalblue;
+    color: white;
+    border-color: darkgrey;
+    border-style: hidden;
+    border-width: 1px;
+    border-radius: 5px;
+    margin-left: 15px;
+    padding: 6px 10px 6px 10px;
+}
+.google-button {
+    margin-top: 20px;
+    background-color: #f0f0f0;
+    font-size: 18px;
+    padding: 10px;
+    font-weight: bold;
+    display: inline-block;
+    border: none;
+}
+
+.google-logo {
+    height: 20px;
+    float: left;
+    margin-right: 10px;
+}

@@ -1,0 +1,31 @@
+.list-input {
+    padding: 5px;
+    font-size: 18px;
+    margin-top: 1%;
+    margin-left: 15px;
+}
+
+#list-add-button {
+    font-size: 17px;
+    background-color: royalblue;
+    color: white;
+    border-color: darkgrey;
+    border-style: hidden;
+    border-width: 1px;
+    border-radius: 5px;
+    margin-left: 15px;
+    padding: 6px 10px 6px 10px;
+}
+
+#list-add-button-disabled {
+    opacity: 0.8;
+    font-size: 17px;
+    background-color: royalblue;
+    color: white;
+    border-color: darkgrey;
+    border-style: hidden;
+    border-width: 1px;
+    border-radius: 5px;
+    margin-left: 15px;
+    padding: 6px 10px 6px 10px;
+}

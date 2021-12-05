@@ -1,11 +1,11 @@
 import './App.css';
 import './index.js';
-import ListMenu from "./components/ListMenu"
-import AddList from "./components/AddList"
+import ListMenu from "./components/ListView/ListMenu"
+import AddList from "./components/ListView/AddList"
 
-import ToDoList from "./components/ToDoList"
-import AddTask from "./components/AddTask"
-import ToolBar from "./components/ToolBar"
+import ToDoList from "./components/TaskView/ToDoList"
+import AddTask from "./components/TaskView/AddTask"
+import ToolBar from "./components/TaskView/ToolBar"
 import React, {useState} from "react";
 
 function App(props) {
