@@ -50,7 +50,7 @@
 #share-button {
     /*position: absolute;*/
     float: right;
-    margin-right: 15px;
+    margin-right: 14px;
     border-style: hidden;
     background-color: transparent;
     transform: scale(2);
