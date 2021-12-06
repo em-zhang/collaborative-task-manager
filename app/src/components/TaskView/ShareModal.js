@@ -1,5 +1,6 @@
 import './ShareModal.css';
 import AddEditor from "./AddEditor";
+import EditorsList from "./EditorsList";
 
 function ShareModal(props) {
     return (
@@ -10,10 +11,18 @@ function ShareModal(props) {
                     <div id="share-message">
                         Share Settings
                     </div>
-                    <AddEditor></AddEditor>
-                    <div id="editors-list">
-                        Editors Go Here
+                    <div id="share-message">
+                        Owner = {props.owner}
                     </div>
+                    <AddEditor id="add-editors">
+                    </AddEditor>
+                    <EditorsList
+                        id="editors-list"
+                        owner={props.owner}
+                        editors={props.editors}
+                    >
+                        Editors Go Here
+                    </EditorsList>
                     <button tabIndex="0"
                             className="share-button"
                             id="share-alert-cancel"
@@ -21,7 +30,9 @@ function ShareModal(props) {
                             onKeyDown={e => {
                                 if(e.keyCode === 9) {
                                     e.preventDefault();
-                                    document.getElementById("alert-ok").focus();
+                                    if (document.getElementById("add-editors")) {
+                                        document.getElementById("add-editors").focus();
+                                    }
                                 }
                             }}
                     >

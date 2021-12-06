@@ -79,7 +79,11 @@ function App(props) {
                             </i>
                         </button>
                         {showShareModal &&
-                        <ShareModal>
+                        <ShareModal
+                            onClose={toggleShareModal}
+                            owner={props.owner}
+                            editors={props.editors}
+                        >
                         </ShareModal>}
                     </h1>
                     <div>

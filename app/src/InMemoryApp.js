@@ -189,13 +189,18 @@ function SignedInApp(props) {
 
     // determine what list name to display in the header of the app
     let currentListName = "";
+    let listOwner = null;
+    let listEditors = null;
     if (listIDs.length > 0){
         // find the information of the current list that we are displaying
         let currList = listIDs.filter((e) => e.id === currentList);
         if (currList.length > 0) {
             currentListName = listIDs.filter((e) => e.id === currentList)[0].listName;
+            listOwner = listIDs.filter((e) => e.id === currentList)[0].owner;
+            listEditors = listIDs.filter((e) => e.id === currentList)[0].sharedWith;
         }
     }
+
 
     return <div>
         {!loading && <App
@@ -203,6 +208,9 @@ function SignedInApp(props) {
             listData={listIDs}
             currListID={currentList}
             currListName={currentListName}
+            owner={listOwner}
+            editors={listEditors}
+
             handleAddList={handleAddList}
             handleListSelected={handleListSelected}
             handleDeleteList={handleDeleteList}
