@@ -53,10 +53,6 @@ function SignUp(props) {
                     onClick={() => createNewUser()}>
                     Sign Up
                 </button>
-                <button
-                    onClick={() => createUserWithEmailAndPassword(FAKE_EMAIL, FAKE_PASSWORD)}>
-                    Create test user
-                </button>
             </form>
             {!loading && (error || passwordMatchError) &&
             <div className="error-message">

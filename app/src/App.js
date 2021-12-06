@@ -6,13 +6,20 @@ import AddList from "./components/ListView/AddList"
 import ToDoList from "./components/TaskView/ToDoList"
 import AddTask from "./components/TaskView/AddTask"
 import ToolBar from "./components/TaskView/ToolBar"
+import ShareModal from "./components/TaskView/ShareModal";
 import React, {useState} from "react";
+import SortMenu from "./components/TaskView/SortMenu";
 
 function App(props) {
     const[showCompleted, setShowCompleted] = useState(true);
     const filteredList = props.taskList.filter(task => showCompleted || !task.isCompleted);
     const numCompleted = props.taskList.filter(task => task.isCompleted).length;
     const[homepage, showHomepage] = useState(true);
+    const [showShareModal, setShowShareModal] = useState(false);
+
+    function toggleShareModal() {
+        setShowShareModal(!showShareModal)
+    }
 
     return (
         homepage
@@ -65,6 +72,15 @@ function App(props) {
                         <div className="title">
                              Task Manager
                         </div>
+                        <button id="share-button"
+                                aria-label="Share Button"
+                                onClick={toggleShareModal()}>
+                            <i className="las la-user-plus">
+                            </i>
+                        </button>
+                        {showShareModal &&
+                        <ShareModal>
+                        </ShareModal>}
                     </h1>
                     <div>
                         <h2>{props.currListName}</h2>

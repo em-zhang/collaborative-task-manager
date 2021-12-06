@@ -44,6 +44,16 @@
     transform: scale(2);
 }
 
+#share-button {
+    position: relative;
+    float: right;
+    /*height: 20px;*/
+    width: 4.5em;
+    border-style: hidden;
+    background-color: transparent;
+    transform: scale(2);
+}
+
 .heading {
     padding-top: 3%;
     display: inline;
