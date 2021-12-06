@@ -198,7 +198,7 @@ function SignedInApp(props) {
     }
 
     return <div>
-        <App
+        {!loading && <App
             user={props.user}
             listData={listIDs}
             currListID={currentList}
@@ -216,7 +216,7 @@ function SignedInApp(props) {
             handleTaskFieldChanged={handleTaskFieldChanged}
             handleSortSelected={handleSortSelected}
             sortOption={sortOption}
-        />
+        />}
         {loading &&
         <div className="loading-message">
             <img src={loadingSymbol} alt="Loading..." />

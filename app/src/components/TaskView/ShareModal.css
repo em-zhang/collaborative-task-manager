@@ -1,4 +1,4 @@
-.sort-backdrop {
+.share-backdrop {
     z-index:1;
     position: fixed;
     top:0;
@@ -10,54 +10,34 @@
     background-color: rgba(0, 0, 0, .3);
 }
 
-#sort-by{
-    text-align: center;
-    padding-bottom: 20pt;
+#share-alert-cancel {
+    height: 25px;
+    width: 100%;
 }
-.sort-modal {
+
+.share-modal {
     background-color: #ffffff;
     border-radius: 10px;
     margin: 0 auto;
-    text-align: center;
-    height: 130pt;
-    width: 150pt;
+    text-align: left;
+    height: 200pt;
+    width: 240pt;
     display: flex;
-    padding: 30px 30px 0 30px;
+    padding: 30px 30px 30px 30px;
     position: relative;
-    top: 35vh;
+    top: 25vh;
 }
 
-.sort-buttons {
-    display: block;
-    position: absolute;
-    padding: 15px;
-    bottom: 5%;
-    right: 0;
+#share-message {
+    font-size: 25px;
 }
 
-#alert-sort-name {
-    margin: 5px;
-    height: 25px;
-    width: 170px;
-    border-radius: 12px;
-    border-color: dimgrey;
+#editors-list {
+    font-size: 18px;
+    border-style: solid;
     border-width: 1px;
+    border-color: dimgrey;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-#alert-sort-priority {
-    margin: 5px;
-    height: 25px;
-    width: 170px;
-    border-radius: 12px;
-    border-color: dimgrey;
-    border-width: 1px;
-}
-
-#alert-sort-date {
-    margin: 5px;
-    height: 25px;
-    width: 170px;
-    border-radius: 12px;
-    border-color: dimgrey;
-    border-width: 1px;
-}

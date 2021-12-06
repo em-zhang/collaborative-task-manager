@@ -12,8 +12,6 @@
 }
 
 .loading-message {
-    border-style: solid;
-    border-color: green;
     text-align: center;
     font-size: 30px;
     position: relative;
