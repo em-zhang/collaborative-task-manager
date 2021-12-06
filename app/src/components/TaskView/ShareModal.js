@@ -6,8 +6,8 @@ function ShareModal(props) {
             <div className="sort-modal">
                 {props.children}
                 <div className="sort-buttons">
-                    <div id="sort-by">
-                        Sort by:
+                    <div id="share-message">
+                        Share this list with collaborators
                     </div>
                     <button className={"alert-button"} id={"alert-sort-date"} type={"button"}
                             onClick={() => {

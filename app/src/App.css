@@ -12,8 +12,11 @@
 }
 
 .loading-message {
+    border-style: solid;
+    border-color: green;
     text-align: center;
     font-size: 30px;
+    position: relative;
 }
 
 .add-task-container {
@@ -45,10 +48,11 @@
 }
 
 #share-button {
-    position: relative;
+    /*position: absolute;*/
     float: right;
+    margin-right: 15px;
     /*height: 20px;*/
-    width: 4.5em;
+    /*width: 1em;*/
     border-style: hidden;
     background-color: transparent;
     transform: scale(2);

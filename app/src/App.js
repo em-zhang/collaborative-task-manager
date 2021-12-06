@@ -74,7 +74,7 @@ function App(props) {
                         </div>
                         <button id="share-button"
                                 aria-label="Share Button"
-                                onClick={toggleShareModal()}>
+                                onClick={toggleShareModal}>
                             <i className="las la-user-plus">
                             </i>
                         </button>
