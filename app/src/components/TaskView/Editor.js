@@ -8,7 +8,7 @@ function Editor(props) {
         <div className="task-container">
             <SelectionMaintainingInput
                 id="editor-label"
-                value={props.editor.uid}
+                value={props.editor}
                 // onBlur={(e) =>
                 //     props.onTaskFieldChanged(props.taskId, "taskLabel", itemName)
                 // }

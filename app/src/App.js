@@ -21,6 +21,10 @@ function App(props) {
         setShowShareModal(!showShareModal)
     }
 
+    console.log("user uid is ", props.user.uid)
+    console.log("user display is ", props.user.displayName)
+    console.log("user email is ", props.user.email)
+
     return (
         homepage
             ?

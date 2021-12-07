@@ -46,6 +46,7 @@ function InMemoryApp(props) {
             <SignedInApp
                 {...props}
                 user={user}
+                email={user.email}
             />
             <button type="button" onClick={() => auth.signOut()}>Logout</button>
             {!user.emailVerified && <button type="button" onClick={verifyEmail}>Verify email</button>}
@@ -63,7 +64,7 @@ function InMemoryApp(props) {
 const collectionName = "list-items"
 
 function SignedInApp(props) {
-    let queryAll = db.collection(collectionName).where('owner', "==", props.user.uid);
+    let queryAll = db.collection(collectionName).where('owner', "==", props.email);
     const [all_value] = useCollection(queryAll);
 
     let listIDs = [];
@@ -107,7 +108,6 @@ function SignedInApp(props) {
             isCompleted: false,
             priority: 1,
             dateCreated: firebase.database.ServerValue.TIMESTAMP,
-            owner: props.user.uid
         }).catch((error) => {
             console.error("Error writing document: ", error);
         })
@@ -171,8 +171,8 @@ function SignedInApp(props) {
         db.collection(collectionName).doc(newId).set({
             id: newId,
             listName: newList,
-            owner: props.user.uid,
-            sharedWith: [props.user.uid],
+            owner: props.email,
+            sharedWith: [props.email],
         })
         return newId;
     }
@@ -201,6 +201,7 @@ function SignedInApp(props) {
         }
     }
 
+    console.log("owner is ", listOwner)
 
     return <div>
         {!loading && <App
