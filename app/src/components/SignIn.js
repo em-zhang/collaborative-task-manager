@@ -11,7 +11,6 @@ function SignIn(props) {
     const [password, setPassword] = useState("");
     const [signInWithEmailAndPassword, loading, error] = useSignInWithEmailAndPassword(props.auth);
 
-    console.log("it is", googleProvider.email);
     return (
         <div>
             <form onSubmit={(e) => e.preventDefault()}>
@@ -51,7 +50,7 @@ function SignIn(props) {
             <div className="signin-google">
                 <button
                     className="google-button"
-                    onClick={() => props.auth.signInWithPopup(githubProvider) && console.log("googleProvider is ", googleProvider.uid, googleProvider.email)}>
+                    onClick={() => props.auth.signInWithPopup(githubProvider)}>
                     <img
                         className="google-logo"
                         src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"

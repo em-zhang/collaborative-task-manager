@@ -34,15 +34,15 @@ const auth = firebase.auth();
 function InMemoryApp(props) {
     const [user, loading, error] = useAuthState(auth);
 
-    function verifyEmail() {
-        auth.currentUser.sendEmailVerification();
-    }
+        function verifyEmail() {
+            auth.currentUser.sendEmailVerification();
+        }
 
     if (loading) {
         return <p>Checking...</p>;
     } else if (user) {
         return <div>
-            {user.displayName || user.email}
+            User email is {user.email}
             <SignedInApp
                 {...props}
                 user={user}
@@ -56,6 +56,7 @@ function InMemoryApp(props) {
             {error && <p>Error App: {error.message}</p>}
             <AuthPage
                 auth={auth}
+                user={user}
             />
         </>
     }

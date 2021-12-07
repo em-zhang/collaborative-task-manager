@@ -2,6 +2,7 @@ import { useState } from "react";
 import firebase from "firebase/compat";
 import SignIn from "./SignIn.js"
 import SignUp from "./SignUp"
+import ResetPassword from "./ResetPassword";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import "./SignIn.css";
 import TabList from "./TabList";
@@ -22,9 +23,14 @@ function AuthPage(props) {
                         <SignIn
                             key="Sign In"
                             auth={props.auth}
+                            user={props.user}
                         />
                         <SignUp
                             key="Sign Up"
+                            auth={props.auth}
+                        />
+                        <ResetPassword
+                            key="Reset Password"
                             auth={props.auth}
                         />
                     </TabList>

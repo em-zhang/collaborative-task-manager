@@ -6,11 +6,12 @@ function SignUp(props) {
     const [password, setPassword] = useState("");
     const [retypePassword, setRetypePassword] = useState("");
     const [passwordMatchError, setPasswordMatchError] = useState(false);
+    const signIn = useCreateUserWithEmailAndPassword(props.auth);
+    const [createUserWithEmailAndPassword, loading, error] = [signIn[0], signIn[2], signIn[3]];
 
-    const [createUserWithEmailAndPassword, loading, error] = useCreateUserWithEmailAndPassword(props.auth);
-    const FAKE_EMAIL = 'foo@bar.com';
-    const FAKE_PASSWORD = 'foobar';
-
+    if (error){
+        console.log("error is ", error.code, error.message)
+    }
     const createNewUser = () => {
         if (password !== retypePassword) {
             setPasswordMatchError(true);
@@ -22,6 +23,7 @@ function SignUp(props) {
             createUserWithEmailAndPassword(email, password);
         }
     }
+
 
     return (
         <div>
@@ -55,12 +57,20 @@ function SignUp(props) {
                 </button>
             </form>
             {!loading && (error || passwordMatchError) &&
-            <div className="error-message">
-                {passwordMatchError ? "Passwords do not match."
-                    : password.length < 6 ? "Password must be at least 6 characters."
-                        : email.length === 0 ? "Please enter a valid email address."
-                        : "An error occurred while signing up. " +
-                            "Make sure you have entered a valid email and password."}
+            <div className="errorDiv">
+                {
+                    passwordMatchError
+                        ? "Passwords do not match"
+                        : error.code === 'auth/weak-password'
+                            ? "Password must be at least 6 characters long."
+                            : error.code === 'auth/invalid-email'
+                                ? "Please provide a valid email address."
+                                : error.code === 'auth/email-already-in-use'
+                                    ? "This email already has an account associated with it. Try another sign in method."
+                                    : error.code === 'auth/internal-error'
+                                        ? "Please re-check your username and password."
+                                        : "Some error occurred; please try again."
+                }
             </div>
             }
         </div>
