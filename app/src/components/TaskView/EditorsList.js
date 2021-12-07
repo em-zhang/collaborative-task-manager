@@ -1,5 +1,6 @@
 import './EditorsList.css';
 import Editor from "./Editor";
+import Task from "./Task";
 
 function EditorsList(props) {
     return (
@@ -7,12 +8,11 @@ function EditorsList(props) {
             <div className="checklist">
                 {props.editors.map(editor =>
                     <Editor {...editor}
-                        editor = {editor}
-                          // key={task.taskId}
-                          // onDeleteTask={props.onDeleteTask}
-                          // onTaskFieldChanged={props.onTaskFieldChanged}
-                          // onChangePriority={props.onChangePriority}
+                          key={editor}
+                            editor={editor}
+                            onDeleteEditor={props.onDeleteEditor}
                     />)}
+
             </div>
         </div>);
 }

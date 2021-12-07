@@ -87,8 +87,11 @@ function App(props) {
                         {showShareModal &&
                         <ShareModal
                             onClose={toggleShareModal}
+                            currListID={props.currListID}
                             owner={props.owner}
                             editors={props.editors}
+                            onAddEditor={props.handleAddEditor}
+                            onDeleteEditor={props.handleDeleteEditor}
                         >
                         </ShareModal>}
                     </h1>

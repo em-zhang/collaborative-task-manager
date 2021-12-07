@@ -11,15 +11,21 @@ function ShareModal(props) {
                     <div id="share-message">
                         Share Settings
                     </div>
-                    <div id="share-message">
-                        Owner = {props.owner}
+                    <div id="owner-message">
+                        Owner: {props.owner}
                     </div>
-                    <AddEditor id="add-editors">
+                    <AddEditor
+                        id="add-editors"
+                        currListID={props.currListID}
+                        onAddEditor={props.onAddEditor}
+                        onDeleteEditor={props.onDeleteEditor}
+                    >
                     </AddEditor>
                     <EditorsList
                         id="editors-list"
                         owner={props.owner}
                         editors={props.editors}
+                        onDeleteEditor={props.onDeleteEditor}
                     >
                         Editors Go Here
                     </EditorsList>

@@ -2,33 +2,34 @@ import './AddTask.css';
 import {useState} from "react";
 
 function AddEditor(props){
-    const [currTask, setCurrTask] = useState("");
+    const [currEditor, setCurrEditor] = useState("");
 
     return (
         <div className="add-editor-container">
             <input
                 className="todo-input"
+                type="email"
                 id="new-todo-text"
                 placeholder="Add a New Editor"
-                value={currTask}
+                value={currEditor}
                 onChange={e => {
-                    setCurrTask(e.target.value);
+                    setCurrEditor(e.target.value);
                 }}
                 onKeyPress={e => {
-                    if (currTask !== "") {
+                    if (currEditor !== "") {
                         if (e.key === "Enter") {
-                            props.onAddTask(currTask);
-                            setCurrTask("");
+                            props.onAddEditor(currEditor);
+                            setCurrEditor("");
                         }
                     }
                 }}
             />
-            <button className={currTask !== "" ? "add-button" : "add-button-disabled"}
-                    tabIndex = {currTask !== "" ? 0 : 1}
+            <button className={currEditor !== "" ? "add-button" : "add-button-disabled"}
+                    tabIndex = {currEditor !== "" ? 0 : 1}
                     onClick={() => {
-                        if (currTask !== "") {
-                            props.onAddTask(currTask);
-                            setCurrTask("");
+                        if (currEditor !== "") {
+                            props.onAddEditor(currEditor);
+                            setCurrEditor("");
                         }
                     }}>
                 Add

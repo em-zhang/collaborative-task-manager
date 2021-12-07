@@ -1,41 +1,27 @@
 import {useState} from 'react';
 import './Editor.css';
+import TextareaAutosize from 'react-textarea-autosize';
 import SelectionMaintainingInput from "../SelectionMaintainingInput";
 
 function Editor(props) {
 
     return (
-        <div className="task-container">
-            <SelectionMaintainingInput
+        <div className="editor-container">
+            <TextareaAutosize
                 id="editor-label"
-                value={props.editor}
-                // onBlur={(e) =>
-                //     props.onTaskFieldChanged(props.taskId, "taskLabel", itemName)
-                // }
-                onKeyPress={e => {
-                    if (e.key === "Enter") {
-                        if (document.getElementById('task-label')){
-                            e.preventDefault();
-                            document.getElementById('task-label').blur();
-                        }
-                    }
+                disabled={true}>
+                {props.editor}
+
+            </TextareaAutosize>
+            <button
+                className="delete-editor-button"
+                aria-label="delete"
+                onClick={() => {
+                    props.onDeleteEditor(props.editor);
                 }}
-                // don't allow user to edit a task if it's been marked completed
-                disabled={props.isCompleted}
-            />
-
-            <div>
-                <button
-                    className="delete-list-button"
-                    aria-label="delete"
-                    // onClick={() => {
-                    //     props.onDeleteTask(props.taskId);
-                    // }}
-                >
-                    X
-                </button>
-
-            </div>
+            >
+                X
+            </button>
         </div>
     )
 }

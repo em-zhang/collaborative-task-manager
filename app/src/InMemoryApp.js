@@ -173,7 +173,7 @@ function SignedInApp(props) {
             id: newId,
             listName: newList,
             owner: props.email,
-            sharedWith: [props.email],
+            editors: [],
         })
         return newId;
     }
@@ -188,21 +188,42 @@ function SignedInApp(props) {
         setCurrentList(list)
     }
 
+    function handleAddEditor(editorEmail){
+        console.log("In handleAddEditor")
+        const doc = db.collection(collectionName).doc(currentList);
+        doc.update({
+            editors: firebase.firestore.FieldValue.arrayUnion(editorEmail)
+        });
+    }
+
+    function handleDeleteEditor(editorEmail){
+        const doc = db.collection(collectionName).doc(currentList);
+        doc.update({
+            editors: firebase.firestore.FieldValue.arrayRemove(editorEmail)
+        });
+    }
+
     // determine what list name to display in the header of the app
     let currentListName = "";
     let listOwner = null;
     let listEditors = null;
+    let isSharable = false;
+
     if (listIDs.length > 0){
         // find the information of the current list that we are displaying
         let currList = listIDs.filter((e) => e.id === currentList);
         if (currList.length > 0) {
             currentListName = listIDs.filter((e) => e.id === currentList)[0].listName;
             listOwner = listIDs.filter((e) => e.id === currentList)[0].owner;
-            listEditors = listIDs.filter((e) => e.id === currentList)[0].sharedWith;
+            listEditors = listIDs.filter((e) => e.id === currentList)[0].editors;
+            isSharable = (listIDs.filter((e) => e.id === currentList)[0].owner === props.email);
+
         }
     }
 
     console.log("owner is ", listOwner)
+    console.log("editors is ", listEditors)
+    console.log("is sharable is ", isSharable)
 
     return <div>
         {!loading && <App
@@ -212,6 +233,9 @@ function SignedInApp(props) {
             currListName={currentListName}
             owner={listOwner}
             editors={listEditors}
+
+            handleAddEditor={handleAddEditor}
+            handleDeleteEditor={handleDeleteEditor}
 
             handleAddList={handleAddList}
             handleListSelected={handleListSelected}

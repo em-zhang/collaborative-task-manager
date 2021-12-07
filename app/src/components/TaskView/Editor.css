@@ -1,0 +1,30 @@
+.editor-container {
+    display: inline-flex;
+    /*margin: 5px;*/
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    background-color: white;
+    opacity: 0.8;
+    width: 100%;
+    justify-content: space-between;
+}
+
+#editor-label{
+    color: black;
+    background: white;
+    font-family: "PT Sans", sans-serif;
+    font-size: 16px;
+    flex-basis: 90%;
+    min-height: 27px;
+    height: auto;
+    border: none;
+    resize: none;
+    margin: 4px 10px 4px 5px;
+    flex-grow: 1;
+}
+
+.delete-editor-button {
+    margin: 10px 10px;
+    border: none;
+    background-color: white;
+}
