@@ -6,11 +6,12 @@ function EditorsList(props) {
     return (
         <div id="list-container">
             <div className="checklist">
-                {props.editors.map(editor =>
+                {props.editors.slice(1).map(editor =>
                     <Editor {...editor}
-                          key={editor}
+                            key={editor}
                             editor={editor}
                             onDeleteEditor={props.onDeleteEditor}
+                            isOwner={props.isOwner}
                     />)}
 
             </div>

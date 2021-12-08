@@ -3,6 +3,8 @@ import AddEditor from "./AddEditor";
 import EditorsList from "./EditorsList";
 
 function ShareModal(props) {
+    const isOwner = props.owner === props.user.email;
+
     return (
         <div className="share-backdrop">
             <div className="share-modal">
@@ -29,6 +31,7 @@ function ShareModal(props) {
                         owner={props.owner}
                         editors={props.editors}
                         onDeleteEditor={props.onDeleteEditor}
+                        isOwner={isOwner}
                     >
                         Editors Go Here
                     </EditorsList>

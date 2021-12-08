@@ -36,6 +36,7 @@ function InMemoryApp(props) {
 
         function verifyEmail() {
             auth.currentUser.sendEmailVerification();
+            console.log("send verification email")
         }
 
     if (loading) {
@@ -65,22 +66,22 @@ function InMemoryApp(props) {
 const collectionName = "list-items"
 
 function SignedInApp(props) {
-    let queryAll = db.collection(collectionName).where('owner', "==", props.email);
-    let querySharedLists = db.collection(collectionName).where("editors", "array-contains", props.email);
+    let queryAll = db.collection(collectionName).where("editors", "array-contains", props.email);
+    // let querySharedLists = db.collection(collectionName).where("editors", "array-contains", props.email);
 
     const [all_value] = useCollection(queryAll);
-    const [shared_lists] = useCollection(querySharedLists);
+    // const [shared_lists] = useCollection(querySharedLists);
 
     let listIDs = [];
     if (all_value) {
         listIDs = all_value.docs.map((doc) => {
             return {...doc.data()}});
     }
-    let sharedListIDs = [];
-    if (shared_lists) {
-        sharedListIDs = shared_lists.docs.map((doc) => {
-            return {...doc.data()}});
-    }
+    // let sharedListIDs = [];
+    // if (shared_lists) {
+    //     sharedListIDs = shared_lists.docs.map((doc) => {
+    //         return {...doc.data()}});
+    // }
 
     // only get data from the current list
     const [currentList, setCurrentList] = useState("default-list");
@@ -110,7 +111,7 @@ function SignedInApp(props) {
         // find the information of the current list that we are displaying
         let currList = listIDs.filter((e) => e.id === currentList);
         if (currList.length > 0) {
-            currentListName = listIDs.filter((e) => e.id === currentList)[0].listName || sharedListIDs;
+            currentListName = listIDs.filter((e) => e.id === currentList)[0].listName;
             listOwner = listIDs.filter((e) => e.id === currentList)[0].owner;
             listEditors = listIDs.filter((e) => e.id === currentList)[0].editors;
             isSharable = (listIDs.filter((e) => e.id === currentList)[0].owner === props.email);
@@ -219,7 +220,7 @@ function SignedInApp(props) {
             id: newId,
             listName: newList,
             owner: props.email,
-            editors: [],
+            editors: [props.email],
         })
         return newId;
     }
@@ -253,8 +254,6 @@ function SignedInApp(props) {
         <App
             user={props.user}
             listData={listIDs}
-            sharedListData={sharedListIDs}
-
             currListID={currentList}
             currListName={currentListName}
             owner={listOwner}

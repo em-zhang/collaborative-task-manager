@@ -14,6 +14,9 @@ import SortMenu from "./components/TaskView/SortMenu";
 function App(props) {
     const[showCompleted, setShowCompleted] = useState(true);
     const filteredList = props.taskList.filter(task => showCompleted || !task.isCompleted);
+    const listsIOwn = props.listData.filter(list => list.owner === props.user.email);
+    const listsSharedWithMe = props.listData.filter(list => list.owner !== props.user.email);
+
     const numCompleted = props.taskList.filter(task => task.isCompleted).length;
     const[homepage, showHomepage] = useState(true);
     const [showShareModal, setShowShareModal] = useState(false);
@@ -22,10 +25,9 @@ function App(props) {
         setShowShareModal(!showShareModal)
     }
 
-    console.log("user uid is ", props.user.uid)
-    console.log("user display is ", props.user.displayName)
-    console.log("user is ", props.user.user)
-    console.log("user email is ", props.user.email)
+    console.log("user email is ", props.user.email, "lists data is ", props.listData)
+    console.log("owner is ", props.owner, "lists i own is ", listsIOwn)
+    console.log("lists shared with me ", listsSharedWithMe)
 
     return (
         homepage
@@ -39,16 +41,13 @@ function App(props) {
                             Task Manager
                         </div>
                     </h1>
-                    {/*<div className="header">*/}
-                    {/*    <h2>My Lists</h2>*/}
-                    {/*</div>*/}
                 </div>
                 <TabList classname="tabs">
                     <ListMenu
                         key="My Lists"
                         className="taskList"
                         isOwner={props.isOwner}
-                        listData={props.listData}
+                        listData={listsIOwn}
                         currListID={props.currListID}
                         currListName={props.currListName}
                         onListSelected={props.handleListSelected}
@@ -61,7 +60,7 @@ function App(props) {
                         key="Shared With Me"
                         className="taskList"
                         isOwner={props.isOwner}
-                        sharedListData={props.sharedListData}
+                        sharedListData={listsSharedWithMe}
                         currListID={props.currListID}
                         currListName={props.currListName}
                         onListSelected={props.handleListSelected}
@@ -98,6 +97,7 @@ function App(props) {
                             onClose={toggleShareModal}
                             currListID={props.currListID}
                             owner={props.owner}
+                            user={props.user}
                             editors={props.editors}
                             onAddEditor={props.handleAddEditor}
                             onDeleteEditor={props.handleDeleteEditor}

@@ -13,6 +13,7 @@ function Editor(props) {
                 value={props.editor}
             >
             </TextareaAutosize>
+            {props.isOwner &&
             <button
                 className="delete-editor-button"
                 aria-label="delete"
@@ -22,6 +23,8 @@ function Editor(props) {
             >
                 X
             </button>
+            }
+
         </div>
     )
 }
