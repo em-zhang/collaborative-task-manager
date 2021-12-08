@@ -57,7 +57,7 @@ function SignUp(props) {
                 </button>
             </form>
             {!loading && (error || passwordMatchError) &&
-            <div className="errorDiv">
+            <div className="error-signup">
                 {
                     passwordMatchError
                         ? "Passwords do not match"

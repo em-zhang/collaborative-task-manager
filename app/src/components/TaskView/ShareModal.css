@@ -10,10 +10,6 @@
     background-color: rgba(0, 0, 0, .3);
 }
 
-#share-alert-cancel {
-    height: 25px;
-    width: 100%;
-}
 
 .share-modal {
     background-color: #ffffff;
@@ -21,7 +17,7 @@
     margin: 0 auto;
     text-align: left;
     height: 300pt;
-    width: 240pt;
+    width: 200pt;
     display: flex;
     padding: 30px 30px 30px 30px;
     position: relative;
@@ -29,11 +25,13 @@
 }
 
 #share-alert-cancel{
-    margin: 10px 10px;
+    margin-left: 50px;
+    float: right;
 }
 
 #share-message {
-    display: inline;
+    /*display: grid;*/
+    columns: 2;
     font-size: 20px;
 }
 

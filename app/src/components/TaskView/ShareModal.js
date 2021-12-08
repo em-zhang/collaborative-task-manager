@@ -12,6 +12,21 @@ function ShareModal(props) {
                 <div className="share-buttons">
                     <div id="share-message">
                         Share Settings
+                        <button tabIndex="0"
+                                className="share-cancel-button"
+                                id="share-alert-cancel"
+                                onClick={() => props.onClose()}
+                                onKeyDown={e => {
+                                    if(e.keyCode === 9) {
+                                        e.preventDefault();
+                                        if (document.getElementById("add-editors")) {
+                                            document.getElementById("add-editors").focus();
+                                        }
+                                    }
+                                }}
+                        >
+                            X
+                        </button>
                     </div>
                     <div id="owner-message">
                         Owner: {props.owner}
@@ -38,21 +53,6 @@ function ShareModal(props) {
                     <div id="share-message">
                         Pending Invitations
                     </div>
-                    <button tabIndex="0"
-                            className="share-button"
-                            id="share-alert-cancel"
-                            onClick={() => props.onClose()}
-                            onKeyDown={e => {
-                                if(e.keyCode === 9) {
-                                    e.preventDefault();
-                                    if (document.getElementById("add-editors")) {
-                                        document.getElementById("add-editors").focus();
-                                    }
-                                }
-                            }}
-                    >
-                        Cancel
-                    </button>
                 </div>
             </div>
         </div>
