@@ -1,0 +1,21 @@
+.profile {
+    height: 40px;
+    column-count: 2;
+    background: lightgrey;
+    padding: 7px;
+    border: 0px solid darkgrey;
+    border-bottom-width: 2px;
+}
+
+#user-id {
+    margin-left: 5px;
+}
+
+#profile-button {
+    float: right;
+    margin-right: 13px;
+    margin-top: 10px;
+    border-style: hidden;
+    background-color: transparent;
+    transform: scale(1.5);
+}

@@ -2,11 +2,13 @@ import React, {useState} from "react";
 import App from './App';
 import AuthPage from "./components/AuthPage";
 import loadingSymbol from '../src/LoadingSymbol.gif'
+import './InMemoryApp.css';
+
 
 // Import the functions you need from the SDKs you need
 import {generateUniqueID} from "web-vitals/dist/modules/lib/generateUniqueID";
 import firebase from "firebase/compat";
-import {  useCollection } from "react-firebase-hooks/firestore";
+import {useCollection} from "react-firebase-hooks/firestore";
 import {
     useAuthState,
     useCreateUserWithEmailAndPassword,
@@ -34,22 +36,31 @@ const auth = firebase.auth();
 function InMemoryApp(props) {
     const [user, loading, error] = useAuthState(auth);
 
-        function verifyEmail() {
-            auth.currentUser.sendEmailVerification();
-            console.log("send verification email")
-        }
+    function verifyEmail() {
+        auth.currentUser.sendEmailVerification();
+        console.log("send verification email")
+    }
 
     if (loading) {
         return <p>Checking...</p>;
     } else if (user) {
         return <div>
-            User email is {user.email}
+            <div class="profile">
+                <div id="user-id">
+                    Logged in as {user.email}
+                </div>
+                <div id="profile-button">
+                    <button id="logout-button" type="button" onClick={() => auth.signOut()}>
+                        <i id="logout-icon" className="las la-sign-out-alt"></i>
+                    </button>
+                </div>
+            </div>
             <SignedInApp
                 {...props}
                 user={user}
                 email={user.email}
             />
-            <button type="button" onClick={() => auth.signOut()}>Logout</button>
+            {/*<button id="logout-button" type="button" onClick={() => auth.signOut()}>Logout</button>*/}
             {!user.emailVerified && <button type="button" onClick={verifyEmail}>Verify email</button>}
         </div>
     } else {
@@ -75,7 +86,8 @@ function SignedInApp(props) {
     let listIDs = [];
     if (all_value) {
         listIDs = all_value.docs.map((doc) => {
-            return {...doc.data()}});
+            return {...doc.data()}
+        });
     }
     // let sharedListIDs = [];
     // if (shared_lists) {
@@ -107,7 +119,7 @@ function SignedInApp(props) {
     let listEditors = null;
     let isSharable = false;
 
-    if (listIDs.length > 0){
+    if (listIDs.length > 0) {
         // find the information of the current list that we are displaying
         let currList = listIDs.filter((e) => e.id === currentList);
         if (currList.length > 0) {
@@ -143,8 +155,8 @@ function SignedInApp(props) {
     function handleDeleteTask(taskID) {
         db.collection(collectionName).doc(currentList).collection("tasks").doc(taskID).delete()
             .catch((error) => {
-                    console.error("Error deleting document: ", error);
-                });
+                console.error("Error deleting document: ", error);
+            });
     }
 
     // adds a task, generating new id each time
@@ -201,7 +213,7 @@ function SignedInApp(props) {
     }
 
     // select a sort option
-    function handleSortSelected(option){
+    function handleSortSelected(option) {
         setSortOption(option);
     }
 
@@ -214,7 +226,7 @@ function SignedInApp(props) {
     }
 
     // add a new list
-    function handleAddList(newList){
+    function handleAddList(newList) {
         const newId = generateUniqueID();
         db.collection(collectionName).doc(newId).set({
             id: newId,
@@ -231,11 +243,11 @@ function SignedInApp(props) {
     }
 
     // select and go into a list
-    function handleListSelected(list){
+    function handleListSelected(list) {
         setCurrentList(list)
     }
 
-    function handleAddEditor(editorEmail){
+    function handleAddEditor(editorEmail) {
         console.log("In handleAddEditor")
         const doc = db.collection(collectionName).doc(currentList);
         doc.update({
@@ -243,7 +255,7 @@ function SignedInApp(props) {
         });
     }
 
-    function handleDeleteEditor(editorEmail){
+    function handleDeleteEditor(editorEmail) {
         const doc = db.collection(collectionName).doc(currentList);
         doc.update({
             editors: firebase.firestore.FieldValue.arrayRemove(editorEmail)
@@ -279,7 +291,7 @@ function SignedInApp(props) {
         />
         {loading &&
         <div className="loading-message">
-            <img src={loadingSymbol} alt="Loading..." />
+            <img src={loadingSymbol} alt="Loading..."/>
         </div>}
     </div>
 }
