@@ -1,17 +1,21 @@
 import React from 'react';
 import ListItem from './ListItem'
 import './ListMenu.css';
+import SharedListItem from "./SharedListItem";
 
 function SharedLists(props) {
+    const currentListName = props.listName;
+    console.log("list item is", props.listID, props.listName)
+
     return (
         <div id="list-container">
             <div className="checklist">
                 {props.sharedListData.map(list =>
-                    <ListItem
+                    <SharedListItem
                         listID={list.id}
                         listName={list.listName}
                         currListID={props.currListID}
-                        currListName={props.currListName}
+                        currListName={currentListName}
                         onListSelected={props.onListSelected}
                         homepage={props.homepage}
                         showHomepage={props.showHomepage}

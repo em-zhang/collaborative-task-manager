@@ -1,7 +1,8 @@
 import './ListItem.css';
 import SelectionMaintainingInput from "../SelectionMaintainingInput";
 
-function ListItem(props) {
+function SharedListItem(props) {
+    console.log("list item is", props.listID, props.listName)
     return (
         <div className="list-item-container">
             <SelectionMaintainingInput
@@ -32,19 +33,8 @@ function ListItem(props) {
                     View
                 </button>
             </div>
-            <div>
-                <button
-                    aria-label="Delete list button"
-                    className="delete-list-button"
-                    onClick={() => {
-                        props.onDeleteList(props.listID);
-                    }}>
-                    X
-                </button>
-
-            </div>
         </div>
     )
 }
 
-export default ListItem;
+export default SharedListItem;

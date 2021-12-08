@@ -39,43 +39,38 @@ function App(props) {
                             Task Manager
                         </div>
                     </h1>
-                    <div className="header">
-                        <h2>My Lists</h2>
-                    </div>
+                    {/*<div className="header">*/}
+                    {/*    <h2>My Lists</h2>*/}
+                    {/*</div>*/}
                 </div>
-                <div className="top-button-bar">
-                    <div className="add-task">
-                        <AddList
-                            onAddList={props.handleAddList}
-                            onListSelected={props.handleListSelected}
-                        />
-                    </div>
-                </div>
-                <div className="taskList">
+                <TabList classname="tabs">
                     <ListMenu
+                        key="My Lists"
+                        className="taskList"
+                        isOwner={props.isOwner}
                         listData={props.listData}
                         currListID={props.currListID}
                         currListName={props.currListName}
                         onListSelected={props.handleListSelected}
                         showHomepage={showHomepage}
+                        onAddList={props.handleAddList}
                         onDeleteList={props.handleDeleteList}
-                        onListFieldChanged={props.handleListFieldChanged}
-                    />
-                </div>
-                <div className="header">
-                    <h2>Shared With Me</h2>
-                </div>
-                <div className="taskList">
+                        onListFieldChanged={props.handleListFieldChanged}>
+                    </ListMenu>
                     <SharedLists
+                        key="Shared With Me"
+                        className="taskList"
+                        isOwner={props.isOwner}
                         sharedListData={props.sharedListData}
                         currListID={props.currListID}
                         currListName={props.currListName}
                         onListSelected={props.handleListSelected}
                         showHomepage={showHomepage}
                         onDeleteList={props.handleDeleteList}
-                        onListFieldChanged={props.handleListFieldChanged}
-                    />
-                </div>
+                        onListFieldChanged={props.handleListFieldChanged}>
+                    </SharedLists>
+                </TabList>
+
             </div>
             :
             <div className="app-container">

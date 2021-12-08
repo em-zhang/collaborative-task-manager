@@ -110,15 +110,30 @@ function SignedInApp(props) {
         // find the information of the current list that we are displaying
         let currList = listIDs.filter((e) => e.id === currentList);
         if (currList.length > 0) {
-            currentListName = listIDs.filter((e) => e.id === currentList)[0].listName;
+            currentListName = listIDs.filter((e) => e.id === currentList)[0].listName || sharedListIDs;
             listOwner = listIDs.filter((e) => e.id === currentList)[0].owner;
             listEditors = listIDs.filter((e) => e.id === currentList)[0].editors;
             isSharable = (listIDs.filter((e) => e.id === currentList)[0].owner === props.email);
-
         }
     }
 
+    // let currentSharedListName = "";
+    //
+    // if (sharedListIDs.length > 0){
+    //     // find the information of the current list that we are displaying
+    //     let currList = listIDs.filter((e) => e.id === currentList);
+    //     if (currList.length > 0) {
+    //         currentSharedListName = listIDs.filter((e) => e.id === currentList)[0].listName || sharedListIDs;
+    //         listOwner = listIDs.filter((e) => e.id === currentList)[0].owner;
+    //         listEditors = listIDs.filter((e) => e.id === currentList)[0].editors;
+    //         isSharable = (listIDs.filter((e) => e.id === currentList)[0].owner === props.email);
+    //     }
+    // }
+
+    const isOwner = props.user.email === listOwner;
+
     console.log("owner is ", listOwner)
+    console.log("user is ", props.user.email)
     console.log("editors is ", listEditors)
     console.log("is sharable is ", isSharable)
 
@@ -235,7 +250,7 @@ function SignedInApp(props) {
     }
 
     return <div>
-        {!loading && <App
+        <App
             user={props.user}
             listData={listIDs}
             sharedListData={sharedListIDs}
@@ -243,6 +258,7 @@ function SignedInApp(props) {
             currListID={currentList}
             currListName={currentListName}
             owner={listOwner}
+            isOwner={isOwner}
             editors={listEditors}
 
             handleAddEditor={handleAddEditor}
@@ -261,7 +277,7 @@ function SignedInApp(props) {
             handleTaskFieldChanged={handleTaskFieldChanged}
             handleSortSelected={handleSortSelected}
             sortOption={sortOption}
-        />}
+        />
         {loading &&
         <div className="loading-message">
             <img src={loadingSymbol} alt="Loading..." />
