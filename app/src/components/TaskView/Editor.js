@@ -9,9 +9,9 @@ function Editor(props) {
         <div className="editor-container">
             <TextareaAutosize
                 id="editor-label"
-                disabled={true}>
-                {props.editor}
-
+                disabled={true}
+                value={props.editor}
+            >
             </TextareaAutosize>
             <button
                 className="delete-editor-button"

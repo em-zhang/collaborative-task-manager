@@ -20,16 +20,21 @@
     border-radius: 10px;
     margin: 0 auto;
     text-align: left;
-    height: 200pt;
+    height: 300pt;
     width: 240pt;
     display: flex;
     padding: 30px 30px 30px 30px;
     position: relative;
-    top: 25vh;
+    top: 15vh;
+}
+
+#share-alert-cancel{
+    margin: 10px 10px;
 }
 
 #share-message {
-    font-size: 25px;
+    display: inline;
+    font-size: 20px;
 }
 
 #owner-message {

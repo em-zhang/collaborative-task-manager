@@ -21,6 +21,9 @@ function ShareModal(props) {
                         onDeleteEditor={props.onDeleteEditor}
                     >
                     </AddEditor>
+                    <div id="share-message">
+                        Editors
+                    </div>
                     <EditorsList
                         id="editors-list"
                         owner={props.owner}
@@ -29,6 +32,9 @@ function ShareModal(props) {
                     >
                         Editors Go Here
                     </EditorsList>
+                    <div id="share-message">
+                        Pending Invitations
+                    </div>
                     <button tabIndex="0"
                             className="share-button"
                             id="share-alert-cancel"

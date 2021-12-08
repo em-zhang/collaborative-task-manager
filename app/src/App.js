@@ -2,11 +2,12 @@ import './App.css';
 import './index.js';
 import ListMenu from "./components/ListView/ListMenu"
 import AddList from "./components/ListView/AddList"
-
 import ToDoList from "./components/TaskView/ToDoList"
 import AddTask from "./components/TaskView/AddTask"
 import ToolBar from "./components/TaskView/ToolBar"
 import ShareModal from "./components/TaskView/ShareModal";
+import SharedLists from "./components/ListView/SharedLists";
+import TabList from "./components/TabList";
 import React, {useState} from "react";
 import SortMenu from "./components/TaskView/SortMenu";
 
@@ -26,7 +27,6 @@ function App(props) {
     console.log("user is ", props.user.user)
     console.log("user email is ", props.user.email)
 
-
     return (
         homepage
             ?
@@ -40,7 +40,7 @@ function App(props) {
                         </div>
                     </h1>
                     <div className="header">
-                        <h2>All Lists</h2>
+                        <h2>My Lists</h2>
                     </div>
                 </div>
                 <div className="top-button-bar">
@@ -54,6 +54,20 @@ function App(props) {
                 <div className="taskList">
                     <ListMenu
                         listData={props.listData}
+                        currListID={props.currListID}
+                        currListName={props.currListName}
+                        onListSelected={props.handleListSelected}
+                        showHomepage={showHomepage}
+                        onDeleteList={props.handleDeleteList}
+                        onListFieldChanged={props.handleListFieldChanged}
+                    />
+                </div>
+                <div className="header">
+                    <h2>Shared With Me</h2>
+                </div>
+                <div className="taskList">
+                    <SharedLists
+                        sharedListData={props.sharedListData}
                         currListID={props.currListID}
                         currListName={props.currListName}
                         onListSelected={props.handleListSelected}

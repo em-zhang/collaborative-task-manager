@@ -66,18 +66,26 @@ const collectionName = "list-items"
 
 function SignedInApp(props) {
     let queryAll = db.collection(collectionName).where('owner', "==", props.email);
+    let querySharedLists = db.collection(collectionName).where("editors", "array-contains", props.email);
+
     const [all_value] = useCollection(queryAll);
+    const [shared_lists] = useCollection(querySharedLists);
 
     let listIDs = [];
     if (all_value) {
         listIDs = all_value.docs.map((doc) => {
             return {...doc.data()}});
     }
+    let sharedListIDs = [];
+    if (shared_lists) {
+        sharedListIDs = shared_lists.docs.map((doc) => {
+            return {...doc.data()}});
+    }
 
     // only get data from the current list
     const [currentList, setCurrentList] = useState("default-list");
+
     let query = db.collection(collectionName).doc(currentList).collection("tasks");
-    // let query = db.collection(collectionName).doc(currentList).collection("list-items").where('owner', "==", props.user.uid);
 
     // set the sort option to order the query
     const [sortOption, setSortOption] = useState("dateCreated");
@@ -91,6 +99,29 @@ function SignedInApp(props) {
             return {...doc.data()}
         });
     }
+
+    // determine what list name to display in the header of the app
+    let currentListName = "";
+    let listOwner = null;
+    let listEditors = null;
+    let isSharable = false;
+
+    if (listIDs.length > 0){
+        // find the information of the current list that we are displaying
+        let currList = listIDs.filter((e) => e.id === currentList);
+        if (currList.length > 0) {
+            currentListName = listIDs.filter((e) => e.id === currentList)[0].listName;
+            listOwner = listIDs.filter((e) => e.id === currentList)[0].owner;
+            listEditors = listIDs.filter((e) => e.id === currentList)[0].editors;
+            isSharable = (listIDs.filter((e) => e.id === currentList)[0].owner === props.email);
+
+        }
+    }
+
+    console.log("owner is ", listOwner)
+    console.log("editors is ", listEditors)
+    console.log("is sharable is ", isSharable)
+
 
     // delete a task based on taskID
     function handleDeleteTask(taskID) {
@@ -203,32 +234,12 @@ function SignedInApp(props) {
         });
     }
 
-    // determine what list name to display in the header of the app
-    let currentListName = "";
-    let listOwner = null;
-    let listEditors = null;
-    let isSharable = false;
-
-    if (listIDs.length > 0){
-        // find the information of the current list that we are displaying
-        let currList = listIDs.filter((e) => e.id === currentList);
-        if (currList.length > 0) {
-            currentListName = listIDs.filter((e) => e.id === currentList)[0].listName;
-            listOwner = listIDs.filter((e) => e.id === currentList)[0].owner;
-            listEditors = listIDs.filter((e) => e.id === currentList)[0].editors;
-            isSharable = (listIDs.filter((e) => e.id === currentList)[0].owner === props.email);
-
-        }
-    }
-
-    console.log("owner is ", listOwner)
-    console.log("editors is ", listEditors)
-    console.log("is sharable is ", isSharable)
-
     return <div>
         {!loading && <App
             user={props.user}
             listData={listIDs}
+            sharedListData={sharedListIDs}
+
             currListID={currentList}
             currListName={currentListName}
             owner={listOwner}
