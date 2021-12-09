@@ -9,9 +9,6 @@ function SignUp(props) {
     const signIn = useCreateUserWithEmailAndPassword(props.auth);
     const [createUserWithEmailAndPassword, loading, error] = [signIn[0], signIn[2], signIn[3]];
 
-    if (error){
-        console.log("error is ", error.code, error.message)
-    }
     const createNewUser = () => {
         if (password !== retypePassword) {
             setPasswordMatchError(true);
@@ -19,11 +16,9 @@ function SignUp(props) {
         }
         else {
             setPasswordMatchError(false);
-            console.log("creating user with email/password ", email, password);
-            createUserWithEmailAndPassword(email, password);
+            createUserWithEmailAndPassword(email, password)
         }
     }
-
 
     return (
         <div>

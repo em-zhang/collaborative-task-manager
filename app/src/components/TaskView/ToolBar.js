@@ -77,16 +77,7 @@ function ToolBar(props) {
                     <br/>
                     Delete Completed
                 </button>
-                <button className="toolbar-button"
-                        id="share-button-tb"
-                        aria-label="Share Button"
-                    // onClick={toggleShareModal}>
-                >
-                    <i id="share-icon" className="las la-user-plus">
-                    </i>
-                    <br/>
-                    Share
-                </button>
+
             </div>
             {showAlert && <Alert onClose={toggleModal} onOK={handleAlertOK}>
                 <div>

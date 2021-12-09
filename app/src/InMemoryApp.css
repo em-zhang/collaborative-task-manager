@@ -3,12 +3,19 @@
     column-count: 2;
     background: lightgrey;
     padding: 7px;
-    border: 0px solid darkgrey;
+    border: 0px solid lightgrey;
     border-bottom-width: 2px;
 }
 
 #user-id {
-    margin-left: 5px;
+    display: inline-flex;
+    font-size: 15px;
+    margin-left: 7px;
+    margin-top: 1px;
+}
+
+#email {
+    margin-left: 2px;
 }
 
 #profile-button {
@@ -18,4 +25,19 @@
     border-style: hidden;
     background-color: transparent;
     transform: scale(1.5);
+}
+
+#profile-icon {
+    transform: scale(1.5);
+    color: royalblue;
+    margin-right: 5px;
+}
+
+#verify-email-button{
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    color: royalblue;
+    text-decoration: underline;
+    font-weight: bold;
 }

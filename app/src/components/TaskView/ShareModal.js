@@ -50,9 +50,9 @@ function ShareModal(props) {
                     >
                         Editors Go Here
                     </EditorsList>
-                    <div id="share-message">
-                        Pending Invitations
-                    </div>
+                    {/*<div id="share-message">*/}
+                    {/*    Pending Invitations*/}
+                    {/*</div>*/}
                 </div>
             </div>
         </div>

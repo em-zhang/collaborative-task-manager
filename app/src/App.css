@@ -49,6 +49,7 @@
     /*position: absolute;*/
     float: right;
     margin-right: 14px;
+    padding-bottom: 4em;
     border-style: hidden;
     background-color: transparent;
     transform: scale(2);

@@ -11,9 +11,13 @@ function SignIn(props) {
     const [password, setPassword] = useState("");
     const signIn = useSignInWithEmailAndPassword(props.auth);
     const [signInWithEmailAndPassword, loading, error] = [signIn[0], signIn[2], signIn[3]];
+    const [providerError, setProviderError] = useState(false);
 
     if (error){
-        console.log("error is ", error.code, error.message)
+        console.log("here an error is ", error.code, error.message)
+    }
+    if (providerError){
+        console.log("provider error occurred ", providerError)
     }
 
     return (
@@ -40,16 +44,18 @@ function SignIn(props) {
                     Sign In
                 </button>
             </form>
-            {!loading && error && "An error occurred. Please check your credentials" && error.message}
             <div className="signin-google">
                 <button
                     className="google-button"
-                    onClick={() => props.auth.signInWithPopup(googleProvider).then(() => {
-                        console.log("github worked")
-                        // setResetEmailSuccess(true);
-                    })
+                    onClick={() => props.auth.signInWithPopup(googleProvider)
+                        .then(() => {
+                            console.log("sign in with google worked")
+                            setProviderError(false);
+
+                        })
                         .catch((error) => {
-                            console.log("error is", error, error.code, error.message)
+                            console.log("sign with google error is", error, error.code, error.message)
+                            setProviderError(true);
                         })
                     }>
 
@@ -66,10 +72,11 @@ function SignIn(props) {
                     onClick={() => props.auth.signInWithPopup(githubProvider)
                         .then(() => {
                             console.log("github worked")
-                        // setResetEmailSuccess(true);
+                            setProviderError(false);
                     })
                         .catch((error) => {
-                            console.log("error is", error.code, error.message)
+                            console.log("github error is", error.code, error.message);
+                            setProviderError(true);
                         })}>
                     <img
                         className="google-logo"
@@ -80,7 +87,6 @@ function SignIn(props) {
             </div>
             {!loading && (error) &&
             <div className="error-signin">
-                {console.log("error", error, error.code)}
                 {error.code === 'auth/weak-password'
                     ? "Password must be at least 6 characters long."
                     : error.code === 'auth/invalid-email'
@@ -91,7 +97,14 @@ function SignIn(props) {
                                 ? "Please re-check your username and password."
                                     : error.code === 'auth/account-exists-with-different-credential'
                                         ? "An account already exists with this email."
-                                            : "Some error occurred; please try again."
+                                            : "An error occurred. Check your credentials and try again."
+                }
+            </div>
+            }
+            {!loading && (providerError) &&
+            <div className="error-provider">
+                {
+                    "An error occurred. You may already have an existing account with this email with another provider."
                 }
             </div>
             }

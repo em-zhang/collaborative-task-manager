@@ -35,10 +35,10 @@ const auth = firebase.auth();
 
 function InMemoryApp(props) {
     const [user, loading, error] = useAuthState(auth);
+    let sentEmail = false;
 
     function verifyEmail() {
         auth.currentUser.sendEmailVerification();
-        console.log("send verification email")
     }
 
     if (loading) {
@@ -47,21 +47,32 @@ function InMemoryApp(props) {
         return <div>
             <div class="profile">
                 <div id="user-id">
-                    Logged in as {user.email}
+                    <div>
+                        <i id="profile-icon"
+                           className={user.emailVerified ? "las la-user-check" : "las la-user"}>
+                        </i>
+                    </div>
+                    <div id="email">{user.email}</div>
                 </div>
                 <div id="profile-button">
                     <button id="logout-button" type="button" onClick={() => auth.signOut()}>
                         <i id="logout-icon" className="las la-sign-out-alt"></i>
                     </button>
                 </div>
+                {!user.emailVerified &&
+                <button
+                    id="verify-email-button"
+                    type="button"
+                    onClick={verifyEmail}>
+                    Verify email
+                </button>}
             </div>
             <SignedInApp
                 {...props}
                 user={user}
                 email={user.email}
             />
-            {/*<button id="logout-button" type="button" onClick={() => auth.signOut()}>Logout</button>*/}
-            {!user.emailVerified && <button type="button" onClick={verifyEmail}>Verify email</button>}
+
         </div>
     } else {
         return <>
