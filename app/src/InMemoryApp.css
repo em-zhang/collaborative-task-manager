@@ -1,10 +1,11 @@
 .profile {
     height: 40px;
-    column-count: 2;
+    columns: 2;
     background: lightgrey;
     padding: 7px;
     border: 0px solid lightgrey;
     border-bottom-width: 2px;
+    min-width: 360px;
 }
 
 #user-id {
@@ -40,4 +41,14 @@
     color: royalblue;
     text-decoration: underline;
     font-weight: bold;
+}
+
+#logout-button{
+    position: absolute;
+    background: transparent;
+    border-color: black;
+    border-style: solid;
+    border-radius: 3px;
+    color: black;
+    transform: scale(1.4);
 }

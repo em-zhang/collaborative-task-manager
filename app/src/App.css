@@ -5,6 +5,7 @@
     -moz-osx-font-smoothing: grayscale;
     margin-bottom: 10%;
     min-width: 360px;
+    text-align: center;
 }
 
 .title {
@@ -36,7 +37,7 @@
 }
 
 #home-button {
-    position: absolute;
+    /*position: absolute;*/
     float: left;
     height: 42px;
     width: 4em;

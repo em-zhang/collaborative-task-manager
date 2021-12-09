@@ -13,13 +13,6 @@ function SignIn(props) {
     const [signInWithEmailAndPassword, loading, error] = [signIn[0], signIn[2], signIn[3]];
     const [providerError, setProviderError] = useState(false);
 
-    if (error){
-        console.log("here an error is ", error.code, error.message)
-    }
-    if (providerError){
-        console.log("provider error occurred ", providerError)
-    }
-
     return (
         <div>
             <form onSubmit={(e) => e.preventDefault()}>
@@ -37,13 +30,13 @@ function SignIn(props) {
                     onChange={e => setPassword(e.target.value)}
                     placeholder="password"
                 />
-                <button
-                    type="submit"
-                    onClick={() => signInWithEmailAndPassword(email, password)}
-                    className="signin-button">
-                    Sign In
-                </button>
             </form>
+            <button
+                type="submit"
+                onClick={() => signInWithEmailAndPassword(email, password)}
+                className="signin-button">
+                Sign In
+            </button>
             <div className="signin-google">
                 <button
                     className="google-button"

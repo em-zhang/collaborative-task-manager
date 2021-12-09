@@ -42,8 +42,12 @@ function InMemoryApp(props) {
     }
 
     if (loading) {
-        return <p>Checking...</p>;
-    } else if (user) {
+        return(
+        <div className="loading-message">
+            <img src={loadingSymbol} alt="Loading..."/>
+        </div>)
+    }
+    else if (user) {
         return <div>
             <div class="profile">
                 <div id="user-id">
@@ -276,10 +280,6 @@ function SignedInApp(props) {
             handleSortSelected={handleSortSelected}
             sortOption={sortOption}
         />
-        {loading &&
-        <div className="loading-message">
-            <img src={loadingSymbol} alt="Loading..."/>
-        </div>}
     </div>
 }
 

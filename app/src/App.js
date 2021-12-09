@@ -25,10 +25,6 @@ function App(props) {
         setShowShareModal(!showShareModal)
     }
 
-    console.log("user email is ", props.user.email, "lists data is ", props.listData)
-    console.log("owner is ", props.owner, "lists i own is ", listsIOwn)
-    console.log("lists shared with me ", listsSharedWithMe)
-
     return (
         homepage
             ?

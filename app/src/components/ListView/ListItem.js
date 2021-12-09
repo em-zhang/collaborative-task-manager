@@ -35,16 +35,14 @@ function ListItem(props) {
                     View
                 </button>
             </div>
-            <div>
-                <button
-                    aria-label="Delete list button"
-                    className="delete-list-button"
-                    onClick={() => {
-                        props.onDeleteList(props.listID);
-                    }}>
-                    X
-                </button>
-            </div>
+            <button
+                aria-label="Delete list button"
+                className="delete-list-button"
+                onClick={() => {
+                    props.onDeleteList(props.listID);
+                }}>
+                X
+            </button>
         </div>
     )
 }

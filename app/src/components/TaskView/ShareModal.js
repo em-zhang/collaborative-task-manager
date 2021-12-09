@@ -13,8 +13,8 @@ function ShareModal(props) {
                     <div id="share-message">
                         Share Settings
                         <button tabIndex="0"
-                                className="share-cancel-button"
-                                id="share-alert-cancel"
+                                className="cancel-share-button"
+                                id="cancel-share"
                                 onClick={() => props.onClose()}
                                 onKeyDown={e => {
                                     if(e.keyCode === 9) {
@@ -48,11 +48,7 @@ function ShareModal(props) {
                         onDeleteEditor={props.onDeleteEditor}
                         isOwner={isOwner}
                     >
-                        Editors Go Here
                     </EditorsList>
-                    {/*<div id="share-message">*/}
-                    {/*    Pending Invitations*/}
-                    {/*</div>*/}
                 </div>
             </div>
         </div>

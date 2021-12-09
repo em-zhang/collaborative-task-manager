@@ -1,10 +1,10 @@
-import './ListItem.css';
+import "./ShareListItem.css"
 import SelectionMaintainingInput from "../SelectionMaintainingInput";
 
 function SharedListItem(props) {
     console.log("list item is", props.listID, props.listName)
     return (
-        <div className="list-item-container">
+        <div className="shared-list-item-container">
             <SelectionMaintainingInput
                 id="list-item-label"
                 value={props.listName}
@@ -24,7 +24,7 @@ function SharedListItem(props) {
                 <i className={props.editors.length > 1 ? "las la-user-friends" : null }></i>
             </div>
             <div className="button-container">
-                <button className="view-list-button"
+                <button className="shared-view-list-button"
                         onClick={() => {
                             props.onListSelected(props.listID);
                             props.showHomepage(false);

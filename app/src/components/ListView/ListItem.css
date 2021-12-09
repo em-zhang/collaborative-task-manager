@@ -24,22 +24,19 @@
     width: 48px;
     height: 32px;
     border: none;
-    margin-right: 4px;
-    border-radius: 10px;
+    border-radius: 7px;
     font-size: 15px;
     font-family: "PT Sans", sans-serif;
-    background-color: royalblue;
-    color: white;
+    background-color: lightgrey;
+    font-weight: bold;
 }
 
 .delete-list-button {
-    right: 23px;
     margin-top: 10px;
     display: inline-list-item;
-    margin-right: 10px;
     border: none;
     background-color: white;
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
 .collab-icon{

@@ -6,6 +6,7 @@
 }
 
 .signin-button{
+    margin-top: 10px;
     font-size: 17px;
     background-color: royalblue;
     color: white;
@@ -17,13 +18,16 @@
     padding: 6px 10px 6px 10px;
 }
 .google-button {
-    margin-top: 20px;
+    margin-top: 10px;
     background-color: #f0f0f0;
     font-size: 18px;
     padding: 10px;
     font-weight: bold;
     display: inline-block;
-    border: none;
+    border-style: solid;
+    border-color: darkgrey;
+    border-width: 1px;
+    border-radius: 3px;
 }
 
 .google-logo {

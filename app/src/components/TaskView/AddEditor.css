@@ -1,12 +1,15 @@
-.todo-input {
-    padding: 5px 3rem 5px 5px;
-    font-size: 10px;
+.editor-input {
+    padding: 5px 5px 5px 5px;
+    font-size: 14px;
     box-sizing: border-box;
     flex-grow: 1;
+    margin-bottom: 10px;
+    width: 205px;
 }
 
+
 .add-button {
-    font-size: 10px;
+    font-size: 14px;
     background-color: royalblue;
     color: white;
     border-color: darkgrey;
@@ -19,7 +22,7 @@
 
 .add-button-disabled {
     opacity: 0.8;
-    font-size: 10px;
+    font-size: 14px;
     background-color: royalblue;
     color: white;
     border-color: darkgrey;

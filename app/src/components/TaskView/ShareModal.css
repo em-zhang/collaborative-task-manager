@@ -10,13 +10,12 @@
     background-color: rgba(0, 0, 0, .3);
 }
 
-
 .share-modal {
     background-color: #ffffff;
     border-radius: 10px;
     margin: 0 auto;
     text-align: left;
-    height: 300pt;
+    height: 260pt;
     width: 200pt;
     display: flex;
     padding: 30px 30px 30px 30px;
@@ -24,29 +23,21 @@
     top: 15vh;
 }
 
-#share-alert-cancel{
-    margin-left: 50px;
+.cancel-share-button{
+    margin-left: 40px;
     float: right;
+    border: none;
+    background-color: white;
+    transform: scale(1.4);
 }
 
 #share-message {
-    /*display: grid;*/
+    margin-top: 5px;
     columns: 2;
-    font-size: 20px;
+    font-size: 19px;
 }
 
 #owner-message {
     font-size: 16px;
     font-weight: normal;
 }
-
-
-#editors-list {
-    font-size: 18px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: dimgrey;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-

@@ -1,4 +1,4 @@
-import './AddTask.css';
+import './AddEditor.css';
 import {useState} from "react";
 
 function AddEditor(props){
@@ -7,10 +7,10 @@ function AddEditor(props){
     return (
         <div className="add-editor-container">
             <input
-                className="todo-input"
+                className="editor-input"
                 type="email"
                 id="new-todo-text"
-                placeholder="Add a New Editor"
+                placeholder="editor@example.com"
                 value={currEditor}
                 onChange={e => {
                     setCurrEditor(e.target.value);

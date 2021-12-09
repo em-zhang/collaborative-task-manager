@@ -1,6 +1,5 @@
 import { useState } from "react"
 import { getAuth, sendPasswordResetEmail } from "firebase/auth";
-import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 
 function ResetPassword(props) {
     const [resetEmail, setResetEmail] = useState("");
@@ -63,8 +62,8 @@ function ResetPassword(props) {
                     Reset email successfully sent to {resetEmail}.
                 </div>
             }
+            {errorCode &&
             <div className="error-reset-password">
-                {console.log("error is ", errorCode, "error msg ", errorMessage)}
                 { errorCode === 'auth/invalid-email'
                     ? "Please provide a valid email address."
                     : errorCode === 'auth/user-not-found'

@@ -24,7 +24,6 @@
 
 .toolbar-button {
     font-family: "PT Sans", sans-serif;
-    /*font-size: 13.5px;*/
     font-size: 12px;
     background: royalblue;
     border-style: hidden;
@@ -38,7 +37,6 @@
 
 #sort-button{
     width: 70px;
-    /*width: 30%*/
 }
 
 #sort-icon{
