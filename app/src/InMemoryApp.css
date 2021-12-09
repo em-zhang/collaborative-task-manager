@@ -44,11 +44,12 @@
 }
 
 #logout-button{
-    position: absolute;
-    background: transparent;
-    border-color: black;
-    border-style: solid;
-    border-radius: 3px;
-    color: black;
+    /*position: absolute;*/
+    /*background: white;*/
+    /*border-color: white;*/
+    /*border-style: solid;*/
+    /*border-radius: 3px;*/
+    /*color: black;*/
+    right: 10px;
     transform: scale(1.4);
 }

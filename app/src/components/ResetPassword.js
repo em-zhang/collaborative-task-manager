@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { getAuth, sendPasswordResetEmail } from "firebase/auth";
+import "./ResetPassword.css"
 
 function ResetPassword(props) {
     const [resetEmail, setResetEmail] = useState("");
@@ -13,7 +14,7 @@ function ResetPassword(props) {
         <div>
             <div>
                 Forgot your password?
-                Send reset email.
+                Send a reset email.
             </div>
             <input
                 className="reset-email-input"
@@ -21,7 +22,6 @@ function ResetPassword(props) {
                 onChange={e => setResetEmail(e.target.value)}
                 placeholder="email"
                 type="email"
-                className="reset-password-button"
                 onKeyPress={e => {
                     if (resetEmail !== "") {
                         if (e.key === "Enter") {
@@ -43,6 +43,7 @@ function ResetPassword(props) {
 
             />
             <button
+                className="reset-password-button"
                 onClick={() => sendPasswordResetEmail(props.auth, resetEmail)
                     .then(() => {
                         console.log("password reset email sent to ", resetEmail)
