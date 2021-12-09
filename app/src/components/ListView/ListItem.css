@@ -24,10 +24,12 @@
     width: 48px;
     height: 32px;
     border: none;
-    margin-right: 5px;
-    font-weight: bold;
+    margin-right: 4px;
     border-radius: 10px;
-    background-color: #f0f0f0;
+    font-size: 15px;
+    font-family: "PT Sans", sans-serif;
+    background-color: royalblue;
+    color: white;
 }
 
 .delete-list-button {
@@ -38,4 +40,11 @@
     border: none;
     background-color: white;
     transform: scale(1.2);
+}
+
+.collab-icon{
+    right: 23px;
+    margin: auto 10px;
+    border: none;
+    transform: scale(1.5);
 }

@@ -48,6 +48,7 @@ function App(props) {
                         className="taskList"
                         isOwner={props.isOwner}
                         listData={listsIOwn}
+                        editors={props.editors}
                         currListID={props.currListID}
                         currListName={props.currListName}
                         onListSelected={props.handleListSelected}

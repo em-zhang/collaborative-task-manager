@@ -14,6 +14,7 @@ function SharedLists(props) {
                     <SharedListItem
                         listID={list.id}
                         listName={list.listName}
+                        editors={list.editors}
                         currListID={props.currListID}
                         currListName={currentListName}
                         onListSelected={props.onListSelected}

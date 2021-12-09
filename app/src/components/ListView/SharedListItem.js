@@ -20,6 +20,9 @@ function SharedListItem(props) {
                     }
                 }}
             />
+            <div className="collab-icon">
+                <i className={props.editors.length > 1 ? "las la-user-friends" : null }></i>
+            </div>
             <div className="button-container">
                 <button className="view-list-button"
                         onClick={() => {

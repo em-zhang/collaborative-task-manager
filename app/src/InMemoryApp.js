@@ -100,11 +100,6 @@ function SignedInApp(props) {
             return {...doc.data()}
         });
     }
-    // let sharedListIDs = [];
-    // if (shared_lists) {
-    //     sharedListIDs = shared_lists.docs.map((doc) => {
-    //         return {...doc.data()}});
-    // }
 
     // only get data from the current list
     const [currentList, setCurrentList] = useState("default-list");
@@ -141,26 +136,7 @@ function SignedInApp(props) {
         }
     }
 
-    // let currentSharedListName = "";
-    //
-    // if (sharedListIDs.length > 0){
-    //     // find the information of the current list that we are displaying
-    //     let currList = listIDs.filter((e) => e.id === currentList);
-    //     if (currList.length > 0) {
-    //         currentSharedListName = listIDs.filter((e) => e.id === currentList)[0].listName || sharedListIDs;
-    //         listOwner = listIDs.filter((e) => e.id === currentList)[0].owner;
-    //         listEditors = listIDs.filter((e) => e.id === currentList)[0].editors;
-    //         isSharable = (listIDs.filter((e) => e.id === currentList)[0].owner === props.email);
-    //     }
-    // }
-
     const isOwner = props.user.email === listOwner;
-
-    console.log("owner is ", listOwner)
-    console.log("user is ", props.user.email)
-    console.log("editors is ", listEditors)
-    console.log("is sharable is ", isSharable)
-
 
     // delete a task based on taskID
     function handleDeleteTask(taskID) {

@@ -19,6 +19,7 @@ function ListMenu(props) {
                     {props.listData.map(list =>
                         <ListItem
                             isOwner={props.isOwner}
+                            editors={list.editors}
                             listID={list.id}
                             listName={list.listName}
                             currListID={props.currListID}
