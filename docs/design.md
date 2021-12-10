@@ -96,18 +96,22 @@ Some challenges we ran into:
 - We made sure that our app is well-aligned (add boxes, buttons, tasks) in accordance with the guest design lecture
 
 ### Final Design
+Screen images for the Sign in and Sign up pages. User can sign in with email/password, github, and google. User can click Forgot Password buton to bring up a modal to send a password reset email. The app will display error messages for invalid inputs.
 <p float="left">
 <img src="screenshots/lab5/lab5-1.png" height="500"/>
 </p>
 
+Screen images for usage of the app when viewing lists and shared lists. The first screenshot is the My Lists menu for a verified user, as you can see from the icon and profile bar on top, which includes a log out buton. Lists that are shared have a share icon next to the view button. The second and third screenshots are from an un-verified user. A user can not view shared lists unless they have verified their account. Shared lists also cannot be deleted by editors.
 <p float="left">
 <img src="screenshots/lab5/lab5-2.png" height="500"/>
 </p>
 
+Screen images for further usage of the app when trying to share with collaborators.  Upon clicking on the share icon in the top right next to the title of the app, a modal will appear to view share settings. This will display the owner of the list, an input to add new editors, and the editors of the list shown in a small window. The third screenshot is the view from an editor who is not the owner – you can see that they can share the list with other editors, but cannot remove editors.
 <p float="left">
 <img src="screenshots/lab5/lab5-3.png" height="500"/>
 </p>
 
+These are some screenshots to showcase the responsive display of the app.
 <p float="left">
 <img src="screenshots/lab5/lab5-4.png" height="600"/>
 </p>
