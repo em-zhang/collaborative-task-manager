@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import './SignUp.css'
 
 function SignUp(props) {
     const [email, setEmail] = useState("");
