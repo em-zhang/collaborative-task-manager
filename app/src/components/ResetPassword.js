@@ -5,7 +5,12 @@ import "./ResetPassword.css"
 function ResetPassword(props) {
     const [resetEmail, setResetEmail] = useState("");
     const [resetEmailSuccess, setResetEmailSuccess] = useState(false);
+    const [err, setErr] = useState(null);
 
+    function disableMessage() {
+        setResetEmailSuccess(false)
+        setErr(null);
+    }
     return (
         <div>
             <div className="reset-backdrop">
@@ -31,7 +36,7 @@ function ResetPassword(props) {
                             className="reset-email-input"
                             value={resetEmail}
                             onChange={e => setResetEmail(e.target.value)}
-                            onFocus={() => setResetEmailSuccess(false)}
+                            onFocus={() => disableMessage()}
                             placeholder="email"
                             type="email"
                             onKeyPress={e => {
@@ -43,6 +48,7 @@ function ResetPassword(props) {
                                             })
                                             .catch((error) => {
                                                 setResetEmailSuccess(false);
+                                                setErr(error);
                                             })
                                     }
                                 }
@@ -59,17 +65,23 @@ function ResetPassword(props) {
                             })
                                 .catch((error) => {
                                 setResetEmailSuccess(false);
+                                setErr(error);
                             })
                             }>
                             Send
                         </button>
                     </div>
                     <br/>
-                    {resetEmailSuccess &&
+                    {resetEmailSuccess ?
                         <div className="success-msg">
                             Reset email successfully sent.
                         </div>
-                    }
+                    : null}
+                    {err ?
+                        <div className="success-msg">
+                            An error occurred.
+                        </div>
+                        : null}
                 </div>
             </div>
         </div>
