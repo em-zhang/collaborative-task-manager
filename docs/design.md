@@ -14,10 +14,14 @@ Quick references:
 Design ideas: Having multiple tabs to show different lists based on ownership, allow authentication through GitHub/Google/email and password, allow users to reset password, using a modal for sharing settings
 
 Initial iterations of our app screens:
-
+<p float="left">
+<img src="screenshots/lab5/lab5-iteration.png" height="400"/>
+</p>
 
 Final iterations:
-
+<p float="left">
+<img src="screenshots/lab5/lab5-final.png" height="400"/>
+</p>
 
 ### Key Design Decisions
 - Creating a modal to access sharing: We used a modal popup to access sharing settings to separate it from the lists and have all of the sharing information and controls in one central place
@@ -91,3 +95,18 @@ Some challenges we ran into:
 - We made sure that our app is well-aligned (add boxes, buttons, tasks) in accordance with the guest design lecture
 
 ### Final Design
+<p float="left">
+<img src="screenshots/lab5/lab5-1.png" height="500"/>
+</p>
+
+<p float="left">
+<img src="screenshots/lab5/lab5-2.png" height="500"/>
+</p>
+
+<p float="left">
+<img src="screenshots/lab5/lab5-3.png" height="500"/>
+</p>
+
+<p float="left">
+<img src="screenshots/lab5/lab5-4.png" height="600"/>
+</p>
