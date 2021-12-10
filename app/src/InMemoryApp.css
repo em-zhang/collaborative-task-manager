@@ -1,6 +1,6 @@
 .profile {
     height: 40px;
-    columns: 2;
+    /*columns: 2;*/
     background: lightgrey;
     padding: 7px;
     border: 0px solid lightgrey;
@@ -21,11 +21,10 @@
 
 #profile-button {
     float: right;
-    margin-right: 13px;
     margin-top: 10px;
     border-style: hidden;
     background-color: transparent;
-    transform: scale(1.5);
+    transform: scale(1.2);
 }
 
 #profile-icon {
@@ -46,10 +45,11 @@
 #logout-button{
     /*position: absolute;*/
     /*background: white;*/
-    /*border-color: white;*/
-    /*border-style: solid;*/
+    border-color: darkgrey;
+    border-style: solid;
+    border-width: 1px;
     /*border-radius: 3px;*/
     /*color: black;*/
-    right: 10px;
-    transform: scale(1.4);
+    border-radius: 3px;
+    transform: scale(1.2);
 }

@@ -51,11 +51,12 @@ function SignUp(props) {
                 onClick={() => createNewUser()}>
                 Sign Up
             </button>
+            <br/>
             {!loading && (error || passwordMatchError) &&
             <div className="error-signup">
                 {
                     passwordMatchError
-                        ? "Passwords do not match"
+                        ? "Passwords do not match."
                         : error.code === 'auth/weak-password'
                             ? "Password must be at least 6 characters long."
                             : error.code === 'auth/invalid-email'
@@ -63,7 +64,7 @@ function SignUp(props) {
                                 : error.code === 'auth/email-already-in-use'
                                     ? "This email already has an account associated with it. Try another sign in method."
                                     : error.code === 'auth/internal-error'
-                                        ? "Please re-check your username and password."
+                                        ? "Please enter a valid username and password."
                                         : "Some error occurred; please try again."
                 }
             </div>

@@ -56,6 +56,8 @@ function App(props) {
                     <SharedLists
                         key="Shared With Me"
                         className="taskList"
+                        verified={props.verified}
+                        handleVerifyEmail={props.handleVerifyEmail}
                         isOwner={props.isOwner}
                         sharedListData={listsSharedWithMe}
                         currListID={props.currListID}

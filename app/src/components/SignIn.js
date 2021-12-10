@@ -108,9 +108,11 @@ function SignIn(props) {
                         : error.code === 'auth/email-already-in-use'
                             ? "This email already has an account associated with it. Try another sign in method."
                             : error.code === 'auth/internal-error'
-                                ? "Please re-check your username and password."
+                                ? "Please enter a valid username and password."
                                     : error.code === 'auth/account-exists-with-different-credential'
                                         ? "An account already exists with this email."
+                                        : error.code === 'auth/user-not-found'
+                                            ? "The user was not found. Try signing up with a new account."
                                             : "An error occurred. Check your credentials and try again."
                 }
             </div>

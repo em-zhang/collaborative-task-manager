@@ -68,13 +68,15 @@ function InMemoryApp(props) {
                     id="verify-email-button"
                     type="button"
                     onClick={verifyEmail}>
-                    Verify email
+                    Verify
                 </button>}
             </div>
             <SignedInApp
                 {...props}
                 user={user}
                 email={user.email}
+                verified={user.emailVerified}
+                handleVerifyEmail={verifyEmail}
             />
 
         </div>
@@ -262,6 +264,8 @@ function SignedInApp(props) {
             owner={listOwner}
             isOwner={isOwner}
             editors={listEditors}
+            verified={props.verified}
+            handleVerifyEmail={props.handleVerifyEmail}
 
             handleAddEditor={handleAddEditor}
             handleDeleteEditor={handleDeleteEditor}

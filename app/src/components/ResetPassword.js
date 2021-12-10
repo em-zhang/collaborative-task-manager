@@ -64,19 +64,20 @@ function ResetPassword(props) {
                             className="reset-password-button"
                             onClick={() => sendPasswordResetEmail(props.auth, resetEmail)
                                 .then(() => {
-                                    console.log("password reset email sent to ", resetEmail)
-                                    setResetEmailSuccess(true);
-                                })
+                                console.log("password reset email sent to ", resetEmail)
+                                setResetEmailSuccess(true);
+                            })
                                 .catch((error) => {
-                                    errorCode = error.code;
-                                    errorMessage = error.message;
-                                    setResetEmailSuccess(false);
-                                    console.log("error is ", errorCode, "error msg ", errorMessage)
-                                })
+                                errorCode = error.code;
+                                errorMessage = error.message;
+                                setResetEmailSuccess(false);
+                                console.log("error is", errorMessage, errorCode)
+                            })
                             }>
                             Send
                         </button>
                     </div>
+                    <br/>
                     {resetEmailSuccess &&
                         <div>
                             Reset email successfully sent to {resetEmail}.
