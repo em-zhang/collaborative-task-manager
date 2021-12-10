@@ -1,9 +1,5 @@
-import { useState } from "react";
-import firebase from "firebase/compat";
 import SignIn from "./SignIn.js"
 import SignUp from "./SignUp"
-import ResetPassword from "./ResetPassword";
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import "./SignIn.css";
 import TabList from "./TabList";
 

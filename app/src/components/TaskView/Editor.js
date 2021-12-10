@@ -1,10 +1,7 @@
-import {useState} from 'react';
 import './Editor.css';
 import TextareaAutosize from 'react-textarea-autosize';
-import SelectionMaintainingInput from "../SelectionMaintainingInput";
 
 function Editor(props) {
-
     return (
         <div className="editor-container">
             <TextareaAutosize

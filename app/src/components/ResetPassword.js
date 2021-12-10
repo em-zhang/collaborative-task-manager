@@ -1,14 +1,10 @@
 import {useState} from "react"
-import {getAuth, sendPasswordResetEmail} from "firebase/auth";
+import {sendPasswordResetEmail} from "firebase/auth";
 import "./ResetPassword.css"
 
 function ResetPassword(props) {
     const [resetEmail, setResetEmail] = useState("");
     const [resetEmailSuccess, setResetEmailSuccess] = useState(false);
-    let errorCode = "";
-    let errorMessage = "";
-
-    console.log("error is ", errorCode, errorMessage);
 
     return (
         <div>
@@ -20,7 +16,6 @@ function ResetPassword(props) {
                         <div>
                             <button tabIndex="0"
                                     className="cancel-reset-button"
-                                // id="cancel-share"
                                     onClick={() => props.onClose()}
                             >
                                 X
@@ -29,29 +24,25 @@ function ResetPassword(props) {
                     </div>
                     <div id="forgot-msg">
                         Forgot your password?
-                        Send a reset email.
+                        Send a reset email to reset it.
                     </div>
                     <div>
                         <input
                             className="reset-email-input"
                             value={resetEmail}
                             onChange={e => setResetEmail(e.target.value)}
+                            onFocus={() => setResetEmailSuccess(false)}
                             placeholder="email"
                             type="email"
                             onKeyPress={e => {
                                 if (resetEmail !== "") {
                                     if (e.key === "Enter") {
-                                        console.log("pressed enter");
                                         sendPasswordResetEmail(props.auth, resetEmail)
                                             .then(() => {
-                                                console.log("password reset email sent to ", resetEmail)
                                                 setResetEmailSuccess(true);
                                             })
                                             .catch((error) => {
-                                                errorCode = error.code;
-                                                errorMessage = error.message;
                                                 setResetEmailSuccess(false);
-                                                console.log("error is", errorMessage, errorCode)
                                             })
                                     }
                                 }
@@ -64,14 +55,10 @@ function ResetPassword(props) {
                             className="reset-password-button"
                             onClick={() => sendPasswordResetEmail(props.auth, resetEmail)
                                 .then(() => {
-                                console.log("password reset email sent to ", resetEmail)
                                 setResetEmailSuccess(true);
                             })
                                 .catch((error) => {
-                                errorCode = error.code;
-                                errorMessage = error.message;
                                 setResetEmailSuccess(false);
-                                console.log("error is", errorMessage, errorCode)
                             })
                             }>
                             Send
@@ -79,18 +66,8 @@ function ResetPassword(props) {
                     </div>
                     <br/>
                     {resetEmailSuccess &&
-                        <div>
+                        <div className="success-msg">
                             Reset email successfully sent to {resetEmail}.
-                        </div>
-                    }
-                    {errorCode &&
-                        <div className="error-reset-password">
-                            {errorCode === 'auth/invalid-email'
-                                ? "Please provide a valid email address."
-                                : errorCode === 'auth/user-not-found'
-                                    ? "The email address was not found. Sign up instead?"
-                                    : "Some error occurred."
-                            }
                         </div>
                     }
                 </div>

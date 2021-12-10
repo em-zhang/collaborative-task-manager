@@ -4,18 +4,13 @@ import AuthPage from "./components/AuthPage";
 import loadingSymbol from '../src/LoadingSymbol.gif'
 import './InMemoryApp.css';
 
-
 // Import the functions you need from the SDKs you need
 import {generateUniqueID} from "web-vitals/dist/modules/lib/generateUniqueID";
 import firebase from "firebase/compat";
 import {useCollection} from "react-firebase-hooks/firestore";
 import {
-    useAuthState,
-    useCreateUserWithEmailAndPassword,
-    useSignInWithEmailAndPassword
+    useAuthState
 } from 'react-firebase-hooks/auth';
-import AddList from "./components/ListView/AddList";
-import ListMenu from "./components/ListView/ListMenu";
 
 
 const firebaseConfig = {
@@ -35,8 +30,6 @@ const auth = firebase.auth();
 
 function InMemoryApp(props) {
     const [user, loading, error] = useAuthState(auth);
-    let sentEmail = false;
-
     function verifyEmail() {
         auth.currentUser.sendEmailVerification();
     }
@@ -49,7 +42,7 @@ function InMemoryApp(props) {
     }
     else if (user) {
         return <div>
-            <div class="profile">
+            <div className="profile">
                 <div id="user-id">
                     <div>
                         <i id="profile-icon"
@@ -95,10 +88,7 @@ const collectionName = "list-items"
 
 function SignedInApp(props) {
     let queryAll = db.collection(collectionName).where("editors", "array-contains", props.email);
-    // let querySharedLists = db.collection(collectionName).where("editors", "array-contains", props.email);
-
     const [all_value] = useCollection(queryAll);
-    // const [shared_lists] = useCollection(querySharedLists);
 
     let listIDs = [];
     if (all_value) {
@@ -129,7 +119,6 @@ function SignedInApp(props) {
     let currentListName = "";
     let listOwner = null;
     let listEditors = null;
-    let isSharable = false;
 
     if (listIDs.length > 0) {
         // find the information of the current list that we are displaying
@@ -138,7 +127,6 @@ function SignedInApp(props) {
             currentListName = listIDs.filter((e) => e.id === currentList)[0].listName;
             listOwner = listIDs.filter((e) => e.id === currentList)[0].owner;
             listEditors = listIDs.filter((e) => e.id === currentList)[0].editors;
-            isSharable = (listIDs.filter((e) => e.id === currentList)[0].owner === props.email);
         }
     }
 

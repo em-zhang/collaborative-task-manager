@@ -37,10 +37,10 @@
 }
 
 #home-button {
-    /*position: absolute;*/
     float: left;
     height: 42px;
     width: 4em;
+    margin-right: -3em;
     border-style: hidden;
     background-color: transparent;
     transform: scale(2);
@@ -48,11 +48,10 @@
 
 #share-button {
     float: right;
-    padding-bottom: 4em;
+    padding: 0px 15px 50px 0px;
     border-style: hidden;
     background-color: transparent;
     transform: scale(2);
-    margin-right: 2%;
 }
 
 .heading {

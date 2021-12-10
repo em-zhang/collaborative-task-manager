@@ -2,7 +2,6 @@ import firebase from "firebase/compat";
 import { useState } from "react";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import "./SignIn.css"
-import ShareModal from "./TaskView/ShareModal";
 import ResetPassword from "./ResetPassword";
 
 const googleProvider = new firebase.auth.GoogleAuthProvider();
@@ -49,18 +48,17 @@ function SignIn(props) {
                     className="sign-in-button"
                     onClick={() => props.auth.signInWithPopup(googleProvider)
                         .then(() => {
-                            console.log("sign in with google worked")
                             setProviderError(false);
 
                         })
                         .catch((error) => {
-                            console.log("sign with google error is", error, error.code, error.message)
                             setProviderError(true);
                         })
                     }>
 
                     <img
                         className="google-logo"
+                        alt="google logo"
                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/800px-Google_%22G%22_Logo.svg.png"
                     />
                     Sign In with Google
@@ -71,24 +69,22 @@ function SignIn(props) {
                     className="sign-in-button"
                     onClick={() => props.auth.signInWithPopup(githubProvider)
                         .then(() => {
-                            console.log("github worked")
                             setProviderError(false);
                     })
                         .catch((error) => {
-                            console.log("github error is", error.code, error.message);
                             setProviderError(true);
                         })}>
                     <img
                         className="google-logo"
+                        alt="github logo"
                         src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"
                     />
                     Sign In with Github
                 </button>
             </div>
             <div>
-                <button id="reset-pass-button"
+                <button id="forgot-pass-button"
                         aria-label="Reset Password Button"
-                        // className="sign-in-button"
                         onClick={toggleResetModal}>
                     Forgot Password?
                 </button>

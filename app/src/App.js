@@ -1,7 +1,6 @@
 import './App.css';
 import './index.js';
 import ListMenu from "./components/ListView/ListMenu"
-import AddList from "./components/ListView/AddList"
 import ToDoList from "./components/TaskView/ToDoList"
 import AddTask from "./components/TaskView/AddTask"
 import ToolBar from "./components/TaskView/ToolBar"
@@ -9,7 +8,6 @@ import ShareModal from "./components/TaskView/ShareModal";
 import SharedLists from "./components/ListView/SharedLists";
 import TabList from "./components/TabList";
 import React, {useState} from "react";
-import SortMenu from "./components/TaskView/SortMenu";
 
 function App(props) {
     const[showCompleted, setShowCompleted] = useState(true);

@@ -1,6 +1,5 @@
 .profile {
     height: 40px;
-    /*columns: 2;*/
     background: lightgrey;
     padding: 7px;
     border: 0px solid lightgrey;
@@ -46,14 +45,11 @@
 }
 
 #logout-button{
-    /*position: absolute;*/
+    padding: 0px 5px 0px 0px;
     background: transparent;
     border-color: transparent;
     border-style: solid;
     border-width: 1px;
-    /*border-radius: 3px;*/
-    /*color: black;*/
     border-radius: 3px;
     transform: scale(1.8);
-    /*padding-right: 200%;*/
 }
