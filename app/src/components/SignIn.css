@@ -3,11 +3,17 @@
     font-size: 16px;
     margin-top: 1%;
     margin-left: 15px;
+    width: 90%;
+    border-style: solid;
+    border-color: darkgrey;
+    border-width: 1px;
+    border-radius: 3px;
+    float: left;
 }
 
 .signin-button{
     margin-top: 10px;
-    font-size: 17px;
+    font-size: 18px;
     background-color: royalblue;
     color: white;
     border-color: darkgrey;
@@ -15,13 +21,17 @@
     border-width: 1px;
     border-radius: 5px;
     margin-left: 15px;
-    padding: 6px 10px 6px 10px;
+    padding: 6px 0px 6px 35px;
+    width: 92%;
+    border-radius: 3px;
+    float: left;
+    text-align: center;
 }
 
-.google-button {
+.sign-in-button {
     margin-top: 10px;
     background-color: #f0f0f0;
-    font-size: 18px;
+    font-size: 17px;
     padding: 10px;
     font-weight: bold;
     display: inline-block;
@@ -29,10 +39,34 @@
     border-color: darkgrey;
     border-width: 1px;
     border-radius: 3px;
+    width: 92%;
+    margin-left: 15px;
+    float: left;
 }
 
 .google-logo {
     height: 20px;
     float: left;
-    margin-right: 10px;
+    margin-right: 20px;
+}
+
+.error-signin {
+    margin-top: 10px;
+}
+
+#reset-pass-button {
+    margin-top: 10px;
+    background-color: transparent;
+    font-size: 14px;
+    display: inline-block;
+    padding: 10px;
+    border-style: dotted;
+    font-style: italic;
+    border-color: darkgrey;
+    text-decoration: underline;
+    border-width: 0px;
+    border-radius: 3px;
+    width: 40%;
+    margin-left: 15px;
+    float: center;
 }

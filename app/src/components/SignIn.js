@@ -2,6 +2,8 @@ import firebase from "firebase/compat";
 import { useState } from "react";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import "./SignIn.css"
+import ShareModal from "./TaskView/ShareModal";
+import ResetPassword from "./ResetPassword";
 
 const googleProvider = new firebase.auth.GoogleAuthProvider();
 const githubProvider = new firebase.auth.GithubAuthProvider();
@@ -12,6 +14,11 @@ function SignIn(props) {
     const signIn = useSignInWithEmailAndPassword(props.auth);
     const [signInWithEmailAndPassword, loading, error] = [signIn[0], signIn[2], signIn[3]];
     const [providerError, setProviderError] = useState(false);
+    const [showResetModal, setShowResetModal] = useState(false);
+
+    function toggleResetModal() {
+        setShowResetModal(!showResetModal)
+    }
 
     return (
         <div>
@@ -39,7 +46,7 @@ function SignIn(props) {
             </button>
             <div className="signin-google">
                 <button
-                    className="google-button"
+                    className="sign-in-button"
                     onClick={() => props.auth.signInWithPopup(googleProvider)
                         .then(() => {
                             console.log("sign in with google worked")
@@ -61,7 +68,7 @@ function SignIn(props) {
             </div>
             <div className="signin-google">
                 <button
-                    className="google-button"
+                    className="sign-in-button"
                     onClick={() => props.auth.signInWithPopup(githubProvider)
                         .then(() => {
                             console.log("github worked")
@@ -77,6 +84,20 @@ function SignIn(props) {
                     />
                     Sign In with Github
                 </button>
+            </div>
+            <div>
+                <button id="reset-pass-button"
+                        aria-label="Reset Password Button"
+                        // className="sign-in-button"
+                        onClick={toggleResetModal}>
+                    Forgot Password?
+                </button>
+                {showResetModal &&
+                    <ResetPassword
+                        key="Reset Password"
+                        auth={props.auth}
+                        onClose={toggleResetModal}
+                    />}
             </div>
             {!loading && (error) &&
             <div className="error-signin">

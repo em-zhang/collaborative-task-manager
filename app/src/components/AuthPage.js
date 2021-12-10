@@ -18,7 +18,7 @@ function AuthPage(props) {
                         Task Manager
                     </div>
                 </h1>
-                <div className="header">
+                <div className="auth-header">
                     <TabList className="tabs">
                         <SignIn
                             key="Sign In"
@@ -29,10 +29,10 @@ function AuthPage(props) {
                             key="Sign Up"
                             auth={props.auth}
                         />
-                        <ResetPassword
-                            key="Reset Password"
-                            auth={props.auth}
-                        />
+                        {/*<ResetPassword*/}
+                        {/*    key="Reset Password"*/}
+                        {/*    auth={props.auth}*/}
+                        {/*/>*/}
                     </TabList>
                 </div>
             </div>
