@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/cs124/static/css/main.55179124.chunk.css",
-    "main.js": "/cs124/static/js/main.c27c2cc4.chunk.js",
-    "main.js.map": "/cs124/static/js/main.c27c2cc4.chunk.js.map",
+    "main.css": "/cs124/static/css/main.c02fa8b3.chunk.css",
+    "main.js": "/cs124/static/js/main.9013b809.chunk.js",
+    "main.js.map": "/cs124/static/js/main.9013b809.chunk.js.map",
     "runtime-main.js": "/cs124/static/js/runtime-main.4fadd501.js",
     "runtime-main.js.map": "/cs124/static/js/runtime-main.4fadd501.js.map",
     "static/js/2.af25b05c.chunk.js": "/cs124/static/js/2.af25b05c.chunk.js",
     "static/js/2.af25b05c.chunk.js.map": "/cs124/static/js/2.af25b05c.chunk.js.map",
     "index.html": "/cs124/index.html",
-    "static/css/main.55179124.chunk.css.map": "/cs124/static/css/main.55179124.chunk.css.map",
+    "static/css/main.c02fa8b3.chunk.css.map": "/cs124/static/css/main.c02fa8b3.chunk.css.map",
     "static/js/2.af25b05c.chunk.js.LICENSE.txt": "/cs124/static/js/2.af25b05c.chunk.js.LICENSE.txt",
     "static/media/LoadingSymbol.e9f28dc7.gif": "/cs124/static/media/LoadingSymbol.e9f28dc7.gif"
   },
   "entrypoints": [
     "static/js/runtime-main.4fadd501.js",
     "static/js/2.af25b05c.chunk.js",
-    "static/css/main.55179124.chunk.css",
-    "static/js/main.c27c2cc4.chunk.js"
+    "static/css/main.c02fa8b3.chunk.css",
+    "static/js/main.9013b809.chunk.js"
   ]
 }
