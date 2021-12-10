@@ -1,0 +1,32 @@
+.shared-list-item-container {
+    display: inline-flex;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    background-color: white;
+    opacity: 0.8;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.shared-view-list-button {
+    width: 48px;
+    height: 32px;
+    border: none;
+    margin-right: 10px;
+    border-radius: 7px;
+    font-size: 15px;
+    font-family: "PT Sans", sans-serif;
+    background-color: lightgrey;
+    font-weight: bold;
+}
+
+#verify-email-button-2{
+    font-size: 16px;
+    background-color: royalblue;
+    color: white;
+    border-color: darkgrey;
+    border-style: hidden;
+    border-width: 1px;
+    border-radius: 7px;
+    margin-left: 15px;
+    padding: 6px 10px 6px 10px;}

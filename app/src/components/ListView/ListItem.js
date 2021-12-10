@@ -1,5 +1,5 @@
 import './ListItem.css';
-import SelectionMaintainingInput from "./SelectionMaintainingInput";
+import SelectionMaintainingInput from "../SelectionMaintainingInput";
 
 function ListItem(props) {
     return (
@@ -19,6 +19,9 @@ function ListItem(props) {
                     }
                 }}
             />
+            <div className="collab-icon">
+                <i className={props.editors.length > 1 ? "las la-user-friends" : null }></i>
+            </div>
             <div className="button-container">
                 <button className="view-list-button"
                         onClick={() => {
@@ -32,16 +35,14 @@ function ListItem(props) {
                     View
                 </button>
             </div>
-            <div>
             <button
                 aria-label="Delete list button"
                 className="delete-list-button"
-                    onClick={() => {
-                        props.onDeleteList(props.listID);
-                    }}>
+                onClick={() => {
+                    props.onDeleteList(props.listID);
+                }}>
                 X
             </button>
-            </div>
         </div>
     )
 }

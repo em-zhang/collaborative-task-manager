@@ -1,5 +1,5 @@
-import Alert from "../components/Alert"
-import SortMenu from "../components/SortMenu"
+import Alert from "./Alert"
+import SortMenu from "./SortMenu"
 import React, {useState} from "react";
 import './ToolBar.css';
 
@@ -57,9 +57,11 @@ function ToolBar(props) {
                 <button
                     className="toolbar-button"
                     id="hide-button"
-                    onClick={() => {toggleShowCompleted()}}>
+                    onClick={() => {
+                        toggleShowCompleted()
+                    }}>
                     <i id="hide-icon"
-                       className={props.showCompleted ? "las la-eye-slash": "las la-eye"}>
+                       className={props.showCompleted ? "las la-eye-slash" : "las la-eye"}>
                     </i>
                     <br/>
                     {props.showCompleted ? "Hide Completed" : "Show All"}
@@ -69,12 +71,13 @@ function ToolBar(props) {
                     id={props.numCompleted !== 0 ? "delete-button" : "delete-completed-button-hidden"}
                     disabled={props.numCompleted === 0}
                     onClick={toggleModal}
-                    >
+                >
                     <i id="delete-icon" className="las la-trash">
                     </i>
                     <br/>
                     Delete Completed
                 </button>
+
             </div>
             {showAlert && <Alert onClose={toggleModal} onOK={handleAlertOK}>
                 <div>

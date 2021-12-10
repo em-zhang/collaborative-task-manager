@@ -6,6 +6,7 @@ function ToDoList(props) {
     return (
         <div id="list-container">
             <div className="checklist">
+                {props.taskList.length === 0 ? "No current tasks." : null}
                 {props.taskList.map(task =>
                     <Task {...task}
                           key={task.taskId}

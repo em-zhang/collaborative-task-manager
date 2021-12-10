@@ -2,12 +2,11 @@
     padding: 5px;
     font-size: 18px;
     margin-top: 1%;
-    /*margin-left: 60%;*/
     margin-left: 15px;
 }
 
 #list-add-button {
-    font-size: 17px;
+    font-size: 14px;
     background-color: royalblue;
     color: white;
     border-color: darkgrey;
@@ -20,7 +19,7 @@
 
 #list-add-button-disabled {
     opacity: 0.8;
-    font-size: 17px;
+    font-size: 14px;
     background-color: royalblue;
     color: white;
     border-color: darkgrey;

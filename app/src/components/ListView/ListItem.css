@@ -20,22 +20,28 @@
     flex-grow: 1;
 }
 
-
 .view-list-button {
     width: 48px;
     height: 32px;
     border: none;
+    border-radius: 7px;
+    font-size: 15px;
+    font-family: "PT Sans", sans-serif;
+    background-color: lightgrey;
     font-weight: bold;
-    border-radius: 10px;
-    background-color: #f0f0f0;
 }
 
 .delete-list-button {
-    right: 23px;
     margin-top: 10px;
     display: inline-list-item;
-    margin-right: 10px;
     border: none;
     background-color: white;
-    transform: scale(1.2);
+    transform: scale(1.1);
+}
+
+.collab-icon{
+    right: 23px;
+    margin: auto 10px;
+    border: none;
+    transform: scale(1.5);
 }

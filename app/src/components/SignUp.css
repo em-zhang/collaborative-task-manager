@@ -1,0 +1,10 @@
+.error-signup {
+    margin-top: 3%;
+    width: 100%;
+}
+
+#signup-form {
+    height: 150px;
+    margin: 5px;
+    padding: 20px;
+}

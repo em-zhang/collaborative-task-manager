@@ -1,0 +1,63 @@
+.signin-input{
+    padding: 5px;
+    font-size: 18px;
+    margin-top: 5px;
+    width: 90%;
+    border-style: solid;
+    border-color: darkgrey;
+    border-width: 1px;
+    border-radius: 3px;
+}
+
+.signin-button{
+    margin-top: 10px;
+    font-size: 18px;
+    background-color: royalblue;
+    color: white;
+    border-color: darkgrey;
+    border-style: hidden;
+    border-width: 1px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    padding: 10px 10px 10px 10px;
+    width: 91%;
+    text-align: center;
+}
+
+.sign-in-button {
+    margin-top: 10px;
+    background-color: #f0f0f0;
+    font-size: 17px;
+    padding: 10px;
+    font-weight: bold;
+    border-style: solid;
+    border-color: darkgrey;
+    border-width: 1px;
+    border-radius: 3px;
+    width: 91%;
+}
+
+.google-logo {
+    height: 20px;
+    float: left;
+}
+
+.error-signin {
+    margin-top: 10px;
+}
+
+#forgot-pass-button {
+    margin-top: 10px;
+    background-color: transparent;
+    font-size: 14px;
+    display: inline-block;
+    padding: 10px;
+    border-style: dotted;
+    font-style: italic;
+    border-color: darkgrey;
+    text-decoration: underline;
+    border-width: 0px;
+    border-radius: 3px;
+    width: 40%;
+    color: royalblue;
+}

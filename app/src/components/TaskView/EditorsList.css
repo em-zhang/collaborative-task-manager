@@ -1,0 +1,17 @@
+.editor-list-container{
+    border-color: lightgrey;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 3px;
+    overflow-y: auto;
+    max-height: 210px;
+    min-height: 210px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+#no-editors-message{
+    padding-top: 30px;
+    font-size: 16px;
+    font-weight: normal;
+}

@@ -1,0 +1,15 @@
+.tab-list-item {
+    font-size: 17px;
+    display: inline-block;
+    list-style: none;
+    /*margin-bottom: -1px;*/
+    padding: 0.5rem 0.6rem;
+    border: solid white;  /*White with width to reserve space for active gray border*/
+    border-width: 1px 1px 0 1px;
+    width: 40%;
+}
+
+.tab-list-active {
+    background-color: white;
+    border-color: #cccccc;
+}

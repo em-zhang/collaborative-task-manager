@@ -1,0 +1,53 @@
+.profile {
+    height: 40px;
+    background: lightgrey;
+    padding: 7px;
+    border: 0px solid lightgrey;
+    border-bottom-width: 2px;
+    min-width: 360px;
+    width: 100%;
+}
+
+#user-id {
+    display: inline-flex;
+    font-size: 16px;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-right: 8px;
+}
+
+#email {
+    margin-left: 2px;
+}
+
+#profile-button {
+    float: right;
+    margin-top: 10px;
+    border-style: hidden;
+    background-color: transparent;
+    transform: scale(1.2);
+    margin-right: 3%;
+}
+
+#profile-icon {
+    transform: scale(1.5);
+    color: royalblue;
+    margin-right: 10px;
+}
+
+#verify-email-button{
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    color: royalblue;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+#logout-button{
+    float: right;
+    padding: 0px 7px 0px 0px;
+    background-color: transparent;
+    border: none;
+    transform: scale(1.8);
+}

@@ -1,0 +1,31 @@
+.todo-input {
+    padding: 5px 3rem 5px 5px;
+    font-size: 18px;
+    box-sizing: border-box;
+    flex-grow: 1;
+}
+
+.add-button {
+    font-size: 17px;
+    background-color: royalblue;
+    color: white;
+    border-color: darkgrey;
+    border-style: hidden;
+    border-width: 1px;
+    border-radius: 7px;
+    margin-left: 15px;
+    padding: 6px 10px 6px 10px;
+}
+
+.add-button-disabled {
+    opacity: 0.8;
+    font-size: 17px;
+    background-color: royalblue;
+    color: white;
+    border-color: darkgrey;
+    border-style: hidden;
+    border-width: 1px;
+    border-radius: 7px;
+    margin-left: 15px;
+    padding: 6px 10px 6px 10px;
+}

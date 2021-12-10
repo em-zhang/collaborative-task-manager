@@ -5,6 +5,7 @@
     -moz-osx-font-smoothing: grayscale;
     margin-bottom: 10%;
     min-width: 360px;
+    text-align: center;
 }
 
 .title {
@@ -14,6 +15,7 @@
 .loading-message {
     text-align: center;
     font-size: 30px;
+    position: relative;
 }
 
 .add-task-container {
@@ -35,10 +37,18 @@
 }
 
 #home-button {
-    position: absolute;
     float: left;
     height: 42px;
     width: 4em;
+    margin-right: -3em;
+    border-style: hidden;
+    background-color: transparent;
+    transform: scale(2);
+}
+
+#share-button {
+    float: right;
+    padding: 0px 15px 50px 0px;
     border-style: hidden;
     background-color: transparent;
     transform: scale(2);
