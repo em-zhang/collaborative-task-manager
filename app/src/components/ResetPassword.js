@@ -67,7 +67,7 @@ function ResetPassword(props) {
                     <br/>
                     {resetEmailSuccess &&
                         <div className="success-msg">
-                            Reset email successfully sent to {resetEmail}.
+                            Reset email successfully sent.
                         </div>
                     }
                 </div>
