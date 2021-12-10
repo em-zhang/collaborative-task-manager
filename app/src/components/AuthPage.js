@@ -29,10 +29,6 @@ function AuthPage(props) {
                             key="Sign Up"
                             auth={props.auth}
                         />
-                        {/*<ResetPassword*/}
-                        {/*    key="Reset Password"*/}
-                        {/*    auth={props.auth}*/}
-                        {/*/>*/}
                     </TabList>
                 </div>
             </div>

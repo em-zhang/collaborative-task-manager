@@ -23,7 +23,8 @@ function SignUp(props) {
 
     return (
         <div className="signup-page">
-            <form
+            <div id="signup-form">
+            <form className="signup-form"
                 onSubmit={(e) => e.preventDefault()}>
                 <input
                     className="signin-input"
@@ -48,11 +49,12 @@ function SignUp(props) {
                 />
             </form>
             <button
-                className="signin-button"
+                className="signin-button signup-form"
                 onClick={() => createNewUser()}>
                 Sign Up
             </button>
             <br/>
+            </div>
             {!loading && (error || passwordMatchError) &&
             <div className="error-signup">
                 {
