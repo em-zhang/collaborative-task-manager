@@ -32,7 +32,7 @@ function App(props) {
                         <div
                             aria-label="Task Manager"
                             className="title">
-                            - Task Manager -
+                            Task Manager
                         </div>
                     </h1>
                 </div>

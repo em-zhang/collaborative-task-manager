@@ -79,7 +79,7 @@ function ResetPassword(props) {
                     : null}
                     {err ?
                         <div className="success-msg">
-                            An error occurred.
+                            Please enter a valid email.
                         </div>
                         : null}
                 </div>
