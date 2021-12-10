@@ -1,5 +1,6 @@
 # Lab 5: Responsive Task Manager App supporting multiple lists
 **Group members:** Olina Wong, Emily Zhang, Christopher Chung
+
 In Lab 5, we iterated on our working Task Manager app from the previous lab to support two new key functionalities.
 - Support logging in via various accounts (Google/Github/Email).
 - Support for sharing of lists between users.
