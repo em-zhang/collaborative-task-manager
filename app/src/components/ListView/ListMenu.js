@@ -16,6 +16,7 @@ function ListMenu(props) {
             </div>
             <div id="list-container">
                 <div className="checklist">
+                    {props.listData.length === 0 ? "No current lists." : null}
                     {props.listData.map(list =>
                         <ListItem
                             isOwner={props.isOwner}

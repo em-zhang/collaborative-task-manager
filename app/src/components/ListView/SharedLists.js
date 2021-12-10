@@ -8,6 +8,7 @@ function SharedLists(props) {
     return (
         <div id="list-container">
             <div className="checklist">
+                {props.sharedListData.length === 0 ? "No lists have been shared with you." : null}
                 {props.verified ?
                 props.sharedListData.map(list =>
                     <SharedListItem
