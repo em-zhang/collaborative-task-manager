@@ -1,14 +1,12 @@
 .signin-input{
     padding: 5px;
     font-size: 18px;
-    margin-top: 1%;
-    /*margin-left: 15px;*/
+    margin-top: 5px;
     width: 90%;
     border-style: solid;
     border-color: darkgrey;
     border-width: 1px;
     border-radius: 3px;
-    /*float: left;*/
 }
 
 .signin-button{
